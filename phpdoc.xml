@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+    <title>Swagger To Markdown (md)</title>
+    <parser>
+        <target>./doc</target>
+        <encoding>utf8</encoding>
+        <extensions>
+            <extension>php</extension>
+        </extensions>
+    </parser>
+    <transformer>
+        <target>phpdoc-md</target>
+    </transformer>
+    <transformations>
+        <template name="xml" />
+    </transformations>
+    <files>
+        <directory>./src/Swagger-to-md</directory>
+        <ignore>./src/Swagger-to-md/Example.php</ignore>
+        <ignore>./src/Swagger-to-md/Compat.php</ignore>
+        <ignore>./src/Swagger-to-md/Autoload.php</ignore>
+    </files>
+</phpdoc>
