@@ -1,0 +1,78 @@
+{
+    "name": "njuhel/swagger-to-md",
+    "description": "Tranform a swagger (multifile or plainfile) into markdown doc file based on template files. The generated doc is more a sskeltton of doc than a full finished doc file (depends of the documentation into your swagger file)",
+    "version": "0.0.x-dev",
+    "type": "library",
+    "keywords": ["swagger", "OAI", "openapi", "md", "markdown", "transform", "doc", "skeletton", "template", "api", "restfull", "php"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Nicolas JUHEL",
+            "email": "swaggervalidator@nabbar.com",
+            "role": "Lead Developer"
+        }
+    ],
+    "support": {
+        "email": "swaggervalidator@nabbar.com"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.5.0",
+        "njuhel/swagger-validator": ">=1.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">4.8",
+        "phpunit/php-file-iterator": ">=1.4",
+        "phpunit/php-text-template": ">=1.2",
+        "phpunit/php-code-coverage": ">=2.1",
+        "phpunit/php-timer": ">=1.0",
+        "phpunit/phpunit-mock-objects": ">=2.3",
+        "phpdocumentor/phpdocumentor": ">=2.0",
+        "evert/phpdoc-md" : ">=0.2",
+        "codeclimate/php-test-reporter": "dev-master"
+    },
+    "scripts": {
+        "Coverage": [
+            "php vendor/phpunit/phpunit/phpunit --debug --process-isolation --report-useless-tests --colors=always --stop-on-error --stop-on-failure --verbose --configuration tests/phpunit/phpunit.xml --bootstrap tests/phpunit/bootstrap.php --coverage-clover=build/logs/clover.xml --coverage-text=php://stdout"
+        ],
+        "Phpunit": [
+            "php vendor/phpunit/phpunit/phpunit --debug --process-isolation --report-useless-tests --colors=always --stop-on-error --stop-on-failure --verbose --configuration tests/phpunit/phpunit.xml --bootstrap tests/phpunit/bootstrap.php"
+        ],
+        "PharBuilder": [
+            "php -d phar.readonly=0 -f tests/pharBuilder/makePhar.php",
+            "chmod ugo+x bin/SwaggerValidator.phar"
+        ],
+        "PharTest": [
+            "php vendor/phpunit/phpunit/phpunit --debug --process-isolation --report-useless-tests --colors=always --stop-on-error --stop-on-failure --verbose --configuration tests/phartest/phpunit.xml --bootstrap tests/phartest/bootstrap.php"
+        ],
+        "PhpDoc": [
+            "rm -vrf doc/; mkdir -vp doc;mkdir -vp temp;",
+            "vendor/phpdocumentor/phpdocumentor/bin/phpdoc -c ./phpdoc.xml --target ./doc --validate --progressbar --cache-folder ./temp",
+            "vendor/evert/phpdoc-md/bin/phpdocmd doc/structure.xml doc/",
+            "rm -rf doc/structure.xml temp/; mv doc/ApiIndex.md doc/README.md"
+        ],
+        "build": [
+            "@Phpunit",
+            "@PharBuilder",
+            "@PhpDoc",
+            "@PharTest",
+            "@Coverage"
+        ],
+        "gitBuild": [
+            "@Phpunit",
+            "@PharBuilder",
+            "@PharTest"
+        ],
+        "gitBuildCoverage": [
+            "@Phpunit",
+            "@PharBuilder",
+            "@PharTest",
+            "@Coverage",
+            "./vendor/bin/test-reporter"
+        ],
+        "test": [
+            "@Phpunit"
+        ]
+    }
+}
