@@ -1,0 +1,29 @@
+JavaScript: false
+Ruby: true
+Python: false
+PHP: true
+
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - php
+    # ... CONFIG CONTENT ...
+    # exclude_fingerprints:
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
+
+ratings:
+  paths:
+  - src/**
+  - src/Swagger-2-md/**
+  - "**.php"
+
+exclude_paths:
+- tests/**/*
+- vendor/**/*
+- bin/**/*
+- doc/**/*
