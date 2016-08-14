@@ -23,7 +23,7 @@ Swagger is old name of [OpenAPI Projet](https://openapis.org/) and who manage th
 - Install into a git repository as submodule : 
 ```sh
 git submodule init
-git submodule add --branch v1.0.x http://srv01.https://github.com/njuhel/php-swagger-to-md build/lib/swagger-to-md
+git submodule add --branch v1.0.x https://github.com/njuhel/php-swagger-to-md build/lib/swagger-to-md
 git submodule update
 ```
 
