@@ -1,7 +1,7 @@
 # php-swagger-to-md
 Transform a swagger (multifile / monofile) into md documents based on templates
 
-[![Dependency Status](https://gemnasium.com/badges/github.com/njuhel/php-swagger-to-md.svg)](https://gemnasium.com/github.com/njuhel/php-swagger-to-md)  ~  [![Code Climate](https://codeclimate.com/github/njuhel/php-swagger-to-md/badges/gpa.svg)](https://codeclimate.com/github/njuhel/php-swagger-to-md)  ~  [![Test Coverage](https://codeclimate.com/github/njuhel/SwaggerValidator-PHP/badges/coverage.svg)](https://codeclimate.com/github/njuhel/php-swagger-to-md/coverage)  ~  [![Travis branch](https://img.shields.io/travis/njuhel/php-swagger-to-md/master.svg?maxAge=600&label=PHP%205.5%20--7.0)](https://travis-ci.org/njuhel/php-swagger-to-md)
+[![Dependency Status](https://gemnasium.com/badges/github.com/njuhel/php-swagger-to-md.svg)](https://gemnasium.com/github.com/njuhel/php-swagger-to-md)  ~  [![Code Climate](https://codeclimate.com/github/njuhel/php-swagger-to-md/badges/gpa.svg)](https://codeclimate.com/github/njuhel/php-swagger-to-md)  ~  [![Test Coverage](https://codeclimate.com/github/njuhel/php-swagger-to-md/badges/coverage.svg)](https://codeclimate.com/github/njuhel/php-swagger-to-md/coverage)  ~  [![Travis branch](https://img.shields.io/travis/njuhel/php-swagger-to-md/master.svg?maxAge=600&label=PHP%205.5%20--7.0)](https://travis-ci.org/njuhel/php-swagger-to-md)
 
 # **_PHP_ Swagger To Markdown (md)**
 
