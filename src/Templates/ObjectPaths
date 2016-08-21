@@ -1,0 +1,9 @@
+{% for resource in resources %}
+### {{ resource.name }}]
+{% for path in resource.paths %}
+#### {{ path.name }}
+{{ path.item }}
+  
+{% endfor %}
+  
+{% endfor %}

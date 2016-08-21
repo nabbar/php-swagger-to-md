@@ -1,0 +1,59 @@
+#!/usr/bin/env php
+<?php
+/*
+ * Copyright 2016 Nicolas JUHEL<swaggervalidator@nabbar.com>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+if (version_compare('5.4', PHP_VERSION, '>=')) {
+    fwrite(STDERR, 'This version of swagger-to-md requires PHP 5.4; using the latest version of PHP is highly recommended.' . PHP_EOL . PHP_EOL);
+    exit(1);
+}
+
+if (!ini_get('date.timezone')) {
+    ini_set('date.timezone', 'UTC');
+}
+
+foreach (array(__DIR__ . '/../../autoload.php', __DIR__ . '/../vendor/autoload.php', __DIR__ . '/vendor/autoload.php') as $file) {
+    if (file_exists($file)) {
+        define('SWG2MD_COMPOSER_INSTALL', $file);
+        break;
+    }
+}
+
+unset($file);
+
+if (!defined('SWG2MD_COMPOSER_INSTALL')) {
+    fwrite(STDERR, 'You need to set up the project dependencies using the following commands:' . PHP_EOL .
+            'wget http://getcomposer.org/composer.phar' . PHP_EOL .
+            'php composer.phar install' . PHP_EOL .
+            PHP_EOL . PHP_EOL
+    );
+    exit(1);
+}
+
+require SWG2MD_COMPOSER_INSTALL;
+
+if (!class_exists('\SwaggerValidator\Swagger')) {
+    require 'phar://' . dirname(SWG2MD_COMPOSER_INSTALL) . DIRECTORY_SEPARATOR . 'njuhel' . DIRECTORY_SEPARATOR . 'swagger-validator' . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'SwaggerValidator.phar';
+}
+
+\Swagger2md\SwaggerValidator\Override::override();
+
+if (!empty($argc) && $argc > 1) {
+    $doc = new \Swagger2md\Swagger2md(array_pop($argv));
+}
+else {
+    $doc = new \Swagger2md\Swagger2md(null);
+}

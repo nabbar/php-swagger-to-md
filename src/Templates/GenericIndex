@@ -1,0 +1,20 @@
+{% for tag in tags %}
+* Tag : {{ tag.name }}
+    {% if tag.description |length > 0 %} : {{ tag.description }}{% endIf %}
+    {% if externalDocs|length > 0 %} : Addition note : {{ externalDocs }}{% endif %}
+    {% for path in tag.paths %}
+    * [{{ path.name }}](#{{ path.link }})
+    {% endfor %}
+{% endfor %}
+* [Summary](#summary)
+* [Resources](#resources)
+    {% for path in paths %}
+    * [Resource : {{ path.name }}](#{{ path.link }})
+        {% for subpath in path.subpath %}
+        * [Path : {{ subpath.name }}](#{{ subpath.link }})
+            {% for method in subpath.methods %}
+            * [Operation : {{ method.name }}](#{{ method.link }})
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
+* [Table of contents](#table-of-contents)
