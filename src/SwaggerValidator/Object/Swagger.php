@@ -50,17 +50,19 @@ class Swagger extends \SwaggerValidator\Object\Swagger
             }
 
             if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                $templateVars[$key] = $this->$key->$method($context->setDataPath($paths), $generalItems, $twigObject);
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $generalItems, $twigObject);
             }
-            else {
+            elseif (!is_object($this->$key)) {
                 $templateVars[$key] = $this->$key;
             }
         }
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));
         array_shift($tpl);
+        array_shift($tpl);
         $tpl = implode('', array_map('ucfirst', $tpl));
 
+        \Swagger2md\Swagger2md::printOutVV('Rendering this template : ' . $tpl);
         return $twigObject->render($tpl, $templateVars);
     }
 

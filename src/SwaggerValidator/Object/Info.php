@@ -27,4 +27,32 @@ namespace Swagger2md\SwaggerValidator\Object;
 class Info extends \SwaggerValidator\Object\Info
 {
 
+    /**
+     *
+     * @param \SwaggerValidator\Common\Context $context
+     * @param \Twig_Environment $twigObject
+     */
+    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems, \Twig_Environment $twigObject)
+    {
+        $method       = __FUNCTION__;
+        $templateVars = array();
+
+        foreach ($this->keys() as $key) {
+            if (is_object($this->$key) && method_exists($this->$key, $method)) {
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $generalItems, $twigObject);
+            }
+            elseif (!is_object($this->$key)) {
+                $templateVars[$key] = $this->$key;
+            }
+        }
+
+        $tpl = explode('\\', trim(__CLASS__, "\\"));
+        array_shift($tpl);
+        array_shift($tpl);
+        $tpl = implode('', array_map('ucfirst', $tpl));
+
+        \Swagger2md\Swagger2md::printOutVV('Rendering this template : ' . $tpl);
+        return $twigObject->render($tpl, $templateVars);
+    }
+
 }

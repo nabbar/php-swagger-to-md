@@ -1,7 +1,7 @@
 {% if url|length > 0 and email|length > 0 %}
-* Contact {{ name ?? }} : {{ email }} - {{ url }}
+* Contact {{ name ?? ''}} : {{ email }} - {{ url }}
 {% else %}
-* Contact {{ name ?? }} : {{ email }}{{ url }}
+* Contact {{ name ?? '' }} : {{ email }}{{ url }}
 {% endif %}
 {% if externalDocs|length > 0 %}
     * Addition note : {{ externalDocs }}

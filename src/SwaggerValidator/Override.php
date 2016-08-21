@@ -24,42 +24,41 @@ namespace Swagger2md\SwaggerValidator;
  * @author Nicolas JUHEL <swaggervalidator@nabbar.com>
  * @version 1.0.0
  */
-class Override
-{
+class Override {
 
     public static function override()
     {
+        \SwaggerValidator\Swagger::cleanInstances();
 
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('TypeString', '\Swagger2md\SwaggerValidator//DataType/TypeString');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('TypeInteger', '\Swagger2md\SwaggerValidator//DataType/TypeInteger');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('TypeArray', '\Swagger2md\SwaggerValidator//DataType/TypeArray');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('TypeArrayItems', '\Swagger2md\SwaggerValidator//DataType/TypeArrayItems');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('TypeBoolean', '\Swagger2md\SwaggerValidator//DataType/TypeBoolean');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('TypeObject', '\Swagger2md\SwaggerValidator//DataType/TypeObject');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('TypeCombined', '\Swagger2md\SwaggerValidator//DataType/TypeCombined');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('TypeNumber', '\Swagger2md\SwaggerValidator//DataType/TypeNumber');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('TypeFile', '\Swagger2md\SwaggerValidator//DataType/TypeFile');
 
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Parameters', '\Swagger2md\SwaggerValidator//Object/Parameters');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Responses', '\Swagger2md\SwaggerValidator//Object/Responses');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Headers', '\Swagger2md\SwaggerValidator//Object/Headers');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('ParameterBody', '\Swagger2md\SwaggerValidator//Object/ParameterBody');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Security', '\Swagger2md\SwaggerValidator//Object/Security');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('SecurityRequirement', '\Swagger2md\SwaggerValidator//Object/SecurityRequirement');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Swagger', '\Swagger2md\SwaggerValidator//Object/Swagger');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('HeaderItem', '\Swagger2md\SwaggerValidator//Object/HeaderItem');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Operation', '\Swagger2md\SwaggerValidator//Object/Operation');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('ResponseItem', '\Swagger2md\SwaggerValidator//Object/ResponseItem');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('ExternalDocs', '\Swagger2md\SwaggerValidator//Object/ExternalDocs');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Info', '\Swagger2md\SwaggerValidator//Object/Info');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('PathItem', '\Swagger2md\SwaggerValidator//Object/PathItem');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('SecurityItem', '\Swagger2md\SwaggerValidator//Object/SecurityItem');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('License', '\Swagger2md\SwaggerValidator//Object/License');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Paths', '\Swagger2md\SwaggerValidator//Object/Paths');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Reference', '\Swagger2md\SwaggerValidator//Object/Reference');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Contact', '\Swagger2md\SwaggerValidator//Object/Contact');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('Definitions', '\Swagger2md\SwaggerValidator//Object/Definitions');
-        \SwaggerValidator\Common\CollectionType::getInstance()->set('SecurityDefinitions', '\Swagger2md\SwaggerValidator//Object/SecurityDefinitions');
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::TypeString, new \Swagger2md\SwaggerValidator\DataType\TypeString());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::TypeInteger, new \Swagger2md\SwaggerValidator\DataType\TypeInteger());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::TypeArray, new \Swagger2md\SwaggerValidator\DataType\TypeArray());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::TypeArrayItems, new \Swagger2md\SwaggerValidator\DataType\TypeArrayItems());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::TypeBoolean, new \Swagger2md\SwaggerValidator\DataType\TypeBoolean());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::TypeObject, new \Swagger2md\SwaggerValidator\DataType\TypeObject());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::TypeCombined, new \Swagger2md\SwaggerValidator\DataType\TypeCombined());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::TypeNumber, new \Swagger2md\SwaggerValidator\DataType\TypeNumber());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::TypeFile, new \Swagger2md\SwaggerValidator\DataType\TypeFile());
+
+
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::Parameters, new \Swagger2md\SwaggerValidator\Object\Parameters());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::Responses, new \Swagger2md\SwaggerValidator\Object\Responses());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::Headers, new \Swagger2md\SwaggerValidator\Object\Headers());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::ParameterBody, new \Swagger2md\SwaggerValidator\Object\ParameterBody());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::Swagger, new \Swagger2md\SwaggerValidator\Object\Swagger());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::HeaderItem, new \Swagger2md\SwaggerValidator\Object\HeaderItem());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::Operation, new \Swagger2md\SwaggerValidator\Object\Operation());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::ResponseItem, new \Swagger2md\SwaggerValidator\Object\ResponseItem());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::ExternalDocs, new \Swagger2md\SwaggerValidator\Object\ExternalDocs());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::Info, new \Swagger2md\SwaggerValidator\Object\Info());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::PathItem, new \Swagger2md\SwaggerValidator\Object\PathItem());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::License, new \Swagger2md\SwaggerValidator\Object\License());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::Paths, new \Swagger2md\SwaggerValidator\Object\Paths());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::Reference, new \Swagger2md\SwaggerValidator\Object\Reference());
+		\SwaggerValidator\Common\Factory::getInstance()->set(\SwaggerValidator\Common\CollectionType::Contact, new \Swagger2md\SwaggerValidator\Object\Contact());
+
+
     }
-
 }
+

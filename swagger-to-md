@@ -57,3 +57,5 @@ if (!empty($argc) && $argc > 1) {
 else {
     $doc = new \Swagger2md\Swagger2md(null);
 }
+
+$doc->markdown();

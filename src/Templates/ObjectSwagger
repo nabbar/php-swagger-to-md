@@ -6,24 +6,12 @@
 >>>
 | Attribute | Value |
 | :-------: | :---: |
-{% if Schemes|count > 0 %}
 | Schemes | {{ schemes|join(', ') }} |
-{% endif %}
-{% if host|length > 0 %}
 | Hostname | {{ host }} |
-{% endif %}
-{% if basePath|length > 0 %}
 | Root Path | {{ basePath }} |
-{% endif %}
-{% for scheme in schemes %}
-| Calling url | {{ scheme }}{{ host }}{{ basePath }} |
-{% endfor  %}
-{% if consumes|count > 0 %}
+| API Base Url | {% for scheme in schemes %}{{ scheme }}://{{ host }}{{ basePath }} {% endfor  %}|
 | Content-Type Accepted | {{ consumes|join(', ') }} |
-{% endif %}
-{% if produces|count > 0 %}
 | Content-Type Return | {{ produces|join(', ') }} |
-{% endif %}
 >>>
 ---
 

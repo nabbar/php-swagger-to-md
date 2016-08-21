@@ -36,7 +36,7 @@ function parsePath($source, $destination)
 
     $namespace = explode('src' . DIRECTORY_SEPARATOR, $source);
     array_shift($namespace);
-    $namespace = str_replace('\\\\', '\\', '\\Swagger2md\\' . implode('\\', $namespace));
+    $namespace = str_replace('\\\\', '\\', '\\Swagger2md\\' . str_replace(DIRECTORY_SEPARATOR, '\\', implode('\\', $namespace)));
 
     file_put_contents($destination, "\n", FILE_APPEND);
 
@@ -57,15 +57,14 @@ function parsePath($source, $destination)
 
 
         $class = pathinfo($file, PATHINFO_FILENAME);
-        $str   = "\t\t\\SwaggerValidator\\Common\\CollectionType::getInstance()->set('{$class}', '{$namespace}$class');\n";
+        $str   = "\t\t\\SwaggerValidator\\Common\\Factory::getInstance()->set(\\SwaggerValidator\\Common\\CollectionType::{$class}, new {$namespace}$class());\n";
 
         print "Adding class : {$class}\n";
         file_put_contents($destination, $str, FILE_APPEND);
     }
 }
 
-$header = '
-<?php
+$header = '<?php
 
 /*
  * Copyright 2016 Nicolas JUHEL <swaggervalidator@nabbar.com>.
@@ -95,7 +94,7 @@ class Override {
 
     public static function override()
     {
-
+        \SwaggerValidator\Swagger::cleanInstances();
 ';
 
 $footer = '
