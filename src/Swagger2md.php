@@ -50,9 +50,35 @@ class Swagger2md
      *
      * @var string
      */
+    protected $tempFolder;
+
+    /**
+     *
+     * @var string
+     */
     protected $output;
 
-    public function __construct($swaggerFile)
+    /**
+     *
+     * @var \Swagger2md\Swagger2md
+     */
+    private static $instance;
+
+    /**
+     *
+     * @var array
+     */
+    protected $suffixObject;
+
+    /**
+     * Private construct for singleton
+     */
+    private function __construct()
+    {
+
+    }
+
+    public function loadSwaggerFile($swaggerFile = null)
     {
         $params = getopt('h::v', array(
             'templates::',
@@ -159,13 +185,37 @@ class Swagger2md
             self::printOutV('The result will be print in the stdout.');
         }
 
-        try {
-            \SwaggerValidator\Swagger::setSwaggerFile(getcwd() . DIRECTORY_SEPARATOR . $swaggerFile);
-            $this->swagger = \SwaggerValidator\Swagger::load(new \Swagger2md\Context());
-        }
-        catch (Exception $ex) {
+        \SwaggerValidator\Swagger::setSwaggerFile(getcwd() . DIRECTORY_SEPARATOR . $swaggerFile);
+        $this->swagger = \SwaggerValidator\Swagger::load(new \Swagger2md\Context());
+    }
 
+    /**
+     * get the singleton of this object
+     * @return \Swagger2md\Swagger2md
+     */
+    public static function getInstance()
+    {
+        if (empty(self::$instance)) {
+            self::$instance = new static();
         }
+
+        return self::$instance;
+    }
+
+    /**
+     * replace the singleton of this object
+     */
+    public static function setInstance(\Swagger2md\Swagger2md $instance)
+    {
+        self::$instance = $instance;
+    }
+
+    /**
+     * prune the singleton of this object
+     */
+    public static function pruneInstance()
+    {
+        self::$instance = null;
     }
 
     public function markdown()
@@ -277,6 +327,39 @@ Options:
         }
 
         return str_replace(' ', '-', preg_replace('/([\W]*)/si', '', strtolower($title))) . ($suffix > 0 ? '-' . ((int) $suffix) : '');
+    }
+
+    public function renderObject($name, $anchor, $template, $vars)
+    {
+        $file = $this->checkAndMakeObjectFolder() . uniqid('obj_');
+        file_put_contents($file, $this->twigTpl->render($template, $vars));
+
+        if (!is_array($this->suffixObject)) {
+            $this->suffixObject = array();
+        }
+
+        $this->suffixObject[$name] = array(
+            'name' => $name,
+            'link' => $anchor,
+            'file' => $file,
+        );
+    }
+
+    private function checkAndMakeObjectFolder()
+    {
+        $folder = $this->tempFolder . DIRECTORY_SEPARATOR . 'tmpObject' . DIRECTORY_SEPARATOR;
+
+        if (file_exists($folder)) {
+            return $folder;
+        }
+
+        mkdir($folder, 0777, true);
+
+        if (file_exists($folder)) {
+            return $folder;
+        }
+
+        throw new Exception('Cannot create folder : ' . $folder);
     }
 
 }

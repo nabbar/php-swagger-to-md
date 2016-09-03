@@ -62,13 +62,13 @@ try {
     require 'phar://Swagger2MD.phar/Swagger2md.php';
 
     if (!empty($argc) && $argc > 1) {
-        $doc = new \Swagger2md\Swagger2md(array_pop($argv));
+        \Swagger2md\Swagger2md::getInstance()->loadSwaggerFile(array_pop($argv));
     }
     else {
-        $doc = new \Swagger2md\Swagger2md(null);
+        \Swagger2md\Swagger2md::getInstance()->loadSwaggerFile();
     }
 
-    $doc->markdown();
+    \Swagger2md\Swagger2md::getInstance()->markdown();
 }
 catch (\Exception $e) {
     file_put_contents('php://stderr', print_r($e, true));

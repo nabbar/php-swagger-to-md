@@ -53,10 +53,10 @@ if (!class_exists('\SwaggerValidator\Swagger')) {
 \Swagger2md\SwaggerValidator\Override::override();
 
 if (!empty($argc) && $argc > 1) {
-    $doc = new \Swagger2md\Swagger2md(array_pop($argv));
+    \Swagger2md\Swagger2md::getInstance()->loadSwaggerFile(array_pop($argv));
 }
 else {
-    $doc = new \Swagger2md\Swagger2md(null);
+    \Swagger2md\Swagger2md::getInstance()->loadSwaggerFile();
 }
 
-$doc->markdown();
+\Swagger2md\Swagger2md::getInstance()->markdown();
