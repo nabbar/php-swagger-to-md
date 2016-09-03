@@ -1,4 +1,4 @@
-```js
+```json
 HTTP 1.1 {{ method }} {% if scheme|length > 0 %}{{ scheme }}://{% endif %}{{ host }}{{path}} 
 {% for head in headers %}
 {{ head }}
