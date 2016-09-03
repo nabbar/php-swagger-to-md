@@ -133,6 +133,16 @@ class Operation extends \SwaggerValidator\Object\Operation
         );
     }
 
+    protected function calculateLength($mixed)
+    {
+        if (is_array($mixed)) {
+            return array_sum(array_map(array('$this', 'calculateLength'), $mixed)) + count($mixed);
+        }
+        else {
+            return strlen($mixed);
+        }
+    }
+
     protected function makeRequestExample(\SwaggerValidator\Common\Context $context, $operation, \Twig_Environment $twigObject)
     {
         $keyParameters = \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS;
@@ -210,7 +220,7 @@ class Operation extends \SwaggerValidator\Object\Operation
             }
             if (!empty($templateVars['postForm'])) {
                 $templateVars['headers'][] = 'Content-Type: multipart/form-data, boundary=' . $boundary;
-                $templateVars['headers'][] = 'Content-Length: ' . (array_sum(array_map('strlen', $templateVars['postForm'])) + (4 * count($templateVars['postForm'])));
+                $templateVars['headers'][] = 'Content-Length: ' . $this->calculateLength($templateVars['postForm']);
             }
         }
 
