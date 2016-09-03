@@ -136,7 +136,7 @@ class Operation extends \SwaggerValidator\Object\Operation
     protected function calculateLength($mixed)
     {
         if (is_array($mixed)) {
-            return array_sum(array_map(array('$this', 'calculateLength'), $mixed)) + count($mixed);
+            return array_sum(array_map(array($this, 'calculateLength'), $mixed)) + count($mixed);
         }
         else {
             return strlen($mixed);
