@@ -41,6 +41,10 @@ class Swagger extends \SwaggerValidator\Object\Swagger
         $templateVars = array();
         $tags         = array();
 
+        if (isset($this->basePath)) {
+            $context->setBasePath($this->basePath);
+        }
+
         foreach ($this->keys() as $key) {
             if ($key === \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS) {
                 continue;

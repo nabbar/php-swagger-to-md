@@ -42,7 +42,9 @@ class TypeObject extends \SwaggerValidator\DataType\TypeObject
             }
         }
 
-        $templateVars['model'] = $this->getModel($context);
+        $templateVars['partType']        = $twigObject->render('PartTypeFormat', $templateVars);
+        $templateVars['linkItemsObject'] = $twigObject->render('PartLinkObject', array('name' => $context->getDataPath(), 'link' => 'toto'));
+        $templateVars['model']           = $this->getModel($context);
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));
         array_shift($tpl);

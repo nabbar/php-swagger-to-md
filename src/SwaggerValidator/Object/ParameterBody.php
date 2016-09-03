@@ -29,12 +29,74 @@ class ParameterBody extends \SwaggerValidator\Object\ParameterBody
 
     public function markdown(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
     {
-        $method    = __FUNCTION__;
-        $schemaKey = \SwaggerValidator\Common\FactorySwagger::KEY_SCHEMA;
-        return array(
-            'schema' => $this->$schemaKey->$method($context, $twigObject),
-            'model'  => json_encode($this->$schemaKey->getModel($context), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT),
+        $method       = __FUNCTION__;
+        $schemaKey    = \SwaggerValidator\Common\FactorySwagger::KEY_SCHEMA;
+        $templateVars = array();
+
+        foreach ($this->keys() as $key) {
+
+            if (is_object($this->$key) && method_exists($this->$key, $method)) {
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $twigObject);
+            }
+            elseif (!is_object($this->$key)) {
+                $templateVars[$key] = $this->$key;
+            }
+        }
+
+        if (!$this->$schemaKey->has('type')) {
+            $templateVars['type'] = \SwaggerValidator\Common\FactorySwagger::TYPE_OBJECT;
+        }
+        else {
+            $templateVars['type'] = $this->$schemaKey->type;
+        }
+
+        $noMerge = array(
+            \SwaggerValidator\Common\FactorySwagger::TYPE_OBJECT,
         );
+
+        if (!in_array($templateVars['type'], $noMerge)) {
+            if (array_key_exists('partType', $templateVars[$schemaKey])) {
+                $templateVars['partType'] = $templateVars[$schemaKey]['partType'];
+            }
+            if (array_key_exists('linkItemsObject', $templateVars[$schemaKey])) {
+                $templateVars['linkItemsObject'] = $templateVars[$schemaKey]['linkItemsObject'];
+            }
+            if (array_key_exists('partValidation', $templateVars[$schemaKey])) {
+                $templateVars['partValidation'] = $templateVars[$schemaKey]['partValidation'];
+            }
+            if (array_key_exists('model', $templateVars[$schemaKey])) {
+                $templateVars['model'] = $templateVars[$schemaKey]['model'];
+            }
+            unset($templateVars[$schemaKey]);
+
+            foreach ($this->$schemaKey->keys() as $key) {
+
+                if (is_object($this->$key) && method_exists($this->$key, $method)) {
+                    $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $twigObject);
+                }
+                elseif (!is_object($this->$key)) {
+                    $templateVars[$key] = $this->$key;
+                }
+            }
+        }
+        else {
+            $templateVars['partType']        = $twigObject->render('PartTypeFormat', $templateVars);
+            $templateVars['linkItemsObject'] = $twigObject->render('PartLinkObject', array('name' => $context->getDataPath(), 'link' => 'toto'));
+            $templateVars['model']           = $this->getModel($context);
+        }
+
+        $templateVars['name'] = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
+        $templateVars['in']   = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
+
+        $tpl = explode('\\', trim(__CLASS__, "\\"));
+        array_shift($tpl);
+        array_shift($tpl);
+        $tpl = implode('', array_map('ucfirst', $tpl));
+
+        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
+        $templateVars['render'] = $twigObject->render($tpl, $templateVars);
+
+        return $templateVars;
     }
 
 }

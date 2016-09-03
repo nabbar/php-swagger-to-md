@@ -42,6 +42,13 @@ class TypeArray extends \SwaggerValidator\DataType\TypeArray
             }
         }
 
+        $templateVars['partType']        = $twigObject->render('PartTypeFormat', $templateVars);
+        $templateVars['linkItemsObject'] = $twigObject->render('PartLinkItems', array('name' => $context->getDataPath(), 'link' => 'toto'));
+        $templateVars['partValidation']  = implode(', ', array_filter(array(
+            $twigObject->render('PartMinMaxItems', $templateVars),
+            $twigObject->render('PartUniqueItems', $templateVars),
+        )));
+
         $templateVars['model'] = $this->getModel($context);
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));

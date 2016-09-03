@@ -124,7 +124,7 @@ class Paths extends \SwaggerValidator\Object\Paths
 
             $tplResources[$resource]['paths'][$key] = array(
                 'name' => $string,
-                'item' => $this->$key->$method($context->setDataPath($key), $generalItems, $twigObject),
+                'item' => $this->$key->$method($context->setDataPath($key)->setRoutePath($key), $generalItems, $twigObject),
             );
         }
 

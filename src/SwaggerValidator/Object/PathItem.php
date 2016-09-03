@@ -129,7 +129,7 @@ class PathItem extends \SwaggerValidator\Object\PathItem
 
             $tplOperation[$key] = array(
                 'name' => $string,
-                'item' => $this->$key->$method($context->setDataPath($key), $generalItems, $twigObject),
+                'item' => $this->$key->$method($context->setDataPath($key)->setMethod($key), $generalItems, $twigObject),
             );
         }
 

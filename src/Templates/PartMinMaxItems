@@ -1,0 +1,1 @@
+{% if minItems > 0 and maxItems > 0 %}between {{ minItems }} and {{ maxItems }} items (included){% elseif minItems > 0 %}at least {{ minItems }} items{% elseif maxItems > 0 %}no more than {{ maxItems }} items{% endif %}

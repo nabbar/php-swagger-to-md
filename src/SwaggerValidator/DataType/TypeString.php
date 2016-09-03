@@ -42,6 +42,11 @@ class TypeString extends \SwaggerValidator\DataType\TypeString
             }
         }
 
+        $templateVars['partType']       = $twigObject->render('PartTypeFormat', $templateVars);
+        $templateVars['partValidation'] = implode(', ', array_filter(array(
+            $twigObject->render('PartMinMaxLength', $templateVars),
+        )));
+
         $templateVars['model'] = $this->getModel($context);
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));

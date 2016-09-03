@@ -42,7 +42,8 @@ class TypeBoolean extends \SwaggerValidator\DataType\TypeBoolean
             }
         }
 
-        $templateVars['model'] = $this->getModel($context);
+        $templateVars['partType'] = $twigObject->render('PartTypeFormat', $templateVars);
+        $templateVars['model']    = $this->getModel($context);
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));
         array_shift($tpl);

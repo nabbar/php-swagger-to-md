@@ -42,6 +42,12 @@ class TypeNumber extends \SwaggerValidator\DataType\TypeNumber
             }
         }
 
+        $templateVars['partType']       = $twigObject->render('PartTypeFormat', $templateVars);
+        $templateVars['partValidation'] = implode(', ', array_filter(array(
+            $twigObject->render('PartMinimumMaximum', $templateVars),
+            $twigObject->render('PartMultipleOf', $templateVars),
+        )));
+
         $templateVars['model'] = $this->getModel($context);
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));
