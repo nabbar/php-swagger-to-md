@@ -56,6 +56,12 @@ class Swagger2md
      *
      * @var string
      */
+    protected $templateFolder;
+
+    /**
+     *
+     * @var string
+     */
     protected $output;
 
     /**
@@ -145,14 +151,14 @@ class Swagger2md
         }
 
         if (!empty($params['templates'])) {
-            $tplDir = $this->checkTemplates($params['templates']);
+            $this->templateFolder = $this->checkTemplates($params['templates']);
         }
         else {
-            $tplDir = $this->checkTemplates();
+            $this->templateFolder = $this->checkTemplates();
         }
 
         if (!empty($temp)) {
-            $this->twigTpl = new \Twig_Environment(new \Twig_Loader_Filesystem($tplDir), array(
+            $this->twigTpl = new \Twig_Environment(new \Twig_Loader_Filesystem($this->templateFolder), array(
                 'cache'            => $temp,
                 'debug'            => (self::$verboseLevel > 0),
                 'strict_variables' => false,
@@ -161,7 +167,7 @@ class Swagger2md
             ));
         }
         else {
-            $this->twigTpl = new \Twig_Environment(new \Twig_Loader_Filesystem($tplDir), array(
+            $this->twigTpl = new \Twig_Environment(new \Twig_Loader_Filesystem($this->templateFolder), array(
                 'cache'            => false,
                 'debug'            => (self::$verboseLevel > 0),
                 'strict_variables' => false,
@@ -375,6 +381,19 @@ Options:
         }
 
         return null;
+    }
+
+    public function getFileFromTemplate($fileName)
+    {
+        if (!file_exists($this->templateFolder)) {
+            return null;
+        }
+
+        if (!file_exists($this->templateFolder . DIRECTORY_SEPARATOR . $fileName)) {
+            return null;
+        }
+
+        return file_get_contents($this->templateFolder . DIRECTORY_SEPARATOR . $fileName);
     }
 
 }

@@ -38,35 +38,23 @@ class Operation extends \SwaggerValidator\Object\Operation
         $this->getMethodGeneric($context, $method, $generalItems, null, array($twigObject));
         $this->getModelConsumeProduce($generalItems);
 
-        $colParamsTitle = array(
-            'name'            => array('title' => 'Name', 'align' => 'center'),
-            'in'              => array('title' => 'Location', 'align' => 'center'),
-            'partType'        => array('title' => 'Type', 'align' => 'center'),
-            'required'        => array('title' => 'Required', 'align' => 'center'),
-            'partValidation'  => array('title' => 'Validation', 'align' => 'center'),
-            'pattern'         => array('title' => 'Pattern', 'align' => 'center'),
-            'enum'            => array('title' => 'Enum', 'align' => 'center'),
-            'linkItemsObject' => array('title' => 'Definition', 'align' => 'center'),
-            'default'         => array('title' => 'Default', 'align' => 'center'),
-            'example'         => array('title' => 'Example', 'align' => 'center'),
-            'description'     => array('title' => 'Description', 'align' => 'left'),
-        );
+        $colParamsTitle = array();
+        $configColTitle = explode('\n', str_replace('\r', '', \Swagger2md\Swagger2md::getInstance()->getFileFromTemplate('RequestParamsCols')));
+        foreach ($configColTitle as &$oneColon) {
+            $oneColon = explode('|', $oneColon);
+
+            $colParamsTitle[$oneColon[0]] = array(
+                'enabled' => false,
+                'title'   => $oneColon[1],
+                'align'   => $oneColon[2]
+            );
+        }
+
+        $colParamsTitle['name']['enabled']     = true;
+        $colParamsTitle['in']['enabled']       = true;
+        $colParamsTitle['partType']['enabled'] = true;
 
         if (!empty($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS])) {
-            $col = array(
-                'name'            => true,
-                'in'              => true,
-                'partType'        => true,
-                'required'        => false,
-                'partValidation'  => false,
-                'pattern'         => false,
-                'enum'            => false,
-                'linkItemsObject' => false,
-                'default'         => false,
-                'example'         => false,
-                'description'     => false,
-            );
-
             foreach ($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS] as $location => $list) {
                 if (empty($list)) {
                     continue;
@@ -77,20 +65,18 @@ class Operation extends \SwaggerValidator\Object\Operation
                         unset($params['required']);
                     }
 
-                    foreach (array_keys($col) as $key) {
+                    foreach (array_keys($colParamsTitle) as $key) {
                         if (array_key_exists($key, $params) && !is_null($params[$key]) && (!is_string($params[$key]) || strlen($params[$key]) > 0)) {
-                            $col[$key] = true;
+                            $colParamsTitle[$key]['enabled'] = true;
                         }
                     }
                 }
             }
-
-            foreach ($col as $key => $value) {
-                if ($value === false) {
-                    unset($colParamsTitle[$key]);
-                }
-            }
         }
+
+        $colParamsTitle = array_filter($colParamsTitle, function($val) {
+            return $val['enabled'];
+        });
 
         $templateVars = array(
             \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS => null,
