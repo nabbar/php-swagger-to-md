@@ -72,8 +72,9 @@ class Operation extends \SwaggerValidator\Object\Operation
                     continue;
                 }
                 foreach ($list as $name => $params) {
-                    if (!array_key_exists('required', $params)) {
-                        $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS][$location][$name]['required'] = false;
+                    if (array_key_exists('required', $params) && $params['required'] === false) {
+                        unset($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS][$location][$name]['required']);
+                        unset($params['required']);
                     }
 
                     foreach (array_keys($col) as $key) {
