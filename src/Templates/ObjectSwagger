@@ -2,7 +2,7 @@
 
 ---
 
-* Global Definition
+### Global Definition
 | Attribute | Value |
 | :-------: | :---: |
 | Schemes | {{ schemes|join(', ') }} |
