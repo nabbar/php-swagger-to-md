@@ -1,6 +1,4 @@
-Pathitem tpl
 {% for method in operations %}
-##### {{ method.name }}
+#### {{ method.name }}
 {{ method.item }}
-  
 {% endfor %}

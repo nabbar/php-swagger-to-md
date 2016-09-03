@@ -125,7 +125,11 @@ class PathItem extends \SwaggerValidator\Object\PathItem
                 continue;
             }
 
-            $string = $twigObject->render('StringMethod', array('string' => $key));
+            $string = $twigObject->render('StringMethod', array(
+                'route'  => $context->getRoutePath(),
+                'path'   => $context->getDataPath(),
+                'method' => $key
+            ));
 
             $tplOperation[$key] = array(
                 'name' => $string,

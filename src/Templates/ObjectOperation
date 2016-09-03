@@ -1,10 +1,9 @@
 {{ description }}
-
 {% if externalDocs|length > 0 %}
-* Addition note : {{ externalDocs }}
+##### Addition note : {{ externalDocs }}
 {% endif %}
-
 {% if parameters is not null and parameters.count > 0 %}
+##### Request
 * **Request Parameters** :
 
     | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
@@ -16,20 +15,18 @@
 {{ Request }}
 
 {% if responses is not null and responses.count > 0 %}
-{% for location in responses.items %}
-* Response Status : {{ location.name }}
-{% if location is not null and location.count > 0 and location.name != 'schema' %}
-{% for param in location.items %}
-    * Header {{ param.name }} : {{ param.format ?? param.type }}
-{% endfor %}
+##### Responses
+{% for status in responses.items %}
+* **Response Status** : {{ status.name }}
+{% if status is not null and status.count > 0 %}
 
-{% for param in location.items %}
-    * Response Header {{ param.name }}
-    {% if param.render is not null %}{{ param.render }}{% endif %}
-{% endfor %}
-{% else %}
-    * Response Body
-{{ location.items.body.items.schema.render }}
+    | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
+    | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+{% for item in status.items %}{% if item.render is not null %}{{ item.render }}{% endif %}{% endfor %}
+
+* Example of response :
+{{ status.Response }}
+
 {% endif %}
 {% endfor %}
 {% endif %}
