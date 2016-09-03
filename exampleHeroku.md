@@ -57,10 +57,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 295
+Content-Length: 194
 {
-    "name": "ur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor ac",
-    "birthday": 1378617018
+    "name": "odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum element",
+    "birthday": -916289225
 }
 ```
 
@@ -77,10 +77,10 @@ Content-Length: 295
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 297
+Content-Length: 233
 {
-    "name": " Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada",
-    "birthday": 1280945155
+    "name": ", a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molest",
+    "birthday": -1842546556
 }
 ```
 
@@ -96,7 +96,7 @@ Content-Length: 297
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/a+facilisis+sapien+finibus+at.+Nullam+finibus+urna+v 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/sce+nec+est+quam.+Pellentesque+vulputate+sapien+at+turpis+molestie 
 ```
 
 
