@@ -75,28 +75,25 @@ Multiple status values can be provided with comma seperated strings
     | status | array | false |
 
     * Request Parameter status
-        Status values that need to be considered for filter
+    	Status values that need to be considered for filter
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | status |
-        | Type | Array |
-        | Location | query |
-                | Unique Items | false |
-        | Items form | [ [Object name](#ref) ] |
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | status |
+	| Type | Array |
+	| Location | query |
+	| Unique Items | false |
+	| Items form | [ [Object name](#ref) ] |
 
-        Details Items Object
-            * **Object 1** :
-            ```
-                
+	Details Items Object
+		* **Object 1** :
+				
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Type | String |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Type | String |
 
-            ```
-        
+
 
 
 
@@ -114,28 +111,25 @@ Muliple tags can be provided with comma seperated strings. Use tag1, tag2, tag3 
     | tags | array | false |
 
     * Request Parameter tags
-        Tags to filter by
+    	Tags to filter by
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | tags |
-        | Type | Array |
-        | Location | query |
-                | Unique Items | false |
-        | Items form | [ [Object name](#ref) ] |
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | tags |
+	| Type | Array |
+	| Location | query |
+	| Unique Items | false |
+	| Items form | [ [Object name](#ref) ] |
 
-        Details Items Object
-            * **Object 1** :
-            ```
-                
+	Details Items Object
+		* **Object 1** :
+				
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Type | String |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Type | String |
 
-            ```
-        
+
 
 
 
@@ -153,14 +147,14 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
     | petId | integer | true |
 
     * Request Parameter petId
-        ID of pet that needs to be fetched
+    	ID of pet that needs to be fetched
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | petId |
-        | Type | Integer, formatted as : int64 |
-        | Location | path |
-                            
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | petId |
+	| Type | Integer, formatted as : int64 |
+	| Location | path |
+
 
 
 
@@ -174,14 +168,14 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
     | petId | string | true |
 
     * Request Parameter petId
-        ID of pet that needs to be updated
+    	ID of pet that needs to be updated
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | petId |
-        | Type | String |
-        | Location | path |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | petId |
+	| Type | String |
+	| Location | path |
+
 
 * Request Location : formData
     | Name | Type | Required | 
@@ -190,24 +184,24 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
     | status | string | true |
 
     * Request Parameter name
-        Updated name of the pet
+    	Updated name of the pet
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | name |
-        | Type | String |
-        | Location | formData |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | name |
+	| Type | String |
+	| Location | formData |
+
 
     * Request Parameter status
-        Updated status of the pet
+    	Updated status of the pet
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | status |
-        | Type | String |
-        | Location | formData |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | status |
+	| Type | String |
+	| Location | formData |
+
 
 
 
@@ -221,14 +215,14 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
     | api_key | string | true |
 
     * Request Parameter api_key
-        
+    	
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | api_key |
-        | Type | String |
-        | Location | header |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | api_key |
+	| Type | String |
+	| Location | header |
+
 
 * Request Location : path
     | Name | Type | Required | 
@@ -236,14 +230,14 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
     | petId | integer | true |
 
     * Request Parameter petId
-        Pet id to delete
+    	Pet id to delete
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | petId |
-        | Type | Integer, formatted as : int64 |
-        | Location | path |
-                            
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | petId |
+	| Type | Integer, formatted as : int64 |
+	| Location | path |
+
 
 
 
@@ -275,14 +269,14 @@ For valid response try integer IDs with value <= 5 or > 10. Other values will ge
     | orderId | string | true |
 
     * Request Parameter orderId
-        ID of pet that needs to be fetched
+    	ID of pet that needs to be fetched
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | orderId |
-        | Type | String |
-        | Location | path |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | orderId |
+	| Type | String |
+	| Location | path |
+
 
 
 
@@ -296,14 +290,14 @@ For valid response try integer IDs with value < 1000. Anything above 1000 or non
     | orderId | string | true |
 
     * Request Parameter orderId
-        ID of the order that needs to be deleted
+    	ID of the order that needs to be deleted
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | orderId |
-        | Type | String |
-        | Location | path |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | orderId |
+	| Type | String |
+	| Location | path |
+
 
 
 
@@ -360,24 +354,24 @@ Pathitem tpl
     | password | string | false |
 
     * Request Parameter username
-        The user name for login
+    	The user name for login
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | username |
-        | Type | String |
-        | Location | query |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | username |
+	| Type | String |
+	| Location | query |
+
 
     * Request Parameter password
-        The password for login in clear text
+    	The password for login in clear text
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | password |
-        | Type | String |
-        | Location | query |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | password |
+	| Type | String |
+	| Location | query |
+
 
 
 
@@ -405,14 +399,14 @@ Pathitem tpl
     | username | string | true |
 
     * Request Parameter username
-        The name that needs to be fetched. Use user1 for testing.
+    	The name that needs to be fetched. Use user1 for testing.
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | username |
-        | Type | String |
-        | Location | path |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | username |
+	| Type | String |
+	| Location | path |
+
 
 
 
@@ -426,14 +420,14 @@ This can only be done by the logged in user.
     | username | string | true |
 
     * Request Parameter username
-        name that need to be deleted
+    	name that need to be deleted
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | username |
-        | Type | String |
-        | Location | path |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | username |
+	| Type | String |
+	| Location | path |
+
 
 * Request Location : body
 
@@ -449,14 +443,14 @@ This can only be done by the logged in user.
     | username | string | true |
 
     * Request Parameter username
-        The name that needs to be deleted
+    	The name that needs to be deleted
 
-    | Attribute | Value |
-    | :-------: | :---: |
-        | Name | username |
-        | Type | String |
-        | Location | path |
-                        
+	| Attribute | Value |
+	| :-------: | :---: |
+	| Name | username |
+	| Type | String |
+	| Location | path |
+
 
 
 

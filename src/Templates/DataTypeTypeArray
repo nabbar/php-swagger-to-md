@@ -1,35 +1,31 @@
-    {{ description }}
+	{{ description }}
 
-    | Attribute | Value |
-    | :-------: | :---: |
-    {% if name is not null %}
-    | Name | {{ name }} |
-    {% endif %}
-    | Type | Array{% if format is not null %}, formatted as : {{ format }}{% endif %} |
-    {% if in is not null %}
-    | Location | {{ in }} |
-    {% endif %}
-    {% if minItems > 0 and maxItems > 0 %}
-    | Items Count | between {{ minItems }} and {{ maxItems }} (included) |
-    {% elseif minItems > 0 %}
-    | Items Count | at least {{ minItems }} items |
-    {% elseif maxItems > 0 %}
-    | Items Count | no more than {{ maxItems }} items |
-    {% endif %}
-    {% if uniqueItems == true %}
-    | Unique Items | true |
-    {% else %}
-    | Unique Items | false |
-    {% endif %}
-    | Items form | [ {{ items.render }} ] |
+	| Attribute | Value |
+	| :-------: | :---: |
+{% if name is not null %}
+	| Name | {{ name }} |
+{% endif %}
+	| Type | Array{% if format is not null %}, formatted as : {{ format }}{% endif %} |
+{% if in is not null %}
+	| Location | {{ in }} |
+{% endif %}
+{% if minItems > 0 and maxItems > 0 %}
+	| Items Count | between {{ minItems }} and {{ maxItems }} (included) |
+{% elseif minItems > 0 %}
+	| Items Count | at least {{ minItems }} items |
+{% elseif maxItems > 0 %}
+	| Items Count | no more than {{ maxItems }} items |
+{% endif %}
+{% if uniqueItems == true %}
+	| Unique Items | true |
+{% else %}
+	| Unique Items | false |
+{% endif %}
+	| Items form | [ {{ items.render }} ] |
 
-    {% if items.objects.0 is not null %}
-    Details Items Object
-    {% for object in items.objects %}
-        * **Object {{ loop.index }}** :
-            ```
-            {{ object.render }}
-            ```
-    {% endfor %}
-    {% endif %}
-
+{% if items.objects.0 is not null %}
+	Details Items Object
+{% for object in items.objects %}
+		* **Object {{ loop.index }}** :
+			{{ object.render }}
+{% endfor %}{% endif %}
