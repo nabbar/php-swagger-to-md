@@ -35,6 +35,7 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 #### get /
 
 * Request Parameters :
+
 | Name | Location | Type | Validation | Default | Description |  
 | :---: | :---: | :---: | :---: | :---: | :---: |  
 | limit | query | integer | Value : 11 <= x <= 10000 | 11 | number of pets to return | 
@@ -49,6 +50,7 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 #### post /
 
 * Request Parameters :
+
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :---: |  
 | body | body | object | yes | [#/paths///post/parameters/0](#testtoto) | The pet JSON you want to post | 
@@ -57,10 +59,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 194
+Content-Length: 66
 {
-    "name": "odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum element",
-    "birthday": -916289225
+    "name": "cidunt pretium sodale",
+    "birthday": 190479514
 }
 ```
 
@@ -69,6 +71,7 @@ Content-Length: 194
 #### put /
 
 * Request Parameters :
+
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :---: |  
 | body | body | object | yes | [#/paths///put/parameters/0](#testtoto) | The pet JSON you want to post | 
@@ -77,10 +80,10 @@ Content-Length: 194
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 233
+Content-Length: 76
 {
-    "name": ", a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molest",
-    "birthday": -1842546556
+    "name": "apien finibus at. Nullam fini",
+    "birthday": -1664317112
 }
 ```
 
@@ -90,13 +93,14 @@ Content-Length: 233
 #### get /{petId}
 
 * Request Parameters :
+
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :---: |  
 | petId | path | string | yes | ID of the pet | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/sce+nec+est+quam.+Pellentesque+vulputate+sapien+at+turpis+molestie 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/us+urna+vel+auctor+fringilla.+Mauris+eu+tortor+blandit%2C+bibendum+tortor+ac%2C+congue+eros.+Lorem+ips 
 ```
 
 
