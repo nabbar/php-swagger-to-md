@@ -39,20 +39,29 @@ class Operation extends \SwaggerValidator\Object\Operation
         $this->getModelConsumeProduce($generalItems);
 
         $colParamsTitle = array();
-        $configColTitle = explode('\n', str_replace('\r', '', \Swagger2md\Swagger2md::getInstance()->getFileFromTemplate('RequestParamsCols')));
-        foreach ($configColTitle as &$oneColon) {
-            $oneColon = explode('|', $oneColon);
+        $configColTitle = explode("\n", str_replace("\r", '', \Swagger2md\Swagger2md::getInstance()->getFileFromTemplate('RequestParamsCols')));
 
-            $colParamsTitle[$oneColon[0]] = array(
-                'enabled' => false,
-                'title'   => $oneColon[1],
-                'align'   => $oneColon[2]
+        $colParamsTitle = array_map(function($val) {
+            $colons = explode('|', trim($val));
+            $enable = false;
+
+            if (count($colons) < 3) {
+                return;
+            }
+
+            if (in_array($colons[0], array('name', 'in', 'partType'))) {
+                $enable = true;
+            }
+
+            return array(
+                'enabled' => $enable,
+                'key'     => $colons[0],
+                'title'   => $colons[1],
+                'align'   => $colons[2]
             );
-        }
+        }, $configColTitle);
 
-        $colParamsTitle['name']['enabled']     = true;
-        $colParamsTitle['in']['enabled']       = true;
-        $colParamsTitle['partType']['enabled'] = true;
+        $colParamsTitle = array_filter($colParamsTitle);
 
         if (!empty($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS])) {
             foreach ($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS] as $location => $list) {
@@ -65,9 +74,15 @@ class Operation extends \SwaggerValidator\Object\Operation
                         unset($params['required']);
                     }
 
-                    foreach (array_keys($colParamsTitle) as $key) {
-                        if (array_key_exists($key, $params) && !is_null($params[$key]) && (!is_string($params[$key]) || strlen($params[$key]) > 0)) {
-                            $colParamsTitle[$key]['enabled'] = true;
+                    foreach ($colParamsTitle as &$col) {
+                        if (!array_key_exists($col['key'], $params)) {
+                            continue;
+                        }
+                        if (is_null($params[$col['key']])) {
+                            continue;
+                        }
+                        if (!is_string($params[$col['key']]) || strlen($params[$col['key']]) > 0) {
+                            $col['enabled'] = true;
                         }
                     }
                 }

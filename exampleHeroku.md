@@ -36,9 +36,9 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 
 * Request Parameters :
 
-| Name |  |  |  
-| --- | --- | --- |  
-| limit | query | integer | 
+| Name | Location | Type | Validation | Default | Description |  
+| :---: | :---: | :---: | :---: | :---: | :--- |  
+|  |  |  |  |  |  | 
 
 * Example of request :
 ```json
@@ -51,18 +51,18 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 
 * Request Parameters :
 
-| Name |  |  |  
-| --- | --- | --- |  
-| body | body | object | 
+| Name | Location | Type | Required | Definition | Description |  
+| :---: | :---: | :---: | :---: | :---: | :--- |  
+|  |  |  |  |  |  | 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 54
+Content-Length: 208
 {
-    "name": " auctor ",
-    "birthday": -623418899
+    "name": "na ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Prae",
+    "birthday": 686237431
 }
 ```
 
@@ -72,18 +72,18 @@ Content-Length: 54
 
 * Request Parameters :
 
-| Name |  |  |  
-| --- | --- | --- |  
-| body | body | object | 
+| Name | Location | Type | Required | Definition | Description |  
+| :---: | :---: | :---: | :---: | :---: | :--- |  
+|  |  |  |  |  |  | 
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 151
+Content-Length: 51
 {
-    "name": "dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula qu",
-    "birthday": -832785598
+    "name": ". Do",
+    "birthday": -2122099021
 }
 ```
 
@@ -94,13 +94,13 @@ Content-Length: 151
 
 * Request Parameters :
 
-| Name |  |  |  
-| --- | --- | --- |  
-| petId | path | string | 
+| Name | Location | Type | Required | Description |  
+| :---: | :---: | :---: | :---: | :--- |  
+|  |  |  |  |  | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/s+vehicula+ex+lorem%2C+ut+ornare+purus+ultrices+nec.+Vestibulum+elementum+felis+sit+amet+ipsum+euismod+ullamcorper.+Phasellus+sit+amet+vestibulum+quam.+Morbi+tincidunt+pretium+sodales.+Etiam+dignissim+risus+non+felis+scelerisque+aliquet.+Phasellus+ 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/ibulum+elementum+felis+sit+amet+ipsum+euismod+ullamcorper.+Phasellus+sit+amet+vestibulum+quam.+Morbi+tincidunt+pretium+sodales.+Etiam+d 
 ```
 
 
