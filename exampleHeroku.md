@@ -38,7 +38,7 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 
 | Name | Location | Type | Validation | Default | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| limit | query | integer | Value : 11 <= x <= 10000 | 11 | number of pets to return | 
+| limit | query | integer | 11 <= Value <= 10000 | 11 | number of pets to return | 
 
 * Example of request :
 ```json
@@ -59,10 +59,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 86
+Content-Length: 232
 {
-    "name": "corper. Phasellus sit amet vestibulum q",
-    "birthday": -1167900482
+    "name": ". Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pelle",
+    "birthday": 1776182140
 }
 ```
 
@@ -80,10 +80,10 @@ Content-Length: 86
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 193
+Content-Length: 136
 {
-    "name": "asellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna ar",
-    "birthday": -1989051928
+    "name": "alesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu",
+    "birthday": -1396550731
 }
 ```
 
@@ -100,7 +100,7 @@ Content-Length: 193
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/n 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/sed%2C+dapibus+vel+elit.+Sed+efficitur%2C+mi+sit+amet+fermentum+ultricies%2C+felis+felis+aliquam+enim%2C+id+feugiat+magna+elit+in+sapien.+Sed+malesuada%2C+velit+eu+dapibus+vehicula%2C+sem+tortor+ac 
 ```
 
 

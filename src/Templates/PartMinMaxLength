@@ -1,1 +1,1 @@
-{% if minLength > 0 and maxLength > 0 %} length : {{ minLength }} <= x <= {{ maxLength }} chars{% elseif minLength > 0 %} length : >= {{ minLength }} chars{% elseif maxItems > 0 %} length : <= {{ maxLength }} chars{% endif %}
+{% if minLength > 0 and maxLength > 0 %}{{ minLength }} <= length <= {{ maxLength }}{% elseif minLength > 0 %}length >= {{ minLength }}{% elseif maxItems > 0 %}length <= {{ maxLength }}{% endif %}
