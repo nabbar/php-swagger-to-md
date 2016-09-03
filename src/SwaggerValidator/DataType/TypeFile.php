@@ -27,4 +27,37 @@ namespace Swagger2md\SwaggerValidator\DataType;
 class TypeFile extends \SwaggerValidator\DataType\TypeFile
 {
 
+    public function markdown(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
+    {
+        $method       = __FUNCTION__;
+        $templateVars = array();
+
+        foreach ($this->keys() as $key) {
+
+            if (is_object($this->$key) && method_exists($this->$key, $method)) {
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $twigObject);
+            }
+            elseif (!is_object($this->$key)) {
+                $templateVars[$key] = $this->$key;
+            }
+        }
+
+        $templateVars['partType']       = $twigObject->render('PartTypeFormat', $templateVars);
+        $templateVars['partValidation'] = implode(', ', array_filter(array(
+            $twigObject->render('PartMinMaxLength', $templateVars),
+        )));
+
+        $templateVars['model'] = $this->getModel($context);
+
+        $tpl = explode('\\', trim(__CLASS__, "\\"));
+        array_shift($tpl);
+        array_shift($tpl);
+        $tpl = implode('', array_map('ucfirst', $tpl));
+
+        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
+        $templateVars['render'] = $twigObject->render($tpl, $templateVars);
+
+        return $templateVars;
+    }
+
 }
