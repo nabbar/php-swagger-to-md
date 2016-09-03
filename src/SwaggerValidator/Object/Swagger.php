@@ -50,7 +50,8 @@ class Swagger extends \SwaggerValidator\Object\Swagger
         }
 
         if (isset($this->schemes)) {
-            $context->setScheme(array_shift($this->schemes));
+            $tmp = $this->schemes;
+            $context->setScheme(array_shift($tmp));
         }
 
         foreach ($this->keys() as $key) {
