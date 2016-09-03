@@ -39,17 +39,17 @@ class Operation extends \SwaggerValidator\Object\Operation
         $this->getModelConsumeProduce($generalItems);
 
         $colParamsTitle = array(
-            'name'            => 'Name',
-            'in'              => 'Location',
-            'partType'        => 'Type',
-            'required'        => 'Required',
-            'partValidation'  => 'Validation',
-            'pattern'         => 'Pattern',
-            'enum'            => 'Enum',
-            'linkItemsObject' => 'Definition',
-            'default'         => 'Default',
-            'example'         => 'Example',
-            'description'     => 'Description',
+            'name'            => array('title' => 'Name', 'align' => 'center'),
+            'in'              => array('title' => 'Location', 'align' => 'center'),
+            'partType'        => array('title' => 'Type', 'align' => 'center'),
+            'required'        => array('title' => 'Required', 'align' => 'center'),
+            'partValidation'  => array('title' => 'Validation', 'align' => 'center'),
+            'pattern'         => array('title' => 'Pattern', 'align' => 'center'),
+            'enum'            => array('title' => 'Enum', 'align' => 'center'),
+            'linkItemsObject' => array('title' => 'Definition', 'align' => 'center'),
+            'default'         => array('title' => 'Default', 'align' => 'center'),
+            'example'         => array('title' => 'Example', 'align' => 'center'),
+            'description'     => array('title' => 'Description', 'align' => 'left'),
         );
 
         if (!empty($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS])) {
