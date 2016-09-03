@@ -148,13 +148,13 @@ Get basic information about a user.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/6.000969E%2B244 
+HTTP 1.1 get https://api.instagram.com/v1/users/1.022115E-124 
 ```
 
 
@@ -165,7 +165,7 @@ See the authenticated user's feed.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | count | query | integer |  no |  |  |  |  |  |  | Count of media to return. |
@@ -174,7 +174,7 @@ See the authenticated user's feed.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=-1218447187&max_id=-890099060&min_id=882360829 
+HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=-772382901&max_id=1261877898&min_id=1672470213 
 ```
 
 
@@ -185,7 +185,7 @@ HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=-1218447187&max_
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | count | query | integer |  no |  |  |  |  |  |  | Count of media to return. |
@@ -196,7 +196,7 @@ HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=-1218447187&max_
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/-629171400000/media/recent?count=-1302283850&max_timestamp=-201889084&min_timestamp=-1876309161&min_id=ien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tort&max_id=eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20s 
+HTTP 1.1 get https://api.instagram.com/v1/users/2.55873E-149/media/recent?count=1741013627&max_timestamp=-1402208825&min_timestamp=1815866895&min_id=r%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20el&max_id=a%20vel%20auctor%20fringil 
 ```
 
 
@@ -211,7 +211,7 @@ available for the currently authenticated user.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | count | query | integer |  no |  |  |  |  |  |  | Count of media to return. |
@@ -219,7 +219,7 @@ available for the currently authenticated user.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked?count=824706731&max_like_id=-1540874518 
+HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked?count=-941581126&max_like_id=86674414 
 ```
 
 
@@ -230,7 +230,7 @@ Search for a user by name.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | q | query | string |  no |  |  |  |  |  |  | A query string |
@@ -238,7 +238,7 @@ Search for a user by name.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/search?q=s.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20&count=ec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20ar 
+HTTP 1.1 get https://api.instagram.com/v1/users/search?q=felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus&count=%2C%20ege 
 ```
 
 
@@ -249,13 +249,13 @@ Get the list of users this user follows.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/-1.697639E-91/follows 
+HTTP 1.1 get https://api.instagram.com/v1/users/-1.42671E-171/follows 
 ```
 
 
@@ -266,13 +266,13 @@ Get the list of users this user is followed by.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/6.436049E-223/followed-by 
+HTTP 1.1 get https://api.instagram.com/v1/users/2.106438E%2B47/followed-by 
 ```
 
 
@@ -284,7 +284,7 @@ List the users who have requested this user's permission to follow.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 
@@ -302,14 +302,14 @@ Modify the relationship between the current user and thetarget user.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | body | body | string |  no |  |  |  |  |  |  | One of follow/unfollow/block/unblock/approve/ignore. |
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/users/3.097071E%2B154/relationship 
+HTTP 1.1 post https://api.instagram.com/v1/users/5.672956E%2B230/relationship 
 Content-Type: application/json
 Content-Length: 8
 "follow"
@@ -331,14 +331,14 @@ has liked this media item.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | media-id | path | integer |  no |  |  |  |  |  |  | The media ID |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/-997113738 
+HTTP 1.1 get https://api.instagram.com/v1/media/-405440728 
 ```
 
 
@@ -352,7 +352,7 @@ the last 5 days. Can return mix of image and video types.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | LAT | query | number |  no |  |  |  |  |  |  | Latitude of the center search coordinate. If used, lng is required. |
@@ -363,7 +363,7 @@ the last 5 days. Can return mix of image and video types.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/search?LAT=3.379785E+198&MIN_TIMESTAMP=2122774824&LNG=3.124992E-235&MAX_TIMESTAMP=-133490584&DISTANCE=1000 
+HTTP 1.1 get https://api.instagram.com/v1/media/search?LAT=3.03663E-58&MIN_TIMESTAMP=-953407028&LNG=7.402298E-216&MAX_TIMESTAMP=-1349391240&DISTANCE=1000 
 ```
 
 
@@ -376,7 +376,7 @@ Can return mix of image and video types.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 
@@ -394,14 +394,14 @@ Get a list of recent comments on a media object.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | media-id | path | integer |  no |  |  |  |  |  |  | Media ID |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/-1738778192/comments 
+HTTP 1.1 get https://api.instagram.com/v1/media/963188729/comments 
 ```
 
 
@@ -417,7 +417,7 @@ Create a comment on a media object with the following rules:
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | media-id | path | integer |  no |  |  |  |  |  |  | Media ID |
@@ -425,10 +425,10 @@ Create a comment on a media object with the following rules:
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/media/-1738778192/comments 
+HTTP 1.1 post https://api.instagram.com/v1/media/963188729/comments 
 Content-Type: application/json
-Content-Length: 14
--1.158641e-132
+Content-Length: 13
+-4.971935e-47
 ```
 
 
@@ -440,14 +440,14 @@ authored by the authenticated user.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | media-id | path | integer |  no |  |  |  |  |  |  | Media ID |
 
 * Example of request :
 ```json
-HTTP 1.1 delete https://api.instagram.com/v1/media/-1738778192/comments 
+HTTP 1.1 delete https://api.instagram.com/v1/media/963188729/comments 
 ```
 
 
@@ -459,14 +459,14 @@ Get a list of users who have liked this media.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | media-id | path | integer |  no |  |  |  |  |  |  | Media ID |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/72893512/likes 
+HTTP 1.1 get https://api.instagram.com/v1/media/207341346/likes 
 ```
 
 
@@ -476,14 +476,14 @@ Set a like on this media by the currently authenticated user.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | media-id | path | integer |  no |  |  |  |  |  |  | Media ID |
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/media/72893512/likes 
+HTTP 1.1 post https://api.instagram.com/v1/media/207341346/likes 
 ```
 
 
@@ -494,14 +494,14 @@ Remove a like on this media by the currently authenticated user.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | media-id | path | integer |  no |  |  |  |  |  |  | Media ID |
 
 * Example of request :
 ```json
-HTTP 1.1 delete https://api.instagram.com/v1/media/72893512/likes 
+HTTP 1.1 delete https://api.instagram.com/v1/media/207341346/likes 
 ```
 
 
@@ -518,14 +518,14 @@ Its corresponding shortcode is D.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | shortcode | path | string |  no |  |  |  |  |  |  | The media shortcode |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media1/In+non+lectus+eu+nunc+interdum+laoreet+a+ut+dui.+Sed+e 
+HTTP 1.1 get https://api.instagram.com/v1/media1/o+quis%2C+iaculis+odio.+Mauris+volutpat+dignissim+mi+eget+lacinia.+In+nisi+odio%2C+porta+ut+quam+non%2C+imperdiet+varius+orci.+Donec+consectetur+sed+ante+sit+amet+sagittis.+In+non+lectus+ 
 ```
 
 
@@ -537,13 +537,13 @@ Get information about a tag object.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/uis+condimentum+eget%2C+tristique+ut+quam.+Maecenas+et+velit+dignissim%2C+tincidunt+justo+quis%2C+iaculis+odio.+Mauris+volutpat+dignissim+mi+eget+lacinia.+In+nisi+odio%2C+porta+ut+quam+non%2C+imperdiet+varius+orci.+Donec+consectetur+sed+ante+sit+amet+sag 
+HTTP 1.1 get https://api.instagram.com/v1/tags/+luctus+ante+nec%2C+volutpat+dictum+neque.+Donec+molestie%2C+eros+in+pretium+pulvinar%2C+est+leo+vehicula+lectus%2C+a+cursus+neque+erat+vitae+odio.+Sed+sed+neque+dignissim%2C+imperdiet+nunc+maximus%2C+finibus+erat.+Proin+id+scelerisque+ipsum.+Quisque+porta+mauris+nec 
 ```
 
 
@@ -557,13 +557,13 @@ these objects.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/vinar+vel+metus+et%2C+molestie+pretium+tortor.+Praesent+interdum+fringilla+orci%2C+gravida+ornare+nibh+sollicitudin+et.+Curabitur+pulvinar+metus+massa%2C+malesuada+facilisis+sapien+finibus+at.+Nullam+finibus+urna+vel+auctor+fringilla.+M/media/recent 
+HTTP 1.1 get https://api.instagram.com/v1/tags/o+consectetur+congue+quis+nec+tellus.+Morbi+consequat+mi+id+eros+viverra/media/recent 
 ```
 
 
@@ -574,14 +574,14 @@ HTTP 1.1 get https://api.instagram.com/v1/tags/vinar+vel+metus+et%2C+molestie+pr
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | q | query | string |  no |  |  |  |  |  |  | A valid tag name without a leading #. (eg. snowy, nofilter) |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/search?q=arius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Ma 
+HTTP 1.1 get https://api.instagram.com/v1/tags/search?q=c%20se 
 ```
 
 
@@ -593,14 +593,14 @@ Get information about a location.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | location-id | path | integer |  no |  |  |  |  |  |  | Location ID |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/-1179292352 
+HTTP 1.1 get https://api.instagram.com/v1/locations/-965521329 
 ```
 
 
@@ -611,7 +611,7 @@ Get a list of recent media objects from a given location.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | location-id | path | integer |  no |  |  |  |  |  |  | Location ID |
@@ -622,7 +622,7 @@ Get a list of recent media objects from a given location.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/1358125031/media/recent?max_timestamp=-626116550&min_timestamp=-1033433199&min_id=sse%20justo%20turpis%2C&max_id=ortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor 
+HTTP 1.1 get https://api.instagram.com/v1/locations/-432169154/media/recent?max_timestamp=2129961596&min_timestamp=-704409277&min_id=tique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20j&max_id=t%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20s 
 ```
 
 
@@ -633,7 +633,7 @@ Search for a location by geographic coordinate.
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | distance | query | integer |  no |  |  |  |  |  |  | Default is 1000m (distance=1000), max distance is 5000. |
@@ -645,7 +645,7 @@ Search for a location by geographic coordinate.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/search?distance=-1808722283&facebook_places_id=1053798802&foursquare_id=2033017817&lat=-2.808974E-113&lng=3.963278E-175&foursquare_v2_id=799232443 
+HTTP 1.1 get https://api.instagram.com/v1/locations/search?distance=1405320813&facebook_places_id=-557723939&foursquare_id=-1832950121&lat=8.18773E-78&lng=3.334319E-161&foursquare_v2_id=-1465663945 
 ```
 
 
@@ -666,7 +666,7 @@ geography, use the [media search endpoint
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | user-id | path | number |  no |  |  |  |  |  |  | The user identifier number |
 | tag-name | path | string |  no |  |  |  |  |  |  | Tag name |
 | geo-id | path | integer |  no |  |  |  |  |  |  | Geolocation ID |
@@ -675,7 +675,7 @@ geography, use the [media search endpoint
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/geographies/-191058859/media/recent?count=1956200152&min_id=803829810 
+HTTP 1.1 get https://api.instagram.com/v1/geographies/-386241613/media/recent?count=1520052647&min_id=1704847304 
 ```
 
 

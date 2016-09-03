@@ -37,7 +37,7 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | limit | query | integer |  no | Value : 11 <= x <= 10000 |  |  |  | 11 |  | number of pets to return |
 
 * Example of request :
@@ -52,17 +52,17 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | body | body | object |  no |  |  |  | [#/paths///post/parameters/0](#testtoto) |  |  | The pet JSON you want to post |
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 293
+Content-Length: 84
 {
-    "name": ", ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu,",
-    "birthday": -1331046889
+    "name": "e vulputate sapien at turpis molestie ",
+    "birthday": 1461000101
 }
 ```
 
@@ -73,17 +73,17 @@ Content-Length: 293
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | body | body | object |  no |  |  |  | [#/paths///put/parameters/0](#testtoto) |  |  | The pet JSON you want to post |
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 221
+Content-Length: 237
 {
-    "name": "est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci",
-    "birthday": -779932363
+    "name": "erdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor bl",
+    "birthday": -463604061
 }
 ```
 
@@ -95,12 +95,12 @@ Content-Length: 221
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 | petId | path | string |  no |  |  |  |  |  |  | ID of the pet |
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/auris+vehicula+ex+lorem%2C+ut+ornare+purus+ultrices+nec.+Vestibulum+elementum+felis+sit+amet 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/lus+faucibus+urna+arcu%2C+et+dignissim+augue+interdum+sed.+Vestibulum+eget+luctus+metus%2C+e 
 ```
 
 

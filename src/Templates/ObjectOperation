@@ -6,7 +6,7 @@
 * Request Parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 {% for location in parameters.items %}{% if location is not null and location.count > 0 %}{% for param in location.items %}{% if param.render is not null %}{{ param.render }}{% endif %}{% endfor %}{% endif %}{% endfor %}
 {% endif %}
 
@@ -19,7 +19,7 @@
 * Response **{{ status.name }}** parameters :
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
+| :---: | :---: | :---: | :---: | :-----------------------: | :--------------: | :---: | :---------: | :---: | :---: | :----------------------------------------------: |
 {% for item in status.items %}{% if item.render is not null %}{{ item.render }}{% endif %}{% endfor %}
 
 * Example of response **{{ status.name }}** :
