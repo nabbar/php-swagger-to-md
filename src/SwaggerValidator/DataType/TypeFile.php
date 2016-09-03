@@ -47,7 +47,7 @@ class TypeFile extends \SwaggerValidator\DataType\TypeFile
             $twigObject->render('PartMinMaxLength', $templateVars),
         )));
 
-        $templateVars['model'] = $this->getModel($context);
+        $templateVars['model'] = '--data-binary ' . "\n" . base64_encode(hash('SHA512', microtime(true) . uniqid(uniqid('binary_', true), true)) . hash('SHA512', microtime(true) . uniqid(uniqid('binary_', true), true)) . hash('SHA512', microtime(true) . uniqid(uniqid('binary_', true), true)) . hash('SHA512', microtime(true) . uniqid(uniqid('binary_', true), true)));
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));
         array_shift($tpl);
