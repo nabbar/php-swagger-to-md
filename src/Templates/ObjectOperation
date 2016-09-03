@@ -3,14 +3,11 @@
 * Addition note : {{ externalDocs }}
 {% endif %}
 {% if parameters is not null and parameters.count > 0 %}
-* Request
-  * **Request Parameters** :
-
+* **Request Parameters** :
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
 {% for location in parameters.items %}{% if location is not null and location.count > 0 %}{% for param in location.items %}{% if param.render is not null %}{{ param.render }}{% endif %}{% endfor %}{% endif %}{% endfor %}
 {% endif %}
-
   * Example of request :
 {{ Request }}
 
@@ -20,15 +17,11 @@
   * **Response Status** : {{ status.name }}
 {% if status is not null and status.count > 0 %}
     * Response parameters :
-
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
 {% for item in status.items %}{% if item.render is not null %}{{ item.render }}{% endif %}{% endfor %}
-
     * Example of response :
-
 {{ status.Response }}
-
 {% endif %}
 {% endfor %}
 {% endif %}
