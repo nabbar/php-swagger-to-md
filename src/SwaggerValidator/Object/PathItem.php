@@ -118,11 +118,12 @@ class PathItem extends \SwaggerValidator\Object\PathItem
         $tplOperation = array();
 
         foreach ($this->keys() as $key) {
-            if (substr($key, 0, 1) != '/' || !is_object($this->$key) || !($this->$key instanceof \SwaggerValidator\Object\Operation)) {
+            if (!is_object($this->$key) || !($this->$key instanceof \SwaggerValidator\Object\Operation)) {
+                \Swagger2md\Swagger2md::printOutVV('Skip PathItem Name : ' . $key);
                 continue;
             }
 
-            $string = $twigObject->render('StringMethod', $key);
+            $string = $twigObject->render('StringMethod', array('string' => $key));
 
             $tplOperation[$key] = array(
                 'name' => $string,

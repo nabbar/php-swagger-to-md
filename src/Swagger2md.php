@@ -18,15 +18,6 @@
 
 namespace Swagger2md;
 
-if (file_exists('swagger2md.phar')) {
-    require_once "phar://swagger2md.phar";
-    \Swagger2md\Swagger2mdAutoload::registerAutoloader();
-}
-else {
-    require_once 'Swagger2mdAutoload.php';
-    \Swagger2md\Swagger2mdAutoload::registerAutoloader();
-}
-
 /**
  * Description of Swagger2md
  *
@@ -63,9 +54,7 @@ class Swagger2md
 
     public function __construct($swaggerFile)
     {
-        $this->showVersion();
-
-        $params = getopt('h::vv::vvv::v', array(
+        $params = getopt('h::v', array(
             'templates::',
             'tempDir::',
             'output::',
@@ -75,23 +64,42 @@ class Swagger2md
         ));
 
         if (isset($params['help']) || isset($params['h'])) {
+            $this->showVersion();
             $this->showUsage();
             $this->showHelp();
             $this->exitCode(0);
         }
 
         if (isset($params['version'])) {
+            $this->showVersion();
             $this->exitCode(0);
         }
 
+        if (isset($params['v'])) {
+            if (is_array($params['v']) && count($params['v']) > 2) {
+                unset($params['v']);
+                $params['vvv'] = true;
+            }
+            elseif (is_array($params['v']) && count($params['v']) > 1) {
+                unset($params['v']);
+                $params['vv'] = true;
+            }
+        }
+
         if (isset($params['verbose']) || isset($params['vvv'])) {
+            $this->showVersion();
             self::$verboseLevel = 3;
+            self::printOutV('Verbose : maximum');
         }
         elseif (isset($params['vv'])) {
+            $this->showVersion();
             self::$verboseLevel = 2;
+            self::printOutV('Verbose : medium');
         }
         elseif (isset($params['v'])) {
+            $this->showVersion();
             self::$verboseLevel = 1;
+            self::printOutV('Verbose : minimum');
         }
         else {
             self::$verboseLevel = 0;
@@ -231,16 +239,35 @@ Options:
 
     public function checkTemplates($path = null)
     {
+        if (defined('PHAR_SWG2MD_ROOT_PATH')) {
+            $baseDir = PHAR_SWG2MD_ROOT_PATH;
+        }
+        elseif (\Phar::running()) {
+            $baseDir = null;
+        }
+        else {
+            $baseDir = __DIR__ . DIRECTORY_SEPARATOR;
+        }
+
         if (empty($path)) {
-            $path = __DIR__ . DIRECTORY_SEPARATOR . 'Templates';
+            $path = $baseDir . 'Templates';
         }
 
-        if (!file_exists($path)) {
+        if (\Phar::running()) {
+            $pathReal = $path;
+        }
+        else {
+            $pathReal = realpath($path);
+        }
+
+        if (!file_exists($pathReal)) {
+            self::printOutVV('Given template folder : ' . $path);
             self::printError('The templates folder is not found !');
+            self::exitCode(1);
         }
 
-        self::printOutV('Using template folder : ' . realpath($path));
-        return realpath($path);
+        self::printOutV('Using template folder : ' . $pathReal);
+        return $pathReal;
     }
 
 }

@@ -27,4 +27,14 @@ namespace Swagger2md\SwaggerValidator\Object;
 class ParameterBody extends \SwaggerValidator\Object\ParameterBody
 {
 
+    public function markdown(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
+    {
+        $method    = __FUNCTION__;
+        $schemaKey = \SwaggerValidator\Common\FactorySwagger::KEY_SCHEMA;
+        return array(
+            'schema' => $this->$schemaKey->$method($context, $twigObject),
+            'model'  => json_encode($this->$schemaKey->getModel($context), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT),
+        );
+    }
+
 }

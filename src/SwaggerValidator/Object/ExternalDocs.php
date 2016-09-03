@@ -46,6 +46,10 @@ class ExternalDocs extends \SwaggerValidator\Object\ExternalDocs
             }
         }
 
+        if (isset($this->url)) {
+            $templateVars['include'] = file_get_contents($this->url);
+        }
+
         $tpl = explode('\\', trim(__CLASS__, "\\"));
         array_shift($tpl);
         array_shift($tpl);

@@ -1,3 +1,4 @@
+Path tpl
 {% for resource in resources %}
 ### {{ resource.name }}
 {% for path in resource.paths %}

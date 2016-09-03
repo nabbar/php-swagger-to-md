@@ -38,14 +38,31 @@ class Operation extends \SwaggerValidator\Object\Operation
         $this->getMethodGeneric($context, $method, $generalItems, null, array($twigObject));
         $this->getModelConsumeProduce($generalItems);
 
-        $templateVars = array();
+        $templateVars = array(
+            \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS => null,
+            \SwaggerValidator\Common\FactorySwagger::KEY_RESPONSES  => null,
+            \SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES   => null,
+            \SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES   => null,
+        );
+
+        if (!empty($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES])) {
+            $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES] = $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES];
+            unset($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES]);
+        }
+
+        if (!empty($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES])) {
+            $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES] = $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES];
+            unset($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES]);
+        }
+
+        foreach ($generalItems as $key => $value) {
+            if (array_key_exists($key, $templateVars)) {
+                $templateVars[$key] = $this->calcultateGenerals($key, $value);
+            }
+        }
 
         foreach ($this->keys() as $key) {
-            if ($key === \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS) {
-                continue;
-            }
-
-            if ($key === \SwaggerValidator\Common\FactorySwagger::KEY_RESPONSES) {
+            if (array_key_exists($key, $templateVars)) {
                 continue;
             }
 
@@ -63,7 +80,56 @@ class Operation extends \SwaggerValidator\Object\Operation
         $tpl = implode('', array_map('ucfirst', $tpl));
 
         \Swagger2md\Swagger2md::printOutVV('Rendering this template : ' . $tpl);
-        return $twigObject->render($tpl, $templateVars + $generalItems);
+        return $twigObject->render($tpl, $templateVars);
+    }
+
+    private function calcultateGenerals($type, $array)
+    {
+        $result = array();
+
+        if (is_array($array)) {
+            foreach ($array as $key => $value) {
+
+                $value = $this->calcultateItemsGenerals($key, $value);
+
+                if ($value['count'] < 1) {
+                    continue;
+                }
+
+                $result[$key] = $value;
+            }
+        }
+
+        return array(
+            'name'  => $type,
+            'count' => count($result),
+            'items' => $result,
+        );
+    }
+
+    private function calcultateItemsGenerals($type, $array)
+    {
+        $result = array();
+
+        if (is_array($array)) {
+            foreach ($array as $key => $value) {
+
+                if (empty($value)) {
+                    continue;
+                }
+                elseif (!is_array($value) || count($value) < 1) {
+                    continue;
+                }
+
+                $result[$key] = $value;
+            }
+        }
+
+        return array(
+            'name'  => $type,
+            'count' => count($result),
+            'items' => $result,
+        );
     }
 
 }

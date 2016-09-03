@@ -53,7 +53,7 @@
         ],
         "PharBuilder": [
             "php -d phar.readonly=0 -f tests/pharBuilder/makePhar.php",
-            "chmod ugo+x bin/SwaggerValidator.phar"
+            "chmod -v ugo+x bin/*.phar"
         ],
         "PharTest": [
             "php vendor/phpunit/phpunit/phpunit --debug --process-isolation --report-useless-tests --colors=always --stop-on-error --stop-on-failure --verbose --configuration tests/phartest/phpunit.xml --bootstrap tests/phartest/bootstrap.php"

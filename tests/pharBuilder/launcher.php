@@ -1,5 +1,5 @@
-#!/usr/bin/env php
 <?php
+
 /*
  * Copyright 2016 Nicolas JUHEL<swaggervalidator@nabbar.com>.
  *
@@ -25,30 +25,9 @@ if (!ini_get('date.timezone')) {
     ini_set('date.timezone', 'UTC');
 }
 
-foreach (array(__DIR__ . '/../../autoload.php', __DIR__ . '/../vendor/autoload.php', __DIR__ . '/vendor/autoload.php') as $file) {
-    if (file_exists($file)) {
-        define('SWG2MD_COMPOSER_INSTALL', $file);
-        break;
-    }
-}
-
-unset($file);
-
-if (!defined('SWG2MD_COMPOSER_INSTALL')) {
-    fwrite(STDERR, 'You need to set up the project dependencies using the following commands:' . PHP_EOL .
-            'wget http://getcomposer.org/composer.phar' . PHP_EOL .
-            'php composer.phar install' . PHP_EOL .
-            PHP_EOL . PHP_EOL
-    );
-    exit(1);
-}
-
-require SWG2MD_COMPOSER_INSTALL;
-
-if (!class_exists('\SwaggerValidator\Swagger')) {
-    require dirname(SWG2MD_COMPOSER_INSTALL) . DIRECTORY_SEPARATOR . 'njuhel' . DIRECTORY_SEPARATOR . 'swagger-validator' . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'Swagger.php';
-//    require 'phar://' . dirname(SWG2MD_COMPOSER_INSTALL) . DIRECTORY_SEPARATOR . 'njuhel' . DIRECTORY_SEPARATOR . 'swagger-validator' . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'SwaggerValidator.phar';
-}
+require 'Swagger2mdAutoload.php';
+require 'vendors/swagger-validator/Swagger.php';
+require 'vendors/twig/lib/Twig/Autoloader.php';
 
 \Swagger2md\SwaggerValidator\Override::override();
 
