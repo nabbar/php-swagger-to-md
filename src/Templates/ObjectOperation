@@ -1,9 +1,9 @@
 {{ description }}
 {% if externalDocs|length > 0 %}
-##### Addition note : {{ externalDocs }}
+> > > > ##### Addition note : {{ externalDocs }}
 {% endif %}
 {% if parameters is not null and parameters.count > 0 %}
-##### Request
+> > > > ##### Request
 * **Request Parameters** :
 
     | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
@@ -15,7 +15,7 @@
 {{ Request }}
 
 {% if responses is not null and responses.count > 0 %}
-##### Responses
+> > > > ##### Responses
 {% for status in responses.items %}
 * **Response Status** : {{ status.name }}
 {% if status is not null and status.count > 0 %}
