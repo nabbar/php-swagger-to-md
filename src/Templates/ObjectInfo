@@ -3,28 +3,21 @@
 {% else %}
 # API Documentation
 {% endif %}
-
 {% if version|length > 0 %}
 * Version : {{ version }}
 {% endif %}
-
 {% if description|length > 0 %}
 : {{ description }}
 {% endif %}
-
 {% if termsOfService|length > 0 %}
 * Terms of service : {{ termsOfService }}
 {% endif %}
-
 {% if license|length > 0 %}
 {{ license }}
 {% endif %}
-
 {% if contact|length > 0 %}
 {{ contact }}
 {% endif %}
-
 {% if externalDocs|length > 0 %}
 * Addition note : {{ externalDocs }}
 {% endif %}
-

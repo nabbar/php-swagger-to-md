@@ -2,7 +2,7 @@
 
 ---
 
-> > ### Global Definition
+* Global Definition
 | Attribute | Value |
 | :-------: | :---: |
 | Schemes | {{ schemes|join(', ') }} |
@@ -14,15 +14,15 @@
 
 ---
 
-> ## Summary 
+## Summary 
 {{ Summary }}
 
 ---
 
-> ## Resources 
+## Resources 
 {{ paths }}
 
 ---
 
-> ## Table of contents
+## Table of contents
 {{ Index }}
