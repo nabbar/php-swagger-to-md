@@ -30,21 +30,24 @@ class TypeObject extends \SwaggerValidator\DataType\TypeObject
     public function markdown(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
     {
         $method       = __FUNCTION__;
-        $templateVars = array();
+        $templateVars = array(
+            'partType' => $twigObject->render('PartTypeFormat', array('type' => \SwaggerValidator\Common\FactorySwagger::TYPE_OBJECT)),
+            'model'    => $this->getModel($context)
+        );
 
-        foreach ($this->keys() as $key) {
-
-            if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $twigObject);
-            }
-            elseif (!is_object($this->$key)) {
-                $templateVars[$key] = $this->$key;
+        if (!empty($this->properties)) {
+            $templateVars['linkItemsObject'] = $twigObject->render('PartLinkObject', array('name' => $context->getDataPath(), 'link' => 'toto'));
+        }
+        else {
+            foreach ($this->keys() as $key) {
+                if (is_object($this->$key) && method_exists($this->$key, $method)) {
+                    $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $twigObject);
+                }
+                elseif (!is_object($this->$key)) {
+                    $templateVars[$key] = $this->$key;
+                }
             }
         }
-
-        $templateVars['partType']        = $twigObject->render('PartTypeFormat', $templateVars);
-        $templateVars['linkItemsObject'] = $twigObject->render('PartLinkObject', array('name' => $context->getDataPath(), 'link' => 'toto'));
-        $templateVars['model']           = $this->getModel($context);
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));
         array_shift($tpl);

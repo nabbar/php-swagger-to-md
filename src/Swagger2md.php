@@ -331,35 +331,50 @@ Options:
 
     public function renderObject($name, $anchor, $template, $vars)
     {
-        $file = $this->checkAndMakeObjectFolder() . uniqid('obj_');
-        file_put_contents($file, $this->twigTpl->render($template, $vars));
+        $file = $this->checkAndMakeObjectFolder();
 
         if (!is_array($this->suffixObject)) {
             $this->suffixObject = array();
         }
 
-        $this->suffixObject[$name] = array(
-            'name' => $name,
-            'link' => $anchor,
-            'file' => $file,
-        );
+        if (!empty($file)) {
+            $file .= uniqid('obj_');
+            file_put_contents($file, $this->twigTpl->render($template, $vars));
+
+            $this->suffixObject[$name] = array(
+                'name' => $name,
+                'link' => $anchor,
+                'file' => $file,
+            );
+        }
+        else {
+            $this->suffixObject[$name] = array(
+                'name'     => $name,
+                'link'     => $anchor,
+                'contents' => $this->twigTpl->render($template, $vars),
+            );
+        }
     }
 
     private function checkAndMakeObjectFolder()
     {
-        $folder = $this->tempFolder . DIRECTORY_SEPARATOR . 'tmpObject' . DIRECTORY_SEPARATOR;
+        if (empty($this->tempFolder)) {
+            $folder = $this->tempFolder . DIRECTORY_SEPARATOR . 'tmpObject' . DIRECTORY_SEPARATOR;
 
-        if (file_exists($folder)) {
-            return $folder;
+            if (file_exists($folder)) {
+                return $folder;
+            }
+
+            mkdir($folder, 0777, true);
+
+            if (file_exists($folder)) {
+                return $folder;
+            }
+
+            throw new Exception('Cannot create folder : ' . $folder);
         }
 
-        mkdir($folder, 0777, true);
-
-        if (file_exists($folder)) {
-            return $folder;
-        }
-
-        throw new Exception('Cannot create folder : ' . $folder);
+        return null;
     }
 
 }

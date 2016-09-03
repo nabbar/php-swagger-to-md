@@ -59,10 +59,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 232
+Content-Length: 90
 {
-    "name": ". Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pelle",
-    "birthday": 1776182140
+    "name": ". Quisque porta mauris nec massa egestas, sed",
+    "birthday": 456719185
 }
 ```
 
@@ -80,10 +80,10 @@ Content-Length: 232
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 136
+Content-Length: 180
 {
-    "name": "alesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu",
-    "birthday": -1396550731
+    "name": "m laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur",
+    "birthday": -243974152
 }
 ```
 
@@ -100,7 +100,7 @@ Content-Length: 136
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/sed%2C+dapibus+vel+elit.+Sed+efficitur%2C+mi+sit+amet+fermentum+ultricies%2C+felis+felis+aliquam+enim%2C+id+feugiat+magna+elit+in+sapien.+Sed+malesuada%2C+velit+eu+dapibus+vehicula%2C+sem+tortor+ac 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/nia+id+tempor+sed%2C+dapibus+vel+elit.+Sed+efficitur%2C+mi+sit+amet+fermentum+ultricies%2C+felis+felis+aliquam+enim%2C+id+feugiat+magna+elit+in+sapien.+Sed+malesuada%2C+velit+eu+dapibus+vehicula%2C+sem+tortor+accumsan+nibh%2C 
 ```
 
 
