@@ -3,7 +3,7 @@
 {% if parameters is not null and parameters.count > 0 %}
 {% for location in parameters.items %}
 {% if location is not null and location.count > 0 and location.name != 'body' %}
-* Request Location : {{ location.name }}
+* **Request Location :** *{{ location.name }}*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
 {% for param in location.items %}
@@ -11,12 +11,12 @@
 {% endfor %}
 
 {% for param in location.items %}
-    * Request Parameter {{ param.name }}
+    * **Request Parameter** *{{ param.name }}*
     {% if param.render is not null %}{{ param.render }}{% endif %}
 
 {% endfor %}
 {% else %}
-* Request Location : {{ location.name }}
+* **Request Location :** *{{ location.name }}*
 {{ location.items.body.items.schema.render }}
 {% endif %}
 {% endfor %}
@@ -24,18 +24,18 @@
 
 {% if responses is not null and responses.count > 0 %}
 {% for location in responses.items %}
-* Response Status : {{ location.name }}
+* **Response Status :** *{{ location.name }}*
 {% if location is not null and location.count > 0 and location.name != 'schema' %}
 {% for param in location.items %}
     * Header {{ param.name }} : {{ param.format ?? param.type }}
 {% endfor %}
 
 {% for param in location.items %}
-    * Response Header {{ param.name }}
+    * **Response Header** *{{ param.name }}*
     {% if param.render is not null %}{{ param.render }}{% endif %}
 {% endfor %}
 {% else %}
-    * Response Body
+    * **Response Body**
 {{ location.items.body.items.schema.render }}
 {% endif %}
 {% endfor %}

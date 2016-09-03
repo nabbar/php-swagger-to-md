@@ -49,7 +49,7 @@ Pathitem tpl
 ##### Operation : post
 
 
-* Request Location : body
+* **Request Location :** *body*
 
 
 
@@ -57,7 +57,7 @@ Pathitem tpl
 ##### Operation : put
 
 
-* Request Location : body
+* **Request Location :** *body*
 
 
 
@@ -69,12 +69,12 @@ Pathitem tpl
 ##### Operation : get
 Multiple status values can be provided with comma seperated strings
 
-* Request Location : query
+* **Request Location :** *query*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | status | array | false |
 
-    * Request Parameter status
+    * **Request Parameter** *status*
     
 	Status values that need to be considered for filter
 
@@ -106,12 +106,12 @@ Pathitem tpl
 ##### Operation : get
 Muliple tags can be provided with comma seperated strings. Use tag1, tag2, tag3 for testing.
 
-* Request Location : query
+* **Request Location :** *query*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | tags | array | false |
 
-    * Request Parameter tags
+    * **Request Parameter** *tags*
     
 	Tags to filter by
 
@@ -143,12 +143,12 @@ Pathitem tpl
 ##### Operation : get
 Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error conditions
 
-* Request Location : path
+* **Request Location :** *path*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | petId | integer | true |
 
-    * Request Parameter petId
+    * **Request Parameter** *petId*
     
 	ID of pet that needs to be fetched
 
@@ -164,12 +164,12 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 ##### Operation : post
 
 
-* Request Location : path
+* **Request Location :** *path*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | petId | string | true |
 
-    * Request Parameter petId
+    * **Request Parameter** *petId*
     
 	ID of pet that needs to be updated
 
@@ -179,13 +179,13 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 	| Type | String |
 	| Location | path |
 
-* Request Location : formData
+* **Request Location :** *formData*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | name | string | true |
     | status | string | true |
 
-    * Request Parameter name
+    * **Request Parameter** *name*
     
 	Updated name of the pet
 
@@ -195,7 +195,7 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 	| Type | String |
 	| Location | formData |
 
-    * Request Parameter status
+    * **Request Parameter** *status*
     
 	Updated status of the pet
 
@@ -211,12 +211,12 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 ##### Operation : delete
 
 
-* Request Location : header
+* **Request Location :** *header*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | api_key | string | true |
 
-    * Request Parameter api_key
+    * **Request Parameter** *api_key*
     
 	
 
@@ -226,12 +226,12 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 	| Type | String |
 	| Location | header |
 
-* Request Location : path
+* **Request Location :** *path*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | petId | integer | true |
 
-    * Request Parameter petId
+    * **Request Parameter** *petId*
     
 	Pet id to delete
 
@@ -253,7 +253,7 @@ Pathitem tpl
 ##### Operation : post
 
 
-* Request Location : body
+* **Request Location :** *body*
 
 
 
@@ -265,12 +265,12 @@ Pathitem tpl
 ##### Operation : get
 For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 
-* Request Location : path
+* **Request Location :** *path*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | orderId | string | true |
 
-    * Request Parameter orderId
+    * **Request Parameter** *orderId*
     
 	ID of pet that needs to be fetched
 
@@ -286,12 +286,12 @@ For valid response try integer IDs with value <= 5 or > 10. Other values will ge
 ##### Operation : delete
 For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
 
-* Request Location : path
+* **Request Location :** *path*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | orderId | string | true |
 
-    * Request Parameter orderId
+    * **Request Parameter** *orderId*
     
 	ID of the order that needs to be deleted
 
@@ -313,7 +313,7 @@ Pathitem tpl
 ##### Operation : post
 This can only be done by the logged in user.
 
-* Request Location : body
+* **Request Location :** *body*
 
 
 
@@ -325,7 +325,7 @@ Pathitem tpl
 ##### Operation : post
 
 
-* Request Location : body
+* **Request Location :** *body*
 
 
 
@@ -337,7 +337,7 @@ Pathitem tpl
 ##### Operation : post
 
 
-* Request Location : body
+* **Request Location :** *body*
 
 
 
@@ -349,13 +349,13 @@ Pathitem tpl
 ##### Operation : get
 
 
-* Request Location : query
+* **Request Location :** *query*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | username | string | false |
     | password | string | false |
 
-    * Request Parameter username
+    * **Request Parameter** *username*
     
 	The user name for login
 
@@ -365,7 +365,7 @@ Pathitem tpl
 	| Type | String |
 	| Location | query |
 
-    * Request Parameter password
+    * **Request Parameter** *password*
     
 	The password for login in clear text
 
@@ -395,12 +395,12 @@ Pathitem tpl
 ##### Operation : get
 
 
-* Request Location : path
+* **Request Location :** *path*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | username | string | true |
 
-    * Request Parameter username
+    * **Request Parameter** *username*
     
 	The name that needs to be fetched. Use user1 for testing.
 
@@ -416,12 +416,12 @@ Pathitem tpl
 ##### Operation : put
 This can only be done by the logged in user.
 
-* Request Location : path
+* **Request Location :** *path*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | username | string | true |
 
-    * Request Parameter username
+    * **Request Parameter** *username*
     
 	name that need to be deleted
 
@@ -431,7 +431,7 @@ This can only be done by the logged in user.
 	| Type | String |
 	| Location | path |
 
-* Request Location : body
+* **Request Location :** *body*
 
 
 
@@ -439,12 +439,12 @@ This can only be done by the logged in user.
 ##### Operation : delete
 This can only be done by the logged in user.
 
-* Request Location : path
+* **Request Location :** *path*
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | username | string | true |
 
-    * Request Parameter username
+    * **Request Parameter** *username*
     
 	The name that needs to be deleted
 
