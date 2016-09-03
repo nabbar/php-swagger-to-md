@@ -37,7 +37,7 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 * Request Parameters :
 
 | Name | Location | Type | Validation | Default | Description |  
-| :---: | :---: | :---: | :---: | :---: | :---: |  
+| :---: | :---: | :---: | :---: | :---: | :--- |  
 | limit | query | integer | Value : 11 <= x <= 10000 | 11 | number of pets to return | 
 
 * Example of request :
@@ -52,17 +52,17 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 * Request Parameters :
 
 | Name | Location | Type | Required | Definition | Description |  
-| :---: | :---: | :---: | :---: | :---: | :---: |  
+| :---: | :---: | :---: | :---: | :---: | :--- |  
 | body | body | object | yes | [#/paths///post/parameters/0](#testtoto) | The pet JSON you want to post | 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 121
+Content-Length: 277
 {
-    "name": "lutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsu",
-    "birthday": 1829272035
+    "name": "pien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus",
+    "birthday": -867840820
 }
 ```
 
@@ -73,17 +73,17 @@ Content-Length: 121
 * Request Parameters :
 
 | Name | Location | Type | Required | Definition | Description |  
-| :---: | :---: | :---: | :---: | :---: | :---: |  
+| :---: | :---: | :---: | :---: | :---: | :--- |  
 | body | body | object | yes | [#/paths///put/parameters/0](#testtoto) | The pet JSON you want to post | 
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 204
+Content-Length: 181
 {
-    "name": ", sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus u",
-    "birthday": -1925932459
+    "name": "lputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices ne",
+    "birthday": 1755507483
 }
 ```
 
@@ -95,12 +95,12 @@ Content-Length: 204
 * Request Parameters :
 
 | Name | Location | Type | Required | Description |  
-| :---: | :---: | :---: | :---: | :---: |  
+| :---: | :---: | :---: | :---: | :--- |  
 | petId | path | string | yes | ID of the pet | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/ultrices+nec.+Ve 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/est+molestie.+Aenean+quam+nisi%2C+pos 
 ```
 
 

@@ -6,7 +6,7 @@
 * Request Parameters :
 
 | {% for col in listParamsColons %}{{ col.title }} | {%endfor %} 
-| {% for col in listParamsColons %}{% if col.align == 'left' or col.align == 'center' %}:{% endif %}---{% if col.align == 'left' or col.align == 'center' %}:{% endif %} | {%endfor %} 
+| {% for col in listParamsColons %}{% if col.align == 'left' or col.align == 'center' %}:{% endif %}---{% if col.align == 'right' or col.align == 'center' %}:{% endif %} | {%endfor %} 
 {% for location in parameters.items %}{% for param in location.items %}
 | {% for col,title in listParamsColons %}{% if param[col] is same as(true) %}yes{% elseif param[col] is same as(false) %}no{% else %}{{ param[col]|replace({"\n":"", "\r":""}) }}{% endif %} | {% endfor %}
 
