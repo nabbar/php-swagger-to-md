@@ -70,6 +70,7 @@ Pathitem tpl
 Multiple status values can be provided with comma seperated strings
 
 * **Request Location :** *query*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | status | array | false |
@@ -107,6 +108,7 @@ Pathitem tpl
 Muliple tags can be provided with comma seperated strings. Use tag1, tag2, tag3 for testing.
 
 * **Request Location :** *query*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | tags | array | false |
@@ -144,6 +146,7 @@ Pathitem tpl
 Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error conditions
 
 * **Request Location :** *path*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | petId | integer | true |
@@ -165,6 +168,7 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 
 
 * **Request Location :** *path*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | petId | string | true |
@@ -180,6 +184,7 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 	| Location | path |
 
 * **Request Location :** *formData*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | name | string | true |
@@ -212,6 +217,7 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 
 
 * **Request Location :** *header*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | api_key | string | true |
@@ -227,6 +233,7 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 	| Location | header |
 
 * **Request Location :** *path*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | petId | integer | true |
@@ -266,6 +273,7 @@ Pathitem tpl
 For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 
 * **Request Location :** *path*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | orderId | string | true |
@@ -287,6 +295,7 @@ For valid response try integer IDs with value <= 5 or > 10. Other values will ge
 For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
 
 * **Request Location :** *path*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | orderId | string | true |
@@ -350,6 +359,7 @@ Pathitem tpl
 
 
 * **Request Location :** *query*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | username | string | false |
@@ -396,6 +406,7 @@ Pathitem tpl
 
 
 * **Request Location :** *path*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | username | string | true |
@@ -417,6 +428,7 @@ Pathitem tpl
 This can only be done by the logged in user.
 
 * **Request Location :** *path*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | username | string | true |
@@ -440,6 +452,7 @@ This can only be done by the logged in user.
 This can only be done by the logged in user.
 
 * **Request Location :** *path*
+
     | Name | Type | Required | 
     | :--: | :--: | :------: | 
     | username | string | true |
