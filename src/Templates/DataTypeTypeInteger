@@ -1,3 +1,4 @@
+
 	{{ description }}
 
 	| Attribute | Value |
@@ -31,4 +32,3 @@
 {% if example is not null %}
 	| Example value | {{ example }} |
 {% endif %}
-
