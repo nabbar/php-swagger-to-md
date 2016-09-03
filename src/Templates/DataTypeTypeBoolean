@@ -1,1 +1,1 @@
-| {{ name }} | {{ in }} | {{ partType }} |  {% if require == true %}yes{% else %}no{% endif %} | {{ partValidation }} | {{ pattern }} | {{ enum|join(', ') }} | {{ linkItemsObject }} | {{ default }} | {{ example }} | {{ description }}
+| {{ name }} | {{ in }} | {{ partType }} |  {% if require == true %}yes{% else %}no{% endif %} | {{ partValidation }} | {{ pattern }} | {{ enum|join(', ') }} | {{ linkItemsObject }} | {{ default }} | {{ example }} | {{ description }} |

@@ -38,7 +38,7 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-| limit | query | integer |  no | at least 11 and no more than 10000 |  |  |  | 11 |  | number of pets to return
+| limit | query | integer |  no | at least 11 and no more than 10000 |  |  |  | 11 |  | number of pets to return |
 
 * Example of request :
 ```json
@@ -53,16 +53,16 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-| body | body | object |  no |  |  |  | [#/paths///post/parameters/0](#testtoto) |  |  | The pet JSON you want to post
+| body | body | object |  no |  |  |  | [#/paths///post/parameters/0](#testtoto) |  |  | The pet JSON you want to post |
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 146
+Content-Length: 270
 {
-    "name": "e nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cu",
-    "birthday": 207240163
+    "name": "u ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, im",
+    "birthday": 809050197
 }
 ```
 
@@ -74,16 +74,16 @@ Content-Length: 146
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-| body | body | object |  no |  |  |  | [#/paths///put/parameters/0](#testtoto) |  |  | The pet JSON you want to post
+| body | body | object |  no |  |  |  | [#/paths///put/parameters/0](#testtoto) |  |  | The pet JSON you want to post |
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 103
+Content-Length: 99
 {
-    "name": "es, felis felis aliquam enim, id feugiat magna elit in s",
-    "birthday": -1711548412
+    "name": "aoreet a ipsum. Duis sem elit, posuere eu facilisis ",
+    "birthday": -1129745051
 }
 ```
 
@@ -96,11 +96,11 @@ Content-Length: 103
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-| petId | path | string |  no |  |  |  |  |  |  | ID of the pet
+| petId | path | string |  no |  |  |  |  |  |  | ID of the pet |
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/ndisse+eget+nibh+pulvinar%2C+vestibulum+magna+ut%2C+suscipit+est.+Etiam+varius+lobortis+porttitor.+Mauris+vel+ultrices+erat%2C+at+hendrerit+enim.+Sed+leo+ex%2C+pulvinar+vel 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/ida+ornare+nibh+sollicitudin+et.+Curabitur+pulvinar+metus+massa%2C+malesuada+facilisis+sapien+finibus+at.+Nullam+finibus+urna+v 
 ```
 
 

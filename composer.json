@@ -85,6 +85,14 @@
         ],
         "test": [
             "@Phpunit"
+        ],
+        "examples": [
+            "@PharBuilder",
+            "bin/Swagger2MD.phar --output=exampleHeroku.md -v tests/examples/swaggerPetStoreHeroku.json",
+            "bin/Swagger2MD.phar --output=exampleInstagram.md -v tests/examples/swaggerInstagram.json",
+            "bin/Swagger2MD.phar --output=exampleMultiFile.md -v tests/examples/swaggerMultiFile.json",
+            "bin/Swagger2MD.phar --output=exampleTwitter.md -v tests/examples/swaggerTwitter.json",
+            "bin/Swagger2MD.phar --output=example.md -v tests/examples/swaggerPetStoreFull.json"
         ]
     }
 }
