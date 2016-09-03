@@ -38,7 +38,7 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 
 | Name | Location | Type | Validation | Default | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  |  | 
+| limit | query | integer | 11 <= Value <= 10000 | 11 | number of pets to return | 
 
 * Example of request :
 ```json
@@ -53,16 +53,16 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  |  | 
+| body | body | object | yes | [#/paths///post/parameters/0](#testtoto) | The pet JSON you want to post | 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 208
+Content-Length: 58
 {
-    "name": "na ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Prae",
-    "birthday": 686237431
+    "name": " ac, congue",
+    "birthday": -1630044289
 }
 ```
 
@@ -74,16 +74,16 @@ Content-Length: 208
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  |  | 
+| body | body | object | yes | [#/paths///put/parameters/0](#testtoto) | The pet JSON you want to post | 
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 51
+Content-Length: 102
 {
-    "name": ". Do",
-    "birthday": -2122099021
+    "name": "turpis, lacinia id tempor sed, dapibus vel elit. Sed eff",
+    "birthday": -449601916
 }
 ```
 
@@ -96,11 +96,11 @@ Content-Length: 51
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
+| petId | path | string | yes | ID of the pet | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/ibulum+elementum+felis+sit+amet+ipsum+euismod+ullamcorper.+Phasellus+sit+amet+vestibulum+quam.+Morbi+tincidunt+pretium+sodales.+Etiam+d 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/et%2C+consectetur+adipiscing+elit.+Integer+ipsum+sapien%2C+bibendum+at+placerat+sit+amet%2C+volutpat+sed+lacus.+Nul 
 ```
 
 

@@ -32,16 +32,16 @@ Returns the 20 most recent mentions for the authenticating user
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| count | query | string | Specifies the number of tweets to try and retrieve | 
+| since_id | query | string | Returns result with an ID greater than the specified ID | 
+| max_id | query | string | Returns results with an ID less than or equal to the specified ID | 
+| trim_user | query | string | When set to either true, t or 1, each tweet returned in a timeline will include a user object | 
+| contributor_details | query | string | This parameter enhances the contributors element of the status response | 
+| include_entities | query | string | The entities node will be disincluded when set to false | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/statuses/mentions_timeline?count=%20massa%20egestas%2C%20sed%20mollis%20est%20mol&since_id=%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sa&max_id=pien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit&trim_user=sto%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligu&contributor_details=neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae&include_entities=et.%20Cur 
+HTTP 1.1 get http://api.twitter.com/1.1/statuses/mentions_timeline?count=ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.&since_id=dio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.&max_id=purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nul&trim_user=%20pulvinar%20metus%20massa%2C%20&contributor_details=eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20&include_entities=rta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facil 
 ```
 
 
@@ -53,17 +53,17 @@ Returns a collection of the most recent Tweets posted by the User
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| count | query | string | Specifies the number of tweets to try and retrieve | 
+| since_id | query | string | Returns result with an ID greater than the specified ID | 
+| max_id | query | string | Returns results with an ID less than or equal to the specified ID | 
+| trim_user | query | string | When set to either true, t or 1, each tweet returned in a timeline will include a user object | 
+| exclude_replies | query | boolean | This paramters will prevent from appearing in the returned timeline | 
+| contributor_details | query | boolean | This paramters enhances the contributors element of the status response to include the screen_name of the contributor | 
+| include_rts | query | boolean | When set to false, the timeline will strip any native retweet | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/statuses/user_timeline?count=t%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20N&since_id=ipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20i&max_id=ndimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imper&trim_user=%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20i&exclude_replies=1&contributor_details=0&include_rts=0 
+HTTP 1.1 get http://api.twitter.com/1.1/statuses/user_timeline?count=ce%20ac%20dui%20nisl.%20Donec&since_id=&max_id=tetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20m&trim_user=n%20non%20lectus%20eu%20nunc%20interdum%20l&exclude_replies=0&contributor_details=1&include_rts=0 
 ```
 
 
@@ -75,15 +75,15 @@ Returns a collection of the most recent Tweets
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| since_id | query | string | Returns result with an ID greater than the specified ID | 
+| max_id | query | string | Returns results with an ID less than or equal to the specified ID | 
+| trim_user | query | string | When set to either true, t or 1, each tweet returned in a timeline will include a user object | 
+| exclude_replies | query | boolean | This paramters will prevent from appearing in the returned timeline | 
+| contributor_details | query | boolean | This paramters enhances the contributors element of the status response to include the screen_name of the contributor | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/statuses/home_timeline?since_id=sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20fa&max_id=incidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bi&trim_user=%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.&exclude_replies=1&contributor_details=0 
+HTTP 1.1 get http://api.twitter.com/1.1/statuses/home_timeline?since_id=msan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin&max_id=icula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20digniss&trim_user=bitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20&exclude_replies=0&contributor_details=1 
 ```
 
 
@@ -95,12 +95,12 @@ Retweens a tweet
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| id | path | string | yes | The numerical ID of the desired status | 
+| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/statuses/retweets/t+in+sapien.+Sed+malesuada%2C+velit+eu+dapibus+?trim_user=ongue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20 
+HTTP 1.1 post http://api.twitter.com/1.1/statuses/retweets/+quis+facilisis+arcu%2C+vel+ultrices+augue.+Suspendisse+potenti.+Mauris+vehicula+ex+lorem%2C+ut+ornare+purus+ultrices+nec.+Vestibulum+?trim_user=sum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20 
 ```
 
 
@@ -112,14 +112,14 @@ Retruns a single Tweet
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| id | path | string | yes | The numerical ID of the desired status | 
+| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | 
+| include_my_retweet | query | string | yes | When set to either true, t or 1, any Tweets returned that have been retweeted by the authenticating | 
+| include_entities | query | string |  | The entities node will be disincluded when set to false | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/statuses/show/nec+est+quam.+Pellentesque+vulputate+sapien+at+turpis+molestie+congue.+Nunc+et+lorem?trim_user=sim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed&include_my_retweet=i%20nis&include_entities=lestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pu 
+HTTP 1.1 get http://api.twitter.com/1.1/statuses/show/ndisse+justo+turpis%2C+lacinia+id+tempor+sed%2C+dapibus+vel+elit.+Sed+efficitur%2C+mi+sit+amet+fermentum+ultricies%2C+felis+felis?trim_user=sum.%20Quisque%20porta%20mauri&include_my_retweet=ltrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20me&include_entities=tus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20port 
 ```
 
 
@@ -131,12 +131,12 @@ Destroys the status specified by the required ID parameter
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| id | path | string | yes | The numerical ID of the desired status | 
+| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/statuses/destroy/terdum+sed.+Vestibulum+eget+luctus+metus%2C+eu+bibendum+orci.+Sed+eros+massa%2C+vehicula+quis+condimentum+eget%2C+tristique+ut+quam.+Maecenas+et+velit+dignissim%2C+tincidunt+justo+quis%2C+iacul?trim_user=os%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20ti 
+HTTP 1.1 post http://api.twitter.com/1.1/statuses/destroy/rbi+tincidunt+pretium+sodales.+Etiam+dignissim+risus+non+felis+scelerisque+aliquet.+Phasellus+faucibus+urna+arcu%2C+et+dignissim+augue+interdum+sed.+Vestibulum+eget+luctus+metus%2C+eu+bibendum+orci.+Sed+?trim_user=us%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Se 
 ```
 
 
@@ -148,17 +148,17 @@ Updates the authenticating user's status
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| status | query | string | yes | The text of your status update | 
+| in_reply_to_status_id | query | string |  | The ID of an existing status | 
+| lat | query | string |  | The latitude of the location | 
+| long | query | string |  | The longitude of the location | 
+| place_id | query | string |  | A place in the world | 
+| display_coordinates | query | string |  | Whether or not to put a pin on the exact coordinates a tweet | 
+| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/statuses/update?status=it.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum&in_reply_to_status_id=%20eu%20dapibus%20vehicula%2C&lat=dales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lor&long=im%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20q&place_id=ectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20&display_coordinates=ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20&trim_user=dales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultr 
+HTTP 1.1 post http://api.twitter.com/1.1/statuses/update?status=ictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20ve&in_reply_to_status_id=%20tort&lat=vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20&long=%20Sed%20eu%20nulla%20m&place_id=um%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20e&display_coordinates=%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maece&trim_user=%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20ti 
 ```
 
 
@@ -170,18 +170,18 @@ Returns information allowing the creation of an embedded representation
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| id | query | string | yes | The tweet/status id to return embed code for | 
+| url | query | string | yes | The encoded URL of the Tweet status to be embedded | 
+| maxwidth | query | string |  | The maximum width in pixels that the embed should be rendered at | 
+| hide_media | query | string |  | Specifies whether the embedded tweet should automatically show the original message in the case that the embedded Tweet is a reply | 
+| hide_thread | query | string |  | Specifies whether the embedded Tweet html should include a 'script' element pointing to widgets.js | 
+| align | query | string |  | Specifies whether the embedded Tweet should be left aligned | 
+| related | query | string |  | A value for the TWT related parameters | 
+| lang | query | string |  | Languages code for the rendered embed | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/statuses/oembed?id=e%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibe&url=d%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesu&maxwidth=s%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consecte&hide_media=fficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapi&hide_thread=%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20&align=ltrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis&related=us%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maxi&lang=l.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20 
+HTTP 1.1 get http://api.twitter.com/1.1/statuses/oembed?id=citudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20s&url=convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20&maxwidth=m.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cur&hide_media=bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequ&hide_thread=%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20so&align=dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20s&related=nissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sa&lang=us%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20m 
 ```
 
 
@@ -194,12 +194,12 @@ Return all lists the authenticating or specified user subscribes to, including t
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| screen_name | query | string | yes | The screen name of the user for whom to return results for | 
+| user_id | query | string | yes | The ID of the user for whom to return results for | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/list?screen_name=e%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sap&user_id=pit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20mo 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/list?screen_name=r%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20con&user_id=t%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tris 
 ```
 
 
@@ -211,19 +211,19 @@ Returns a timeline of tweets authored by memebers of the specified list
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list by its slug instead of its numerical id | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
+| since_id | query | string |  | Returns results with an ID greater than the sepcified ID | 
+| max_id | query | string |  | Returns results with an ID less than or equal to the specified ID | 
+| count | query | string |  | Specifies the number of results to retrieve per page | 
+| include_entities | query | string |  | Entities are ON by default | 
+| include_rts | query | string |  | When set to either true, t or 1, the list timeline will contain native retweets in addition to the standard stream of tweets | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/statuses?list_id=lacerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20eli&slug=Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris&owner_screen_name=t%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20qu&owner_id=%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20el&since_id=psum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20veli&max_id=amet%20fermentum%20ultricies%2C%20felis%20felis%20al&count=ue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20p&include_entities=ius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibu&include_rts=ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20S 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/statuses?list_id=it%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.&slug=e%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est&owner_screen_name=ndimentum%20tellus%20sagittis%20at.%20Null&owner_id=lit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Do&since_id=eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Maur&max_id=ctetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20ve&count=%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante&include_entities=t%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20i&include_rts=vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20l 
 ```
 
 
@@ -235,16 +235,16 @@ Returns the list of memebers destroy
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list by its slug instrad of its numerical id | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | 
+| user_id | query | string |  | The id of the user for whom to remove from the list | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list | 
+| owner_id | query | string |  | The is of the user who wons the list being requested by a slug | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/members/destroy?list_id=%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20&slug=tetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20p&owner_screen_name=us&user_id=it%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20&screen_name=t%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20vo&owner_id=os%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/members/destroy?list_id=odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagitti&slug=%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20ve&owner_screen_name=lla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamc&user_id=inibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20f&screen_name=diet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vu&owner_id=ero%2C%20faucib 
 ```
 
 
@@ -256,14 +256,14 @@ Returns the lists of the specified user has been added to
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| user_id | query | string | The id of the user for whom to return results for | 
+| screen_name | query | string | The screen name of the user for whom to return results for | 
+| cursor | query | string | Breaks the results into pages | 
+| filter_to_owned_lists | query | string | When set to true, t or 1, will return just lists the authenticating user owns | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/memberships?user_id=issim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio&screen_name=ctum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C&cursor=dio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20&filter_to_owned_lists=s%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odi 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/memberships?user_id=tur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lore&screen_name=%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempo&cursor=sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20feli&filter_to_owned_lists=issim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas 
 ```
 
 
@@ -275,17 +275,17 @@ Returns the subscribers of the specified list
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list by its slug insted of its numerical id | 
+| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
+| cursor | query | string |  | Breaks the results into pages | 
+| include_entities | query | string |  | Wehn set to either true, t or 1 | 
+| skip_status | query | string |  | When set to either true, t or 1 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers?list_id=etus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam&slug=lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20s&owner_screen_name=o%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissi&owner_id=teger%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est&cursor=que%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magn&include_entities=ie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vesti&skip_status=pat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20po 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers?list_id=%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa&slug=nas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20o&owner_screen_name=%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lor&owner_id=er.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20fau&cursor=estie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20C&include_entities=cies%20t&skip_status=la%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20er 
 ```
 
 
@@ -297,14 +297,14 @@ Subscribes the authenticated user to the specified list
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/lists/subscribers/create?list_id=odales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucib&slug=nte%20nec%2C%20volutpat%20dictu&owner_screen_name=ngilla.%20Mauris%20eu%20tortor%20blandit%2C&owner_id=re%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tor 
+HTTP 1.1 post http://api.twitter.com/1.1/lists/subscribers/create?list_id=icula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20e&slug=um.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20li&owner_screen_name=purus%20ultrices%20nec.%20Vestibulum%20elemen&owner_id=%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ips 
 ```
 
 
@@ -316,18 +316,18 @@ Check if the specified user is a subscriber of the specified list
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | 
+| user_id | query | string |  | The id of the user for whom to remove from the list | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list | 
+| owner_id | query | string |  | The is of the user who wons the list being requested by a slug | 
+| include_entities | query | string |  | Wehn set to either true, t or 1 | 
+| skip_status | query | string |  | When set to either true, t or 1 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers/show?list_id=disse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20o&slug=ros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20&owner_screen_name=%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20co&user_id=bulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.&screen_name=.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris&owner_id=tas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20l&include_entities=et%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec&skip_status=Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ulla 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers/show?list_id=uada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicit&slug=tum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20port&owner_screen_name=is%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed&user_id=ue%20vulp&screen_name=it.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisi&owner_id=ortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20am&include_entities=tique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia&skip_status=lit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tem 
 ```
 
 
@@ -339,14 +339,14 @@ Returns list of subscribers destroy
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers/destroy?list_id=malesuada%2C%20velit%20eu%20dapibus%20vehi&slug=llamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Se&owner_screen_name=nare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tinci&owner_id=tor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendis 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers/destroy?list_id=%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque&slug=nibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20&owner_screen_name=it%20amet&owner_id=dales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20fel 
 ```
 
 
@@ -358,16 +358,16 @@ Returns lists of members create_all
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
+| user_id | query | string |  | The id of the user for whom to remove from the list | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/members/create_all?list_id=pat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui&slug=tie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20a&owner_screen_name=nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultr&owner_id=%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Sus&user_id=m%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20male&screen_name=Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/members/create_all?list_id=dales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper&slug=uis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20t&owner_screen_name=%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvin&owner_id=at%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20&user_id=olestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dict&screen_name=a%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20e 
 ```
 
 
@@ -379,14 +379,14 @@ Returns list of destroy
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/lists/destroy?list_id=potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20&slug=ellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspen&owner_screen_name=ium%20sodales.%20Etiam%20dignissim%20r&owner_id=c%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20ar 
+HTTP 1.1 post http://api.twitter.com/1.1/lists/destroy?list_id=to%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20s&slug=orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consec&owner_screen_name=m%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accu&owner_id=inia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feu 
 ```
 
 
@@ -398,17 +398,17 @@ Returns lists of updates
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
+| name | query | string |  | The name for the list | 
+| mode | query | string |  | Whether your list is public or private | 
+| description | query | string |  | The description to give the list | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/lists/update?list_id=m%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20&slug=Sed%20efficit&owner_screen_name=%20vel%20metus%20et%2C%20mo&owner_id=.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C&name=d%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat&mode=%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20nequ&description=rtor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20au 
+HTTP 1.1 post http://api.twitter.com/1.1/lists/update?list_id=t%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Pha&slug=%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lore&owner_screen_name=l%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20tu&owner_id=nsectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20in&name=lit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magn&mode=.%20In&description=%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20 
 ```
 
 
@@ -420,13 +420,13 @@ Returns list of create
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| name | query | string | The name for the list | 
+| mode | query | string | Whether your list is public or private | 
+| description | query | string | The description to give the list | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/lists/create?name=m%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Se&mode=uisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vu&description=s.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20mole 
+HTTP 1.1 post http://api.twitter.com/1.1/lists/create?name=rtor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficit&mode=lla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellent&description=incidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissi 
 ```
 
 
@@ -438,14 +438,14 @@ Returns list of show
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/show?list_id=ales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20&slug=ctus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Pr&owner_screen_name=t.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20int&owner_id=congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/show?list_id=rus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20ves&slug=ulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20he&owner_screen_name=hasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tinc&owner_id=varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egesta 
 ```
 
 
@@ -457,14 +457,14 @@ Returns list of subscriptions
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| screen_name | query | string | The screen name of the user | 
+| user_id | query | string | The id of the user for whom to return results for | 
+| count | query | string | The amount of results to return per page | 
+| cursor | query | string | Breaks the results into pages | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/subscriptions?screen_name=a%20orci%2C%20gravida%20ornar&user_id=ringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20fe&count=suada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20&cursor=inar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nulla 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/subscriptions?screen_name=dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Integer%20ipsum%20sapie&user_id=sto%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20fe&count=ci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20&cursor=d%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam 
 ```
 
 
@@ -477,18 +477,18 @@ Check if the specified user is a member of the specified list
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| user_id | query | string |  | The id of the user for whom to remove from the list | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
+| include_entities | query | string |  | Wehn set to either true, t or 1 | 
+| skip_status | query | string |  | When set to either true, t or 1 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/list/members/show?list_id=%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20&slug=neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus&user_id=.%20S&screen_name=is%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consec&owner_screen_name=ortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20da&owner_id=ce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nu&include_entities=Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapie&skip_status=nec%20quis 
+HTTP 1.1 get http://api.twitter.com/1.1/list/members/show?list_id=lis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20so&slug=&user_id=%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20a&screen_name=%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20in&owner_screen_name=n%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20&owner_id=ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luc&include_entities=lutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lect&skip_status=sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamc 
 ```
 
 
@@ -500,17 +500,17 @@ Returns the members of the specified list
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
+| include_entities | query | string |  | Wehn set to either true, t or 1 | 
+| skip_status | query | string |  | When set to either true, t or 1 | 
+| cursor | query | string |  | Breaks the results into pages | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/list/members?list_id=at%20dignissim%20mi%20eget%20lacinia&slug=ng%20elit.%20Suspendisse%20just&owner_screen_name=&owner_id=arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20&include_entities=sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultric&skip_status=is%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metu&cursor=urpis%20nec%20dignissim%20aliquam.%20Nunc%20sed%20enim%20 
+HTTP 1.1 get http://api.twitter.com/1.1/list/members?list_id=ipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20p&slug=hasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20i&owner_screen_name=ed&owner_id=%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vu&include_entities=tis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuad&skip_status=et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consect&cursor=etus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20just 
 ```
 
 
@@ -522,15 +522,15 @@ Returns list of members create
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/list/members/create?list_id=%20iaculis%20odio.%20Mauris%20volutpat%20dignissim&slug=%20auc&screen_name=endum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20i&owner_screen_name=s.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20qui&owner_id=unc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultri 
+HTTP 1.1 post http://api.twitter.com/1.1/list/members/create?list_id=stie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20c&slug=sem%20tortor%20accumsan%20nibh%2C%20&screen_name=&owner_screen_name=retium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finib&owner_id=bh%2C%20sed%20pellentesque%20eni 
 ```
 
 
@@ -542,16 +542,16 @@ Returns lists of destroy all
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| list_id | query | string | yes | The numerical id of the list | 
+| slug | query | string | yes | You can identify a list being requested by a slug | 
+| user_id | query | string |  | The id of the user for whom to remove from the list | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/list/members/destroy_all?list_id=ongue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ul&slug=e%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20susc&user_id=it.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium&screen_name=enean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultric&owner_screen_name=i%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condiment&owner_id=%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpa 
+HTTP 1.1 get http://api.twitter.com/1.1/list/members/destroy_all?list_id=t%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20C&slug=e%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Viva&user_id=%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20&screen_name=felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tris&owner_screen_name=s%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20al&owner_id=uisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20qua 
 ```
 
 
@@ -564,15 +564,15 @@ return 20 most recent direct messages sent
 
 | Name | Location | Type |  
 | :---: | :---: | :---: |  
-|  |  |  | 
-|  |  |  | 
-|  |  |  | 
-|  |  |  | 
-|  |  |  | 
+| since_id | query | string | 
+| max_id | query | string | 
+| count | query | string | 
+| page | query | string | 
+| include_entities | query | string | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/direct_messages/sent?since_id=rem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex&max_id=%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec&count=%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20cons&page=ricies%20nibh%20eu%20leo%20consect&include_entities=t%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20 
+HTTP 1.1 get http://api.twitter.com/1.1/direct_messages/sent?since_id=tique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20int&max_id=%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vest&count=la%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque&page=sum%20sapien%2C%20bibe&include_entities=ectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20P 
 ```
 
 
@@ -584,11 +584,11 @@ returns a single direct message specified by an id
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
+| id | query | string | yes | ID of direct message | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/direct_messages/show?id=celerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20inte 
+HTTP 1.1 get http://api.twitter.com/1.1/direct_messages/show?id=s%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pu 
 ```
 
 
@@ -600,14 +600,14 @@ return 20 most recent direct messages sent to user
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| since_id | query | string | return results with ID greater than specified | 
+| max_id | query | string | returns results with an ID less than/equal to specified ID | 
+| include_entities | query | string | whether or not to include entities | 
+| skip_status | query | string | whether or not to include status | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/direct_messages?since_id=arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20n&max_id=er%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20e&include_entities=auris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20tu&skip_status=vida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20fini 
+HTTP 1.1 get http://api.twitter.com/1.1/direct_messages?since_id=m.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20e&max_id=ementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidu&include_entities=eros.%20Mauris%20sollicitu&skip_status=%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C 
 ```
 
 
@@ -619,12 +619,12 @@ destroys direct messages specified in required ID
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| id | query | string | yes | ID of direct message to delete | 
+| include_entities | query | string |  | whether or not to include entities | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/direct_messages/destroy?id=elit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum&include_entities=.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20 
+HTTP 1.1 post http://api.twitter.com/1.1/direct_messages/destroy?id=%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20p&include_entities=tium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20g 
 ```
 
 
@@ -636,13 +636,13 @@ sends a new direct message to specified user
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| user_id | query | string | yes | description | 
+| screen_name | query | string |  | screen name of user receiving message | 
+| text | query | string | yes | text of your direct message | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/direct_messages/new?user_id=gittis%20sed%20ex.%20Vivamus%20id%20vulputate%20o&screen_name=%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien&text=us%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignis 
+HTTP 1.1 post http://api.twitter.com/1.1/direct_messages/new?user_id=ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien&screen_name=it%20est.%20Etiam%20varius%20lobortis%20porttit&text=%20dui%2C%20consectetur%20sit%20amet%20 
 ```
 
 
@@ -655,21 +655,21 @@ returns collection of relevant Tweets matching query
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| q | query | string | yes | URL-encoded search query of 500 characters max | 
+| geocode | query | string |  | returns tweets by users located within given radius | 
+| lang | query | string |  | restricts tweets to a given language | 
+| locale | query | string |  | language of query you are sending | 
+| result_type | query | string |  | specifies type of search results you prefer | 
+| count | query | string |  | number of tweets to return | 
+| until | query | string |  | returns tweets created before given date | 
+| since_id | query | string |  | return results with ID greater than specified | 
+| max_id | query | string |  | returns results with an ID less than/equal to specified ID | 
+| include_entities | query | string |  | whether or not to include entities | 
+| callback | query | string |  | response will use the callback with given name | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/search/tweets?q=%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20&geocode=%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non&lang=s.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ips&locale=%20metus%20in%20eros.%20Mauris%20sollicitudin%20&result_type=laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20&count=inia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20&until=er.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20&since_id=nec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20ero&max_id=s%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C&include_entities=tristique%20ut%20quam.%20Maecen&callback=is%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula 
+HTTP 1.1 get http://api.twitter.com/1.1/search/tweets?q=umsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pell&geocode=an%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20&lang=um%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie&locale=cula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20fau&result_type=%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis&count=t%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Mae&until=%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissi&since_id=it%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20se&max_id=elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20di&include_entities=%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20va&callback=ed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20 
 ```
 
 
@@ -693,11 +693,11 @@ Retrieve the information for the saved search represented by the given id
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
+| id | path | string | yes | The id of the saved search | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/saved_searches/show/.+Sed+eros+massa%2C+vehicula+quis+condimentum+eget%2C+tristique+ut+quam.+Maecenas+et+velit+digni 
+HTTP 1.1 get http://api.twitter.com/1.1/saved_searches/show/t+sagittis.+I 
 ```
 
 
@@ -709,11 +709,11 @@ Create a new saved search for the authenticated user
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
+| query | query | string | yes | The query of the search the user would like to save | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/saved_searches/create?query=ibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia. 
+HTTP 1.1 post http://api.twitter.com/1.1/saved_searches/create?query=gula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum 
 ```
 
 
@@ -725,11 +725,11 @@ Destroy a saved search for the authenticating user
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
+| id | path | string | yes | The id of the saved search | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/saved_searches/destroy/u 
+HTTP 1.1 post http://api.twitter.com/1.1/saved_searches/destroy/+at+hendrerit+enim.+Sed+leo+ex%2C+pulvinar+vel+metus+et%2C+molestie+pretium+tortor.+Praesent+interdum+fringilla+orci%2C+gravida+ornare+nibh+so 
 ```
 
 
@@ -742,15 +742,15 @@ returns a cursored collection of user IDs followed by user
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| user_id | query | string | ID of user for whom to return results for | 
+| screen_name | query | string | screen name of user for whom to return results for | 
+| cursor | query | string | causes list of connections to be broken in pages | 
+| stringify_ids | query | string | IDs converted to strings | 
+| count | query | string | number of IDs to attempt retrieval of | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/friends/ids?user_id=sim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20qua&screen_name=ulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20tu&cursor=ellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendu&stringify_ids=t%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisi&count=%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et 
+HTTP 1.1 get http://api.twitter.com/1.1/friends/ids?user_id=etur%20adipi&screen_name=m%20eros.%20Suspendisse%20eget%20nibh%20pulv&cursor=assa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendu&stringify_ids=enas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum&count=ed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augu 
 ```
 
 
@@ -763,15 +763,15 @@ returns a cursored collection of user IDs following the user
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| user_id | query | string | ID of user for whom to return results for | 
+| screen_name | query | string | screen name of user for whom to return results for | 
+| cursor | query | string | causes list of connections to be broken in pages | 
+| stringify_ids | query | string | IDs converted to strings | 
+| count | query | string | number of IDs to attempt retrieval of | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/followers/ids?user_id=lesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20&screen_name=lit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20&cursor=ncidunt%20justo%20quis%2C%20iaculis%20odio.&stringify_ids=tiam%20varius%20lobortis%20portti&count=pat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20va 
+HTTP 1.1 get http://api.twitter.com/1.1/followers/ids?user_id=%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20S&screen_name=le&cursor=%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20er&stringify_ids=n%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20moles&count=ipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20se 
 ```
 
 
@@ -784,12 +784,12 @@ returns collection of IDs of users with pending follow request
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
+| cursor | query | string | causes list of connections to be broken in pages | 
+| stringify_ids | query | string | IDs converted to strings | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/friendships/incoming?cursor=e%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum&stringify_ids=tia 
+HTTP 1.1 get http://api.twitter.com/1.1/friendships/incoming?cursor=.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potent&stringify_ids=mmodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20t 
 ```
 
 
@@ -801,12 +801,12 @@ returns collection of IDs of users with pending follow request from the user
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
+| cursor | query | string | causes list of connections to be broken in pages | 
+| stringify_ids | query | string | IDs converted to strings | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/friendships/outgoing?cursor=st&stringify_ids=llus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20fe 
+HTTP 1.1 get http://api.twitter.com/1.1/friendships/outgoing?cursor=%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Maur&stringify_ids=osuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus 
 ```
 
 
@@ -818,13 +818,13 @@ allows users to follow user sepcified by ID
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| screen_name | query | string | screen name of user for whom to befriend | 
+| user_id | query | string | ID of user for whom to befriend | 
+| follow | query | string | enable notifications for target user | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/friendships/create?screen_name=t%2C%20elementu&user_id=%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20&follow=sim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condime 
+HTTP 1.1 post http://api.twitter.com/1.1/friendships/create?screen_name=rmentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20eni&user_id=nim.%20Sed%20leo%20ex%2C%20pulvinar%20ve&follow=e%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20au 
 ```
 
 
@@ -836,12 +836,12 @@ allows user to unfollow user psecified by ID
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| screen_name | query | string | yes | screen name of user for whom to befriend | 
+| user_id | query | string | yes | ID of user for whom to befriend | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/friendships/destroy?screen_name=gue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20u&user_id=%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20er 
+HTTP 1.1 post http://api.twitter.com/1.1/friendships/destroy?screen_name=celerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20&user_id=sagittis%20se 
 ```
 
 
@@ -853,14 +853,14 @@ Allows one to enable or disable settings for specified user
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| screen_name | query | string | yes | screen name of user for whom to befriend | 
+| user_id | query | string | yes | ID of user for whom to befriend | 
+| device | query | string | yes | enable/disable device notifications for user | 
+| retweets | query | string | yes | enable/disable retweets from target user | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/friendships/update?screen_name=verra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget&user_id=d%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20v&device=lvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20bland&retweets=d%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapie 
+HTTP 1.1 post http://api.twitter.com/1.1/friendships/update?screen_name=es%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliqu&user_id=unt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20s&device=%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Se&retweets=t.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20d 
 ```
 
 
@@ -872,14 +872,14 @@ returns detailed info about relationship between two users
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| source_id | query | string |  | user id of subject user | 
+| source_screen_name | query | string |  | screen_name of subject user | 
+| target_id | query | string | yes | user id of target user | 
+| target_screen_name | query | string | yes | screen name of target user | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/friendships/show?source_id=gue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci&source_screen_name=ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20&target_id=corper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat&target_screen_name=sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugi 
+HTTP 1.1 get http://api.twitter.com/1.1/friendships/show?source_id=rna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutp&source_screen_name=is%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere&target_id=%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posue&target_screen_name=metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvina 
 ```
 
 
@@ -902,16 +902,16 @@ updates user's settings
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| trend_location_woeid | query | string | the Yahoo! Where On Earth ID to user as defaul tend location | 
+| sleep_time_enabled | query | string | enables/disables sleep time, silencing notifications | 
+| start_sleep_time | query | string | the hour that sleep time should begin if enabled | 
+| end_sleep_time | query | string | the hour that sleep time should end if enabled | 
+| time_zone | query | string | timezone dates and times should be displayed in | 
+| lang | query | string | language which Twitter should render in for the user | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/settings?trend_location_woeid=ibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gra&sleep_time_enabled=ectus%2C%20a%20cursus%20n&start_sleep_time=a%20non%20consequat.%20Pellente&end_sleep_time=iverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pe&time_zone=dum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20&lang=%20Maur 
+HTTP 1.1 post http://api.twitter.com/1.1/account/settings?trend_location_woeid=gnissim%2C%20tincidunt%20justo&sleep_time_enabled=%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus&start_sleep_time=%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20&end_sleep_time=ngue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20susc&time_zone=%20congue.%20Nunc%20et%20l&lang=lus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros 
 ```
 
 
@@ -923,12 +923,12 @@ sets which device Twitter delivers updates to for user
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| device | query | string | yes | must be one of sms, none | 
+| include_entities | query | string |  | whether or not to include entities | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/update_delivery_device?device=erdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20e&include_entities=t%20luc 
+HTTP 1.1 post http://api.twitter.com/1.1/account/update_delivery_device?device=ed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20e&include_entities=u%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20t 
 ```
 
 
@@ -940,16 +940,16 @@ sets values that users ar eable to set under Account tab
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| name | query | string | full name of profile | 
+| url | query | string | url associated with profile | 
+| location | query | string | city or country describing where user of account is. | 
+| description | query | string | a description of user owning account | 
+| include_entities | query | string | whether or not to include entities | 
+| skip_status | query | string | whether or not to include statuses in response | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile?name=lit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesu&url=magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20pur&location=%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed&description=nim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Maur&include_entities=endisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20s&skip_status=t.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20v 
+HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile?name=leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20im&url=%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.&location=ndisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20mol&description=l.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20&include_entities=or%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Su&skip_status=Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lor 
 ```
 
 
@@ -961,22 +961,22 @@ updates user's profile background image
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| tile | query | string |  | whether or not to tile background image | 
+| use | query | string |  | display background image or not | 
+| include_entities | query | string |  | whether or not to include entities | 
+| skip_status | query | string |  | whether or not to include status in returned user objects | 
+| file | formData | file | yes | image to replace background image of profile | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_background_image?tile=sque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulpu&use=sodales.%20Etiam%20dignissim%20risus%20n&include_entities=%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C&skip_status=%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentes 
-Content-Type: multipart/form-data, boundary=57cafe5ee5c90
+HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_background_image?tile=is%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20&use=icula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20pur&include_entities=igula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed&skip_status=are%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20fauc 
+Content-Type: multipart/form-data, boundary=57cafeb4e98c3
 Content-Length: 761
---57cafe5ee5c90
+--57cafeb4e98c3
 content-disposition: form-data; name="file"
 
 --data-binary 
-NzI4ZDhiYjM2OTJlY2FjYWM2ZmRhYzQxZWRkODJjOTFmODFiNmVlMWE1ZWI5ODM5N2MxMmUyZGZhMTg0YTRjN2JkZDJiNmU5MWYzNTFmZDVjMTYzODUxMWZhZjI5OWMwODAyNjIyMGU1NjJjYTVhMTVmNjZmNzJhY2ZlNjhlOTlhMjI0MGJmZWM4MTQ1YmVhN2Y5NTdlYTI5N2EyYzY5MDAxM2U0MmYxMTYwY2JlMTU1ZWVhY2Q1NThjNGY3NGE1ZDFkZjQ4ZjFkM2I3MmIxZTNhZDcyZTA4NzZhODQxZTkwMmU4ZWRlOTIwMDhlNzM4OGM1ZTYzZDE0MjgwM2U4NTdhZjIwNjYzMjI0OTk2MjQ0NjE2ZTgzYWFlZWI2MDE2YjI3ZjZhNTU1ZDhiYzM5NDFmNzNlMGY3YzIzZTk2OGE0NmRkOTk0NmJiMTA0NWI5OWUzNjI0YmE5ZDNmMDkyYWQzMDMxNDYyNzYxNWE2MDA1MDdmZTM4NTVmOWVlYWE4ZGVjNTMwNGU1MDNlMGRjOTNhMWJkY2ExNzRjY2MwYTFlZDg3ZmI5ZDg5NmJiMDZlNmIxMTllMTQxZjk1MDE4NTQ5ZDBhNmEwNTFmMTM0NTY5ZDdlMTdmYjkxYWUxNTBmN2U2N2Y2ZTZmNDkyYTA3N2E0NTc4YTMzZmVkYmIwNzg=
+MDkyYzM1MjI5NjQ3ZWJlNmE0NDE0YmVmODQ2YjYzZjRhMjA5NmQ2YjEyOTU5NWNhZGUzMDVkNjM5NGZhMzQzMjBiN2VjNDRlODBjNjI5NTExN2EyYjY3MjA0ZmRiZjZmZTE2MDBmNTkwODU5NGY2M2I3MTFmOTlhMTk4YmY4ZjU1YjI1ZWI1MDRjNzFkNDNjM2NkN2EwOGE3MmY0ZjQxNDJkYTRkOGI1ZmQwYWY3ZDM2OWJiY2UwZmEyOGMxYTZmODVjMjcwZmMzMTAwNzY4YTVhODdhY2U0NDJhN2I2YTZkNzQwZjZmMTBjNWNjMThhNThiNTQ0ODE3NTUyMTc5MzYyNWJhODViMDIxM2RjMzJlOTE5MTkyNGRlNGJmNDM3NTVhYWQyYzFlZjhlN2QxMDg3YjkwMzM1Nzc2NWYyOTZiYWI4ZTNjNDZmZGRkZmJhNTM3NDMwZjk5YjEwMjllNTlmNzNkMzg1MmQ2OTQ0NTdlMjg0OTYwY2YwNDUxNTJlYzI5NWRkYWYwYWYzOTI1MTdkMjJlYWYzYWQ1ZWFhMDM1M2I2YjVhZjk2NjA1NDEwMTI5ZWI4ZDdjNzYzOTM0MGUxNzczNDU4MmJiZjM4Y2NiOTMwNmY1MzU0MzkwZTAwMmQ1MTM1MzY0YTQwOGJjZDA1ODM1NmMwN2E0ZWE1MDA=
 ```
 
 
@@ -988,17 +988,17 @@ sets one or more hex values that controls color scheme
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| profile_background_color | query | string | profile background color | 
+| profile_link_color | query | string | profile link color | 
+| profile_sidebar_border_color | query | string | profile sidebar's border color | 
+| profile_sidebar_fill_color | query | string | profile's sidebar background color | 
+| profile_text_color | query | string | profile text color | 
+| include_entities | query | string | whether or not to include entities | 
+| skip_status | query | string | whether or not to include statuses | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_colors?profile_background_color=rtis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvin&profile_link_color=sum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20&profile_sidebar_border_color=t%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tor&profile_sidebar_fill_color=um%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20e&profile_text_color=%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C&include_entities=scing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20D&skip_status=st%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20 
+HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_colors?profile_background_color=pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pu&profile_link_color=%20eros%20v&profile_sidebar_border_color=n%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20&profile_sidebar_fill_color=e%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odi&profile_text_color=a%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turp&include_entities=imus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20&skip_status=us%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabi 
 ```
 
 
@@ -1010,19 +1010,19 @@ updates user's profile image
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| skip_status | query | string |  | whether or not to include statuses | 
+| image | formData | file | yes | image to be set as profile image | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_image?skip_status=t%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20l 
-Content-Type: multipart/form-data, boundary=57cafe5ee7609
+HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_image?skip_status=aecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ant 
+Content-Type: multipart/form-data, boundary=57cafeb4eb502
 Content-Length: 762
---57cafe5ee7609
+--57cafeb4eb502
 content-disposition: form-data; name="image"
 
 --data-binary 
-OTdiNGQwYjY2OGY0YjgzNzE4ZmMxMzhiMWVmYzhlZjE4YTMyMDE5ZmY1YjAzOGU3NTE2OGViNDg3OWFjOTM2MDcxYjIxMDdiZTllOGRkY2I5ZjcxNDVhMmI1ZDY4MGY0MmVjMjE3ZjdkMDJiN2U5YThiYzhlODEyZGM2ZDgxZTAzOTkyYTkxMTc5MzNjYWI2OTU0Y2Q4ZmIwNTBkMWRjNDY2M2Q3NzQ4ZjgwNzc3Y2E3NjhkZDdmZDQ1ZDI5NWQwMTUwMzVhYjNhZTVlNmU5ODI5Zjk1ZmI0NjMyZjhmZjM4MmFlOGNiNzljZWU5NGJjMzAwZjhjODU2MGE3ZDM4ZGUwOTgwMjc4MWJhZmQwNDAzODMxMjc2YTNiNjc4YTQ3NTY5YmY1NWU5NmVlNmI4YjQ4OWI5MWQzMTlhZTE3OWFjNjU2OWI0N2E0NWM4NTE4ODVhN2Q2OWRkNWZkYTAyZTcwNTVlNzY0NzIyYTg4Yzk0NzZjYmZhOWQ2ZTIzZmE1MTgzYmI0NDc4MDA5YjI0ODI1NTcwMTMxYzRkNGJlN2EzNDFlNGM5NDc2OTI4ZGFlMmZjYjQ4NTllMWQwYzU5YjlhMDc1YjIxN2FiOTNhNzI0MmY2NzAxMWU5NTExMzcwODRjNGIyZTA5ZmQ2ZjQ4Mjg1YzI1NTk4MmU4ODdkYzg=
+ODM2MDEyNGM5ZWYyMjhkYjBkZWRjZWM4ZTY4YzNjMGE1N2JhYzZkZmM2NTQ1NjM0NzA3MGJlZWRkYTA4ZGU5MmZiZjBmMDA0OGY1MzM4MmQ4NTY4MDEzOTIxYWU3NTQ4YjAwYjViYjViMzAzM2E4YzJmZGVkYzhhY2M3MTU1OWI5YWNhYWNiNjE4ZmI2NzczYzMzYjNjYjA1YjkzYTZmNmM4NGI0MTM5NGYyOTA5Yzg4NmI0YzFiMzgyZDFlN2MzNjRkZTFkOTVmYThlMmJiOGFiZmNjZWY4NmZhYmNhMDQ5NmRlMTlhOWVjOTlhMjM1MWNlMzY3ZDU3ZDZiMzgzMDRjMGI0NDFmNTIxNmVlYWQzZjg3ZjY5M2YyMmEyZDdmZTFmZTRhMDk2MTJhZjlhMmZjMjdhZGQzOTljZDI2Mzk0NDc3OWY4YjdiNmRkMzY5MTgyOTEwY2E2YzI4ZjQzOTk4ODQ4MzdmODQ5Y2FhMDFhN2Y3YWYzOGNmYmU2ZWFhYzQzN2ZlMzI5Y2RkZDkwNTJjZDc1OGZhNjJjYWQwYzk1M2ViOGUwODBhNzJlMjRkMmRmOWRjNGI3MjIzOTdiYWExNmZlODJiYWZhZjVkNDNkYmIwYjRjM2E3M2VmMTJmNDMyOTNmZWQyZjRiYzZiNzgyZWY5ZTExYzZlOTIwZDA=
 ```
 
 
@@ -1035,13 +1035,13 @@ disallows retweets and device notifications from a user
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| include_entities | query | string | whether or not to include entities | 
+| skip_status | query | string | whether or not to include statuses in response | 
+| cursor | query | string | breaks block of user to be broken up into pages | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/blocks/list?include_entities=s.%20Fusce%20ac%20dui%20nisl.%20Done&skip_status=terdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut&cursor=%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20 
+HTTP 1.1 get http://api.twitter.com/1.1/blocks/list?include_entities=%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20s&skip_status=estibulum%20magna%20ut%2C%20suscipit%20est&cursor=c%20dignissim%20aliquam.%20Nunc%20sed%20enim%20nec%20tellus%20accu 
 ```
 
 
@@ -1053,12 +1053,12 @@ returns array of numeric user ids of blocked users
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
+| stringify_ids | query | string | returns array of numeric IDs as string IDs | 
+| cursor | query | string | breaks up block of user IDs into pages | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/blocks/ids?stringify_ids=m%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20vari&cursor=%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu 
+HTTP 1.1 get http://api.twitter.com/1.1/blocks/ids?stringify_ids=ed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20&cursor=%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex 
 ```
 
 
@@ -1070,14 +1070,14 @@ blocks the specified user
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| screen_name | query | string | yes | screen name of user to be blocked | 
+| user_id | query | string | yes | ID of user to be blocked | 
+| include_entities | query | string |  | whether or not to include entities | 
+| skip_status | query | string |  | whether or not to skip statuses | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/blocks/create?screen_name=e%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20sc&user_id=erdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor&include_entities=s%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20veh&skip_status=n.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20pur 
+HTTP 1.1 post http://api.twitter.com/1.1/blocks/create?screen_name=%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignis&user_id=sa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendis&include_entities=ices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincid&skip_status=%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20si 
 ```
 
 
@@ -1089,14 +1089,14 @@ un-blocks the specified user
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| screen_name | query | string | yes | screen name of user to be un-blocked | 
+| user_id | query | string | yes | ID of user to be un-blocked | 
+| include_entities | query | string |  | whether or not to include entities | 
+| skip_status | query | string |  | whether or not to skip statuses | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/blocks/destroy?screen_name=um%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C&user_id=ursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20molli&include_entities=la%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20s&skip_status=ltricies%20nibh%20eu%20leo%20consectet 
+HTTP 1.1 post http://api.twitter.com/1.1/blocks/destroy?screen_name=dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauri&user_id=tur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20vel&include_entities=pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20&skip_status=%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pellentesque.%20Nullam%20ult 
 ```
 
 
@@ -1109,13 +1109,13 @@ returns fully-hydrated user objects up to 100
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| screen_name | query | string | screen name of user to lookup | 
+| user_id | query | string | ID of user to lookup | 
+| include_entities | query | string | whether or not to include entities | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/users/lookup?screen_name=ec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20&user_id=us%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam&include_entities=sum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20e 
+HTTP 1.1 get http://api.twitter.com/1.1/users/lookup?screen_name=ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etia&user_id=Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20&include_entities=ibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20 
 ```
 
 
@@ -1127,13 +1127,13 @@ returns a variety of info about specified user
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| screen_name | query | string | yes | screen name of user to be shown | 
+| user_id | query | string | yes | ID of user to be shown | 
+| include_entities | query | string |  | whether or not to include entities | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/users/show?screen_name=%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nib&user_id=s%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae&include_entities=ue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sa 
+HTTP 1.1 get http://api.twitter.com/1.1/users/show?screen_name=elis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20vari&user_id=is%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C&include_entities=eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aene 
 ```
 
 
@@ -1145,14 +1145,14 @@ simple relevance-based user search
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| q | query | string | yes | the search query to run against people search | 
+| page | query | string |  | specifies the page of results to receive | 
+| count | query | string |  | number of people to return per page | 
+| include_entities | query | string |  | whether or not to include entities | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/users/search?q=entesque%20elit%20libero%2C%20faucibus%20&page=ssim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20ju&count=agna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20era&include_entities=ui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20M 
+HTTP 1.1 get http://api.twitter.com/1.1/users/search?q=estie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20f&page=t%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20ve&count=%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo&include_entities=%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20da 
 ```
 
 
@@ -1164,14 +1164,14 @@ collection of users specified user can contribute to
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| screen_name | query | string | yes | screen name of user that is contributed to | 
+| user_id | query | string | yes | ID of user to that is contributed to | 
+| include_entities | query | string |  | whether or not to include entities | 
+| skip_status | query | string |  | whether or not to skip statuses | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/users/contributees?screen_name=%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac&user_id=stas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20faci&include_entities=eque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20m&skip_status=ien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit 
+HTTP 1.1 get http://api.twitter.com/1.1/users/contributees?screen_name=tus%20me&user_id=r%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20cond&include_entities=bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendi&skip_status=.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20cong 
 ```
 
 
@@ -1183,14 +1183,14 @@ collection of users that can contribute to specified account
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| screen_name | query | string | yes | screen name of user contributing | 
+| user_id | query | string | yes | ID of user contributing | 
+| include_entities | query | string |  | whether or not to include entities | 
+| skip_status | query | string |  | whether or not to skip statuses | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/users/contributors?screen_name=dum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Done&user_id=lamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sap&include_entities=e%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pell&skip_status=ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus 
+HTTP 1.1 get http://api.twitter.com/1.1/users/contributors?screen_name=ue%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dig&user_id=raesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nulla&include_entities=ndisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidu&skip_status=nec%20ultricies%20nibh%20eu%20leo%20 
 ```
 
 
@@ -1202,12 +1202,12 @@ Returna users report spam
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
-|  |  |  |  | 
-|  |  |  |  | 
+| screen_name | query | string | The ID or screen_name of the user you want to report as a spammer | 
+| user_id | query | string | The ID of the user you want to report as a spammer | 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/users/report_spam?screen_name=perdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20pos&user_id=lis%20eu%20ligula%20non%20consequat.%20Pellente 
+HTTP 1.1 post http://api.twitter.com/1.1/users/report_spam?screen_name=%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20ve&user_id=%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20 
 ```
 
 
@@ -1220,11 +1220,11 @@ Returns all the information about a know place
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
+| place_id | path | string | yes | A place in the world | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/geo/id/dio%2C+porta+ut+quam+non%2C+imperdiet+varius+orci.+Donec+consectetur+sed+ante+sit+amet+sagittis.+In+non+lectus+eu+nunc+interdum+laoreet+a+ut+dui.+Sed+eu+nulla+malesuada%2C+egestas+velit+id%2C+semper+felis.+Fusce+ac+dui+nis 
+HTTP 1.1 get http://api.twitter.com/1.1/geo/id/ssa%2C+malesuada+facilisis+sapien+finibus+at.+Nullam+finibus+urna+vel+auctor+fringilla.+Mauris+eu+tortor+blandit%2C+bibendum+tortor+ac%2C+congue+ero 
 ```
 
 
@@ -1236,16 +1236,16 @@ Given a latitude and a longitude, searches for up to 20 places that can be used 
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| lat | query | string | yes | The latitude to search around | 
+| long | query | string | yes | The longtitude to search around | 
+| accuracy | query | string |  | A hint on region in which to search | 
+| granularity | query | string |  | This is the minimal granularity of place types to return | 
+| max_results | query | string |  | A hint as to the number of results to return | 
+| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/geo/reverse_geoncode?lat=%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20digniss&long=suada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisci&accuracy=t%20amet%20ferment&granularity=nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20solli&max_results=te%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20pote&callback=%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20qui 
+HTTP 1.1 get http://api.twitter.com/1.1/geo/reverse_geoncode?lat=et%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tinci&long=uis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20im&accuracy=%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20va&granularity=et%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20co&max_results=e.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20fini&callback=terdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bib 
 ```
 
 
@@ -1257,19 +1257,19 @@ Search for places that can be attached to a statuses/updates
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| lat | query | string | yes | The latitude to search around | 
+| long | query | string | yes | The longtitude to search around | 
+| query | query | string | yes | Free-form text to match against while executing a geo-based query | 
+| ip | query | string | yes | An Ip address | 
+| accuracy | query | string |  | A hint on region in which to search | 
+| granularity | query | string |  | This is the minimal granularity of place types to return | 
+| contained_within | query | string |  | This is the place_id which you would like to restrict the search results to | 
+| attribute:street_address | query | string |  | This parameter searches for places which have this givven street address | 
+| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/geo/search?lat=uam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20v&long=isus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestib&query=um.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20e&ip=%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20l&accuracy=m%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimen&granularity=m%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin&contained_within=utpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdi&attribute%3Astreet_address=us%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa&callback=%20Mauris%20eu%20tortor%20blandit%2C%20bibendu 
+HTTP 1.1 get http://api.twitter.com/1.1/geo/search?lat=que%20port&long=%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20con&query=imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Pr&ip=olor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Integer%20ipsum%20sap&accuracy=que%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecena&granularity=ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Eti&contained_within=am%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20e&attribute%3Astreet_address=s%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Pha&callback=%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulp 
 ```
 
 
@@ -1281,16 +1281,16 @@ Locates places near the given coordinates which are similar in name
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| lat | query | string | yes | The latitude to search around | 
+| long | query | string | yes | The longtitude to search around | 
+| name | query | string | yes | The name a place is known as | 
+| contained_within | query | string |  | This is the place_id which you would like to restrict the search results to | 
+| attribute:street_address | query | string |  | This parameter searches for places which have this givven street address | 
+| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/geo/similar_places?lat=u%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20v&long=nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20v&name=e%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C&contained_within=%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fer&attribute%3Astreet_address=rdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tort&callback=cula%20lectus%2C%20a%20cursus%20neque%20erat%20vita 
+HTTP 1.1 get http://api.twitter.com/1.1/geo/similar_places?lat=rat.%20Proin%20id%20scelerisque%20ipsum&long=sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20&name=s%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20&contained_within=um%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iacu&attribute%3Astreet_address=Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat&callback=eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nu 
 ```
 
 
@@ -1302,17 +1302,17 @@ Create a new place object at the given latitude and logitude
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| lat | query | string | yes | The latitude to search around | 
+| long | query | string | yes | The longtitude to search around | 
+| name | query | string | yes | The name a place is known as | 
+| token | query | string | yes | The token found in the response from geo/similar_places | 
+| contained_within | query | string |  | This is the place_id which you would like to restrict the search results to | 
+| attribute:street_address | query | string |  | This parameter searches for places which have this givven street address | 
+| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/geo/places?lat=psum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20&long=ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Maur&name=lerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20p&token=.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20&contained_within=ngue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec&attribute%3Astreet_address=onsectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20&callback=ci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20se 
+HTTP 1.1 get http://api.twitter.com/1.1/geo/places?lat=verra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20n&long=euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibul&name=ncidunt%20pretiu&token=uis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20element&contained_within=pendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20eleme&attribute%3Astreet_address=ipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gra&callback=el%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tor 
 ```
 
 
@@ -1325,12 +1325,12 @@ Returns the top 10 trending topics for a specific WOEID
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| id | query | string | yes | The yahoo where on earch id | 
+| exclude | query | string | yes | Setting this equal to hashtages will remove all hashtages from the trends list | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/trends/place?id=orci.%20Donec%20consectetur%20sed%20&exclude=n%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20pote 
+HTTP 1.1 get http://api.twitter.com/1.1/trends/place?id=acilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20&exclude=nte%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet 
 ```
 
 
@@ -1353,12 +1353,12 @@ Returns the location that Twitter has trending topic information for
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
-|  |  |  |  |  | 
+| lat | query | string | yes | If provided with a long parameter the available trend locations wil be stored by distance | 
+| long | query | string | yes | If provided with a lat parameters the available trend locations will be sorted by distance | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/trends/closest?lat=%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20se&long=itae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proi 
+HTTP 1.1 get http://api.twitter.com/1.1/trends/closest?lat=d%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Ph&long=erdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed 
 ```
 
 
@@ -1416,7 +1416,7 @@ Returns the current rate limits for methods belonging to the specified resource 
 
 | Name | Location | Type | Definition | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-|  |  |  |  |  | 
+| resources | query | array | [#/paths//application/rate_limit_status/get/parameters/0](#testtoto) | A comma-separated list of resource families you want to know the current rate limit disposition for | 
 
 * Example of request :
 ```json
