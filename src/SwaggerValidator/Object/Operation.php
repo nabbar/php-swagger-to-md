@@ -38,11 +38,61 @@ class Operation extends \SwaggerValidator\Object\Operation
         $this->getMethodGeneric($context, $method, $generalItems, null, array($twigObject));
         $this->getModelConsumeProduce($generalItems);
 
+        $colParamsTitle = array(
+            'name'            => 'Name',
+            'in'              => 'Location',
+            'partType'        => 'Type',
+            'required'        => 'Required',
+            'partValidation'  => 'Validation',
+            'pattern'         => 'Pattern',
+            'enum'            => 'Enum',
+            'linkItemsObject' => 'Definition',
+            'default'         => 'Default',
+            'example'         => 'Example',
+            'description'     => 'Description',
+        );
+
+        if (!empty($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS])) {
+            $col = array(
+                'name'            => true,
+                'in'              => true,
+                'partType'        => true,
+                'required'        => false,
+                'partValidation'  => false,
+                'pattern'         => false,
+                'enum'            => false,
+                'linkItemsObject' => false,
+                'default'         => false,
+                'example'         => false,
+                'description'     => false,
+            );
+
+            foreach ($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS] as $location => $list) {
+                if (empty($list)) {
+                    continue;
+                }
+                foreach ($list as $name => $params) {
+                    foreach (array_keys($col) as $key) {
+                        if (array_key_exists($key, $params) && !is_null($params[$key]) && (!is_string($params[$key]) || strlen($params[$key]) > 0)) {
+                            $col[$key] = true;
+                        }
+                    }
+                }
+            }
+
+            foreach ($col as $key => $value) {
+                if ($value === false) {
+                    unset($colParamsTitle[$key]);
+                }
+            }
+        }
+
         $templateVars = array(
             \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS => null,
             \SwaggerValidator\Common\FactorySwagger::KEY_RESPONSES  => null,
             \SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES   => null,
             \SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES   => null,
+            'listParamsColons'                                      => $colParamsTitle,
             'Request'                                               => $this->makeRequestExample($context, $generalItems, $twigObject)
         );
 

@@ -4,10 +4,12 @@
 {% endif %}
 {% if parameters is not null and parameters.count > 0 %}
 * Request Parameters :
+| {% for col in listParamsColons %}{{ col }} | {%endfor %} 
+| {% for col in listParamsColons %}:---: | {%endfor %} 
+{% for location in parameters.items %}{% for param in location.items %}
+| {% for col,title in listParamsColons %}{% if param[col] is same as(true) %}yes{% elseif param[col] is same as(false) %}no{% else %}{{ param[col] }}{% endif %} | {% endfor %}
 
-| Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-{% for location in parameters.items %}{% if location is not null and location.count > 0 %}{% for param in location.items %}{% if param.render is not null %}{{ param.render }}{% endif %}{% endfor %}{% endif %}{% endfor %}
+{% endfor %}{% endfor %}
 {% endif %}
 
 * Example of request :
