@@ -4,10 +4,10 @@
 {% for location in parameters.items %}
 {% if location is not null and location.count > 0 and location.name != 'body' %}
 * Request Location : {{ location.name }}
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
 {% for param in location.items %}
-> | {{ param.name }} | {{ param.type }} | {% if param.required == true %}true{% else %}false{% endif %} |
+    | {{ param.name }} | {{ param.type }} | {% if param.required == true %}true{% else %}false{% endif %} |
 {% endfor %}
 
 {% for param in location.items %}

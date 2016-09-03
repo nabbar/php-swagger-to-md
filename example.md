@@ -70,27 +70,33 @@ Pathitem tpl
 Multiple status values can be provided with comma seperated strings
 
 * Request Location : query
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | status | array | false |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | status | array | false |
 
     * Request Parameter status
-    Status values that need to be considered for filter
+        Status values that need to be considered for filter
 
->>>
-| Attribute | Value |
-| :-------: | :---: |
-| Name | status |
-| Location | query |
-| Type | Array  |
-| Unique Items | false |
-| Items form | [ [Object name](#ref) ] |
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | status |
+        | Type | Array |
+        | Location | query |
+                | Unique Items | false |
+        | Items form | [ [Object name](#ref) ] |
 
-Details Items Object
-* **Object 1** :
-|  | string |  -  |  | 6BnP6pwS6rjE0TXYj2OlGYVT6kPHXtf34CTb2p48QoNQhKPANDVuCRnJcdq9GGdLi6Xlw1umphdH12iPGdjj5G2iTtrAaFmsMjOiliFKzSrBVJqBXJU3qXlkrNUBsh4fASxVacGK58l0SLBQvwUVuffW3axwrCL2ujYFvFqANLAGxcw2JrXdH |
->>>
+        Details Items Object
+            * **Object 1** :
+            ```
+                
 
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Type | String |
+                        
+
+            ```
+        
 
 
 
@@ -103,27 +109,33 @@ Pathitem tpl
 Muliple tags can be provided with comma seperated strings. Use tag1, tag2, tag3 for testing.
 
 * Request Location : query
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | tags | array | false |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | tags | array | false |
 
     * Request Parameter tags
-    Tags to filter by
+        Tags to filter by
 
->>>
-| Attribute | Value |
-| :-------: | :---: |
-| Name | tags |
-| Location | query |
-| Type | Array  |
-| Unique Items | false |
-| Items form | [ [Object name](#ref) ] |
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | tags |
+        | Type | Array |
+        | Location | query |
+                | Unique Items | false |
+        | Items form | [ [Object name](#ref) ] |
 
-Details Items Object
-* **Object 1** :
-|  | string |  -  |  | IYkfgLih19141EzozX5OWNNf4GZjb8tU7O9nAsFBBGFClf1Uc7J8UwoZcnjowNiEBr1bUHNvos8JH9EUgo3bVrb8PuwmhO0Tg25aJSG8lOS3XxXeV0qQsBZh6vDokDhBGmMpfsyAgqDeXAtTBUJ3vJlCeY0zCiaiF |
->>>
+        Details Items Object
+            * **Object 1** :
+            ```
+                
 
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Type | String |
+                        
+
+            ```
+        
 
 
 
@@ -136,12 +148,20 @@ Pathitem tpl
 Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error conditions
 
 * Request Location : path
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | petId | integer | true |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | petId | integer | true |
 
     * Request Parameter petId
-    | petId | int64 |  -  | 1 | 775354326934618112 |
+        ID of pet that needs to be fetched
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | petId |
+        | Type | Integer, formatted as : int64 |
+        | Location | path |
+                            
+
 
 
   
@@ -149,22 +169,46 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 
 
 * Request Location : path
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | petId | string | true |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | petId | string | true |
 
     * Request Parameter petId
-    | petId | string |  -  | 1 | FO1pqZhCK2qiKD1hi5u55bZTyCbOQBavpcVQbcsWfTe0wfhPlMUrXTkwwwlm8wRyINoU0QQgJ5ggly6Gk08iUsOqYaN6GFEps3jsTaJDfZUAx0hS1paWSYmQ8aXPPCehFxKzHtdXt8y18PTaf3671tYaDWZsydKeLvOtY2qsaYt |
+        ID of pet that needs to be updated
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | petId |
+        | Type | String |
+        | Location | path |
+                        
+
 * Request Location : formData
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | name | string | true |
-> | status | string | true |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | name | string | true |
+    | status | string | true |
 
     * Request Parameter name
-    | name | string |  -  | 1 | Omt4pzbr3aBG6B9FPTTAoI4nKuQUtjdiFGm5gywjI80OKatz3nas5eQQJHKc0YvGESLVqif8qgXaqrKuOUXU9OKSvv5wtAc8sY4Tgj1HAZR0qBvfws9FgUxMpCiTdv2Gu6zLqBs0Ak01VvgsYq7fkF1KikDwQFclML6cnycYSdZOIggHGoW04YKmjoSa45vQRB3e9fc2sbRbs8T8wP8BOTY7iRhm |
+        Updated name of the pet
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | name |
+        | Type | String |
+        | Location | formData |
+                        
+
     * Request Parameter status
-    | status | string |  -  | 1 | MdNog2yweAYqsaSA307T9IH3GOlx6ItTVhhcjPIyqHZSRRsVSzO2iw5Ylrwra0l5hCiBs09SH9Lz0dvTNkW6Q15btBDDBYJTB1v |
+        Updated status of the pet
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | status |
+        | Type | String |
+        | Location | formData |
+                        
+
 
 
   
@@ -172,19 +216,35 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 
 
 * Request Location : header
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | api_key | string | true |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | api_key | string | true |
 
     * Request Parameter api_key
-    | api_key | string |  -  | 1 | 2FVKOHjPUPII9EPZGUbawPO8Ox2pzxsCcom15GQ0vzJEeyEUtQ5ZGT7ur9T0HmCUKYVPFLQalzPz7uuBlzA1sIwUSpUzLxtwwpmbbcmwLc5TGzu2953COzwGZrgLYKhv9EGkQ3RBfWvWw0YF52iTCOABfQneBFJLjq59tXLIThEqhD6nFohhcRTsIhGkWq5gQbqj8c22tHsLky8 |
+        
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | api_key |
+        | Type | String |
+        | Location | header |
+                        
+
 * Request Location : path
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | petId | integer | true |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | petId | integer | true |
 
     * Request Parameter petId
-    | petId | int64 |  -  | 1 | -1764073201681301504 |
+        Pet id to delete
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | petId |
+        | Type | Integer, formatted as : int64 |
+        | Location | path |
+                            
+
 
 
   
@@ -210,12 +270,20 @@ Pathitem tpl
 For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 
 * Request Location : path
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | orderId | string | true |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | orderId | string | true |
 
     * Request Parameter orderId
-    | orderId | string |  -  | 1 | 19CZEFrAGosArAp5jzH0hjcU4R0PQjq |
+        ID of pet that needs to be fetched
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | orderId |
+        | Type | String |
+        | Location | path |
+                        
+
 
 
   
@@ -223,12 +291,20 @@ For valid response try integer IDs with value <= 5 or > 10. Other values will ge
 For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
 
 * Request Location : path
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | orderId | string | true |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | orderId | string | true |
 
     * Request Parameter orderId
-    | orderId | string |  -  | 1 | t3R8IiIpHbZ9Lpe5ZV6gfibj9c8ZwzR0CI8k1RJI2JSO96T82ZpihBBqNJqkjhkV0sg1j0KmKCaTJ42M3s4l3FMRpdbJvvEvYVwiWhEHTPBDTDpX5tj8960zjbiOHXjFSQXP8Cw2r7FlL4jQyD |
+        ID of the order that needs to be deleted
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | orderId |
+        | Type | String |
+        | Location | path |
+                        
+
 
 
   
@@ -278,15 +354,31 @@ Pathitem tpl
 
 
 * Request Location : query
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | username | string | false |
-> | password | string | false |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | username | string | false |
+    | password | string | false |
 
     * Request Parameter username
-    | username | string |  -  |  | p4npK0kG8fQY20E6gY6oB9CtvYdgMjxboUB8VWO3bF2dGHkWFqlgzYJ5WXlJhSUFNvOIsDMDjPQZwbWcBhsbgcgcaCWrvQ7imV1OzNsSCjR9uNl65Nhl0yybauCFlKYHGZwfNZ7piZzNMUTRIbdJKLUUfxABhzjXyQcmPkL |
+        The user name for login
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | username |
+        | Type | String |
+        | Location | query |
+                        
+
     * Request Parameter password
-    | password | string |  -  |  | jlV6fPYX0bGKWBFc8gOpP7noXAKMUwUeRQk6Fi4GtLqqm6DumrUcyhAvRliMRd0J3lQIDUo6GPx3WaxjCsvbJ6GBrZojcp2fKTYnOmuuc1x8c5rPxX0h3HSvGhOSGR8qK6Nyth3FjBOwGglddlvg2nMJEBBksKLd |
+        The password for login in clear text
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | password |
+        | Type | String |
+        | Location | query |
+                        
+
 
 
   
@@ -308,12 +400,20 @@ Pathitem tpl
 
 
 * Request Location : path
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | username | string | true |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | username | string | true |
 
     * Request Parameter username
-    | username | string |  -  | 1 | yMjQPZ9qOG741khnQyqdl9SWLdpvYCmxoFneFxFudMyf7QCXp3bKc4GYh5tgIQN7vblbI0FWNebU4ORuR3e47V2p0wFImtPSFb4ocKkZYwT3kLxcOLgWHjlHP1qcug5as9yETSESoyVJjtV8fb4WuqEkr4wWlC6NLEsFx6xVEtEYWz7bLb7fCLA3Q7ZcJ60vKsahyIddbSb7rijdurt6d393b9gUfgq0IAhhivutnFBPXU2smvyzzIDK |
+        The name that needs to be fetched. Use user1 for testing.
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | username |
+        | Type | String |
+        | Location | path |
+                        
+
 
 
   
@@ -321,12 +421,20 @@ Pathitem tpl
 This can only be done by the logged in user.
 
 * Request Location : path
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | username | string | true |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | username | string | true |
 
     * Request Parameter username
-    | username | string |  -  | 1 | TF8958SGq9YVDsij48hYaJkGiUf1x0TqF2ALasrABpwfSPyWXQV7zfNSa3TH3N7JPIuZaVAMl61dVA9Sq400kOSuRMbVzjEo18oc4ZYp60C1AMU1QV1aJUFBGRxfabEck3op2mO8mraXd5Z400e |
+        name that need to be deleted
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | username |
+        | Type | String |
+        | Location | path |
+                        
+
 * Request Location : body
 
 
@@ -336,12 +444,20 @@ This can only be done by the logged in user.
 This can only be done by the logged in user.
 
 * Request Location : path
-> | Name | Type | Required | 
-> | :--: | :--: | :------: | 
-> | username | string | true |
+    | Name | Type | Required | 
+    | :--: | :--: | :------: | 
+    | username | string | true |
 
     * Request Parameter username
-    | username | string |  -  | 1 | kryLwOGH5oXEe76yQdVkeUf4gcd5vXKQoiBU7hCcGARVHYtxcoSri7vzkIEPFoG4HhZPzB2fbTbTSEq42ivlq0UKJyAoXgtFxsu73wnfqy8icznfRTAiUu3D3D21TvHrXbz1IWg9vpsHYQWQJx8D1ch5Pj6JONbMZKOIH5RcukUsaRjUosxqEPvt8CdXpoKp9y7QDZ38kXBuPUodmWD1L9vULIRb7BAgaI7OHaX28ywXtV |
+        The name that needs to be deleted
+
+    | Attribute | Value |
+    | :-------: | :---: |
+        | Name | username |
+        | Type | String |
+        | Location | path |
+                        
+
 
 
   

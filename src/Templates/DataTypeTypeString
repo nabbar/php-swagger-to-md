@@ -1,1 +1,31 @@
-| {{ name}} | {{ format ?? type }} | {{ minimum }} - {{ maximum }} | {{ required }} | {{ model }} |
+    {{ description }}
+
+    | Attribute | Value |
+    | :-------: | :---: |
+    {% if name is not null %}
+    | Name | {{ name }} |
+    {% endif %}
+    | Type | String{% if format is not null %}, formatted as : {{ format }}{% endif %} |
+    {% if in is not null %}
+    | Location | {{ in }} |
+    {% endif %}
+    {% if minLength > 0 and maxLength > 0 %}
+    | String Length | between {{ minLength }} and {{ maxLength }} chars (included) |
+    {% elseif minLength > 0 %}
+    | String Length | at least {{ minLength }} chars |
+    {% elseif maxItems > 0 %}
+    | String Length | no more than {{ maxLength }} chars |
+    {% endif %}
+    {% if pattern is not null %}
+    | Regex Validation form | {{ pattern }} |
+    {% endif %}
+    {% if enum is not null %}
+    | Validation Enumeration | [ {{ enum|join(', ') }} ] |
+    {% endif %}
+    {% if default is not null %}
+    | Default value | {{ default }} |
+    {% endif %}
+    {% if example is not null %}
+    | Example value | {{ example }} |
+    {% endif %}
+
