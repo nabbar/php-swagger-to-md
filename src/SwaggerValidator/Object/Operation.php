@@ -188,7 +188,7 @@ class Operation extends \SwaggerValidator\Object\Operation
             }
 
             if (!empty($queryString)) {
-                $queryString = '?' . http_build_query($queryString, null, null, PHP_QUERY_RFC3986);
+                $queryString = '?' . preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', http_build_query($queryString, null, '&', PHP_QUERY_RFC3986));
             }
             else {
                 $queryString = null;
