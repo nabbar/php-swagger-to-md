@@ -3,7 +3,7 @@
 {% else %}
 # API Documentation
 {% endif %}
->>>
+
 {% if version|length > 0 %}
 * Version : {{ version }}
 {% endif %}
@@ -27,4 +27,4 @@
 {% if externalDocs|length > 0 %}
 * Addition note : {{ externalDocs }}
 {% endif %}
->>>
+

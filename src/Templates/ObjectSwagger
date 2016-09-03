@@ -3,7 +3,6 @@
 ---
 
 ### Global Definition
->>>
 | Attribute | Value |
 | :-------: | :---: |
 | Schemes | {{ schemes|join(', ') }} |
@@ -12,7 +11,7 @@
 | API Base Url | {% for scheme in schemes %}{{ scheme }}://{{ host }}{{ basePath }} {% endfor  %}|
 | Content-Type Accepted | {{ consumes|join(', ') }} |
 | Content-Type Return | {{ produces|join(', ') }} |
->>>
+
 ---
 
 ## Summary 
