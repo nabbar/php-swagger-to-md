@@ -12,6 +12,7 @@
 {% endif %}
 
     * Example of request :
+
 {{ Request }}
 
 {% if responses is not null and responses.count > 0 %}
@@ -26,6 +27,7 @@
 {% for item in status.items %}{% if item.render is not null %}{{ item.render }}{% endif %}{% endfor %}
 
         * Example of response :
+
 {{ status.Response }}
 
 {% endif %}
