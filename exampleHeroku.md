@@ -38,7 +38,7 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-| limit | query | integer |  no | at least 11 and no more than 10000 |  |  |  | 11 |  | number of pets to return |
+| limit | query | integer |  no | >=  11 and <=  10000 |  |  |  | 11 |  | number of pets to return |
 
 * Example of request :
 ```json
@@ -59,10 +59,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 254
+Content-Length: 68
 {
-    "name": "les ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe",
-    "birthday": 1982566616
+    "name": " eu facilisis nec, tem",
+    "birthday": 1017158918
 }
 ```
 
@@ -80,10 +80,10 @@ Content-Length: 254
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 180
+Content-Length: 253
 {
-    "name": "nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulpu",
-    "birthday": 1288000186
+    "name": "t dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis od",
+    "birthday": 544835671
 }
 ```
 
@@ -100,7 +100,7 @@ Content-Length: 180
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/que+vulputate+sapien+at+turpis+molestie+congue.+N 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/amet+vestibulum+quam.+Morbi+tincidunt+pretium+sodales.+Etiam+dignissim+risus+non+felis+scelerisque+aliquet.+Phasellus+faucibus+urna+arcu%2C+et+dignissim+augue+in 
 ```
 
 
