@@ -48,24 +48,24 @@ For this sample, you can use the api key `special-key` to test the authorization
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/pets 
 Content-Type: application/json
-Content-Length: 795
+Content-Length: 754
 {
-    "id": -6846052357994708992,
+    "id": -110914223294382080,
     "category": {
-        "id": -3041098400486391808,
-        "name": " tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspe"
+        "id": -4377739347382763520,
+        "name": "arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tin"
     },
     "name": "doggie",
     "photoUrls": [
-        "iam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdi"
+        "metus in eros. Mauris sollicitudin varius purus, nec condimentum tellus s"
     ],
     "tags": [
         {
-            "id": 1491983669110243328,
-            "name": "ulvinar vel metus et, molestie pretium tortor. Praesent"
+            "id": 6747460563376275456,
+            "name": "on lectus eu nu"
         }
     ],
-    "status": "inar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor f"
+    "status": "elit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec conse"
 }
 ```
 
@@ -83,24 +83,24 @@ Content-Length: 795
 ```json
 HTTP 1.1 put http://petstore.swagger.io/v2/pets 
 Content-Type: application/json
-Content-Length: 918
+Content-Length: 1195
 {
-    "id": 4219598737443389440,
+    "id": 4851887403100536832,
     "category": {
-        "id": 7978491601653596160,
-        "name": "tum tellus sagittis at. Nullam vel metus ac quam gravida pellentesqu"
+        "id": 2697142155108941824,
+        "name": "stie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa "
     },
     "name": "doggie",
     "photoUrls": [
-        "s velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis moles"
+        "sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamco"
     ],
     "tags": [
         {
-            "id": -1571295995487059968,
-            "name": "a. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In"
+            "id": -51013104691052544,
+            "name": "Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada f"
         }
     ],
-    "status": "e vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvi"
+    "status": "r, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orc"
 }
 ```
 
@@ -149,7 +149,7 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/pets/2708570633586868224 
+HTTP 1.1 get http://petstore.swagger.io/v2/pets/8645668299541053440 
 ```
 
 
@@ -166,17 +166,17 @@ HTTP 1.1 get http://petstore.swagger.io/v2/pets/2708570633586868224
 
 * Example of request :
 ```json
-HTTP 1.1 post http://petstore.swagger.io/v2/pets/velit+dignissim%2C+tincidunt+justo+quis%2C+iaculis+odio.+Mauris+volutpat+dignissim+mi+eget+lacinia.+In+nisi+odio%2C+porta+ut+quam+non%2C+imperdiet+varius+orci.+Donec+consectetur+sed+ante+sit+amet+sagittis.+In+non+lectus+eu+nunc+interdum+laoreet+a+ut+dui.+Sed+eu+ 
-Content-Type: multipart/form-data, boundary=57cad51a7813e
-Content-Length: 571
---57cad51a7813e
+HTTP 1.1 post http://petstore.swagger.io/v2/pets/facilisis+sapien+finibus+at.+Nullam+finibus+urna+vel+auctor+fringilla.+Mauris+eu+tortor+blandit%2C+bibendum+tort 
+Content-Type: multipart/form-data, boundary=57cad63598793
+Content-Length: 412
+--57cad63598793
 content-disposition: form-data; name="name"
 
- non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi
---57cad51a7813e
+nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus fau
+--57cad63598793
 content-disposition: form-data; name="status"
 
- Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque 
+Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed l
 ```
 
 
@@ -192,8 +192,8 @@ content-disposition: form-data; name="status"
 
 * Example of request :
 ```json
-HTTP 1.1 delete http://petstore.swagger.io/v2/pets/-2992050539686002688 
-api_key: osuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue
+HTTP 1.1 delete http://petstore.swagger.io/v2/pets/5213332398825013248 
+api_key: nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc
 ```
 
 
@@ -212,13 +212,13 @@ api_key: osuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. 
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/stores/order 
 Content-Type: 
-Content-Length: 258
+Content-Length: 189
 {
-    "id": 1513771449792331776,
-    "petId": 6777025490449334272,
-    "quantity": 753993176,
-    "shipDate": "2016-09-03T13:50:18+00:00",
-    "status": "rius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, ",
+    "id": -9219525687482777600,
+    "petId": -6296745050361561088,
+    "quantity": 2111659062,
+    "shipDate": "2016-09-03T13:55:01+00:00",
+    "status": "ue elit li",
     "complete": 1
 }
 ```
@@ -236,7 +236,7 @@ For valid response try integer IDs with value <= 5 or > 10. Other values will ge
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/stores/order/us+vel+elit.+Sed+efficitur%2C+mi+sit+amet+fermentum+ultricies%2C+felis+felis+aliquam+enim%2C+id+feugiat+magna+elit+in+sapien.+Sed+malesuada%2C+velit+eu+dapibus+vehicula%2C+sem+tortor+accumsan+nibh%2C+sed+pellen 
+HTTP 1.1 get http://petstore.swagger.io/v2/stores/order/ere+sed+varius+sodales%2C+sagittis+sed+ex.+Vivamus+id+vulputate+odio.+Donec+quis+facilisis+arcu%2C+vel+ultrices+augue.+Suspendisse+potenti.+Mauris+vehicula+ex+lorem%2C+ut+ornare+puru 
 ```
 
 
@@ -251,7 +251,7 @@ For valid response try integer IDs with value < 1000. Anything above 1000 or non
 
 * Example of request :
 ```json
-HTTP 1.1 delete http://petstore.swagger.io/v2/stores/order/+ac+ipsum.+Ut+molestie+aliquet+est%2C+posuere+tincidunt+elit.+Etiam+convallis+eu+ligula+non+consequat.+Pellentesque+elit+libero%2C+faucibus+luctus+ante+nec%2C+volutpat+dictum+neque.+Donec+molestie%2C+eros+in+pretium+pulvinar%2C+est+leo+vehicula+lectus%2C+a+cursus+neq 
+HTTP 1.1 delete http://petstore.swagger.io/v2/stores/order/stie.+Aenean+quam+nisi%2C+posuere+sed+varius+sodales%2C+sagittis+sed+ex.+Vivamus+id+vulputate+odio.+Donec+quis+facilisis+arcu%2C+vel+ultrices+a 
 ```
 
 
@@ -270,16 +270,16 @@ This can only be done by the logged in user.
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/users 
 Content-Type: 
-Content-Length: 864
+Content-Length: 926
 {
-    "id": 9051320968441495552,
-    "username": " facilisis nec, tempus ac ipsum. Ut molestie aliquet ",
-    "firstName": "rbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tri",
-    "lastName": " imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie.",
-    "email": "tur pulvinar m",
-    "password": "issim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, eges",
-    "phone": "turpis, lacinia id tempor sed, dapibus ",
-    "userStatus": -1789897719
+    "id": -8560287016871264256,
+    "username": "dales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas",
+    "firstName": " vehicula ex lorem, ut ornare purus",
+    "lastName": " ipsum dolor sit amet, con",
+    "email": "les ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat",
+    "password": "udin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringill",
+    "phone": " tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Do",
+    "userStatus": 914429898
 }
 ```
 
@@ -298,17 +298,17 @@ Content-Length: 864
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/users/createWithArray 
 Content-Type: 
-Content-Length: 878
+Content-Length: 1044
 [
     {
-        "id": -8210109816308236288,
-        "username": "amet, co",
-        "firstName": " interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper f",
-        "lastName": " pretium sodales. Etiam dignissim risus non felis scel",
-        "email": "dolor sit amet, consectetur adipiscing elit. Integer ipsum sapien, bibe",
-        "password": " non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dig",
-        "phone": "nte nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque",
-        "userStatus": -38991002
+        "id": 5975361439399936000,
+        "username": "orem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius loborti",
+        "firstName": "metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet",
+        "lastName": "lestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobo",
+        "email": "cies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pel",
+        "password": " tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellente",
+        "phone": "et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula qu",
+        "userStatus": 421099732
     }
 ]
 ```
@@ -328,17 +328,17 @@ Content-Length: 878
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/users/createWithList 
 Content-Type: 
-Content-Length: 951
+Content-Length: 922
 [
     {
-        "id": 4258315544039522304,
-        "username": "n consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, f",
-        "firstName": "eq",
-        "lastName": "putate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultr",
-        "email": "m sed. Vestibulum eget luctus metus, ",
-        "password": " elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris sollicitudin varius purus, nec condimentum tellus sagi",
-        "phone": "ibh, sed pellentesque enim metus in eros. Mauris sollicitudin varius purus, nec condimentum tellus sagittis at. Nullam vel metus ac quam gravid",
-        "userStatus": -899440292
+        "id": 6669096441224364032,
+        "username": " sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris",
+        "firstName": "ci, gravida ornare nibh sollicitudin et. Curabitur pu",
+        "lastName": "tor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesu",
+        "email": "nsectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id",
+        "password": "s nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pr",
+        "phone": " vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non fel",
+        "userStatus": -262989317
     }
 ]
 ```
@@ -357,7 +357,7 @@ Content-Length: 951
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/users/login?username=s%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisq&password=Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidun 
+HTTP 1.1 get http://petstore.swagger.io/v2/users/login?username=%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20orn&password=is%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pellentesque.%20Nullam%20ultricies%20turpis%20nec%20dignissim%20aliquam.%20Nunc%20sed%20 
 ```
 
 
@@ -384,7 +384,7 @@ HTTP 1.1 get http://petstore.swagger.io/v2/users/logout
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/users/+vulputate+odio.+Donec+quis+facilisis+arcu%2C+vel+ultrices+augue.+Suspendisse+potenti.+Mauris+vehicula+ex+lorem%2C+ut+ornare+purus+ultrices+nec.+Vestibulum+elementum+felis+sit+amet+ipsum+euismod+u 
+HTTP 1.1 get http://petstore.swagger.io/v2/users/+quam.+Morbi+tincidunt+pretium+sodales.+Etiam+dignissim+risus+non+felis+scelerisque+aliquet.+Phasellus+faucibus+urna+arcu%2C+et+dignissim+augue+interdum+sed.+Vestibulum+eget+luctus+metus%2C+eu+bibendum+orci.+Sed+eros+m 
 ```
 
 
@@ -400,18 +400,18 @@ This can only be done by the logged in user.
 
 * Example of request :
 ```json
-HTTP 1.1 put http://petstore.swagger.io/v2/users/molestie+pretium+tortor.+Praesent+interdum+fringilla+orci%2C+gravida+ornare+nibh+sollicitudin+et.+Curabitur+pulvinar+metus+massa%2C+malesuada+facilisis+sapien+finibus+at.+Nullam+finibu 
+HTTP 1.1 put http://petstore.swagger.io/v2/users/+enim.+Sed+leo+ex%2C+pulvinar+vel+metus+et%2C+molestie+pretium+tortor.+Praesent+interdum+fringilla+orci%2C+gravida+ornare+nibh+sollicitudin+et.+Curabitur+pulvinar+ 
 Content-Type: 
-Content-Length: 797
+Content-Length: 1033
 {
-    "id": 642251808667860992,
-    "username": "interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar m",
-    "firstName": "n id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis fac",
-    "lastName": "tur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu da",
-    "email": "dales. Etiam digni",
-    "password": "es ac commodo qu",
-    "phone": "nissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis",
-    "userStatus": -1092718306
+    "id": -440814114453848064,
+    "username": "semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis ",
+    "firstName": "consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ul",
+    "lastName": "lum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent inte",
+    "email": "suada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce",
+    "password": "d mollis est molestie. Aenean quam n",
+    "phone": "us id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. ",
+    "userStatus": -447168463
 }
 ```
 
@@ -427,7 +427,7 @@ This can only be done by the logged in user.
 
 * Example of request :
 ```json
-HTTP 1.1 delete http://petstore.swagger.io/v2/users/vulputate+odio.+Donec+quis+facilisis+arcu%2C+vel+ultrices+augue.+Suspendisse+potenti.+Mauris+vehicula+ex+lorem%2C+ut+ornare+purus+ultrices+nec.+Vestibulum+elementum+felis+sit+a 
+HTTP 1.1 delete http://petstore.swagger.io/v2/users/a+orci%2C+gravida+ornare+nibh+sollicitudin+et.+Curabitur+pulvinar+metus+massa%2C+males 
 ```
 
 
