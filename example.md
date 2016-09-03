@@ -42,30 +42,30 @@ For this sample, you can use the api key `special-key` to test the authorization
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-    | body | body | object |  no |  |  |  | [#/paths//pets/post/parameters/0](#testtoto) |  |  | Pet object that needs to be added to the store
+| body | body | object |  no |  |  |  | [#/paths//pets/post/parameters/0](#testtoto) |  |  | Pet object that needs to be added to the store
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/pets 
 Content-Type: application/json
-Content-Length: 597
+Content-Length: 922
 {
-    "id": 2961358175107809280,
+    "id": 3583652134039584768,
     "category": {
-        "id": 4338877774618951680,
-        "name": "S9DyIrEr3bPKl4AjNdCAdzXgPrZrdkt6u6FdxjEBvulQzWamaMWn"
+        "id": 3836558555960311808,
+        "name": "Q9J2BL4z72O6T3fY8aaiGBgCu48qpd6gnPiZAmyHpnOiq4hyfrQW27ywbHWAV3QiS8itvQbUd0dD4uckV3gXaOulwrWruNKnV2QrS2l52yJ72WrYZHW9wqv2SrtmeeKagBB9DWfGvYNyVexUVt3rUzuM0Y9fcUqsv2C8ZROuQB3LQAFL3JdYiHLjFVzR"
     },
     "name": "doggie",
     "photoUrls": [
-        "UDclCDzX6FsdkFKEkm9OH0nDaKNXGajBOwXr9wogcRtxwebRAlGil4WwOKtuVN6Jj3btAAKNrekXswO3RumdziJn3dSY0YIk2TNDtxqULKSegHi8cElLX480"
+        "Zkk1Wt0NivDUypK84vcOJa6qWp5RZXHYh10dv11NwF"
     ],
     "tags": [
         {
-            "id": -7400297748441858048,
-            "name": "iZHC1ApF4X5ZJPRX6yfeLUzwREFSWGQeFyRH8gmdercXh3VnCb"
+            "id": -3826180493339000832,
+            "name": "sd9YpXHA37wtdota5rr7sFCtHqZm84rAhAyGyghCoN5BczLi1dptS2XzsXWA1najYJ0wZh8n5eYhNKAOXZiQ1fqtcm3eKexIXyfXPnlUCkcp4Me2MwTOMjhZFldqAL8xjnv8LQ3nbgNf31iQybEkuWjahxASi"
         }
     ],
-    "status": "o5bVXQAPMgG0WeRDn80AnrMlJQg7trJSwVNtLniyEYyAcqeAzeaXGXipOyxiZgawcX0YkjwZh5AuwO552f"
+    "status": "qC7VLTMPgX53d95vZDHEYcAimSPXK8HaLP5wISlYPr22B7yBLffJrP1OIRMs0uCLjIi1BE0q52tHa2iVixEJnGy5xlyyPbk9TCaugbVmep3ormjJTYthE1mcnVKc65lZHwuYHqkVPokgKDZEBtVguisSdd4jiqj0XOYFejB4HVkszk7aN2qilTaz6fTpGdpD2nigGUloPGRo0YzO107nTiW0yQpe3OS5cbmS5HhVn8jo6Td8Tk"
 }
 ```
 
@@ -77,30 +77,30 @@ Content-Length: 597
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-    | body | body | object |  no |  |  |  | [#/paths//pets/put/parameters/0](#testtoto) |  |  | Pet object that needs to be added to the store
+| body | body | object |  no |  |  |  | [#/paths//pets/put/parameters/0](#testtoto) |  |  | Pet object that needs to be added to the store
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore.swagger.io/v2/pets 
 Content-Type: application/json
-Content-Length: 909
+Content-Length: 816
 {
-    "id": -7386568108091113472,
+    "id": -6235574472569520128,
     "category": {
-        "id": 7404323670396502016,
-        "name": "3p0Beh8ly4Qbaat4YNKH5w65GTCGnD9q2a2hsaC0fsbpCFuBsejyKpErjh8GUh7Xr9eUjQUyj6YWMsxfHQNsgrTzI2gDjoBLxPGRGAqZHoVtRtJzkw1AYVaGXrkhPV3nLJerkEr13nvVQeubLwMJrWqooKGeGJBrtPTNukPyIltyAYKluw5VtwkRh15XKHpexi11DRAlc4UM2E8xadtDJOv1PBYAinOPFQRj"
+        "id": -2691662773271658496,
+        "name": "42oo6sXZaqzisfpkhmWZLNrX68quySyCVW11oY1zoASRQic8E87qVyo2GOweG4QC1SDpQFZegR679ifOqmemVCoCrUQ7YHKZzopq3oFjgLrq3Geu3sQZ5eBw8rE79o7JNwaQVPacABCDiQ7ljYkpcVWlnAsxZAhM7rD2gNeRpRuHHC31BoqNkm9HXCfXcxJjYnmfbB6AsBiaembP"
     },
     "name": "doggie",
     "photoUrls": [
-        "rEUvzGydP6o3z1MnxNc8MNq9BfPs689yN34mKCAAIYDi0qGxeSG0G6ahm0Js9T0XX4jIHUiqTVJTlprAi7AYeLf"
+        "CC4YLMWn2TAzDTx0fMcQSMjt5tHrFwbh9ggV2cj45TDJMbK2XWTQJckOF2gkzsCIISEL5XQaRuUEFEGDAztjMO8sQ"
     ],
     "tags": [
         {
-            "id": 1423781826127724544,
-            "name": "2VT3SQ8cyQ6RhZM0T8qlIItjGH4WhQWkLPoEFxQeoX5FXRGR06cJOG2vn7rFXo0JdpoTWe7lcc094H14NdOCUQ8hXAXVYXFbm34jibEuoFEsmFxaTmNNcV5av26t0MFnPKG8WlDk1iNnXlyRHlEUhK4NMbgNXWaNGRVDczXdRLBP6aGNwlHN6MATXRGUOQIvHE8Ud584RKUX"
+            "id": 8836864579813244928,
+            "name": "Qp8zhMkmKbxBFsfk6WYGvs0hg8J6wwwnWFWeshBcs9O8B3tHZrovToN9xxg44Nr0sofUGQ69"
         }
     ],
-    "status": "BLqXte3fOWdGC8vtQ0bu86IeeN5YH2SiOjghxjxmgK3TTymKyyeHEXVSK1Rr4KKS31aBkHXBs0umyQ67olO2iKV2LNuPxfIAg"
+    "status": "VhAYKiYbHu45ieDPvHUi8VKxaFd1Mm0HEBGpUFBB9GHsUkip1cHa8sHj7VkTikBXWhmQWXr6D8yxtRXu3FFc8nvfiP9BaLy62UXZSp6vxF31w1wAGbMOyh4R7eshZ1o2Vl2OK8jiOnjkoQU41HTAZYs6d"
 }
 ```
 
@@ -149,7 +149,7 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/pets/-956550862484799488 
+HTTP 1.1 get http://petstore.swagger.io/v2/pets/-6119225324644335616 
 ```
 
 
@@ -166,17 +166,17 @@ HTTP 1.1 get http://petstore.swagger.io/v2/pets/-956550862484799488
 
 * Example of request :
 ```json
-HTTP 1.1 post http://petstore.swagger.io/v2/pets/GwnMNPQZzBvZ8QkshVBDqLlaO9VUArdgXA3KqTK0uf0C5l5nhH0HsmRhwMb6dpnb0qWrjGrOVsr1Nwo4doLGLCXhp9oDyLOycKZvqrjmUKnHhLLuaxaVa8 
-Content-Type: multipart/form-data, boundary=57cacc9b56fcf
-Content-Length: 356
---57cacc9b56fcf
+HTTP 1.1 post http://petstore.swagger.io/v2/pets/cDngjPpjBmBLm9nC5hiykC8JJY3GlmgxZDOjseC4AePXodAuvS2Quaze9CUuZb2ZPRih5VmGacDyqe2V74LBflQpYLUYWXXLOg3TcqzmCdU2sXYz2Jbi51H3NB1JzZvnfzhr 
+Content-Type: multipart/form-data, boundary=57cacce5d9032
+Content-Length: 523
+--57cacce5d9032
 content-disposition: form-data; name="name"
 
-AhBdQn2pzMp4dRozL9XsqIeVTM6OXe2xwDKn0MMzzcEM33mOdjhE2wzViGKfUMMrqwOrjB0SNFFQI1FWlXAotakLQ41LRNcik1JEDKwqpbh8dX4zUFXnPi9FnaqeYDxjFgXi0tJpF1yTYDsSiqg7IpN5AdkyRRRw8OP8
---57cacc9b56fcf
+QOC4IEwGC6Imh0rjIv6kxQTwlgLVxdUo2wtLb0rO6aanaCGS8NdFD6bZnXUVbPjdmNYxNpmUzwiK9ZDhMQWqX8qk5lfgazuxns5bSr5sYoc7nQoaGlAEt1YzmePxOj4bM9mEAs6yQjGe95oPqZuU0stmHjTvDXGp733HvagmtWAC2YssYWnYpQl6aeCNcickmg2RridUfNxh
+--57cacce5d9032
 content-disposition: form-data; name="status"
 
-yyYz7RyKkq2KHat6XyGbTf2L6zTVo2dXAcwH34snvu7cEBjB90M3fPOloHhNJvKkHh
+ZKKW7IlY4s8j4Wvn9QJqSARbOMqCjIojt9fBSBAW4If8FLwOBfetQ6EFS5hbOGvhPLSHnsDrbTARE6FfmUIc0nSTt95hQAyFmrnJU1a6ULXyRDOexxryUjrntxEj7dZtFmdzonFi9CR0fFfNcGl7ZNusk9MsnLW279BwxhOGUGH9mWXyCjFC6a5rkRUHCQKKZ
 ```
 
 
@@ -192,8 +192,8 @@ yyYz7RyKkq2KHat6XyGbTf2L6zTVo2dXAcwH34snvu7cEBjB90M3fPOloHhNJvKkHh
 
 * Example of request :
 ```json
-HTTP 1.1 delete http://petstore.swagger.io/v2/pets/1082027988440055808 
-api_key: Kmu8SYg4DRof1o24DRSZgAh3kMOEt5Gesamk9DpNuN2vc4AQWtPd36hnT51mbIBDTYX2BnP6aSCnXcdUF37Jao63t8qFQ2iK0gMCDCIOulbsxpmdstWCS3Gmc6138kN9AzLdcu2HPd9nDvB5ZyISBoeNvgQ
+HTTP 1.1 delete http://petstore.swagger.io/v2/pets/3996850394759168000 
+api_key: gwD4cxLTH7QFGsYm55
 ```
 
 
@@ -206,19 +206,19 @@ api_key: Kmu8SYg4DRof1o24DRSZgAh3kMOEt5Gesamk9DpNuN2vc4AQWtPd36hnT51mbIBDTYX2BnP
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-    | body | body | object |  no |  |  |  | [#/paths//stores/order/post/parameters/0](#testtoto) |  |  | order placed for purchasing the pet
+| body | body | object |  no |  |  |  | [#/paths//stores/order/post/parameters/0](#testtoto) |  |  | order placed for purchasing the pet
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/stores/order 
 Content-Type: 
-Content-Length: 335
+Content-Length: 392
 {
-    "id": -3008570199382163456,
-    "petId": -3277574528095485952,
-    "quantity": -1336488725,
-    "shipDate": "2016-09-03T13:14:03+00:00",
-    "status": "pLCXklwvv52fydCKFWeoCy8YNLrzuyBUkdSEzoa4tck1qXL6T0uvzDtmpVVUuwOOKHtj5EoyRIziFloylS4UvxhUtcOXJDMtkgNqVbYNTy5yUt6fmaaRIsMcEBaofWRAdF09QZWJx1hsvoHRzSJhlvtZ7Do",
+    "id": 8352614864094494720,
+    "petId": 433507215442182144,
+    "quantity": 1044274905,
+    "shipDate": "2016-09-03T13:15:17+00:00",
+    "status": "Xebv6u434MxbuFyug88mv9H2XeobJPqH3Bca5he93LlyqT2G1b2xlKziYYtINUqRvD1BUgKY15wrZz81Kby5V8oU6SDUM3LhGNTA3Dz5J6wJFFKqRiwNqUHwMkqzocQ40JF3nf87lFQ1lAscTYZjTHQG2hfqt6vtQaxepGlLlcMHNeTGdTZ7AQNC732B9x50IDe8jzTFMFmzUff89ffJ52ld",
     "complete": 0
 }
 ```
@@ -236,7 +236,7 @@ For valid response try integer IDs with value <= 5 or > 10. Other values will ge
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/stores/order/gXOVXXLWUuuVLWqaEiJx11SxvSE8g1 
+HTTP 1.1 get http://petstore.swagger.io/v2/stores/order/OfWUfFxuNQ3GvQmRph7E 
 ```
 
 
@@ -251,7 +251,7 @@ For valid response try integer IDs with value < 1000. Anything above 1000 or non
 
 * Example of request :
 ```json
-HTTP 1.1 delete http://petstore.swagger.io/v2/stores/order/wZysWwdTqHomtlND05ny6oqETji2AkM7jlzgRMaiuyEXUrBUxYsEnTihdBkNV6UfruwjgGBKffI9Hk4fjxTGqbYDNirIpmYRQua6bMRq2zAJTFZccSTC4RgRaIAz4yrU3C0foSFqsgam 
+HTTP 1.1 delete http://petstore.swagger.io/v2/stores/order/gUE0ZHldNK13HVjmsN9j 
 ```
 
 
@@ -264,22 +264,22 @@ This can only be done by the logged in user.
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-    | body | body | object |  no |  |  |  | [#/paths//users/post/parameters/0](#testtoto) |  |  | Created user object
+| body | body | object |  no |  |  |  | [#/paths//users/post/parameters/0](#testtoto) |  |  | Created user object
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/users 
 Content-Type: 
-Content-Length: 1134
+Content-Length: 958
 {
-    "id": -2476801154479030272,
-    "username": "IYYH0taMAzFAuFQ8mRJRQXQZM4HLa2nS1mA1PLOpkt0P8QXvHHmyEdxqhfcsizlkVWmLHab1DbRM2PhJwEiaRQB95NBonXIjT44AegCSsuEujWePAw0smBBrpdPMby64CaFRriJTMon5kCVV8WnuyZWXcMKokQsX18PtqyndXLjhnfcvbA0JzXHMJ",
-    "firstName": "a4jD2lLROcqbqnWJEkYRParQT0NBNx3XBnAEImvwyWIYjFIYZGQPRiFLjsm6Zq3BNDgw0M3yIL",
-    "lastName": "2rf0qWRfN9UysnVynlCY9ffFg1IOJumLVCMlzEBnNwWgTROgdqfnGu3WwLLfg81bKOxks8HgFDwyvlP",
-    "email": "L56sA9p6Ubmajnm4cToE25UHIrgeM5Wyb20LbqR6BehVBEZNxnsAtnhcOyqADn8Pq9ACAsIcG07iE66cuyMYV4aJCBkgYs5oCF1c8JoPKw7oDdA8Mn6Hrhr4SLkRepgQ5h3d1s2LYaaBoLJa8QRA7jE04YSio89tqcHsEKeDUofjaYtjPlTWEyXIxP1VYaopm6R1Q5ELuU4ETxXITRExpCgWriRqsgPPmHQcNvYhp2WiAT1tK",
-    "password": "1aih6KzYa2f0RBIIOveNNDPJWpDXSoDTyWbFGLEROTSFvBnk7B7UfXEcmiafGO9fKlVq7ziVtbAZMYjTzrOPos1LLc1s0aHKwDbDcuyGF8Fr7ZkHr8wQByBnKDPKNwvj9GXmav3QE",
-    "phone": "hLICs9LY0nxCKhfz226xmgejCpPGftpxe79HhVGhidU3v9CxcI5zZjSCIIiXbHuqPE76zOoS2jVxsy5Ehadgt6ScOaa0REqGjyNTmcLpvHWYf2CwcQMGXESLP2MHHco1LbU8oGxUntSDwv9ImWpjBh5qkR723v3PHYX6Eu01YTFuoOdKLC4mU9Me0Uh4pkU7iRdXldZk7EOvs1gdEkAyunNvh4AHpuOIl2FHgE1niQTLS9Zwu",
-    "userStatus": 36248445
+    "id": -7425741237782577152,
+    "username": "MakvXThwoRKPceuBpyHOpMotDq1Tu2Jhd3MbW3HlVrb7GFI6dpUDcj7PJ8JdasuovhzslgOgIZnoF5vTupwHIDwsMfFWHaldsUGNav3TvqhawN31dAIVdeoZu3WcehqGc6tnBwg6XyhtlkuyUdu8rS8WW58anyRzFlWhScnPKEj6ZOEU182s0bpXgx7D6ZdMk93cmr176le59S0a13D2e2ZvA79H6muqwxCTYE150fb97bk9eXbt0aY",
+    "firstName": "h7iouMO0krTj6Vo6aAghLAr0xCtyNs95Ast4fi4zKYTRTiY4SemDONEmp8VcA4haxLeM3jmOifFcxDhqRD3GqI3QQY2r2kBz5Qm9aIXtYDGwgXW8A0O1JRRzPU0SeCsktOuExs8w5O2mMZunZjoIafi0ajTpWlKqae4HHddM2g8OfDbfWAY7Qh70A0pwm9Wwo1d5frShH05XEhcARbHHsPH3P7zcgwIEyWKNnC45Ca2",
+    "lastName": "sfRjrz1ToIWePw",
+    "email": "638LC4vps7uxKFA17QSqhrrbQa840Eu6ICSkHnJaueIeTjf098rrATCq3Lu4pZb8C3skqcuU",
+    "password": "c9kvplFyN68GJzKu4OU3Z2",
+    "phone": "3v0tHuo8HxtcXPRvCYDjHd3ciS6lS91VE2omwMvdkYqhOiNqgrJYENaWFhixqks5mRrTEX7YWxgKP3a6uU49Hf6mwoUXIm25duYSr5QnD77tbizGdEQUTWhpkbm3xp8LT7DlduJQCRjO9SumwkhqhyPBJcEhCN3vVHR8cAYOriCBa7YHsf7JOXlya0PM",
+    "userStatus": -1241513595
 }
 ```
 
@@ -292,23 +292,23 @@ Content-Length: 1134
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-    | body | body | array |  no |  |  |  | [#/paths//users/createWithArray/post/parameters/0/schema](#testtoto) |  |  | List of user object
+| body | body | array |  no |  |  |  | [#/paths//users/createWithArray/post/parameters/0/schema](#testtoto) |  |  | List of user object
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/users/createWithArray 
 Content-Type: 
-Content-Length: 828
+Content-Length: 856
 [
     {
-        "id": -4929742386944278528,
-        "username": "s9yoHwAOAYJa9H0n7GmcFAwMFn30BJY3SxrA42pE09OaQPxXvUaavGWa40aFJ9JCHbcLdCpeLeoB3WzyQKJmqFwuGHapRT1y4ejiQJwBXUd0QNyHxh3XXAsDhC39w4IBi1T9KpLHkYHaMgSjyVhvwK9O",
-        "firstName": "dXThFvAHoJsOv98uRig",
-        "lastName": "bzG6Rb",
-        "email": "BlqZyoSQ4nrLMbdAGnIae1qmc02jSeWtAns9Ll0QJrBwDP6jdPusRUP4VSnN6khHHKRt6RjPjVlWLsgYiKq9FfdA7BoeVGWCqN6wFpmYlIV6bb4tVvDBLRcSsA7oh31HR7ewxBvSjrYuD3YzzBaksmdVXkjeokWgrbNYMiQ6KPBnTzWsb6MEtZzqkSEJdAZFLMDy5uEPkfddP9G0gsFJse9N7OwkovZaiDJn8ndsDqGs",
-        "password": "mtQP8zinI5uwCPV8P6qtPOBd14QsKj27NSXWrfjalOGXDC6tJxWylyLnCCPnVRuIJsEaHYk3M11qE7UnEQWZoHn1kcof4TYNlDY3Bj6ol7PZeJnTAjSZ1g1lspAwjzkEcjHOCOdYV2YaMl3nEWmGcn1FNCc6bxLoQtdthqsdtqogLsDqo06Bo8h",
-        "phone": "KuiW23lSw",
-        "userStatus": -586453748
+        "id": 1879333841684922368,
+        "username": "4neuwrELQRmcb6E1Lc9fWtQroLH60In55BAB3enU6K6iQLjBXsRUVHljt3qtLNzRp9ttnQntAuMrf53dyU7uCtN5xezj18aqhEUEvh86LUx10Aeyvm37",
+        "firstName": "Rdo5MH6USxbwrQ1JZ8uUFwVgKuM7xTYo7mtT3ANV7ZszQuiQCNKhjFy49kcHea5lwzeA92wh2YQSs9I5Xtng9Vligx0vI5QfE5PO8l5ajW3M5LR3fejoaFHqdHWVMMbrS0f0llbFhesn0kqfy",
+        "lastName": "EJqlaD26zPSKgLLwM7SYMacfxdzYt8J7R9s1Nv",
+        "email": "nk08BMT7y1ZwNaJ3HWCGqKqxBz0CnvKLPLTqxNy6OyCCImFqji6J2whD6hguM1fCM93kXBqM92pSo5iInprpWI320kxNmNp8WtsU4SHeV66k",
+        "password": "p2zOtZKc3Ncnk0K7qS4TlZXeGc9MiuYHwyw0xgdA3qYoqIwQBAJWzHbfTl2cP0Ulyqm6GzHKZF9poFfZfZWPG85zt7Li8FEH60NNAuxzaGZymfyBfvrVDwv6DgpMW3t34gQELoeW4evqu32JztEd09kDqJpnNTqRagwVELRJZmauqdd0HSdH1xlshLQ4EgVOxrKcdCWcY6GpkUp1MDJOa4",
+        "phone": "rQ6wvnrkUT476",
+        "userStatus": -881356865
     }
 ]
 ```
@@ -322,23 +322,23 @@ Content-Length: 828
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-    | body | body | array |  no |  |  |  | [#/paths//users/createWithList/post/parameters/0/schema](#testtoto) |  |  | List of user object
+| body | body | array |  no |  |  |  | [#/paths//users/createWithList/post/parameters/0/schema](#testtoto) |  |  | List of user object
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/users/createWithList 
 Content-Type: 
-Content-Length: 1067
+Content-Length: 1008
 [
     {
-        "id": 1753159505098571776,
-        "username": "jmeqzAZISX53s1T8hqZMS5ON3jTrHQT1c8rLJruCpAFRCz0T0ZFS4uG8NzAupuwCCYompTYOtDG5dGYdGE6K8MSWmtqMXXozVMVkFT98xPeKwcYcQ4WZRPVdim0gjoPeaLzQFJZdydX4qWgh1dgS3c6my6CRus6FdGvTpv6YI4280jp1xGUBS0Xq7AiC2phg5N9vift1jwakPzlnggY8gWzowS0yiiPo6YT",
-        "firstName": "emqySASIae5qu4zL189x196jsVHyTAX7XnFPYyx8MDyhI73JgcgimmBOijnbUkjRIZGGyeOlRnCzvFiLSz4fWF3eZqqTLKKtKr9iFYDxlg7QWqCOZG3Wm7alyBfkl0N5rXo7V1EhiL8ebK3br77Nei9NTo7foVlQTJYPLC63oeiAZl",
-        "lastName": "qsTeHcnv5MDlbyG1spZhbCne1CxBCSn2lhh3tEzzqcUBLADd0CucfSqgvYR7Rfacwrg06Qzx2t8O4L25oxhEqIUVGM",
-        "email": "x1eKyG1yMR7jUBsIFeLKDi2hIKcEqYHX0WIzCJ7pAfJuQbdwqYh3hj",
-        "password": "Z3xDuvlswia5UTckus3ZjfcPGb6Jtq5suC6Y8srEKBKFuXZZp3YIjay0mEJP5PiArpzzR0eCBYh6Wh5ll34EeCEBhormdJWF9wf0wuC8sUfpblKwpObEqQfHeG4sq18AxnA3Rdck7rJjMuPbi1PJR5q6MvydwHN34o7WCjgKK03",
-        "phone": "uTJNUzwMEXSrsrEZ8s2cQ98ttpdeqhMUavH55eRJcJbFaPEiiGv8QEBk4Pyu6kpgQ7mVldFxXQc8GRrYxW7oBJIGyhaEBzVrHin2v2AtSNByE2xcYEBAnkgWBrAd1wFIO2",
-        "userStatus": 570574401
+        "id": 8397382068429914112,
+        "username": "ZPXP0wQIxGtomQ0Gs9RHDCLefOuUA2yzRwpS3fAAV4YhVZYo9P5MrR0GFuAfw9PoFegIuRjpVhHQhFfqukdW",
+        "firstName": "dDQId6fnVE39UMEM53InLzErO5W8iSkwvbeJhu6c8am2W0P24ypP74hWad4t5pZBAekRIr4QBrTyrIAwgZlo4DkeQpHWOHxpVRhDiluUMnse63Kn36M7J6mzw4vlL2KHU1ldnP7adApjD9HGgtOZzaz6e5r08cH2e2gBSnM5XboBl6iCz6B9hbfwhGwpSes6hII96ve4GDF2JYEj4gsmsH",
+        "lastName": "Jnp9gECnVl54sAjwhXckHaY0efsBI9trxTBOxebszhx1SRy9OKuvUsw9IYKq8eSG7uvEIG7iYEkQvS0kCuQxXmGFkr6tFYaM",
+        "email": "FqbmxtkcNaIGa2jETQCfxhAYo3DnepPTQ1fouzAiKjYUmhzf8buFt4DR8hfmG4gw5vUA5vTPPRKb9kqivVXZ0BR8S6vzbL6hh0SmwLblCWxMgY5MU2MUED3xKy6VkcdBd5XKQ96t5EgmCl8woUr3yuAi2HenUrY8xWSn5ZRbD7yftGMRB",
+        "password": "U9IvsLcG8786fF27387VkK2S0vzNna0hjIMLtZsC6AIlgLtkUAffkh7lNG8aR8sbRfXlepXl0GGhsaBmKQB58JqWqy7hHAtyPqU4QSpRy580fKn0A",
+        "phone": "5JIvG83NqKnTjdjeha6G1FM9F2T22u18eJDUSHIis6bMjv0BF7iGM4Qr7JuaewisgWm8D5r6bDSv9T7O0pvMuleB5JLjg3Lw08FDe",
+        "userStatus": -2038518445
     }
 ]
 ```
@@ -357,7 +357,7 @@ Content-Length: 1067
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/users/login?username=mNX&password=ovOq31pHD05Xg1zICMJ8ssXudhzz4wJt2xU5zkNckS9BTIjvv3EXvBsIT1hYy0rBymG7Guj0mtBgcUMHYrEt26bV8tTGtlh2HY9nstoPXZ69UTRSkwlmCxiL0csuyJwfIGDba11717hV08OkEaHhHZ3HcvcKfI0XoE8yG9GHhXDh6sCLCj2kj61wBdhQWhOkWWTC6zjowXGDpio2CrmW 
+HTTP 1.1 get http://petstore.swagger.io/v2/users/login?username=KDVTw2IxrekWzzxFjjYznK6nTM07TLxDosxVvgsXuNT4mqJFKIf7tlum7ut0g1EEtczZs1WWOP0bgKQ0s57VrBiy6MzmNd1hpAgRCcOr2OCiztj1yrX02fy927w&password=lx7L7nDJAraCgNVPgeRPGOPI4oS7woWRV3D3rgN1HXDYLzN1OFQuuGcy45FAtCspG5t7lg83eM1ZlP09uRDYxQxBVdcpQ 
 ```
 
 
@@ -384,7 +384,7 @@ HTTP 1.1 get http://petstore.swagger.io/v2/users/logout
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/users/ot8CKYy1MTXJMAQmUeSRVwhdUjQlFNS4g0G0Ze2M70wUAmguB9mwFDKAXBVDoOHFOnFOCIAKI7EiuVN55aCKOnkLYgpn462TuHH6qiR8pwrTreZwoChdZCYXSnkXumQZ4y6uRXDht4bVjbsINKVMmTJfh4dMq3LvCR0uPDLjHXe08HJVrEINyr3PwgCWknsWfsr56doNaCOjkxfLcXyKpCzVScScAk9PNBVTOjHY 
+HTTP 1.1 get http://petstore.swagger.io/v2/users/PwJiD4zM8Ny9MUZN3uEHtby1NueZU5DJBn2fsB2AoBKbvJYzeChHOPJCjYCd3gXEDZU5BWF0xpc39aCoNT6C 
 ```
 
 
@@ -396,22 +396,22 @@ This can only be done by the logged in user.
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
 | username | path | string |  no |  |  |  |  |  |  | name that need to be deleted
-    | body | body | object |  no |  |  |  | [#/paths//users/{username}/put/parameters/1](#testtoto) |  |  | Updated user object
+| body | body | object |  no |  |  |  | [#/paths//users/{username}/put/parameters/1](#testtoto) |  |  | Updated user object
 
 * Example of request :
 ```json
-HTTP 1.1 put http://petstore.swagger.io/v2/users/wig4x1guA0TcAO5MGim1scO37HRroQnV8DZFEfaff3rQSxCyPZAhcokj6cLv28qbLpQqE1FU47KXEnwum6Lzu6TAiE5lMvwxVnYAoDutLfqqDWU02GzxNs756drSJYqEmoeK2JeOZFeCB8CEPbbCDjIKw9Dg83Uus9fvStjR8ytKH6owhA9VTRFq1jG9mADPJTlCnFuwdYgU4FrlfAh8sXytgeDDPhtzaOcxtG3HEkCIZ44eFmn7jWAzbec0 
+HTTP 1.1 put http://petstore.swagger.io/v2/users/Pe2NQfQ6dvJdqPOmuPUU1X4czsZtyBcoQfbGu2MHywVYlJlQzfLBcQNMiNgRptffIrVduIV2fQ1BAmr9BdKO3yAmmRdLkt12VXfqFasV0uwAQYKsbvgf4RBqIPc2jd5ealEQv7LwBh7sgSUrnbHr3iSL74OrhUFsfkiKs3h4lpwChr4FDL7G3Zsb4gClaiOqD6a5asawRH898cOMXVs1UUcYbPkm88MLfXRqq1WiI5rRifDfa 
 Content-Type: 
-Content-Length: 880
+Content-Length: 1098
 {
-    "id": -4109455585332690944,
-    "username": "AGhJgOYIXqIO3075e075umHYhSlE9zuKgLtwAsexSWmWXt1ct9hYwZXNRis1SWL8IfEiHSPAPbwNFyZ9Hh7dg518nuafrVn9a2rRVhsKtYy8wxhePps6uueSYo8qkwzvy0ntiPeLNMUkjcz9B2f6wtZvS7VdDuIcv5FOUTzIFt3ZFC9hEoobSoGKvCX97GlDL1rF",
-    "firstName": "1nAvqAa3JsI7RT0fALLdJUkpgYahpPbrdMWEm7H6AperieGTZr6Imq7CphTO75glRcZejGlT5zloN1hNtnwPODrdVk23qiohvn",
-    "lastName": "P4RJar4yf5Q2zeyo3cQh8bjbBCAS7YpX2hGcIKKXQB0pPzOSLE9TPt5q6FjdDIaGZQSIBDFreGQ4fE",
-    "email": "1i6U8A0yGGSUkA50AWTjxxZYLFPQVtNWMURVuRtbyl5SWaTx6MQEjPC5vrVqVJmIDdD857jDspwpzpWGcNkvDXB8pxykgV3U8G2eNmRgLnFlNC2Zpnu3l6bKDK5TF8ONPQ2DdTTZhzl4co3CLyF6ERR",
-    "password": "BWbg5Z4UQ6x40r4h1pmeNqRzYwGDnxVYu7fz7juYp22pu6Hww3KjtBTs8z5w70uB8Jbf3FdsHgSbmzHSCsc646ycFDINEdpMXA20fftXvl9SURLxjYDn4",
-    "phone": "AKPixuwWhtxjtMzXK5iTXdLIK4HnsLz3wpl3TS0alxuPk3M485Y5iJO2Ovqh",
-    "userStatus": -1719366756
+    "id": 1181989718712123392,
+    "username": "m5DSgeTZ740BeUzCcsDft6xv26e3NSFaXi2exWdE0egf9PRlivBLC8gEeuH2nnckFezcbNRc17raWiwfN70pgh4vMMx99JuPY329QTlS0N2X6zcTGcjXuosgbZplITaGWcPM5",
+    "firstName": "F6ZI35hgZYtjVXIndTmCe4vpLsBBfHNUNMCRRT7RSAaNxSbKMxm0CSqok2ZAJMuxy6oq0wiS6tGEmRo8oL91DzpYBoylb3SK9hbaNt2UWIyizWqYIA0m9qkLPT60WYK6fVg3ojXl2vDCs4BaEBwO1RzQKFRHEBOUx5XWpVhrqV3S0E2Fgztiq39aI0SmCGg9Me6b9oCzkGsklv0B4tTux2",
+    "lastName": "f3xCFeSP07WcgkOQEvjZQOZrTtlo0o3grBS7PLXQTT29eR0TmjSc8SE2mZqnotEQ4wYUiVKbPNl3ElW0FPdOIRQ5RhtfK76PE4JW0u8QitUWPRXvGajp1auSrX8c4f1IkLFkgNayh5v7WsCCCW2D6wwyuFKzUMiexYzOLKn3PSaLkMoWJrAPX6nsM71HUkVsivg4fD75viRQ5fMOHmEEt17g99X3tSvLoMQDpYJVgAMmQy",
+    "email": "xVOcpQjFZtC3XvzITlzxLxhHNRt9I2kfY9rnZL3ZfF3cbCV4YuCJ1TrPKUZsXjIVtajtWmtb1woc9jh7OTRPNjFyeE1bYJ7rUqVQMo2OVq04Jicyc4nZn2xBHyMFiU7ck326r4UmvVrfdENpIbp5eWHVvuBNoJZIM2Pe7JBCE2RSHFipQHv4Dc09HBW5lWO8ZDm6mXI10AUHfc76TCaxP",
+    "password": "GwMDC7zq",
+    "phone": "z4BFqzosAYmheypks2vZRFForj1zTsOswq7W0vpAuLSJkh4MkzLbfrAHLBgE356AwexwKW7fI0Y2i3PCCBOR3ozO0Ps4VzEsNbYy76NQ6MTpPI1rjPj",
+    "userStatus": 957458265
 }
 ```
 
@@ -427,7 +427,7 @@ This can only be done by the logged in user.
 
 * Example of request :
 ```json
-HTTP 1.1 delete http://petstore.swagger.io/v2/users/NpGRiyStTpXJK0wP8BOeTx3WmzmDQmYDMEu4cmx6MuPxvlmEXbSQJWM5v9JlwHYiltnx 
+HTTP 1.1 delete http://petstore.swagger.io/v2/users/beIDjEdX6185zgbn6i9ZHYIJq2yKpMDA1mdk0ri7sqc1HooOHyOpww8XyHHXukxvHLQHc8PEz1Ggq547DSxapF7YmPVQatmR 
 ```
 
 
