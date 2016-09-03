@@ -154,7 +154,7 @@ Get basic information about a user.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/-5.823139E-191 
+HTTP 1.1 get https://api.instagram.com/v1/users/6.000969E%2B244 
 ```
 
 
@@ -174,7 +174,7 @@ See the authenticated user's feed.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=-7940845&max_id=1937613228&min_id=-1578499244 
+HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=-1218447187&max_id=-890099060&min_id=882360829 
 ```
 
 
@@ -196,7 +196,7 @@ HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=-7940845&max_id=
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/-4.325625E%2B246/media/recent?count=-806245803&max_timestamp=-749681362&min_timestamp=497295204&min_id=gittis.%20In%20non%20lectus%20eu%20nunc&max_id=ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20 
+HTTP 1.1 get https://api.instagram.com/v1/users/-629171400000/media/recent?count=-1302283850&max_timestamp=-201889084&min_timestamp=-1876309161&min_id=ien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tort&max_id=eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20s 
 ```
 
 
@@ -219,7 +219,7 @@ available for the currently authenticated user.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked?count=1971251313&max_like_id=1836281115 
+HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked?count=824706731&max_like_id=-1540874518 
 ```
 
 
@@ -238,7 +238,7 @@ Search for a user by name.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/search?q=rta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20sempe&count=interdum%20fringilla%20orci%2C%20gravida%20ornare%20 
+HTTP 1.1 get https://api.instagram.com/v1/users/search?q=s.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20&count=ec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20ar 
 ```
 
 
@@ -255,7 +255,7 @@ Get the list of users this user follows.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/3.862492E%2B200/follows 
+HTTP 1.1 get https://api.instagram.com/v1/users/-1.697639E-91/follows 
 ```
 
 
@@ -272,7 +272,7 @@ Get the list of users this user is followed by.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/5.753023E-17/followed-by 
+HTTP 1.1 get https://api.instagram.com/v1/users/6.436049E-223/followed-by 
 ```
 
 
@@ -309,7 +309,7 @@ Modify the relationship between the current user and thetarget user.
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/users/7.361749E%2B64/relationship 
+HTTP 1.1 post https://api.instagram.com/v1/users/3.097071E%2B154/relationship 
 Content-Type: application/json
 Content-Length: 8
 "follow"
@@ -338,7 +338,7 @@ has liked this media item.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/455646968 
+HTTP 1.1 get https://api.instagram.com/v1/media/-997113738 
 ```
 
 
@@ -359,11 +359,11 @@ the last 5 days. Can return mix of image and video types.
 | MIN_TIMESTAMP | query | integer |  no |  |  |  |  |  |  | A unix timestamp. All media returned will be taken later thanthis timestamp. |
 | LNG | query | number |  no |  |  |  |  |  |  | Longitude of the center search coordinate. If used, lat is required. |
 | MAX_TIMESTAMP | query | integer |  no |  |  |  |  |  |  | A unix timestamp. All media returned will be taken earlier than thistimestamp. |
-| DISTANCE | query | integer |  no | no more than 5000 |  |  |  | 1000 |  | Default is 1km (distance=1000), max distance is 5km. |
+| DISTANCE | query | integer |  no | Value : <= 5000 |  |  |  | 1000 |  | Default is 1km (distance=1000), max distance is 5km. |
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/search?LAT=1.0522E+173&MIN_TIMESTAMP=-749797081&LNG=-2.240487E-141&MAX_TIMESTAMP=2108618748&DISTANCE=1000 
+HTTP 1.1 get https://api.instagram.com/v1/media/search?LAT=3.379785E+198&MIN_TIMESTAMP=2122774824&LNG=3.124992E-235&MAX_TIMESTAMP=-133490584&DISTANCE=1000 
 ```
 
 
@@ -401,7 +401,7 @@ Get a list of recent comments on a media object.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/-248475638/comments 
+HTTP 1.1 get https://api.instagram.com/v1/media/-1738778192/comments 
 ```
 
 
@@ -425,10 +425,10 @@ Create a comment on a media object with the following rules:
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/media/-248475638/comments 
+HTTP 1.1 post https://api.instagram.com/v1/media/-1738778192/comments 
 Content-Type: application/json
-Content-Length: 11
-8.11706e+40
+Content-Length: 14
+-1.158641e-132
 ```
 
 
@@ -447,7 +447,7 @@ authored by the authenticated user.
 
 * Example of request :
 ```json
-HTTP 1.1 delete https://api.instagram.com/v1/media/-248475638/comments 
+HTTP 1.1 delete https://api.instagram.com/v1/media/-1738778192/comments 
 ```
 
 
@@ -466,7 +466,7 @@ Get a list of users who have liked this media.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/1767916224/likes 
+HTTP 1.1 get https://api.instagram.com/v1/media/72893512/likes 
 ```
 
 
@@ -483,7 +483,7 @@ Set a like on this media by the currently authenticated user.
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/media/1767916224/likes 
+HTTP 1.1 post https://api.instagram.com/v1/media/72893512/likes 
 ```
 
 
@@ -501,7 +501,7 @@ Remove a like on this media by the currently authenticated user.
 
 * Example of request :
 ```json
-HTTP 1.1 delete https://api.instagram.com/v1/media/1767916224/likes 
+HTTP 1.1 delete https://api.instagram.com/v1/media/72893512/likes 
 ```
 
 
@@ -525,7 +525,7 @@ Its corresponding shortcode is D.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media1/nsectetur+adipiscing+elit.+Suspendisse+justo+turpis%2C+lacinia+id+tempor+sed%2C+dapibus+vel+elit.+Sed+efficitur%2C+mi+sit+amet+fermentum+ultricies%2C+felis+felis+aliquam 
+HTTP 1.1 get https://api.instagram.com/v1/media1/In+non+lectus+eu+nunc+interdum+laoreet+a+ut+dui.+Sed+e 
 ```
 
 
@@ -543,7 +543,7 @@ Get information about a tag object.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/nibus+erat.+Proin+id+scelerisque+ipsum.+Qui 
+HTTP 1.1 get https://api.instagram.com/v1/tags/uis+condimentum+eget%2C+tristique+ut+quam.+Maecenas+et+velit+dignissim%2C+tincidunt+justo+quis%2C+iaculis+odio.+Mauris+volutpat+dignissim+mi+eget+lacinia.+In+nisi+odio%2C+porta+ut+quam+non%2C+imperdiet+varius+orci.+Donec+consectetur+sed+ante+sit+amet+sag 
 ```
 
 
@@ -563,7 +563,7 @@ these objects.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/eu+tortor+blandit%2C+bibendum+tortor+ac%2C+congue+eros.+Lorem+ipsum+dolor+sit+amet%2C+consectetur+adipiscing+elit.+Suspendisse+justo+turpis%2C+lacinia+id+tempor+sed%2C+dapibus+vel+elit.+Sed+efficitur%2C+mi+sit+amet+fermentum+ultricies%2C+fel/media/recent 
+HTTP 1.1 get https://api.instagram.com/v1/tags/vinar+vel+metus+et%2C+molestie+pretium+tortor.+Praesent+interdum+fringilla+orci%2C+gravida+ornare+nibh+sollicitudin+et.+Curabitur+pulvinar+metus+massa%2C+malesuada+facilisis+sapien+finibus+at.+Nullam+finibus+urna+vel+auctor+fringilla.+M/media/recent 
 ```
 
 
@@ -581,7 +581,7 @@ HTTP 1.1 get https://api.instagram.com/v1/tags/eu+tortor+blandit%2C+bibendum+tor
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/search?q=la.%20Mauris 
+HTTP 1.1 get https://api.instagram.com/v1/tags/search?q=arius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Ma 
 ```
 
 
@@ -600,7 +600,7 @@ Get information about a location.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/-1803398006 
+HTTP 1.1 get https://api.instagram.com/v1/locations/-1179292352 
 ```
 
 
@@ -622,7 +622,7 @@ Get a list of recent media objects from a given location.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/1709273574/media/recent?max_timestamp=1158291886&min_timestamp=-1844829226&min_id=imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20a&max_id=ssa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nis 
+HTTP 1.1 get https://api.instagram.com/v1/locations/1358125031/media/recent?max_timestamp=-626116550&min_timestamp=-1033433199&min_id=sse%20justo%20turpis%2C&max_id=ortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor 
 ```
 
 
@@ -645,7 +645,7 @@ Search for a location by geographic coordinate.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/search?distance=1020707407&facebook_places_id=1214467176&foursquare_id=-1869461935&lat=5.069574E-167&lng=-3.960387E-127&foursquare_v2_id=-774051598 
+HTTP 1.1 get https://api.instagram.com/v1/locations/search?distance=-1808722283&facebook_places_id=1053798802&foursquare_id=2033017817&lat=-2.808974E-113&lng=3.963278E-175&foursquare_v2_id=799232443 
 ```
 
 
@@ -675,7 +675,7 @@ geography, use the [media search endpoint
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/geographies/-784227098/media/recent?count=-1212016092&min_id=-224331740 
+HTTP 1.1 get https://api.instagram.com/v1/geographies/-191058859/media/recent?count=1956200152&min_id=803829810 
 ```
 
 

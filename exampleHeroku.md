@@ -38,7 +38,7 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 
 | Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
 | :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-| limit | query | integer |  no | >=  11 and <=  10000 |  |  |  | 11 |  | number of pets to return |
+| limit | query | integer |  no | Value : 11 <= x <= 10000 |  |  |  | 11 |  | number of pets to return |
 
 * Example of request :
 ```json
@@ -59,10 +59,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 68
+Content-Length: 293
 {
-    "name": " eu facilisis nec, tem",
-    "birthday": 1017158918
+    "name": ", ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu,",
+    "birthday": -1331046889
 }
 ```
 
@@ -80,10 +80,10 @@ Content-Length: 68
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 253
+Content-Length: 221
 {
-    "name": "t dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis od",
-    "birthday": 544835671
+    "name": "est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci",
+    "birthday": -779932363
 }
 ```
 
@@ -100,7 +100,7 @@ Content-Length: 253
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/amet+vestibulum+quam.+Morbi+tincidunt+pretium+sodales.+Etiam+dignissim+risus+non+felis+scelerisque+aliquet.+Phasellus+faucibus+urna+arcu%2C+et+dignissim+augue+in 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/auris+vehicula+ex+lorem%2C+ut+ornare+purus+ultrices+nec.+Vestibulum+elementum+felis+sit+amet 
 ```
 
 
