@@ -1,1 +1,1 @@
-{{ type }}{% if format is not null %}, formatted as : {{ format }}{% endif %}
+{% if format is not null %}{{ format }}{% else %}{{ type }}{% endif %}
