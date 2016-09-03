@@ -45,6 +45,14 @@ class Swagger extends \SwaggerValidator\Object\Swagger
             $context->setBasePath($this->basePath);
         }
 
+        if (isset($this->host)) {
+            $context->setHost($this->host);
+        }
+
+        if (isset($this->schemes)) {
+            $context->setScheme(array_shift($this->schemes));
+        }
+
         foreach ($this->keys() as $key) {
             if ($key === \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS) {
                 continue;

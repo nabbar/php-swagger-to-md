@@ -185,6 +185,8 @@ class Operation extends \SwaggerValidator\Object\Operation
             }
         }
 
+        $templateVars['host']     = $context->getHost();
+        $templateVars['scheme']   = $context->getScheme();
         $templateVars['path']     = $path . $queryString;
         $templateVars['method']   = $context->getMethod();
         $templateVars['headers']  = array();

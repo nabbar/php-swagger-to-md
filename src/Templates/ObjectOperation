@@ -1,5 +1,9 @@
 {{ description }}
 
+{% if externalDocs|length > 0 %}
+* Addition note : {{ externalDocs }}
+{% endif %}
+
 {% if parameters is not null and parameters.count > 0 %}
 * **Request Parameters** :
 
