@@ -1,6 +1,6 @@
 {% for tag in tags %}
 * Tag : {{ tag.name }}
-    {% if tag.description |length > 0 %} : {{ tag.description }}{% endIf %}
+    {% if tag.description |length > 0 %} : {{ tag.description }}{% endif %}
     {% if externalDocs|length > 0 %} : Addition note : {{ externalDocs }}{% endif %}
     {% for path in tag.paths %}
     * [{{ path.name }}](#{{ path.link }})

@@ -52,7 +52,7 @@ class Paths extends \SwaggerValidator\Object\Paths
 
                 $summary[$resources] = array(
                     'name'  => $string,
-                    'link'  => preg_replace('s/([ ]*)/i', '-', preg_replace('s/([\W]*)/i', '', strtolower($string))),
+                    'link'  => \Swagger2md\Swagger2md::makeAnchor($string),
                     'paths' => array(),
                 );
             }
@@ -61,11 +61,12 @@ class Paths extends \SwaggerValidator\Object\Paths
 
             $summary[$resources]['paths'][$key] = array(
                 'name'    => $string,
-                'link'    => preg_replace('s/([ ]*)/i', '-', preg_replace('s/([\W]*)/i', '', strtolower($string))) . ($isResource ? '-1' : ''),
+                'link'    => \Swagger2md\Swagger2md::makeAnchor($string, $isResource),
                 'methods' => $this->$key->$method($context->setDataPath($key), $twigObject),
             );
         }
 
+        \Swagger2md\Swagger2md::printOutVV('Summary rendered for path :' . $context->getDataPath());
         return $summary;
     }
 
@@ -86,6 +87,7 @@ class Paths extends \SwaggerValidator\Object\Paths
             $this->$key->$method($context->setDataPath($key), $twigObject, $tags);
         }
 
+        \Swagger2md\Swagger2md::printOutVV('Tags rendered for path :' . $context->getDataPath());
         return $tags;
     }
 
@@ -131,7 +133,7 @@ class Paths extends \SwaggerValidator\Object\Paths
         array_shift($tpl);
         $tpl = implode('', array_map('ucfirst', $tpl));
 
-        \Swagger2md\Swagger2md::printOutVV('Rendering this template : ' . $tpl);
+        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
         return $twigObject->render($tpl, array(
                     'resources' => $tplResources,
         ));

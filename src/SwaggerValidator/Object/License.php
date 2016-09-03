@@ -51,7 +51,7 @@ class License extends \SwaggerValidator\Object\License
         array_shift($tpl);
         $tpl = implode('', array_map('ucfirst', $tpl));
 
-        \Swagger2md\Swagger2md::printOutVV('Rendering this template : ' . $tpl);
+        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
         return $twigObject->render($tpl, $templateVars);
     }
 

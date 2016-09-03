@@ -44,10 +44,11 @@ class PathItem extends \SwaggerValidator\Object\PathItem
             $string        = $twigObject->render('StringMethod', array('string' => $key));
             $summary[$key] = array(
                 'name' => $string,
-                'link' => preg_replace('s/([ ]*)/i', '-', preg_replace('s/([\W]*)/i', '', strtolower($string))),
+                'link' => \Swagger2md\Swagger2md::makeAnchor($string),
             );
         }
 
+        \Swagger2md\Swagger2md::printOutVV('Summary rendered for path :' . $context->getDataPath());
         return $summary;
     }
 
@@ -61,14 +62,14 @@ class PathItem extends \SwaggerValidator\Object\PathItem
         $method  = __FUNCTION__;
         $keyTags = \SwaggerValidator\Common\FactorySwagger::KEY_TAGS;
         $curPath = $context->getLastDataPath();
+
+
         $string  = $twigObject->render('StringPath', array('string' => $curPath));
         $pathBlk = array(
             'name'    => $string,
-            'link'    => preg_replace('s/([ ]*)/i', '-', preg_replace('s/([\W]*)/i', '', strtolower($string))) . ($isResource ? '-1' : ''),
+            'link'    => \Swagger2md\Swagger2md::makeAnchor($string),
             'methods' => array()
         );
-
-        list($resource, $isResource) = $this->getResourceForKey($key);
 
         foreach ($this->keys() as $key) {
             if (substr($key, 0, 1) != '/' || !is_object($this->$key) || !($this->$key instanceof \SwaggerValidator\Object\Operation)) {
@@ -97,10 +98,11 @@ class PathItem extends \SwaggerValidator\Object\PathItem
 
             $tags[$opeTag]['paths'][$curPath]['methods'][$key] = array(
                 'name' => $string,
-                'link' => preg_replace('s/([ ]*)/i', '-', preg_replace('s/([\W]*)/i', '', strtolower($string))),
+                'link' => \Swagger2md\Swagger2md::makeAnchor($string),
             );
         }
 
+        \Swagger2md\Swagger2md::printOutVV('Tags rendered for path :' . $context->getDataPath());
         return $tags;
     }
 
@@ -136,7 +138,7 @@ class PathItem extends \SwaggerValidator\Object\PathItem
         array_shift($tpl);
         $tpl = implode('', array_map('ucfirst', $tpl));
 
-        \Swagger2md\Swagger2md::printOutVV('Rendering this template : ' . $tpl);
+        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
         return $twigObject->render($tpl, array(
                     'operations' => $tplOperation,
         ));

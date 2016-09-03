@@ -39,6 +39,7 @@ class Swagger extends \SwaggerValidator\Object\Swagger
         $this->getModelConsumeProduce($generalItems);
 
         $templateVars = array();
+        $tags         = array();
 
         foreach ($this->keys() as $key) {
             if ($key === \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS) {
@@ -55,6 +56,14 @@ class Swagger extends \SwaggerValidator\Object\Swagger
             elseif (!is_object($this->$key)) {
                 $templateVars[$key] = $this->$key;
             }
+
+            if (is_object($this->$key) && method_exists($this->$key, 'getSummary')) {
+                $templateVars['Summary'] = $twigObject->render('GenericSummary', $this->$key->getSummary($context->setDataPath($key), $twigObject));
+            }
+
+            if (is_object($this->$key) && method_exists($this->$key, 'getTags')) {
+                $templateVars['Index'] = $twigObject->render('GenericIndex', $this->$key->getTags($context->setDataPath($key), $twigObject, $tags));
+            }
         }
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));
@@ -62,7 +71,7 @@ class Swagger extends \SwaggerValidator\Object\Swagger
         array_shift($tpl);
         $tpl = implode('', array_map('ucfirst', $tpl));
 
-        \Swagger2md\Swagger2md::printOutVV('Rendering this template : ' . $tpl);
+        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
         return $twigObject->render($tpl, $templateVars);
     }
 

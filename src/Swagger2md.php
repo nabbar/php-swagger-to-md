@@ -270,4 +270,13 @@ Options:
         return $pathReal;
     }
 
+    public static function makeAnchor($title, $suffix = null)
+    {
+        if ($suffix === true) {
+            $suffix = 1;
+        }
+
+        return str_replace(' ', '-', preg_replace('/([\W]*)/si', '', strtolower($title))) . ($suffix > 0 ? '-' . ((int) $suffix) : '');
+    }
+
 }
