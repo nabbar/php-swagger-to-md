@@ -332,7 +332,7 @@ Options:
             $suffix = 1;
         }
 
-        return str_replace(' ', '-', preg_replace('/([\W]*)/si', '', strtolower($title))) . ($suffix > 0 ? '-' . ((int) $suffix) : '');
+        return preg_replace('/([^\w-]*)/si', '', str_replace(' ', '-', strtolower($title))) . ($suffix > 0 ? '-' . ((int) $suffix) : '');
     }
 
     public function extractStored()
