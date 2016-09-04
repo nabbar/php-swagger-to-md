@@ -1,12 +1,11 @@
 * [Summary](#summary)
 * [Resources](#resources)
-    {% for resource in resources %}
-    * [Resource : {{ resource.name }}](#{{ resource.link }})
-        {% for path in resource.paths %}
-        * [Path : {{ path.name }}](#{{ path.link }})
-            {% for method in path.methods %}
-            * [Operation : {{ method.name }}](#{{ method.link }})
-            {% endfor %}
-        {% endfor %}
-    {% endfor %}
+{% for resource in summary %}
+  * [Resource : {{ resource.name }}](#{{ resource.link }})
+{% for path in resource.paths %}
+{% for method in path.methods %}
+    * [Operation : {{ method.name }}](#{{ method.link }})
+{% endfor %}
+{% endfor %}
+{% endfor %}
 * [Table of contents](#table-of-contents)

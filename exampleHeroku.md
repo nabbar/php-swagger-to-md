@@ -25,7 +25,12 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 ## Summary 
 * [Summary](#summary)
 * [Resources](#resources)
-    * [Table of contents](#table-of-contents)
+  * [Resource : Resource : Root](#resourceroot)
+    * [Operation : get /](#get)
+    * [Operation : post /](#post)
+    * [Operation : put /](#put)
+    * [Operation : get /{petId}](#getpetid)
+* [Table of contents](#table-of-contents)
 
 
 ---
@@ -56,25 +61,25 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| pet | body | object | yes | [parameters/body](#objectproperty_57cc38447100d) | The pet JSON you want to post | 
+| pet | body | object | yes | [parameters/body](#objectproperty_57cc40e599c3e) | The pet JSON you want to post | 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 288
+Content-Length: 149
 {
-    "name": "oreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulput",
-    "birthday": -563470470
+    "name": "llicitudin varius purus, nec condimentum tellus sagittis at. Nullam vel metus ac quam gravida pellentes",
+    "birthday": 1229835012
 }
 ```
 
-* <p name="objectproperty_57cc38447100d">Object pet :</p> 
+* <p name="objectproperty_57cc40e599c3e">Object pet :</p> 
 
 | Name | Type | Example |  
 | :---: | :---: | :--- |  
-| name | string | s vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium s | 
-| birthday | int32 | 506389793 | 
+| name | string | dio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed an | 
+| birthday | int32 | -819230604 | 
 
 
 
@@ -86,25 +91,25 @@ Content-Length: 288
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| pet | body | object | yes | [parameters/body](#objectproperty_57cc3844751ad) | The pet JSON you want to post | 
+| pet | body | object | yes | [parameters/body](#objectproperty_57cc40e59df0c) | The pet JSON you want to post | 
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 248
+Content-Length: 211
 {
-    "name": ", tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur",
-    "birthday": -403562061
+    "name": "bendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum",
+    "birthday": -250505513
 }
 ```
 
-* <p name="objectproperty_57cc3844751ad">Object pet :</p> 
+* <p name="objectproperty_57cc40e59df0c">Object pet :</p> 
 
 | Name | Type | Example |  
 | :---: | :---: | :--- |  
-| name | string | psum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convall | 
-| birthday | int32 | -1269353439 | 
+| name | string | amet | 
+| birthday | int32 | -1886316526 | 
 
 
 
@@ -117,11 +122,11 @@ Content-Length: 248
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of the pet | dio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id | 
+| petId | path | string | yes | ID of the pet |  sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros m | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/dio.+Sed+sed+neque+dignissim%2C+imperdiet+nunc+maximus%2C+finibus+erat.+Proin+id 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/+sodales.+Etiam+dignissim+risus+non+felis+scelerisque+aliquet.+Phasellus+faucibus+urna+arcu%2C+et+dignissim+augue+interdum+sed.+Vestibulum+eget+luctus+metus%2C+eu+bibendum+orci.+Sed+eros+m 
 ```
 
 

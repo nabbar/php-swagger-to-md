@@ -49,6 +49,7 @@ class Paths extends \SwaggerValidator\Object\Paths
 
             if (!array_key_exists($resources, $summary)) {
                 $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringResource', array('string' => $resources));
+                \Swagger2md\Swagger2md::printOutVV('Summary add resource :' . $resources);
 
                 $summary[$resources] = array(
                     'name'  => $string,
@@ -59,14 +60,16 @@ class Paths extends \SwaggerValidator\Object\Paths
 
             $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringPath', array('string' => $key));
 
+            \Swagger2md\Swagger2md::printOutVV('Summary adding path :' . $key);
             $summary[$resources]['paths'][$key] = array(
                 'name'    => $string,
-                'link'    => \Swagger2md\Swagger2md::makeAnchor($string, $isResource),
-                'methods' => $this->$key->$method($context->setDataPath($key)),
+                'link'    => \Swagger2md\Swagger2md::makeAnchor($string),
+                'suff'    => ($isResource) ? '1' : '',
+                'methods' => $this->$key->$method($context->setDataPath($key)->setRoutePath($key)),
             );
         }
 
-        \Swagger2md\Swagger2md::printOutVV('Summary rendered for path :' . $context->getDataPath());
+        \Swagger2md\Swagger2md::printOutVV('Summary generated');
         return $summary;
     }
 
@@ -85,7 +88,7 @@ class Paths extends \SwaggerValidator\Object\Paths
                 continue;
             }
 
-            $this->$key->$method($context->setDataPath($key), $tags);
+            $this->$key->$method($context->setDataPath($key)->setRoutePath($key), $tags);
         }
 
         \Swagger2md\Swagger2md::printOutVV('Tags rendered for path :' . $context->getDataPath());

@@ -68,7 +68,7 @@ class Swagger extends \SwaggerValidator\Object\Swagger
             }
 
             if (is_object($this->$key) && method_exists($this->$key, 'getSummary')) {
-                $templateVars['Summary'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('GenericSummary', $this->$key->getSummary($context->setDataPath($key)));
+                $templateVars['Summary'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('GenericSummary', array('summary' => $this->$key->getSummary($context->setDataPath($key))));
             }
 
             if (is_object($this->$key) && method_exists($this->$key, 'getTags')) {

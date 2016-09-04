@@ -41,14 +41,15 @@ class PathItem extends \SwaggerValidator\Object\PathItem
                 continue;
             }
 
-            $string        = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringMethod', array('string' => $key));
+            \Swagger2md\Swagger2md::printOutVV('Summary adding method : ' . $key);
+            $string        = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringMethod', array('method' => $key, 'route' => $context->getRoutePath()));
             $summary[$key] = array(
                 'name' => $string,
                 'link' => \Swagger2md\Swagger2md::makeAnchor($string),
             );
         }
 
-        \Swagger2md\Swagger2md::printOutVV('Summary rendered for path :' . $context->getDataPath());
+        \Swagger2md\Swagger2md::printOutVV('Summary generated for path :' . $context->getDataPath());
         return $summary;
     }
 
