@@ -59,22 +59,14 @@ class PathItem extends \SwaggerValidator\Object\PathItem
      * @param array $tags
      * @return array
      */
-    public function getTags(\SwaggerValidator\Common\Context $context, &$tags)
+    public function getTags(\SwaggerValidator\Common\Context $context, $tags)
     {
         $method  = __FUNCTION__;
         $keyTags = \SwaggerValidator\Common\FactorySwagger::KEY_TAGS;
-        $curPath = $context->getLastDataPath();
-
-
-        $string  = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringPath', array('string' => $curPath));
-        $pathBlk = array(
-            'name'    => $string,
-            'link'    => \Swagger2md\Swagger2md::makeAnchor($string),
-            'methods' => array()
-        );
+        $curPath = $context->getRoutePath();
 
         foreach ($this->keys() as $key) {
-            if (substr($key, 0, 1) != '/' || !is_object($this->$key) || !($this->$key instanceof \SwaggerValidator\Object\Operation)) {
+            if (!is_object($this->$key) || !($this->$key instanceof \SwaggerValidator\Object\Operation)) {
                 continue;
             }
 
@@ -82,29 +74,39 @@ class PathItem extends \SwaggerValidator\Object\PathItem
                 continue;
             }
 
-            $opeTag = $this->$key->$keyTags;
+            foreach ($this->$key->get($keyTags) as $oneTag) {
+                \Swagger2md\Swagger2md::printOutVV('Tags "' . $oneTag . '" found for path :' . $context->getDataPath() . ' and Method :' . $key);
 
-            if (!array_key_exists($opeTag, $tags)) {
-                continue;
+                if (!array_key_exists($oneTag, $tags)) {
+                    $tags[$oneTag] = array(
+                        'name' => $oneTag
+                    );
+                }
+
+                if (!array_key_exists('paths', $tags[$oneTag])) {
+                    $tags[$oneTag]['paths'] = array();
+                }
+
+                if (!array_key_exists($curPath, $tags[$oneTag]['paths'])) {
+                    $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringPath', array('string' => $curPath));
+
+                    $tags[$oneTag]['paths'][$curPath] = array(
+                        'name'    => $string,
+                        'link'    => \Swagger2md\Swagger2md::makeAnchor($string),
+                        'methods' => array()
+                    );
+                }
+
+                $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringMethod', array('method' => $key, 'route' => $curPath));
+
+                $tags[$oneTag]['paths'][$curPath]['methods'][$key] = array(
+                    'name' => $string,
+                    'link' => \Swagger2md\Swagger2md::makeAnchor($string),
+                );
             }
-
-            if (!array_key_exists('paths', $tags[$opeTag])) {
-                $tags[$opeTag]['paths'] = array();
-            }
-
-            if (!array_key_exists($curPath, $tags[$opeTag]['paths'])) {
-                $tags[$opeTag]['paths'][$curPath] = $pathBlk;
-            }
-
-            $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringMethod', array('string' => $key));
-
-            $tags[$opeTag]['paths'][$curPath]['methods'][$key] = array(
-                'name' => $string,
-                'link' => \Swagger2md\Swagger2md::makeAnchor($string),
-            );
         }
 
-        \Swagger2md\Swagger2md::printOutVV('Tags rendered for path :' . $context->getDataPath());
+        \Swagger2md\Swagger2md::printOutVV('Tags generated for path :' . $context->getDataPath());
         return $tags;
     }
 

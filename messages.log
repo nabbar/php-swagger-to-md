@@ -1,0 +1,804 @@
+swagger-to-md 1.0.0 by Nicolas Juhel
+Verbose : medium
+Asked to ouput to : example.md
+Using template folder : /repos/swagger-to-md/src/Templates
+The result will be saved into the file : /repos/swagger-to-md/example.md
+Rendering this template : ObjectContact
+Rendering this template : ObjectContact
+Rendering this template : ObjectLicense
+Rendering this template : ObjectLicense
+Rendering this template : ObjectInfo
+Rendering this template : ObjectInfo
+Rendering this template : StringResource
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartLinkObject
+Rendering this template : TableObjectProperties
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : TableArrayItems
+Rendering this template : PartLinkObject
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxItems
+Rendering this template : PartUniqueItems
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : TableArrayItems
+Rendering this template : PartLinkObject
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxItems
+Rendering this template : PartUniqueItems
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartLinkObject
+Rendering this template : TableObjectProperties
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartLinkObject
+Rendering this template : TableObjectProperties
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : TableArrayItems
+Rendering this template : PartLinkObject
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxItems
+Rendering this template : PartUniqueItems
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : TableArrayItems
+Rendering this template : PartLinkObject
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxItems
+Rendering this template : PartUniqueItems
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartLinkObject
+Rendering this template : TableObjectProperties
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : TableArrayItems
+Rendering this template : PartLinkObject
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxItems
+Rendering this template : PartUniqueItems
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : TableArrayItems
+Rendering this template : PartLinkObject
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxItems
+Rendering this template : PartUniqueItems
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringResource
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartLinkObject
+Rendering this template : TableObjectProperties
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringResource
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartLinkObject
+Rendering this template : TableObjectProperties
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : TableArrayItems
+Rendering this template : PartLinkObject
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxItems
+Rendering this template : PartUniqueItems
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : TableArrayItems
+Rendering this template : PartLinkObject
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxItems
+Rendering this template : PartUniqueItems
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinimumMaximum
+Rendering this template : PartMultipleOf
+Rendering this template : PartTypeFormat
+Rendering this template : PartLinkObject
+Rendering this template : TableObjectProperties
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : StringMethod
+Rendering this template : PartTypeFormat
+Rendering this template : PartMinMaxLength
+Collecting parameters data
+Rendering this template : ExampleRequest
+Rendering this template : ExampleRequest
+Rendering this template : TableOperationRequest
+Rendering this template : ObjectOperationParameters
+Rendering this template : ObjectOperation
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPathItem
+Rendering this template : ObjectPaths
+Rendering this template : ObjectPaths
+Rendering this template : StringResource
+Summary add resource :pets
+Rendering this template : StringPath
+Summary adding path :/pets
+Summary adding method : post
+Rendering this template : StringMethod
+Summary adding method : put
+Rendering this template : StringMethod
+Summary generated for path :#/paths//pets
+Rendering this template : StringPath
+Summary adding path :/pets/findByStatus
+Summary adding method : get
+Rendering this template : StringMethod
+Summary generated for path :#/paths//pets/findByStatus
+Rendering this template : StringPath
+Summary adding path :/pets/findByTags
+Summary adding method : get
+Rendering this template : StringMethod
+Summary generated for path :#/paths//pets/findByTags
+Rendering this template : StringPath
+Summary adding path :/pets/{petId}
+Summary adding method : get
+Rendering this template : StringMethod
+Summary adding method : post
+Rendering this template : StringMethod
+Summary adding method : delete
+Rendering this template : StringMethod
+Summary generated for path :#/paths//pets/{petId}
+Rendering this template : StringResource
+Summary add resource :stores
+Rendering this template : StringPath
+Summary adding path :/stores/order
+Summary adding method : post
+Rendering this template : StringMethod
+Summary generated for path :#/paths//stores/order
+Rendering this template : StringPath
+Summary adding path :/stores/order/{orderId}
+Summary adding method : get
+Rendering this template : StringMethod
+Summary adding method : delete
+Rendering this template : StringMethod
+Summary generated for path :#/paths//stores/order/{orderId}
+Rendering this template : StringResource
+Summary add resource :users
+Rendering this template : StringPath
+Summary adding path :/users
+Summary adding method : post
+Rendering this template : StringMethod
+Summary generated for path :#/paths//users
+Rendering this template : StringPath
+Summary adding path :/users/createWithArray
+Summary adding method : post
+Rendering this template : StringMethod
+Summary generated for path :#/paths//users/createWithArray
+Rendering this template : StringPath
+Summary adding path :/users/createWithList
+Summary adding method : post
+Rendering this template : StringMethod
+Summary generated for path :#/paths//users/createWithList
+Rendering this template : StringPath
+Summary adding path :/users/login
+Summary adding method : get
+Rendering this template : StringMethod
+Summary generated for path :#/paths//users/login
+Rendering this template : StringPath
+Summary adding path :/users/logout
+Summary adding method : get
+Rendering this template : StringMethod
+Summary generated for path :#/paths//users/logout
+Rendering this template : StringPath
+Summary adding path :/users/{username}
+Summary adding method : get
+Rendering this template : StringMethod
+Summary adding method : put
+Rendering this template : StringMethod
+Summary adding method : delete
+Rendering this template : StringMethod
+Summary generated for path :#/paths//users/{username}
+Summary generated
+Tags "pet" found for path :#/paths//pets and Method :post
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags "pet" found for path :#/paths//pets and Method :put
+Rendering this template : StringMethod
+Tags generated for path :#/paths//pets
+Tags "pet" found for path :#/paths//pets/findByStatus and Method :get
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags generated for path :#/paths//pets/findByStatus
+Tags "pet" found for path :#/paths//pets/findByTags and Method :get
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags generated for path :#/paths//pets/findByTags
+Tags "pet" found for path :#/paths//pets/{petId} and Method :get
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags "pet" found for path :#/paths//pets/{petId} and Method :post
+Rendering this template : StringMethod
+Tags "pet" found for path :#/paths//pets/{petId} and Method :delete
+Rendering this template : StringMethod
+Tags generated for path :#/paths//pets/{petId}
+Tags "store" found for path :#/paths//stores/order and Method :post
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags generated for path :#/paths//stores/order
+Tags "store" found for path :#/paths//stores/order/{orderId} and Method :get
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags "store" found for path :#/paths//stores/order/{orderId} and Method :delete
+Rendering this template : StringMethod
+Tags generated for path :#/paths//stores/order/{orderId}
+Tags "user" found for path :#/paths//users and Method :post
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags generated for path :#/paths//users
+Tags "user" found for path :#/paths//users/createWithArray and Method :post
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags generated for path :#/paths//users/createWithArray
+Tags "user" found for path :#/paths//users/createWithList and Method :post
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags generated for path :#/paths//users/createWithList
+Tags "user" found for path :#/paths//users/login and Method :get
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags generated for path :#/paths//users/login
+Tags "user" found for path :#/paths//users/logout and Method :get
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags generated for path :#/paths//users/logout
+Tags "user" found for path :#/paths//users/{username} and Method :get
+Rendering this template : StringPath
+Rendering this template : StringMethod
+Tags "user" found for path :#/paths//users/{username} and Method :put
+Rendering this template : StringMethod
+Tags "user" found for path :#/paths//users/{username} and Method :delete
+Rendering this template : StringMethod
+Tags generated for path :#/paths//users/{username}
+Tags generated
+Array
+(
+    [pet] => Array
+        (
+            [name] => pet
+            [paths] => Array
+                (
+                    [/pets] => Array
+                        (
+                            [name] => Path : /pets
+                            [link] => path--pets
+                            [methods] => Array
+                                (
+                                    [post] => Array
+                                        (
+                                            [name] => post /pets
+                                            [link] => post-pets
+                                        )
+
+                                    [put] => Array
+                                        (
+                                            [name] => put /pets
+                                            [link] => put-pets
+                                        )
+
+                                )
+
+                        )
+
+                    [/pets/findByStatus] => Array
+                        (
+                            [name] => Path : /pets/findByStatus
+                            [link] => path--petsfindbystatus
+                            [methods] => Array
+                                (
+                                    [get] => Array
+                                        (
+                                            [name] => get /pets/findByStatus
+                                            [link] => get-petsfindbystatus
+                                        )
+
+                                )
+
+                        )
+
+                    [/pets/findByTags] => Array
+                        (
+                            [name] => Path : /pets/findByTags
+                            [link] => path--petsfindbytags
+                            [methods] => Array
+                                (
+                                    [get] => Array
+                                        (
+                                            [name] => get /pets/findByTags
+                                            [link] => get-petsfindbytags
+                                        )
+
+                                )
+
+                        )
+
+                    [/pets/{petId}] => Array
+                        (
+                            [name] => Path : /pets/{petId}
+                            [link] => path--petspetid
+                            [methods] => Array
+                                (
+                                    [get] => Array
+                                        (
+                                            [name] => get /pets/{petId}
+                                            [link] => get-petspetid
+                                        )
+
+                                    [post] => Array
+                                        (
+                                            [name] => post /pets/{petId}
+                                            [link] => post-petspetid
+                                        )
+
+                                    [delete] => Array
+                                        (
+                                            [name] => delete /pets/{petId}
+                                            [link] => delete-petspetid
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [store] => Array
+        (
+            [name] => store
+            [paths] => Array
+                (
+                    [/stores/order] => Array
+                        (
+                            [name] => Path : /stores/order
+                            [link] => path--storesorder
+                            [methods] => Array
+                                (
+                                    [post] => Array
+                                        (
+                                            [name] => post /stores/order
+                                            [link] => post-storesorder
+                                        )
+
+                                )
+
+                        )
+
+                    [/stores/order/{orderId}] => Array
+                        (
+                            [name] => Path : /stores/order/{orderId}
+                            [link] => path--storesorderorderid
+                            [methods] => Array
+                                (
+                                    [get] => Array
+                                        (
+                                            [name] => get /stores/order/{orderId}
+                                            [link] => get-storesorderorderid
+                                        )
+
+                                    [delete] => Array
+                                        (
+                                            [name] => delete /stores/order/{orderId}
+                                            [link] => delete-storesorderorderid
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [user] => Array
+        (
+            [name] => user
+            [paths] => Array
+                (
+                    [/users] => Array
+                        (
+                            [name] => Path : /users
+                            [link] => path--users
+                            [methods] => Array
+                                (
+                                    [post] => Array
+                                        (
+                                            [name] => post /users
+                                            [link] => post-users
+                                        )
+
+                                )
+
+                        )
+
+                    [/users/createWithArray] => Array
+                        (
+                            [name] => Path : /users/createWithArray
+                            [link] => path--userscreatewitharray
+                            [methods] => Array
+                                (
+                                    [post] => Array
+                                        (
+                                            [name] => post /users/createWithArray
+                                            [link] => post-userscreatewitharray
+                                        )
+
+                                )
+
+                        )
+
+                    [/users/createWithList] => Array
+                        (
+                            [name] => Path : /users/createWithList
+                            [link] => path--userscreatewithlist
+                            [methods] => Array
+                                (
+                                    [post] => Array
+                                        (
+                                            [name] => post /users/createWithList
+                                            [link] => post-userscreatewithlist
+                                        )
+
+                                )
+
+                        )
+
+                    [/users/login] => Array
+                        (
+                            [name] => Path : /users/login
+                            [link] => path--userslogin
+                            [methods] => Array
+                                (
+                                    [get] => Array
+                                        (
+                                            [name] => get /users/login
+                                            [link] => get-userslogin
+                                        )
+
+                                )
+
+                        )
+
+                    [/users/logout] => Array
+                        (
+                            [name] => Path : /users/logout
+                            [link] => path--userslogout
+                            [methods] => Array
+                                (
+                                    [get] => Array
+                                        (
+                                            [name] => get /users/logout
+                                            [link] => get-userslogout
+                                        )
+
+                                )
+
+                        )
+
+                    [/users/{username}] => Array
+                        (
+                            [name] => Path : /users/{username}
+                            [link] => path--usersusername
+                            [methods] => Array
+                                (
+                                    [get] => Array
+                                        (
+                                            [name] => get /users/{username}
+                                            [link] => get-usersusername
+                                        )
+
+                                    [put] => Array
+                                        (
+                                            [name] => put /users/{username}
+                                            [link] => put-usersusername
+                                        )
+
+                                    [delete] => Array
+                                        (
+                                            [name] => delete /users/{username}
+                                            [link] => delete-usersusername
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+Rendering this template : GenericSummary
+Rendering this template : GenericIndex
+Rendering this template : ObjectSwagger
+Rendering this template : ObjectSwagger

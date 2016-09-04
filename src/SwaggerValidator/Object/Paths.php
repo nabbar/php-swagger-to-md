@@ -38,7 +38,6 @@ class Paths extends \SwaggerValidator\Object\Paths
 
         $summary  = array();
         $keyPaths = \SwaggerValidator\Common\FactorySwagger::KEY_PATHS;
-        $keyTags  = \SwaggerValidator\Common\FactorySwagger::KEY_TAGS;
 
         foreach ($this->keys() as $key) {
             if (substr($key, 0, 1) != '/' || !is_object($this->$key) || !($this->$key instanceof \SwaggerValidator\Object\PathItem)) {
@@ -79,7 +78,7 @@ class Paths extends \SwaggerValidator\Object\Paths
      * @param array $tags
      * @return array
      */
-    public function getTags(\SwaggerValidator\Common\Context $context, &$tags)
+    public function getTags(\SwaggerValidator\Common\Context $context, $tags)
     {
         $method = __FUNCTION__;
 
@@ -88,10 +87,11 @@ class Paths extends \SwaggerValidator\Object\Paths
                 continue;
             }
 
-            $this->$key->$method($context->setDataPath($key)->setRoutePath($key), $tags);
+            $tags = $this->$key->$method($context->setDataPath($key)->setRoutePath($key), $tags);
         }
 
-        \Swagger2md\Swagger2md::printOutVV('Tags rendered for path :' . $context->getDataPath());
+        \Swagger2md\Swagger2md::printOutVV('Tags generated');
+        print_r($tags);
         return $tags;
     }
 

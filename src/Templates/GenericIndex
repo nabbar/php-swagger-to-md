@@ -1,20 +1,20 @@
+* Tags
 {% for tag in tags %}
-* Tag : {{ tag.name }}
-    {% if tag.description |length > 0 %} : {{ tag.description }}{% endif %}
-    {% if externalDocs|length > 0 %} : Addition note : {{ externalDocs }}{% endif %}
-    {% for path in tag.paths %}
-    * [{{ path.name }}](#{{ path.link }})
-    {% endfor %}
+  * Tag : {{ tag.name }}
+{% if tag.description |length > 0 %} : {{ tag.description }}{% endif %}
+{% if externalDocs|length > 0 %} : Addition note : {{ externalDocs }}{% endif %}
+{% for path in tag.paths %}{% for operation in path.methods %}
+    * [Operation : {{ operation.name }}](#{{ operation.link }})
+{% endfor %}{% endfor %}
 {% endfor %}
 * [Summary](#summary)
 * [Resources](#resources)
-    {% for path in paths %}
-    * [Resource : {{ path.name }}](#{{ path.link }})
-        {% for subpath in path.subpath %}
-        * [Path : {{ subpath.name }}](#{{ subpath.link }})
-            {% for method in subpath.methods %}
-            * [Operation : {{ method.name }}](#{{ method.link }})
-            {% endfor %}
-        {% endfor %}
-    {% endfor %}
+{% for resource in summary %}
+  * [Resource : {{ resource.name }}](#{{ resource.link }})
+{% for path in resource.paths %}
+{% for method in path.methods %}
+    * [Operation : {{ method.name }}](#{{ method.link }})
+{% endfor %}
+{% endfor %}
+{% endfor %}
 * [Table of contents](#table-of-contents)

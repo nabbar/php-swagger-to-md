@@ -182,12 +182,12 @@ Get basic information about a user.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | 4.297386E+182 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
+| user-id | path | number | yes | The user identifier number | -6.293928E+63 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/4.297386E%2B182 
+HTTP 1.1 get https://api.instagram.com/v1/users/-6.293928E%2B63 
 ```
 
 
@@ -201,15 +201,15 @@ See the authenticated user's feed.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| count | query | integer |  | Count of media to return. | 676242839 | 
-| max_id | query | integer |  | Return media earlier than this max_id.s | -1348412440 | 
-| min_id | query | integer |  | Return media later than this min_id. | 317563625 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| count | query | integer |  | Count of media to return. | -1882771214 | 
+| max_id | query | integer |  | Return media earlier than this max_id.s | 322783352 | 
+| min_id | query | integer |  | Return media later than this min_id. | -2052659341 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=676242839&max_id=-1348412440&min_id=317563625 
+HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=-1882771214&max_id=322783352&min_id=-2052659341 
 ```
 
 
@@ -223,17 +223,17 @@ HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=676242839&max_id
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | 1.418442E-60 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| count | query | integer |  | Count of media to return. | -1596713669 | 
-| max_timestamp | query | integer |  | Return media before this UNIX timestamp. | -1570759770 | 
-| min_timestamp | query | integer |  | Return media after this UNIX timestamp. | -37922997 | 
-| min_id | query | string |  | Return media later than this min_id. | ittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornar | 
-| max_id | query | string |  | Return media earlier than this max_id. | t quam. Maece | 
+| user-id | path | number | yes | The user identifier number | -4575.906 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| count | query | integer |  | Count of media to return. | 1865799144 | 
+| max_timestamp | query | integer |  | Return media before this UNIX timestamp. | 623824587 | 
+| min_timestamp | query | integer |  | Return media after this UNIX timestamp. | -1708280369 | 
+| min_id | query | string |  | Return media later than this min_id. | ltrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit  | 
+| max_id | query | string |  | Return media earlier than this max_id. | it amet, consectetur adipiscing elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac  | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/1.418442E-60/media/recent?count=-1596713669&max_timestamp=-1570759770&min_timestamp=-37922997&min_id=ittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornar&max_id=t%20quam.%20Maece 
+HTTP 1.1 get https://api.instagram.com/v1/users/-4575.906/media/recent?count=1865799144&max_timestamp=623824587&min_timestamp=-1708280369&min_id=ltrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20&max_id=it%20amet%2C%20consectetur%20adipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20 
 ```
 
 
@@ -251,14 +251,14 @@ available for the currently authenticated user.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| count | query | integer |  | Count of media to return. | 475460596 | 
-| max_like_id | query | integer |  | Return media liked before this id. | -1882886278 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| count | query | integer |  | Count of media to return. | -1156117251 | 
+| max_like_id | query | integer |  | Return media liked before this id. | 581547648 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked?count=475460596&max_like_id=-1882886278 
+HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked?count=-1156117251&max_like_id=581547648 
 ```
 
 
@@ -272,14 +272,14 @@ Search for a user by name.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| q | query | string | yes | A query string |  odio. Sed sed  | 
-| count | query | string |  | Number of users to return. | ultrices erat, at hendrerit enim. Se | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| q | query | string | yes | A query string | utpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Don | 
+| count | query | string |  | Number of users to return. | terdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar met | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/search?q=%20odio.%20Sed%20sed%20&count=ultrices%20erat%2C%20at%20hendrerit%20enim.%20Se 
+HTTP 1.1 get https://api.instagram.com/v1/users/search?q=utpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Don&count=terdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20met 
 ```
 
 
@@ -293,12 +293,12 @@ Get the list of users this user follows.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | 3.304466E+100 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
+| user-id | path | number | yes | The user identifier number | -8.335974E-21 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/3.304466E%2B100/follows 
+HTTP 1.1 get https://api.instagram.com/v1/users/-8.335974E-21/follows 
 ```
 
 
@@ -312,12 +312,12 @@ Get the list of users this user is followed by.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | 2.05207E+172 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
+| user-id | path | number | yes | The user identifier number | 1.930475E+17 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/2.05207E%2B172/followed-by 
+HTTP 1.1 get https://api.instagram.com/v1/users/1.930475E%2B17/followed-by 
 ```
 
 
@@ -332,8 +332,8 @@ List the users who have requested this user's permission to follow.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
 
 * Example of request :
 ```json
@@ -352,13 +352,13 @@ Modify the relationship between the current user and thetarget user.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | 8.306143E+214 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
+| user-id | path | number | yes | The user identifier number | 4.99607E-96 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
 | action | body | string |  | One of follow/unfollow/block/unblock/approve/ignore. | follow | 
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/users/8.306143E%2B214/relationship 
+HTTP 1.1 post https://api.instagram.com/v1/users/4.99607E-96/relationship 
 Content-Type: application/json
 Content-Length: 8
 "follow"
@@ -383,13 +383,13 @@ has liked this media item.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| media-id | path | integer | yes | The media ID | 246628845 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| media-id | path | integer | yes | The media ID | -454584221 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/246628845 
+HTTP 1.1 get https://api.instagram.com/v1/media/-454584221 
 ```
 
 
@@ -406,17 +406,17 @@ the last 5 days. Can return mix of image and video types.
 
 | Name | Location | Type | Required | Validation | Default | Description | Example |  
 | :---: | :---: | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes |  |  | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes |  |  | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| LAT | query | number |  |  |  | Latitude of the center search coordinate. If used, lng is required. | 2.028971E-106 | 
-| MIN_TIMESTAMP | query | integer |  |  |  | A unix timestamp. All media returned will be taken later thanthis timestamp. | -629377428 | 
-| LNG | query | number |  |  |  | Longitude of the center search coordinate. If used, lat is required. | 4.315774E-47 | 
-| MAX_TIMESTAMP | query | integer |  |  |  | A unix timestamp. All media returned will be taken earlier than thistimestamp. | 1238370245 | 
+| user-id | path | number | yes |  |  | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes |  |  | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| LAT | query | number |  |  |  | Latitude of the center search coordinate. If used, lng is required. | 9.7239E-220 | 
+| MIN_TIMESTAMP | query | integer |  |  |  | A unix timestamp. All media returned will be taken later thanthis timestamp. | 2116303825 | 
+| LNG | query | number |  |  |  | Longitude of the center search coordinate. If used, lat is required. | 4.394287E+103 | 
+| MAX_TIMESTAMP | query | integer |  |  |  | A unix timestamp. All media returned will be taken earlier than thistimestamp. | -1899535379 | 
 | DISTANCE | query | integer |  | Value <= 5000 | 1000 | Default is 1km (distance=1000), max distance is 5km. | 1000 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/search?LAT=2.028971E-106&MIN_TIMESTAMP=-629377428&LNG=4.315774E-47&MAX_TIMESTAMP=1238370245&DISTANCE=1000 
+HTTP 1.1 get https://api.instagram.com/v1/media/search?LAT=9.7239E-220&MIN_TIMESTAMP=2116303825&LNG=4.394287E+103&MAX_TIMESTAMP=-1899535379&DISTANCE=1000 
 ```
 
 
@@ -432,8 +432,8 @@ Can return mix of image and video types.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
 
 * Example of request :
 ```json
@@ -452,13 +452,13 @@ Get a list of recent comments on a media object.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| media-id | path | integer | yes | Media ID | -109221507 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| media-id | path | integer | yes | Media ID | 841862926 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/-109221507/comments 
+HTTP 1.1 get https://api.instagram.com/v1/media/841862926/comments 
 ```
 
 
@@ -477,17 +477,17 @@ Create a comment on a media object with the following rules:
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| media-id | path | integer | yes | Media ID | -109221507 | 
-| TEXT | body | number |  | Text to post as a comment on the media object as specified inmedia-id. | -5.92406E-168 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| media-id | path | integer | yes | Media ID | 841862926 | 
+| TEXT | body | number |  | Text to post as a comment on the media object as specified inmedia-id. | 3.882793E+158 | 
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/media/-109221507/comments 
+HTTP 1.1 post https://api.instagram.com/v1/media/841862926/comments 
 Content-Type: application/json
 Content-Length: 13
--5.92406e-168
+3.882793e+158
 ```
 
 
@@ -502,13 +502,13 @@ authored by the authenticated user.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| media-id | path | integer | yes | Media ID | -109221507 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| media-id | path | integer | yes | Media ID | 841862926 | 
 
 * Example of request :
 ```json
-HTTP 1.1 delete https://api.instagram.com/v1/media/-109221507/comments 
+HTTP 1.1 delete https://api.instagram.com/v1/media/841862926/comments 
 ```
 
 
@@ -523,13 +523,13 @@ Get a list of users who have liked this media.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| media-id | path | integer | yes | Media ID | 1452656127 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| media-id | path | integer | yes | Media ID | -881414723 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/1452656127/likes 
+HTTP 1.1 get https://api.instagram.com/v1/media/-881414723/likes 
 ```
 
 
@@ -542,13 +542,13 @@ Set a like on this media by the currently authenticated user.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| media-id | path | integer | yes | Media ID | 1452656127 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| media-id | path | integer | yes | Media ID | -881414723 | 
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/media/1452656127/likes 
+HTTP 1.1 post https://api.instagram.com/v1/media/-881414723/likes 
 ```
 
 
@@ -562,13 +562,13 @@ Remove a like on this media by the currently authenticated user.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| media-id | path | integer | yes | Media ID | 1452656127 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| media-id | path | integer | yes | Media ID | -881414723 | 
 
 * Example of request :
 ```json
-HTTP 1.1 delete https://api.instagram.com/v1/media/1452656127/likes 
+HTTP 1.1 delete https://api.instagram.com/v1/media/-881414723/likes 
 ```
 
 
@@ -588,13 +588,13 @@ Its corresponding shortcode is D.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| shortcode | path | string | yes | The media shortcode | . Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| shortcode | path | string | yes | The media shortcode |  nec. Vestibulum elementum felis sit amet ipsum euismod ullam | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media1/.+Proin+id+scelerisque+ipsum.+Quisque+porta+mauris+nec+massa+egestas%2C+sed+mollis+est+molestie.+Aenean+quam+nisi%2C+posuere+sed+varius+sodales%2C+sagittis 
+HTTP 1.1 get https://api.instagram.com/v1/media1/+nec.+Vestibulum+elementum+felis+sit+amet+ipsum+euismod+ullam 
 ```
 
 
@@ -609,12 +609,12 @@ Get information about a tag object.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name | rra ullamcorper. Fusce nec est quam. Pellent | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | us sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Ma | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/rra+ullamcorper.+Fusce+nec+est+quam.+Pellent 
+HTTP 1.1 get https://api.instagram.com/v1/tags/us+sodales%2C+sagittis+sed+ex.+Vivamus+id+vulputate+odio.+Donec+quis+facilisis+arcu%2C+vel+ultrices+augue.+Suspendisse+potenti.+Ma 
 ```
 
 
@@ -631,12 +631,12 @@ these objects.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name | ctetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name |  vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus  | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/ctetur+adipiscing+elit.+Suspendisse+justo+turpis%2C+lacinia+id+tempor+sed%2C+dapibus+vel+elit/media/recent 
+HTTP 1.1 get https://api.instagram.com/v1/tags/+vehicula+ex+lorem%2C+ut+ornare+purus+ultrices+nec.+Vestibulum+elementum+felis+sit+amet+ipsum+euismod+ullamcorper.+Phasellus+/media/recent 
 ```
 
 
@@ -650,13 +650,13 @@ HTTP 1.1 get https://api.instagram.com/v1/tags/ctetur+adipiscing+elit.+Suspendis
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| q | query | string |  | A valid tag name without a leading #. (eg. snowy, nofilter) | met ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt  | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| q | query | string |  | A valid tag name without a leading #. (eg. snowy, nofilter) |  sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus a | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/search?q=met%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20 
+HTTP 1.1 get https://api.instagram.com/v1/tags/search?q=%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20a 
 ```
 
 
@@ -671,13 +671,13 @@ Get information about a location.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| location-id | path | integer | yes | Location ID | 594093159 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| location-id | path | integer | yes | Location ID | 462321752 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/594093159 
+HTTP 1.1 get https://api.instagram.com/v1/locations/462321752 
 ```
 
 
@@ -691,17 +691,17 @@ Get a list of recent media objects from a given location.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| location-id | path | integer | yes | Location ID | -581870475 | 
-| max_timestamp | query | integer |  | Return media before this UNIX timestamp. | 646248697 | 
-| min_timestamp | query | integer |  | Return media after this UNIX timestamp. | -1595003424 | 
-| min_id | query | string |  | Return media later than this min_id. | c interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequ | 
-| max_id | query | string |  | Return media earlier than this max_id. | l. Donec  | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| location-id | path | integer | yes | Location ID | -1998066448 | 
+| max_timestamp | query | integer |  | Return media before this UNIX timestamp. | 1701251125 | 
+| min_timestamp | query | integer |  | Return media after this UNIX timestamp. | -1399388783 | 
+| min_id | query | string |  | Return media later than this min_id. | at, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur p | 
+| max_id | query | string |  | Return media earlier than this max_id. | o quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagitt | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/-581870475/media/recent?max_timestamp=646248697&min_timestamp=-1595003424&min_id=c%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequ&max_id=l.%20Donec%20 
+HTTP 1.1 get https://api.instagram.com/v1/locations/-1998066448/media/recent?max_timestamp=1701251125&min_timestamp=-1399388783&min_id=at%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20p&max_id=o%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagitt 
 ```
 
 
@@ -715,18 +715,18 @@ Search for a location by geographic coordinate.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| distance | query | integer |  | Default is 1000m (distance=1000), max distance is 5000. | 1181735230 | 
-| facebook_places_id | query | integer |  | Returns a location mapped off of a Facebook places id. If used, aFoursquare id and lat, lng are not required. | 1138361057 | 
-| foursquare_id | query | integer |  | returns a location mapped off of a foursquare v1 api location id.If used, you are not required to use lat and lng. Note that thismethod is deprecated; you should use the new foursquare IDs with V2of their API. | -212874153 | 
-| lat | query | number |  | atitude of the center search coordinate. If used, lng is required. | 2.369397E-74 | 
-| lng | query | number |  | ongitude of the center search coordinate. If used, lat is required. | -8.083259E+53 | 
-| foursquare_v2_id | query | integer |  | Returns a location mapped off of a foursquare v2 api location id. Ifused, you are not required to use lat and lng. | -672656654 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| distance | query | integer |  | Default is 1000m (distance=1000), max distance is 5000. | 345662742 | 
+| facebook_places_id | query | integer |  | Returns a location mapped off of a Facebook places id. If used, aFoursquare id and lat, lng are not required. | 1348316333 | 
+| foursquare_id | query | integer |  | returns a location mapped off of a foursquare v1 api location id.If used, you are not required to use lat and lng. Note that thismethod is deprecated; you should use the new foursquare IDs with V2of their API. | -1749700100 | 
+| lat | query | number |  | atitude of the center search coordinate. If used, lng is required. | -6.49462E+123 | 
+| lng | query | number |  | ongitude of the center search coordinate. If used, lat is required. | -7.4926E+201 | 
+| foursquare_v2_id | query | integer |  | Returns a location mapped off of a foursquare v2 api location id. Ifused, you are not required to use lat and lng. | -807369583 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/search?distance=1181735230&facebook_places_id=1138361057&foursquare_id=-212874153&lat=2.369397E-74&lng=-8.083259E+53&foursquare_v2_id=-672656654 
+HTTP 1.1 get https://api.instagram.com/v1/locations/search?distance=345662742&facebook_places_id=1348316333&foursquare_id=-1749700100&lat=-6.49462E+123&lng=-7.4926E+201&foursquare_v2_id=-807369583 
 ```
 
 
@@ -750,15 +750,15 @@ geography, use the [media search endpoint
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user-id | path | number | yes | The user identifier number | -1.219633E+215 | 
-| tag-name | path | string | yes | Tag name |  mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| geo-id | path | integer | yes | Geolocation ID | -1699983356 | 
-| count | query | integer |  | Max number of media to return. | 1605307508 | 
-| min_id | query | integer |  | Return media before this `min_id`. | -231231621 | 
+| user-id | path | number | yes | The user identifier number | 3.78688E+210 | 
+| tag-name | path | string | yes | Tag name | t sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libe | 
+| geo-id | path | integer | yes | Geolocation ID | -1754014731 | 
+| count | query | integer |  | Max number of media to return. | -1713619773 | 
+| min_id | query | integer |  | Return media before this `min_id`. | -1598469997 | 
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/geographies/-1699983356/media/recent?count=1605307508&min_id=-231231621 
+HTTP 1.1 get https://api.instagram.com/v1/geographies/-1754014731/media/recent?count=-1713619773&min_id=-1598469997 
 ```
 
 
@@ -770,7 +770,92 @@ HTTP 1.1 get https://api.instagram.com/v1/geographies/-1699983356/media/recent?c
 ---
 
 ## Table of contents
+* Tags
+  * Tag : Users
+    * [Operation : get /users/{user-id}](#get-usersuser-id)
+    * [Operation : get /users/self/feed](#get-usersselffeed)
+    * [Operation : get /users/{user-id}/media/recent](#get-usersuser-idmediarecent)
+    * [Operation : get /users/self/media/liked](#get-usersselfmedialiked)
+    * [Operation : get /users/search](#get-userssearch)
+  * Tag : Relationships
+ : Relationships are expressed using the following terms:
+
+**outgoing_status**: Your relationship to the user. Can be "follows",
+  "requested", "none".
+**incoming_status**: A user's relationship to you. Can be "followed_by",
+  "requested_by", "blocked_by_you", "none".
+    * [Operation : get /users/{user-id}/follows](#get-usersuser-idfollows)
+    * [Operation : get /users/{user-id}/followed-by](#get-usersuser-idfollowed-by)
+    * [Operation : get /users/self/requested-by](#get-usersselfrequested-by)
+    * [Operation : post /users/{user-id}/relationship](#post-usersuser-idrelationship)
+  * Tag : Media
+ : At this time, uploading via the API is not possible. We made a conscious
+choice not to add this for the following reasons:
+
+* Instagram is about your life on the go – we hope to encourage photos
+  from within the app.
+* We want to fight spam & low quality photos. Once we allow uploading
+  from other sources, it's harder to control what comes into the Instagram
+  ecosystem. All this being said, we're working on ways to ensure users
+  have a consistent and high-quality experience on our platform.
+    * [Operation : get /media/{media-id}](#get-mediamedia-id)
+    * [Operation : get /media1/{shortcode}](#get-media1shortcode)
+    * [Operation : get /media/search](#get-mediasearch)
+    * [Operation : get /media/popular](#get-mediapopular)
+    * [Operation : post /media/{media-id}/comments](#post-mediamedia-idcomments)
+    * [Operation : get /media/{media-id}/likes](#get-mediamedia-idlikes)
+    * [Operation : get /locations/{location-id}/media/recent](#get-locationslocation-idmediarecent)
+  * Tag : Commnts
+  * Tag : Likes
+    * [Operation : get /media/{media-id}/likes](#get-mediamedia-idlikes)
+    * [Operation : post /media/{media-id}/likes](#post-mediamedia-idlikes)
+    * [Operation : delete /media/{media-id}/likes](#delete-mediamedia-idlikes)
+  * Tag : Tags
+    * [Operation : get /tags/{tag-name}](#get-tagstag-name)
+    * [Operation : get /tags/{tag-name}/media/recent](#get-tagstag-namemediarecent)
+    * [Operation : get /tags/search](#get-tagssearch)
+  * Tag : Location
+    * [Operation : get /locations/{location-id}](#get-locationslocation-id)
+    * [Operation : get /locations/{location-id}/media/recent](#get-locationslocation-idmediarecent)
+    * [Operation : get /locations/search](#get-locationssearch)
+  * Tag : Subscribtions
+  * Tag : Comments
+    * [Operation : get /media/{media-id}/comments](#get-mediamedia-idcomments)
+    * [Operation : post /media/{media-id}/comments](#post-mediamedia-idcomments)
+    * [Operation : delete /media/{media-id}/comments](#delete-mediamedia-idcomments)
 * [Summary](#summary)
 * [Resources](#resources)
-    * [Table of contents](#table-of-contents)
+  * [Resource : Resource : users](#resource--users)
+    * [Operation : get /users/{user-id}](#get-usersuser-id)
+    * [Operation : get /users/self/feed](#get-usersselffeed)
+    * [Operation : get /users/{user-id}/media/recent](#get-usersuser-idmediarecent)
+    * [Operation : get /users/self/media/liked](#get-usersselfmedialiked)
+    * [Operation : get /users/search](#get-userssearch)
+    * [Operation : get /users/{user-id}/follows](#get-usersuser-idfollows)
+    * [Operation : get /users/{user-id}/followed-by](#get-usersuser-idfollowed-by)
+    * [Operation : get /users/self/requested-by](#get-usersselfrequested-by)
+    * [Operation : post /users/{user-id}/relationship](#post-usersuser-idrelationship)
+  * [Resource : Resource : media](#resource--media)
+    * [Operation : get /media/{media-id}](#get-mediamedia-id)
+    * [Operation : get /media/search](#get-mediasearch)
+    * [Operation : get /media/popular](#get-mediapopular)
+    * [Operation : get /media/{media-id}/comments](#get-mediamedia-idcomments)
+    * [Operation : post /media/{media-id}/comments](#post-mediamedia-idcomments)
+    * [Operation : delete /media/{media-id}/comments](#delete-mediamedia-idcomments)
+    * [Operation : get /media/{media-id}/likes](#get-mediamedia-idlikes)
+    * [Operation : post /media/{media-id}/likes](#post-mediamedia-idlikes)
+    * [Operation : delete /media/{media-id}/likes](#delete-mediamedia-idlikes)
+  * [Resource : Resource : media1](#resource--media1)
+    * [Operation : get /media1/{shortcode}](#get-media1shortcode)
+  * [Resource : Resource : tags](#resource--tags)
+    * [Operation : get /tags/{tag-name}](#get-tagstag-name)
+    * [Operation : get /tags/{tag-name}/media/recent](#get-tagstag-namemediarecent)
+    * [Operation : get /tags/search](#get-tagssearch)
+  * [Resource : Resource : locations](#resource--locations)
+    * [Operation : get /locations/{location-id}](#get-locationslocation-id)
+    * [Operation : get /locations/{location-id}/media/recent](#get-locationslocation-idmediarecent)
+    * [Operation : get /locations/search](#get-locationssearch)
+  * [Resource : Resource : geographies](#resource--geographies)
+    * [Operation : get /geographies/{geo-id}/media/recent](#get-geographiesgeo-idmediarecent)
+* [Table of contents](#table-of-contents)
 

@@ -61,25 +61,25 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| pet | body | object | yes | [parameters/body](#objectproperty_57cc416398404) | The pet JSON you want to post | 
+| pet | body | object | yes | [parameters/body](#objectproperty_57cc4a5d914e0) | The pet JSON you want to post | 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 260
+Content-Length: 279
 {
-    "name": "incidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque era",
-    "birthday": 34290269
+    "name": "nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at t",
+    "birthday": 446357227
 }
 ```
 
-* <p name="objectproperty_57cc416398404">Object pet :</p> 
+* <p name="objectproperty_57cc4a5d914e0">Object pet :</p> 
 
 | Name | Type | Example |  
 | :---: | :---: | :--- |  
-| name | string | erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendis | 
-| birthday | int32 | -765012338 | 
+| name | string | elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim | 
+| birthday | int32 | -458099048 | 
 
 
 
@@ -91,25 +91,25 @@ Content-Length: 260
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| pet | body | object | yes | [parameters/body](#objectproperty_57cc41639c73f) | The pet JSON you want to post | 
+| pet | body | object | yes | [parameters/body](#objectproperty_57cc4a5d95608) | The pet JSON you want to post | 
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 175
+Content-Length: 209
 {
-    "name": "pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, fini",
-    "birthday": -1874708052
+    "name": "eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus lu",
+    "birthday": -2063282505
 }
 ```
 
-* <p name="objectproperty_57cc41639c73f">Object pet :</p> 
+* <p name="objectproperty_57cc4a5d95608">Object pet :</p> 
 
 | Name | Type | Example |  
 | :---: | :---: | :--- |  
-| name | string | llente | 
-| birthday | int32 | 1905029215 | 
+| name | string | c et lorem eros. Suspendisse ege | 
+| birthday | int32 | 1846538631 | 
 
 
 
@@ -122,11 +122,11 @@ Content-Length: 175
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of the pet | is nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec mol | 
+| petId | path | string | yes | ID of the pet | Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricie | 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/is+nec%2C+tempus+ac+ipsum.+Ut+molestie+aliquet+est%2C+posuere+tincidunt+elit.+Etiam+convallis+eu+ligula+non+consequat.+Pellentesque+elit+libero%2C+faucibus+luctus+ante+nec%2C+volutpat+dictum+neque.+Donec+mol 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/Donec+consectetur+sed+ante+sit+amet+sagittis.+In+non+lectus+eu+nunc+interdum+laoreet+a+ut+dui.+Sed+eu+nulla+malesuada%2C+egestas+velit+id%2C+semper+felis.+Fusce+ac+dui+nisl.+Donec+ultricie 
 ```
 
 
@@ -138,7 +138,13 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/is+nec%2C+tempus+ac+ipsum.+Ut
 ---
 
 ## Table of contents
+* Tags
 * [Summary](#summary)
 * [Resources](#resources)
-    * [Table of contents](#table-of-contents)
+  * [Resource : Resource : Root](#resource--root)
+    * [Operation : get /](#get-)
+    * [Operation : post /](#post-)
+    * [Operation : put /](#put-)
+    * [Operation : get /{petId}](#get-petid)
+* [Table of contents](#table-of-contents)
 

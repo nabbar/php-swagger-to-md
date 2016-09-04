@@ -34,9 +34,18 @@ class Swagger extends \SwaggerValidator\Object\Swagger
     public function markdown(\SwaggerValidator\Common\Context $context)
     {
         $method       = __FUNCTION__;
+        $keyTags      = \SwaggerValidator\Common\FactorySwagger::KEY_TAGS;
         $generalItems = $this->getMethodGeneric($context, $method);
         $templateVars = array();
         $tags         = array();
+
+        if (($this->has($keyTags))) {
+            foreach ($this->$keyTags as $tag) {
+                if (is_object($tag) && property_exists($tag, 'name')) {
+                    $tags[$tag->name] = get_object_vars($tag);
+                }
+            }
+        }
 
         if (isset($this->basePath)) {
             $context->setBasePath($this->basePath);
@@ -68,13 +77,16 @@ class Swagger extends \SwaggerValidator\Object\Swagger
             }
 
             if (is_object($this->$key) && method_exists($this->$key, 'getSummary')) {
-                $templateVars['Summary'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('GenericSummary', array('summary' => $this->$key->getSummary($context->setDataPath($key))));
+                $summary = $this->$key->getSummary($context->setDataPath($key));
             }
 
             if (is_object($this->$key) && method_exists($this->$key, 'getTags')) {
-                $templateVars['Index'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('GenericIndex', $this->$key->getTags($context->setDataPath($key), $tags));
+                $tags = $this->$key->getTags($context->setDataPath($key), $tags);
             }
         }
+
+        $templateVars['Summary'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('GenericSummary', array('summary' => $summary));
+        $templateVars['Index']   = \Swagger2md\Swagger2md::getInstance()->renderTemplate('GenericIndex', array('tags' => $tags, 'summary' => $summary));
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));
         array_shift($tpl);
