@@ -29,9 +29,11 @@ class ParameterBody extends \SwaggerValidator\Object\ParameterBody
 
     public function markdown(\SwaggerValidator\Common\Context $context)
     {
-        $method       = __FUNCTION__;
-        $schemaKey    = \SwaggerValidator\Common\FactorySwagger::KEY_SCHEMA;
-        $templateVars = array();
+        $method               = __FUNCTION__;
+        $schemaKey            = \SwaggerValidator\Common\FactorySwagger::KEY_SCHEMA;
+        $templateVars         = array();
+        $templateVars['name'] = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
+        $templateVars['in']   = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
 
         foreach ($this->keys() as $key) {
 
@@ -80,13 +82,21 @@ class ParameterBody extends \SwaggerValidator\Object\ParameterBody
             }
         }
         else {
-            $templateVars['partType']        = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartTypeFormat', $templateVars);
-            $templateVars['linkItemsObject'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartLinkObject', array('name' => 'parameters/body', 'link' => 'toto'));
-            $templateVars['model']           = $this->getModel($context);
-        }
+            $ref  = \Swagger2md\Swagger2md::makeAnchor(uniqid('objectProperty_'));
+            $name = 'parameters/body';
 
-        $templateVars['name'] = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
-        $templateVars['in']   = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
+            $templateVars['partType']        = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartTypeFormat', $templateVars);
+            $templateVars['model']           = $this->getModel($context);
+            $templateVars['link']            = $ref;
+            $templateVars['linkItemsObject'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartLinkObject', array('name' => $name, 'link' => $ref));
+
+            $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES] = $templateVars[$schemaKey];
+            unset($templateVars[$schemaKey]);
+
+            \Swagger2md\Swagger2md::getInstance()->renderTable($name, $ref, \SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES, 'ColonsConfigOperation', 'TableObjectProperties', $subVars, true);
+
+            unset($subVars[\SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES]);
+        }
 
         return $templateVars;
     }
