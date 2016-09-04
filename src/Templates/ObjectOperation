@@ -2,33 +2,13 @@
 {% if externalDocs|length > 0 %}
 * Addition note : {{ externalDocs }}
 {% endif %}
-{% if parameters is not null and parameters.count > 0 %}
+{% if parameters is not null %}
 * Request Parameters :
+  * Content-Type Accepted : {{ consumes|join(', ') }}
 
-| {% for col in listParamsColons %}{{ col.title }} | {%endfor %} 
-| {% for col in listParamsColons %}{% if col.align == 'left' or col.align == 'center' %}:{% endif %}---{% if col.align == 'right' or col.align == 'center' %}:{% endif %} | {%endfor %} 
-{% for location in parameters.items %}{% for param in location.items %}
-| {% for col in listParamsColons %}{% if param[col.key] is same as(true) %}yes{% elseif param[col.key] is same as(false) %}no{% else %}{{ param[col.key]|replace({"\n":"", "\r":""}) }}{% endif %} | {% endfor %}
-
-{% endfor %}{% endfor %}
-{% endif %}
+{{ parameters }}
 
 * Example of request :
 {{ Request }}
 
-{% if responses is not null and responses.count > 0 %}
-{% for status in responses.items %}
-{% if status is not null and status.count > 0 %}
-* Response **{{ status.name }}** parameters :
-
-| Name | Location | Type | Required | Validation | Pattern | Enum | Definition | Default | Example | Description |
-| :--: | :------: | :--: | :------: | :--------: | :-----: | :--: | :--------: | :-----: | :-----: | :---------: |
-{% for item in status.items %}{% if item.render is not null %}{{ item.render }}{% endif %}{% endfor %}
-
-* Example of response **{{ status.name }}** :
-
-{{ status.Response }}
-
-{% endif %}
-{% endfor %}
 {% endif %}

@@ -27,7 +27,7 @@ namespace Swagger2md\SwaggerValidator\DataType;
 class TypeArray extends \SwaggerValidator\DataType\TypeArray
 {
 
-    public function markdown(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context)
     {
         $method       = __FUNCTION__;
         $templateVars = array();
@@ -35,29 +35,26 @@ class TypeArray extends \SwaggerValidator\DataType\TypeArray
         foreach ($this->keys() as $key) {
 
             if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $twigObject);
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($key));
             }
             elseif (!is_object($this->$key)) {
                 $templateVars[$key] = $this->$key;
             }
         }
 
-        $templateVars['partType']        = $twigObject->render('PartTypeFormat', $templateVars);
-        $templateVars['linkItemsObject'] = $twigObject->render('PartLinkItems', array('name' => $context->getDataPath(), 'link' => 'toto'));
+        $items = $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_ITEMS];
+        unset($templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_ITEMS]);
+
+        $templateVars = $templateVars + $items;
+
+        $templateVars['partType']        = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartTypeFormat', $templateVars);
+        $templateVars['linkItemsObject'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartLinkItems', array('name' => $context->getDataPath(), 'link' => 'toto'));
         $templateVars['partValidation']  = implode(', ', array_filter(array(
-            $twigObject->render('PartMinMaxItems', $templateVars),
-            $twigObject->render('PartUniqueItems', $templateVars),
+            \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartMinMaxItems', $templateVars),
+            \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartUniqueItems', $templateVars),
         )));
 
         $templateVars['model'] = $this->getModel($context);
-
-        $tpl = explode('\\', trim(__CLASS__, "\\"));
-        array_shift($tpl);
-        array_shift($tpl);
-        $tpl = implode('', array_map('ucfirst', $tpl));
-
-        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        $templateVars['render'] = $twigObject->render($tpl, $templateVars);
 
         return $templateVars;
     }

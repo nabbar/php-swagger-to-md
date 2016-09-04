@@ -27,7 +27,7 @@ namespace Swagger2md\SwaggerValidator\Object;
 class ParameterBody extends \SwaggerValidator\Object\ParameterBody
 {
 
-    public function markdown(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context)
     {
         $method       = __FUNCTION__;
         $schemaKey    = \SwaggerValidator\Common\FactorySwagger::KEY_SCHEMA;
@@ -36,7 +36,7 @@ class ParameterBody extends \SwaggerValidator\Object\ParameterBody
         foreach ($this->keys() as $key) {
 
             if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $twigObject);
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($key));
             }
             elseif (!is_object($this->$key)) {
                 $templateVars[$key] = $this->$key;
@@ -72,7 +72,7 @@ class ParameterBody extends \SwaggerValidator\Object\ParameterBody
             foreach ($this->$schemaKey->keys() as $key) {
 
                 if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                    $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $twigObject);
+                    $templateVars[$key] = $this->$key->$method($context->setDataPath($key));
                 }
                 elseif (!is_object($this->$key)) {
                     $templateVars[$key] = $this->$key;
@@ -80,8 +80,8 @@ class ParameterBody extends \SwaggerValidator\Object\ParameterBody
             }
         }
         else {
-            $templateVars['partType']        = $twigObject->render('PartTypeFormat', $templateVars);
-            $templateVars['linkItemsObject'] = $twigObject->render('PartLinkObject', array('name' => $context->getDataPath(), 'link' => 'toto'));
+            $templateVars['partType']        = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartTypeFormat', $templateVars);
+            $templateVars['linkItemsObject'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartLinkObject', array('name' => $context->getDataPath(), 'link' => 'toto'));
             $templateVars['model']           = $this->getModel($context);
         }
 
@@ -94,7 +94,7 @@ class ParameterBody extends \SwaggerValidator\Object\ParameterBody
         $tpl = implode('', array_map('ucfirst', $tpl));
 
         \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        $templateVars['render'] = $twigObject->render($tpl, $templateVars);
+        $templateVars['render'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate($tpl, $templateVars);
 
         return $templateVars;
     }

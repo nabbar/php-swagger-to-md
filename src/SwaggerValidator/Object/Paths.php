@@ -32,7 +32,7 @@ class Paths extends \SwaggerValidator\Object\Paths
      * @param \SwaggerValidator\Common\Context $context
      * @return array
      */
-    public function getSummary(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
+    public function getSummary(\SwaggerValidator\Common\Context $context)
     {
         $method = __FUNCTION__;
 
@@ -48,7 +48,7 @@ class Paths extends \SwaggerValidator\Object\Paths
             list($resources, $isResource) = $this->getResourceForKey($key);
 
             if (!array_key_exists($resources, $summary)) {
-                $string = $twigObject->render('StringResource', array('string' => $resources));
+                $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringResource', array('string' => $resources));
 
                 $summary[$resources] = array(
                     'name'  => $string,
@@ -57,12 +57,12 @@ class Paths extends \SwaggerValidator\Object\Paths
                 );
             }
 
-            $string = $twigObject->render('StringPath', array('string' => $key));
+            $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringPath', array('string' => $key));
 
             $summary[$resources]['paths'][$key] = array(
                 'name'    => $string,
                 'link'    => \Swagger2md\Swagger2md::makeAnchor($string, $isResource),
-                'methods' => $this->$key->$method($context->setDataPath($key), $twigObject),
+                'methods' => $this->$key->$method($context->setDataPath($key)),
             );
         }
 
@@ -73,9 +73,10 @@ class Paths extends \SwaggerValidator\Object\Paths
     /**
      * Return the array structured by tags, path, method with all name and anchor
      * @param \SwaggerValidator\Common\Context $context
+     * @param array $tags
      * @return array
      */
-    public function getTags(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject, &$tags)
+    public function getTags(\SwaggerValidator\Common\Context $context, &$tags)
     {
         $method = __FUNCTION__;
 
@@ -84,7 +85,7 @@ class Paths extends \SwaggerValidator\Object\Paths
                 continue;
             }
 
-            $this->$key->$method($context->setDataPath($key), $twigObject, $tags);
+            $this->$key->$method($context->setDataPath($key), $tags);
         }
 
         \Swagger2md\Swagger2md::printOutVV('Tags rendered for path :' . $context->getDataPath());
@@ -94,14 +95,12 @@ class Paths extends \SwaggerValidator\Object\Paths
     /**
      *
      * @param \SwaggerValidator\Common\Context $context
-     * @param \Twig_Environment $twigObject
+     * @param array $generalItems
      */
-    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems)
     {
-        $method = __FUNCTION__;
-        $this->getMethodGeneric($context, $method, $generalItems, null, array($twigObject));
-        $this->getModelConsumeProduce($generalItems);
-
+        $method       = __FUNCTION__;
+        $generalItems = $this->getMethodGeneric($context, $method, $generalItems);
         $tplResources = array();
 
         foreach ($this->keys() as $key) {
@@ -112,7 +111,7 @@ class Paths extends \SwaggerValidator\Object\Paths
             list($resource, $isResource) = $this->getResourceForKey($key);
 
             if (!array_key_exists($resource, $tplResources)) {
-                $string = $twigObject->render('StringResource', array('string' => $resource));
+                $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringResource', array('string' => $resource));
 
                 $tplResources[$resource] = array(
                     'name'  => $string,
@@ -120,11 +119,11 @@ class Paths extends \SwaggerValidator\Object\Paths
                 );
             }
 
-            $string = $twigObject->render('StringPath', array('string' => $key));
+            $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringPath', array('string' => $key));
 
             $tplResources[$resource]['paths'][$key] = array(
                 'name' => $string,
-                'item' => $this->$key->$method($context->setDataPath($key)->setRoutePath($key), $generalItems, $twigObject),
+                'item' => $this->$key->$method($context->setDataPath($key)->setRoutePath($key), $generalItems),
             );
         }
 
@@ -134,7 +133,7 @@ class Paths extends \SwaggerValidator\Object\Paths
         $tpl = implode('', array_map('ucfirst', $tpl));
 
         \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        return $twigObject->render($tpl, array(
+        return \Swagger2md\Swagger2md::getInstance()->renderTemplate($tpl, array(
                     'resources' => $tplResources,
         ));
     }

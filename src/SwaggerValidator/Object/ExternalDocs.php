@@ -30,16 +30,16 @@ class ExternalDocs extends \SwaggerValidator\Object\ExternalDocs
     /**
      *
      * @param \SwaggerValidator\Common\Context $context
-     * @param \Twig_Environment $twigObject
+     * @param array $generalItems
      */
-    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems)
     {
         $method       = __FUNCTION__;
         $templateVars = array();
 
         foreach ($this->keys() as $key) {
             if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $generalItems, $twigObject);
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $generalItems);
             }
             elseif (!is_object($this->$key)) {
                 $templateVars[$key] = $this->$key;
@@ -56,7 +56,7 @@ class ExternalDocs extends \SwaggerValidator\Object\ExternalDocs
         $tpl = implode('', array_map('ucfirst', $tpl));
 
         \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        return $twigObject->render($tpl, $templateVars);
+        return \Swagger2md\Swagger2md::getInstance()->renderTemplate($tpl, $templateVars);
     }
 
 }

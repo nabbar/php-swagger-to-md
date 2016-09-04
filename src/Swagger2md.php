@@ -226,7 +226,7 @@ class Swagger2md
 
     public function markdown()
     {
-        file_put_contents($this->output, $this->swagger->markdown(new \Swagger2md\Context(), $this->twigTpl));
+        file_put_contents($this->output, $this->swagger->markdown(new \Swagger2md\Context()));
     }
 
     public static function printError($message)
@@ -335,16 +335,74 @@ Options:
         return str_replace(' ', '-', preg_replace('/([\W]*)/si', '', strtolower($title))) . ($suffix > 0 ? '-' . ((int) $suffix) : '');
     }
 
-    public function renderObject($name, $anchor, $template, $vars)
+    public function renderTable($name, $anchor, $listKey, $colonsFile, $template, $vars, $store = null)
     {
-        $file = $this->checkAndMakeObjectFolder();
+        if ($store !== false) {
+            $file = $this->checkAndMakeObjectFolder();
+        }
 
         if (!is_array($this->suffixObject)) {
             $this->suffixObject = array();
         }
 
+        $colonTitle = $this->getColonArray($colonsFile);
+
+        if (empty($colonTitle)) {
+            self::printError('Cannot load colons config for table with this template : ' . $colonsFile);
+            return;
+        }
+
+        if (empty($vars[$listKey])) {
+            self::printError('Cannot rendenr an empty table...');
+            return;
+        }
+
+        $vars[$listKey] = array_map(function($val) {
+            if (!is_array($val) || !array_key_exists(\SwaggerValidator\Common\FactorySwagger::KEY_REQUIRED, $val)) {
+                return $val;
+            }
+
+            if ($val[\SwaggerValidator\Common\FactorySwagger::KEY_REQUIRED] !== true) {
+                unset($val[\SwaggerValidator\Common\FactorySwagger::KEY_REQUIRED]);
+            }
+
+            return $val;
+        }, $vars[$listKey]);
+
+        $colonTitle = array_map(function($val) use($vars, $listKey) {
+            if (empty($val) || !is_array($vars) || !array_key_exists('key', $val)) {
+                return;
+            }
+
+            if ($val['enabled'] === true) {
+                return $val;
+            }
+
+            foreach ($vars[$listKey] as $item) {
+                if (empty($item) || !is_array($item) || !array_key_exists($val['key'], $item) || is_null($item[$val['key']])) {
+                    continue;
+                }
+                elseif (!is_string($item[$val['key']]) || strlen($item[$val['key']]) > 0) {
+                    $val['enabled'] = true;
+                    break;
+                }
+            }
+
+            return $val;
+        }, $colonTitle);
+
+        $vars['listColons'] = array_filter($colonTitle, function($val) {
+            return $val['enabled'];
+        });
+
+        if ($template == 'TableOperationRequest') {
+            print_r($vars);
+        }
+
         if (!empty($file)) {
             $file .= uniqid('obj_');
+
+            \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $template);
             file_put_contents($file, $this->twigTpl->render($template, $vars));
 
             $this->suffixObject[$name] = array(
@@ -353,12 +411,17 @@ Options:
                 'file' => $file,
             );
         }
-        else {
+        elseif ($store !== false) {
+            \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $template);
             $this->suffixObject[$name] = array(
                 'name'     => $name,
                 'link'     => $anchor,
                 'contents' => $this->twigTpl->render($template, $vars),
             );
+        }
+        else {
+            \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $template);
+            return $this->twigTpl->render($template, $vars);
         }
     }
 
@@ -383,7 +446,7 @@ Options:
         return null;
     }
 
-    public function getFileFromTemplate($fileName)
+    public function getColonArray($fileName)
     {
         if (!file_exists($this->templateFolder)) {
             return null;
@@ -393,7 +456,34 @@ Options:
             return null;
         }
 
-        return file_get_contents($this->templateFolder . DIRECTORY_SEPARATOR . $fileName);
+        $configColTitle = explode("\n", str_replace(array("\n\r", "\r\n", "\r"), "\n", file_get_contents($this->templateFolder . DIRECTORY_SEPARATOR . $fileName)));
+        $colParamsTitle = array_map(function($val) {
+            $colons = explode('|', trim($val));
+            $enable = false;
+
+            if (count($colons) < 3) {
+                return;
+            }
+
+            if (in_array($colons[0], array('name', 'in', 'partType'))) {
+                $enable = true;
+            }
+
+            return array(
+                'enabled' => $enable,
+                'key'     => $colons[0],
+                'title'   => $colons[1],
+                'align'   => $colons[2]
+            );
+        }, $configColTitle);
+
+        return array_filter($colParamsTitle);
+    }
+
+    public function renderTemplate($template, $vars)
+    {
+        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $template);
+        return $this->twigTpl->render($template, $vars);
     }
 
 }

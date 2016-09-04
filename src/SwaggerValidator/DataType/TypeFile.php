@@ -27,7 +27,7 @@ namespace Swagger2md\SwaggerValidator\DataType;
 class TypeFile extends \SwaggerValidator\DataType\TypeFile
 {
 
-    public function markdown(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context)
     {
         $method       = __FUNCTION__;
         $templateVars = array();
@@ -35,27 +35,19 @@ class TypeFile extends \SwaggerValidator\DataType\TypeFile
         foreach ($this->keys() as $key) {
 
             if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $twigObject);
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($key));
             }
             elseif (!is_object($this->$key)) {
                 $templateVars[$key] = $this->$key;
             }
         }
 
-        $templateVars['partType']       = $twigObject->render('PartTypeFormat', $templateVars);
+        $templateVars['partType']       = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartTypeFormat', $templateVars);
         $templateVars['partValidation'] = implode(', ', array_filter(array(
-            $twigObject->render('PartMinMaxLength', $templateVars),
+            \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartMinMaxLength', $templateVars),
         )));
 
         $templateVars['model'] = '--data-binary ' . "\n" . base64_encode(hash('SHA512', microtime(true) . uniqid(uniqid('binary_', true), true)) . hash('SHA512', microtime(true) . uniqid(uniqid('binary_', true), true)) . hash('SHA512', microtime(true) . uniqid(uniqid('binary_', true), true)) . hash('SHA512', microtime(true) . uniqid(uniqid('binary_', true), true)));
-
-        $tpl = explode('\\', trim(__CLASS__, "\\"));
-        array_shift($tpl);
-        array_shift($tpl);
-        $tpl = implode('', array_map('ucfirst', $tpl));
-
-        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        $templateVars['render'] = $twigObject->render($tpl, $templateVars);
 
         return $templateVars;
     }

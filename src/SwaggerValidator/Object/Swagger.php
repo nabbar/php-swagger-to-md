@@ -30,14 +30,11 @@ class Swagger extends \SwaggerValidator\Object\Swagger
     /**
      *
      * @param \SwaggerValidator\Common\Context $context
-     * @param \Twig_Environment $twigObject
      */
-    public function markdown(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context)
     {
-        $method = __FUNCTION__;
-        $this->getMethodGeneric($context, $method, $generalItems, null, array($twigObject));
-        $this->getModelConsumeProduce($generalItems);
-
+        $method       = __FUNCTION__;
+        $generalItems = $this->getMethodGeneric($context, $method);
         $templateVars = array();
         $tags         = array();
 
@@ -64,18 +61,18 @@ class Swagger extends \SwaggerValidator\Object\Swagger
             }
 
             if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $generalItems, $twigObject);
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $generalItems);
             }
             elseif (!is_object($this->$key)) {
                 $templateVars[$key] = $this->$key;
             }
 
             if (is_object($this->$key) && method_exists($this->$key, 'getSummary')) {
-                $templateVars['Summary'] = $twigObject->render('GenericSummary', $this->$key->getSummary($context->setDataPath($key), $twigObject));
+                $templateVars['Summary'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('GenericSummary', $this->$key->getSummary($context->setDataPath($key)));
             }
 
             if (is_object($this->$key) && method_exists($this->$key, 'getTags')) {
-                $templateVars['Index'] = $twigObject->render('GenericIndex', $this->$key->getTags($context->setDataPath($key), $twigObject, $tags));
+                $templateVars['Index'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('GenericIndex', $this->$key->getTags($context->setDataPath($key), $tags));
             }
         }
 
@@ -85,7 +82,7 @@ class Swagger extends \SwaggerValidator\Object\Swagger
         $tpl = implode('', array_map('ucfirst', $tpl));
 
         \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        return $twigObject->render($tpl, $templateVars);
+        return \Swagger2md\Swagger2md::getInstance()->renderTemplate($tpl, $templateVars);
     }
 
 }

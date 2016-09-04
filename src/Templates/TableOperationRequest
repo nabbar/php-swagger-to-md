@@ -1,0 +1,8 @@
+* Request Parameters :
+
+| {% for col in listColons %}{{ col.title }} | {%endfor %} 
+| {% for col in listColons %}{% if col.align == 'left' or col.align == 'center' %}:{% endif %}---{% if col.align == 'right' or col.align == 'center' %}:{% endif %} | {%endfor %} 
+{% for param in parameters %}
+| {% for col in listColons %}{% if param[col.key] is same as(true) %}yes{% elseif param[col.key] is same as(false) %}no{% else %}{{ param[col.key]|replace({"\n":"", "\r":""}) }}{% endif %} | {% endfor %}
+
+{% endfor %}

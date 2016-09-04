@@ -30,9 +30,9 @@ class Parameters extends \SwaggerValidator\Object\Parameters
     /**
      *
      * @param \SwaggerValidator\Common\Context $context
-     * @param \Twig_Environment $twigObject
+     * @param array $generalItems
      */
-    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems)
     {
         $method = __FUNCTION__;
         $context->setType(\SwaggerValidator\Common\Context::TYPE_REQUEST);
@@ -45,12 +45,12 @@ class Parameters extends \SwaggerValidator\Object\Parameters
             if (is_object($this->$key) && ($this->$key instanceof \SwaggerValidator\Object\ParameterBody)) {
                 $name  = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
                 $in    = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
-                $param = $this->$key->$method($context->setDataPath($key), $twigObject);
+                $param = $this->$key->$method($context->setDataPath($key));
             }
             elseif (is_object($this->$key) && ($this->$key instanceof \SwaggerValidator\DataType\TypeCommon)) {
                 $name  = $this->$key->name;
                 $in    = $this->$key->in;
-                $param = $this->$key->$method($context->setDataPath($key), $twigObject);
+                $param = $this->$key->$method($context->setDataPath($key));
             }
 
             if (!array_key_exists($in, $generalItems) || !is_array($generalItems[$in])) {

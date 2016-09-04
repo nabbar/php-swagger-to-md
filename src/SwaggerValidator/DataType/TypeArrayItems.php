@@ -27,51 +27,73 @@ namespace Swagger2md\SwaggerValidator\DataType;
 class TypeArrayItems extends \SwaggerValidator\DataType\TypeArrayItems
 {
 
-    public function markdown(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context)
     {
         $method       = __FUNCTION__;
         $templateVars = array(
-            'items'   => array(),
-            'objects' => array(),
+            'items' => array(),
         );
         $keySchema    = \SwaggerValidator\Common\FactorySwagger::KEY_SCHEMA;
-
-        if (isset($this->$keySchema) && is_object($this->$keySchema)) {
-            $templateVars['items'][] = $twigObject->render('StringObjectRef', array('name' => 'name', 'ref' => 'ref'));
-            if (method_exists($this->$keySchema, $method)) {
-                $templateVars['objects'][] = $this->$keySchema->$method($context->setDataPath($keySchema), $twigObject);
-            }
-        }
-        else {
-            foreach ($this->keys() as $key) {
-                if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                    $type = is_object($this->$key->getModel($context->setDataPath($key)));
-                    $item = $this->$key->$method($context->setDataPath($key), $twigObject);
-                }
-                else {
-                    $type = null;
-                    $item = $this->$key->$method($context->setDataPath($key), $twigObject);
-                }
-
-                if ($type === true) {
-                    $templateVars['items'][]   = $twigObject->render('StringObjectRef', array('name' => 'name', 'ref' => 'ref'));
-                    $templateVars['objects'][] = $item;
-                }
-                else {
-                    $templateVars['items'][] = $item;
-                }
-            }
-        }
-
-        $templateVars['model'] = $this->getModel($context);
 
         $tpl = explode('\\', trim(__CLASS__, "\\"));
         array_shift($tpl);
         array_shift($tpl);
         $tpl = implode('', array_map('ucfirst', $tpl));
 
-        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        $templateVars['render'] = $twigObject->render($tpl, $templateVars);
+        $name = $context->searchDataPath('items', 1);
+        $name = array_pop($name) . '/items/';
+
+        if (isset($this->$keySchema) && is_object($this->$keySchema)) {
+            if (method_exists($this->$keySchema, $method)) {
+                $ref = \Swagger2md\Swagger2md::makeAnchor(uniqid('schema_'));
+
+                $schema = $this->$keySchema->$method($context->setDataPath($keySchema));
+
+                if (is_array($schema) && array_key_exists('type', $schema)) {
+                    $schema = array($schema);
+                }
+
+                \Swagger2md\Swagger2md::getInstance()->renderTable($name . 'schema', $ref, \SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES, 'ColonsConfigOperation', 'TableArrayItems', array(
+                    \SwaggerValidator\Common\FactorySwagger::KEY_TYPE       => \SwaggerValidator\Common\FactorySwagger::TYPE_OBJECT,
+                    \SwaggerValidator\Common\FactorySwagger::KEY_NAME       => $name . 'schema',
+                    'link'                                                  => $ref,
+                    \SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES => $schema,
+                        ), true);
+
+                $templateVars['items'][] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartLinkObject', array('name' => $name . 'schema', 'link' => $ref));
+            }
+            else {
+                \Swagger2md\Swagger2md::printOutV('Object : ' . get_class($this->$keySchema) . ' has not the awaiting method : ' . $method);
+            }
+        }
+        else {
+            foreach ($this->keys() as $key) {
+                if (is_object($this->$key) && method_exists($this->$key, $method)) {
+                    $type = is_object($this->$key->getModel($context->setDataPath($key)));
+                    $item = $this->$key->$method($context->setDataPath($key));
+                }
+                else {
+                    $type = null;
+                    $item = $this->$key->$method($context->setDataPath($key));
+                }
+
+                if ($type === true) {
+                    $ref = \Swagger2md\Swagger2md::makeAnchor(uniqid('itemSchema_'));
+
+                    \Swagger2md\Swagger2md::getInstance()->renderTable($name . $key, $ref, \SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES, 'ColonsConfigOperation', 'TableArrayItems', array(
+                        \SwaggerValidator\Common\FactorySwagger::KEY_TYPE       => \SwaggerValidator\Common\FactorySwagger::TYPE_OBJECT,
+                        \SwaggerValidator\Common\FactorySwagger::KEY_NAME       => $name . $key,
+                        'link'                                                  => $ref,
+                        \SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES => $item,
+                            ), true);
+
+                    $templateVars['items'][] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartLinkObject', array('name' => $name . $key, 'link' => $ref));
+                }
+                else {
+                    $templateVars['items'][] = $item;
+                }
+            }
+        }
 
         return $templateVars;
     }

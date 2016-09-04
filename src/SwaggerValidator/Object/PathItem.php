@@ -32,7 +32,7 @@ class PathItem extends \SwaggerValidator\Object\PathItem
      * @param \SwaggerValidator\Common\Context $context
      * @return array
      */
-    public function getSummary(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
+    public function getSummary(\SwaggerValidator\Common\Context $context)
     {
         $summary = array();
 
@@ -41,7 +41,7 @@ class PathItem extends \SwaggerValidator\Object\PathItem
                 continue;
             }
 
-            $string        = $twigObject->render('StringMethod', array('string' => $key));
+            $string        = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringMethod', array('string' => $key));
             $summary[$key] = array(
                 'name' => $string,
                 'link' => \Swagger2md\Swagger2md::makeAnchor($string),
@@ -55,16 +55,17 @@ class PathItem extends \SwaggerValidator\Object\PathItem
     /**
      * Return the array structured by tags, path, method with all name and anchor
      * @param \SwaggerValidator\Common\Context $context
+     * @param array $tags
      * @return array
      */
-    public function getTags(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject, &$tags)
+    public function getTags(\SwaggerValidator\Common\Context $context, &$tags)
     {
         $method  = __FUNCTION__;
         $keyTags = \SwaggerValidator\Common\FactorySwagger::KEY_TAGS;
         $curPath = $context->getLastDataPath();
 
 
-        $string  = $twigObject->render('StringPath', array('string' => $curPath));
+        $string  = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringPath', array('string' => $curPath));
         $pathBlk = array(
             'name'    => $string,
             'link'    => \Swagger2md\Swagger2md::makeAnchor($string),
@@ -94,7 +95,7 @@ class PathItem extends \SwaggerValidator\Object\PathItem
                 $tags[$opeTag]['paths'][$curPath] = $pathBlk;
             }
 
-            $string = $twigObject->render('StringMethod', array('string' => $key));
+            $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringMethod', array('string' => $key));
 
             $tags[$opeTag]['paths'][$curPath]['methods'][$key] = array(
                 'name' => $string,
@@ -109,14 +110,12 @@ class PathItem extends \SwaggerValidator\Object\PathItem
     /**
      *
      * @param \SwaggerValidator\Common\Context $context
-     * @param \Twig_Environment $twigObject
+     * @param array $generalItems
      */
-    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems)
     {
-        $method = __FUNCTION__;
-        $this->getMethodGeneric($context, $method, $generalItems, null, array($twigObject));
-        $this->getModelConsumeProduce($generalItems);
-
+        $method       = __FUNCTION__;
+        $generalItems = $this->getMethodGeneric($context, $method, $generalItems);
         $tplOperation = array();
 
         foreach ($this->keys() as $key) {
@@ -125,7 +124,7 @@ class PathItem extends \SwaggerValidator\Object\PathItem
                 continue;
             }
 
-            $string = $twigObject->render('StringMethod', array(
+            $string = \Swagger2md\Swagger2md::getInstance()->renderTemplate('StringMethod', array(
                 'route'  => $context->getRoutePath(),
                 'path'   => $context->getDataPath(),
                 'method' => $key
@@ -133,7 +132,7 @@ class PathItem extends \SwaggerValidator\Object\PathItem
 
             $tplOperation[$key] = array(
                 'name' => $string,
-                'item' => $this->$key->$method($context->setDataPath($key)->setMethod($key), $generalItems, $twigObject),
+                'item' => $this->$key->$method($context->setDataPath($key)->setMethod($key), $generalItems),
             );
         }
 
@@ -143,7 +142,7 @@ class PathItem extends \SwaggerValidator\Object\PathItem
         $tpl = implode('', array_map('ucfirst', $tpl));
 
         \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        return $twigObject->render($tpl, array(
+        return \Swagger2md\Swagger2md::getInstance()->renderTemplate($tpl, array(
                     'operations' => $tplOperation,
         ));
     }

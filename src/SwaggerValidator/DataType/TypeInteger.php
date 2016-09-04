@@ -27,7 +27,7 @@ namespace Swagger2md\SwaggerValidator\DataType;
 class TypeInteger extends \SwaggerValidator\DataType\TypeInteger
 {
 
-    public function markdown(\SwaggerValidator\Common\Context $context, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context)
     {
         $method       = __FUNCTION__;
         $templateVars = array();
@@ -35,28 +35,20 @@ class TypeInteger extends \SwaggerValidator\DataType\TypeInteger
         foreach ($this->keys() as $key) {
 
             if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                $templateVars[$key] = $this->$key->$method($context->setDataPath($key), $twigObject);
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($key));
             }
             elseif (!is_object($this->$key)) {
                 $templateVars[$key] = $this->$key;
             }
         }
 
-        $templateVars['partType']       = $twigObject->render('PartTypeFormat', $templateVars);
+        $templateVars['partType']       = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartTypeFormat', $templateVars);
         $templateVars['partValidation'] = implode(', ', array_filter(array(
-            $twigObject->render('PartMinimumMaximum', $templateVars),
-            $twigObject->render('PartMultipleOf', $templateVars),
+            \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartMinimumMaximum', $templateVars),
+            \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartMultipleOf', $templateVars),
         )));
 
         $templateVars['model'] = $this->getModel($context);
-
-        $tpl = explode('\\', trim(__CLASS__, "\\"));
-        array_shift($tpl);
-        array_shift($tpl);
-        $tpl = implode('', array_map('ucfirst', $tpl));
-
-        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        $templateVars['render'] = $twigObject->render($tpl, $templateVars);
 
         return $templateVars;
     }

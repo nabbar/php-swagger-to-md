@@ -30,93 +30,29 @@ class Operation extends \SwaggerValidator\Object\Operation
     /**
      *
      * @param \SwaggerValidator\Common\Context $context
-     * @param \Twig_Environment $twigObject
+     * @param array $generalItems
      */
-    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems, \Twig_Environment $twigObject)
+    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems)
     {
-        $method = __FUNCTION__;
-        $this->getMethodGeneric($context, $method, $generalItems, null, array($twigObject));
-        $this->getModelConsumeProduce($generalItems);
+        $method       = __FUNCTION__;
+        $generalItems = $this->getMethodGeneric($context, $method, $generalItems);
+        $reduce       = array();
 
-        $colParamsTitle = array();
-        $configColTitle = explode("\n", str_replace("\r", '', \Swagger2md\Swagger2md::getInstance()->getFileFromTemplate('RequestParamsCols')));
-
-        $colParamsTitle = array_map(function($val) {
-            $colons = explode('|', trim($val));
-            $enable = false;
-
-            if (count($colons) < 3) {
-                return;
-            }
-
-            if (in_array($colons[0], array('name', 'in', 'partType'))) {
-                $enable = true;
-            }
-
-            return array(
-                'enabled' => $enable,
-                'key'     => $colons[0],
-                'title'   => $colons[1],
-                'align'   => $colons[2]
-            );
-        }, $configColTitle);
-
-        $colParamsTitle = array_filter($colParamsTitle);
-
-        if (!empty($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS])) {
-            foreach ($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS] as $location => $list) {
-                if (empty($list)) {
-                    continue;
-                }
-                foreach ($list as $name => $params) {
-                    if (array_key_exists('required', $params) && $params['required'] === false) {
-                        unset($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS][$location][$name]['required']);
-                        unset($params['required']);
-                    }
-
-                    foreach ($colParamsTitle as &$col) {
-                        if (!array_key_exists($col['key'], $params)) {
-                            continue;
-                        }
-                        if (is_null($params[$col['key']])) {
-                            continue;
-                        }
-                        if (!is_string($params[$col['key']]) || strlen($params[$col['key']]) > 0) {
-                            $col['enabled'] = true;
-                        }
-                    }
-                }
+        foreach ($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS] as $listParams) {
+            if (is_array($listParams) && !empty($listParams)) {
+                $reduce = array_merge($reduce, array_values($listParams));
             }
         }
-
-        $colParamsTitle = array_filter($colParamsTitle, function($val) {
-            return $val['enabled'];
-        });
+        $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS] = $reduce;
+        unset($reduce);
 
         $templateVars = array(
-            \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS => null,
+            \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS => \Swagger2md\Swagger2md::getInstance()->renderTable(null, null, \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS, 'ColonsConfigOperation', 'TableOperationRequest', $generalItems, false),
             \SwaggerValidator\Common\FactorySwagger::KEY_RESPONSES  => null,
-            \SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES   => null,
-            \SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES   => null,
-            'listParamsColons'                                      => $colParamsTitle,
-            'Request'                                               => $this->makeRequestExample($context, $generalItems, $twigObject)
+            \SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES   => $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES],
+            \SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES   => $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES],
+            'Request'                                               => $this->makeRequestExample($context, $generalItems)
         );
-
-        if (!empty($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES])) {
-            $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES] = $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES];
-            unset($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES]);
-        }
-
-        if (!empty($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES])) {
-            $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES] = $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES];
-            unset($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES]);
-        }
-
-        foreach ($generalItems as $key => $value) {
-            if (array_key_exists($key, $templateVars)) {
-                $templateVars[$key] = $this->calcultateGenerals($key, $value);
-            }
-        }
 
         foreach ($this->keys() as $key) {
             if (array_key_exists($key, $templateVars)) {
@@ -124,7 +60,7 @@ class Operation extends \SwaggerValidator\Object\Operation
             }
 
             if (is_object($this->$key) && method_exists($this->$key, $method)) {
-                $templateVars[$key] = $this->$key->$method($context->setDataPath($paths), $generalItems, $twigObject);
+                $templateVars[$key] = $this->$key->$method($context->setDataPath($paths), $generalItems);
             }
             elseif (!is_object($this->$key)) {
                 $templateVars[$key] = $this->$key;
@@ -137,56 +73,7 @@ class Operation extends \SwaggerValidator\Object\Operation
         $tpl = implode('', array_map('ucfirst', $tpl));
 
         \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        return $twigObject->render($tpl, $templateVars);
-    }
-
-    private function calcultateGenerals($type, $array)
-    {
-        $result = array();
-
-        if (is_array($array)) {
-            foreach ($array as $key => $value) {
-
-                $value = $this->calcultateItemsGenerals($key, $value);
-
-                if ($value['count'] < 1) {
-                    continue;
-                }
-
-                $result[$key] = $value;
-            }
-        }
-
-        return array(
-            'name'  => $type,
-            'count' => count($result),
-            'items' => $result,
-        );
-    }
-
-    private function calcultateItemsGenerals($type, $array)
-    {
-        $result = array();
-
-        if (is_array($array)) {
-            foreach ($array as $key => $value) {
-
-                if (empty($value)) {
-                    continue;
-                }
-                elseif (!is_array($value) || count($value) < 1) {
-                    continue;
-                }
-
-                $result[$key] = $value;
-            }
-        }
-
-        return array(
-            'name'  => $type,
-            'count' => count($result),
-            'items' => $result,
-        );
+        return \Swagger2md\Swagger2md::getInstance()->renderTemplate($tpl, $templateVars);
     }
 
     protected function calculateLength($mixed)
@@ -199,7 +86,7 @@ class Operation extends \SwaggerValidator\Object\Operation
         }
     }
 
-    protected function makeRequestExample(\SwaggerValidator\Common\Context $context, $operation, \Twig_Environment $twigObject)
+    protected function makeRequestExample(\SwaggerValidator\Common\Context $context, $operation)
     {
         $keyParameters = \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS;
         $keyResponses  = \SwaggerValidator\Common\FactorySwagger::KEY_RESPONSES;
@@ -287,7 +174,7 @@ class Operation extends \SwaggerValidator\Object\Operation
         }
 
         \Swagger2md\Swagger2md::printOutV('Rendering this template : ExampleRequest');
-        return $twigObject->render('ExampleRequest', $templateVars);
+        return \Swagger2md\Swagger2md::getInstance()->renderTemplate('ExampleRequest', $templateVars);
     }
 
 }

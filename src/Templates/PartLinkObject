@@ -1,1 +1,1 @@
-[{{ name }}](#test{{ link }})
+[{{ name }}](#{{ link }})

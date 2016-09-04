@@ -27,4 +27,14 @@ namespace Swagger2md\SwaggerValidator\Object;
 class Responses extends \SwaggerValidator\Object\Responses
 {
 
+    /**
+     *
+     * @param \SwaggerValidator\Common\Context $context
+     * @param array $generalItems
+     */
+    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems)
+    {
+        return;
+    }
+
 }

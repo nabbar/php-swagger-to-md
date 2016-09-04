@@ -27,4 +27,18 @@ namespace Swagger2md\SwaggerValidator\Object;
 class Reference extends \SwaggerValidator\Object\Reference
 {
 
+    /**
+     *
+     * @param \SwaggerValidator\Common\Context $context
+     */
+    public function markdown(\SwaggerValidator\Common\Context $context)
+    {
+        if ($context->checkExternalRef($this->referenceId)) {
+            return null;
+        }
+
+        $object = \SwaggerValidator\Common\CollectionReference::getInstance()->get($this->referenceId);
+        return $object->getObject($context->setExternalRef($this->referenceId))->markdown($context->setExternalRef($this->referenceId));
+    }
+
 }
