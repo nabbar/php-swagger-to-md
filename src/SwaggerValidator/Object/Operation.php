@@ -39,6 +39,11 @@ class Operation extends \SwaggerValidator\Object\Operation
         $exampleRequest = $this->makeRequestExample($context, $generalItems);
         $reduce         = array();
 
+        $tpl = explode('\\', trim(__CLASS__, "\\"));
+        array_shift($tpl);
+        array_shift($tpl);
+        $tpl = implode('', array_map('ucfirst', $tpl));
+
         foreach ($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS] as $listParams) {
             if (is_array($listParams) && !empty($listParams)) {
                 $reduce = array_merge($reduce, array_values($listParams));
@@ -65,13 +70,21 @@ class Operation extends \SwaggerValidator\Object\Operation
             return $val;
         }, $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS]);
 
-        $templateVars = array(
+        $parameters = \Swagger2md\Swagger2md::getInstance()->renderTemplate($tpl . 'Parameters', array(
             \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS => \Swagger2md\Swagger2md::getInstance()->renderTable(null, null, \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS, 'ColonsConfigOperation', 'TableOperationRequest', $generalItems, false),
+            \SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES   => $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES],
+            'example'                                               => $exampleRequest,
+            'suffix'                                                => \Swagger2md\Swagger2md::getInstance()->extractStored(),
+        ));
+
+        $templateVars = array(
+            \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS => $parameters,
             \SwaggerValidator\Common\FactorySwagger::KEY_RESPONSES  => null,
             \SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES   => $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES],
             \SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES   => $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES],
-            'Request'                                               => $exampleRequest
         );
+
+        unset($parameters);
 
         foreach ($this->keys() as $key) {
             if (array_key_exists($key, $templateVars)) {
@@ -86,12 +99,6 @@ class Operation extends \SwaggerValidator\Object\Operation
             }
         }
 
-        $tpl = explode('\\', trim(__CLASS__, "\\"));
-        array_shift($tpl);
-        array_shift($tpl);
-        $tpl = implode('', array_map('ucfirst', $tpl));
-
-        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
         return \Swagger2md\Swagger2md::getInstance()->renderTemplate($tpl, $templateVars);
     }
 

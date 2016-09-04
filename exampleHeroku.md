@@ -38,6 +38,10 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
   * Content-Type Accepted : application/json, text/xml
 
 
+* Request Parameters :
+  * Content-Type Accepted : application/json, text/xml
+
+
 | Name | Location | Type | Validation | Default | Description | Example |  
 | :---: | :---: | :---: | :---: | :---: | :--- | :--- |  
 | limit | query | integer | 11 <= Value <= 10000 | 11 | number of pets to return | 11 | 
@@ -50,7 +54,17 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 
 
 
+
+
+* Example of request :
+
+
+
 #### post /
+
+* Request Parameters :
+  * Content-Type Accepted : application/json, text/xml
+
 
 * Request Parameters :
   * Content-Type Accepted : application/json, text/xml
@@ -58,19 +72,25 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| body | body | object | yes | [#/paths///post/parameters/0](#toto) | The pet JSON you want to post | 
+| body | body | object | yes | [parameters/body](#toto) | The pet JSON you want to post | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 234
+Content-Length: 264
 {
-    "name": "ue vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices ",
-    "birthday": -2016058399
+    "name": "felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et ve",
+    "birthday": 358597227
 }
 ```
+
+
+
+
+
+* Example of request :
 
 
 
@@ -80,21 +100,31 @@ Content-Length: 234
   * Content-Type Accepted : application/json, text/xml
 
 
+* Request Parameters :
+  * Content-Type Accepted : application/json, text/xml
+
+
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| body | body | object | yes | [#/paths///put/parameters/0](#toto) | The pet JSON you want to post | 
+| body | body | object | yes | [parameters/body](#toto) | The pet JSON you want to post | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 54
+Content-Length: 299
 {
-    "name": "arius l",
-    "birthday": -1138391945
+    "name": "e. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringill",
+    "birthday": 740603518
 }
 ```
+
+
+
+
+
+* Example of request :
 
 
 
@@ -105,15 +135,25 @@ Content-Length: 54
   * Content-Type Accepted : application/json, text/xml
 
 
+* Request Parameters :
+  * Content-Type Accepted : application/json, text/xml
+
+
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of the pet | olestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nib | 
+| petId | path | string | yes | ID of the pet | smod ullamcorper. Phasellus si | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/olestie+pretium+tortor.+Praesent+interdum+fringilla+orci%2C+gravida+ornare+nib 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/smod+ullamcorper.+Phasellus+si 
 ```
+
+
+
+
+
+* Example of request :
 
 
 

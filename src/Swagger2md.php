@@ -335,6 +335,24 @@ Options:
         return str_replace(' ', '-', preg_replace('/([\W]*)/si', '', strtolower($title))) . ($suffix > 0 ? '-' . ((int) $suffix) : '');
     }
 
+    public function extractStored()
+    {
+        $result = array();
+        foreach ($this->suffixObject as $obj) {
+            if (is_array($obj) && array_key_exists('file', $obj) && !empty($obj['file'])) {
+                $obj['contents'] = file_get_contents($obj['file']);
+                unlink($obj['file']);
+            }
+
+            if (!empty($obj['contents'])) {
+                $result[] = $obj;
+            }
+        }
+
+        $this->suffixObject = array();
+        return $result;
+    }
+
     public function renderTable($name, $anchor, $listKey, $colonsFile, $template, $vars, $store = null)
     {
         if ($store !== false) {
@@ -394,10 +412,6 @@ Options:
         $vars['listColons'] = array_filter($colonTitle, function($val) {
             return $val['enabled'];
         });
-
-        if ($template == 'TableOperationRequest') {
-            print_r($vars);
-        }
 
         if (!empty($file)) {
             $file .= uniqid('obj_');

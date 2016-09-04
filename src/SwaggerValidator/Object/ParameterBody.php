@@ -81,7 +81,7 @@ class ParameterBody extends \SwaggerValidator\Object\ParameterBody
         }
         else {
             $templateVars['partType']        = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartTypeFormat', $templateVars);
-            $templateVars['linkItemsObject'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartLinkObject', array('name' => $context->getDataPath(), 'link' => 'toto'));
+            $templateVars['linkItemsObject'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartLinkObject', array('name' => 'parameters/body', 'link' => 'toto'));
             $templateVars['model']           = $this->getModel($context);
         }
 
