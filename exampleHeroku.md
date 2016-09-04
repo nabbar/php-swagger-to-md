@@ -67,10 +67,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 194
+Content-Length: 121
 {
-    "name": ". Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim",
-    "birthday": 298880795
+    "name": "llamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis mol",
+    "birthday": 1819757868
 }
 ```
 
@@ -93,10 +93,10 @@ Content-Length: 194
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 70
+Content-Length: 194
 {
-    "name": "rpis molestie congue. N",
-    "birthday": -1312289124
+    "name": " elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat",
+    "birthday": 822080986
 }
 ```
 
@@ -113,12 +113,12 @@ Content-Length: 70
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of the pet | quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tinc | 
+| petId | path | string | yes | ID of the pet |  non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/quis%2C+laoreet+a+ipsum.+Duis+sem+elit%2C+posuere+eu+facilisis+nec%2C+tempus+ac+ipsum.+Ut+molestie+aliquet+est%2C+posuere+tinc 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/+non+consequat.+Pellentesque+elit+libero%2C+faucibus+luctus+ante+nec%2C+volutpat+dictum+neque.+Donec+molestie%2C+eros+in+ 
 ```
 
 

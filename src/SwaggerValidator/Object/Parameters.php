@@ -45,12 +45,12 @@ class Parameters extends \SwaggerValidator\Object\Parameters
             if (is_object($this->$key) && ($this->$key instanceof \SwaggerValidator\Object\ParameterBody)) {
                 $name  = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
                 $in    = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
-                $param = $this->$key->$method($context->setDataPath($key));
+                $param = $this->get($key)->$method($context->setDataPath($key));
             }
-            elseif (is_object($this->$key) && ($this->$key instanceof \SwaggerValidator\DataType\TypeCommon)) {
-                $name  = $this->$key->name;
-                $in    = $this->$key->in;
-                $param = $this->$key->$method($context->setDataPath($key));
+            elseif (is_object($this->get($key)) && ($this->get($key) instanceof \SwaggerValidator\DataType\TypeCommon)) {
+                $name  = $this->get($key)->get('name');
+                $in    = $this->get($key)->get('in');
+                $param = $this->get($key)->$method($context->setDataPath($key));
             }
 
             if (!array_key_exists($in, $generalItems) || !is_array($generalItems[$in])) {
