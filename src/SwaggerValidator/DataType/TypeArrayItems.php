@@ -45,6 +45,9 @@ class TypeArrayItems extends \SwaggerValidator\DataType\TypeArrayItems
                 $schema = $this->$keySchema->$method($context->setDataPath($keySchema));
 
                 if (is_array($schema) && array_key_exists('type', $schema)) {
+                    if (!isset($schema['name'])) {
+                        $schema['name'] = 'schema';
+                    }
                     $schema = array($schema);
                 }
 
