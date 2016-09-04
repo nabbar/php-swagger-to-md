@@ -45,10 +45,8 @@ class TypeArray extends \SwaggerValidator\DataType\TypeArray
         $items = $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_ITEMS];
         unset($templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_ITEMS]);
 
-        $templateVars = $templateVars + $items;
-
         $templateVars['partType']        = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartTypeFormat', $templateVars);
-        $templateVars['linkItemsObject'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartLinkItems', array('name' => $context->getDataPath(), 'link' => 'toto'));
+        $templateVars['linkItemsObject'] = '[ ' . implode(', ', $items) . ' ]';
         $templateVars['partValidation']  = implode(', ', array_filter(array(
             \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartMinMaxItems', $templateVars),
             \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartUniqueItems', $templateVars),

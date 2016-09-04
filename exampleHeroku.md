@@ -67,10 +67,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 249
+Content-Length: 93
 {
-    "name": "andit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ul",
-    "birthday": 1409315224
+    "name": "d eros viverra ullamcorper. Fusce nec est quam.",
+    "birthday": 1891058877
 }
 ```
 
@@ -93,10 +93,10 @@ Content-Length: 249
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 157
+Content-Length: 200
 {
-    "name": "ortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspend",
-    "birthday": 486531303
+    "name": "uis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula ",
+    "birthday": 339140376
 }
 ```
 
@@ -113,12 +113,12 @@ Content-Length: 157
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of the pet | nas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta  | 
+| petId | path | string | yes | ID of the pet | cilisis arcu, vel ultrices augue. Suspendisse potenti. Mauri | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/nas+et+velit+dignissim%2C+tincidunt+justo+quis%2C+iaculis+odio.+Mauris+volutpat+dignissim+mi+eget+lacinia.+In+nisi+odio%2C+porta+ 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/cilisis+arcu%2C+vel+ultrices+augue.+Suspendisse+potenti.+Mauri 
 ```
 
 
