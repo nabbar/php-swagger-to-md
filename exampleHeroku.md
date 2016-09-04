@@ -46,7 +46,7 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/ 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11 
 ```
 
 
@@ -66,6 +66,12 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
+Content-Type: application/json
+Content-Length: 140
+{
+    "name": "pien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum ",
+    "birthday": 1121828795
+}
 ```
 
 
@@ -85,6 +91,12 @@ HTTP 1.1 post http://petstore-api.herokuapp.com/pet/
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
+Content-Type: application/json
+Content-Length: 291
+{
+    "name": "el auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultr",
+    "birthday": 1239823271
+}
 ```
 
 
@@ -104,7 +116,7 @@ HTTP 1.1 put http://petstore-api.herokuapp.com/pet/
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/{petId} 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/din+et.+Curabitur+pulvinar+metus+massa%2C+malesuada+facilisis+sapien+finibus+at.+Nullam+finibus+urna+vel+auctor+fringilla.+Mauris+eu+tortor+blandit%2C+bibendum+tortor+ac%2C+congue+ero 
 ```
 
 

@@ -34,9 +34,10 @@ class Operation extends \SwaggerValidator\Object\Operation
      */
     public function markdown(\SwaggerValidator\Common\Context $context, $generalItems)
     {
-        $method       = __FUNCTION__;
-        $generalItems = $this->getMethodGeneric($context, $method, $generalItems);
-        $reduce       = array();
+        $method         = __FUNCTION__;
+        $generalItems   = $this->getMethodGeneric($context, $method, $generalItems);
+        $exampleRequest = $this->makeRequestExample($context, $generalItems);
+        $reduce         = array();
 
         foreach ($generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS] as $listParams) {
             if (is_array($listParams) && !empty($listParams)) {
@@ -51,7 +52,7 @@ class Operation extends \SwaggerValidator\Object\Operation
             \SwaggerValidator\Common\FactorySwagger::KEY_RESPONSES  => null,
             \SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES   => $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_CONSUMES],
             \SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES   => $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PRODUCES],
-            'Request'                                               => $this->makeRequestExample($context, $generalItems)
+            'Request'                                               => $exampleRequest
         );
 
         foreach ($this->keys() as $key) {

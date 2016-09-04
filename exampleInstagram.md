@@ -158,7 +158,7 @@ Get basic information about a user.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/{user-id} 
+HTTP 1.1 get https://api.instagram.com/v1/users/6.58603E-61 
 ```
 
 
@@ -182,7 +182,7 @@ See the authenticated user's feed.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/self/feed 
+HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=1424478094&max_id=1504788100&min_id=624969215 
 ```
 
 
@@ -208,7 +208,7 @@ HTTP 1.1 get https://api.instagram.com/v1/users/self/feed
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/{user-id}/media/recent 
+HTTP 1.1 get https://api.instagram.com/v1/users/3.704121E%2B19/media/recent?count=356376900&max_timestamp=-16499315&min_timestamp=-262885304&min_id=c&max_id=c%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim 
 ```
 
 
@@ -235,7 +235,7 @@ available for the currently authenticated user.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked 
+HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked?count=196911608&max_like_id=-1327119827 
 ```
 
 
@@ -258,7 +258,7 @@ Search for a user by name.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/search 
+HTTP 1.1 get https://api.instagram.com/v1/users/search?q=odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsu&count=i%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20e 
 ```
 
 
@@ -279,7 +279,7 @@ Get the list of users this user follows.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/{user-id}/follows 
+HTTP 1.1 get https://api.instagram.com/v1/users/-7.354886E%2B70/follows 
 ```
 
 
@@ -300,7 +300,7 @@ Get the list of users this user is followed by.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/{user-id}/followed-by 
+HTTP 1.1 get https://api.instagram.com/v1/users/8.207951E%2B117/followed-by 
 ```
 
 
@@ -345,7 +345,10 @@ Modify the relationship between the current user and thetarget user.
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/users/{user-id}/relationship 
+HTTP 1.1 post https://api.instagram.com/v1/users/3.635741E%2B91/relationship 
+Content-Type: application/json
+Content-Length: 8
+"follow"
 ```
 
 
@@ -375,7 +378,7 @@ has liked this media item.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/{media-id} 
+HTTP 1.1 get https://api.instagram.com/v1/media/52781858 
 ```
 
 
@@ -404,7 +407,7 @@ the last 5 days. Can return mix of image and video types.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/search 
+HTTP 1.1 get https://api.instagram.com/v1/media/search?LAT=-7048218000&MIN_TIMESTAMP=-651788159&LNG=-3.315233E+89&MAX_TIMESTAMP=-135254901&DISTANCE=1000 
 ```
 
 
@@ -450,7 +453,7 @@ Get a list of recent comments on a media object.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/{media-id}/comments 
+HTTP 1.1 get https://api.instagram.com/v1/media/223200301/comments 
 ```
 
 
@@ -478,7 +481,10 @@ Create a comment on a media object with the following rules:
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/media/{media-id}/comments 
+HTTP 1.1 post https://api.instagram.com/v1/media/223200301/comments 
+Content-Type: application/json
+Content-Length: 13
+8.196595e+148
 ```
 
 
@@ -501,7 +507,7 @@ authored by the authenticated user.
 
 * Example of request :
 ```json
-HTTP 1.1 delete https://api.instagram.com/v1/media/{media-id}/comments 
+HTTP 1.1 delete https://api.instagram.com/v1/media/223200301/comments 
 ```
 
 
@@ -524,7 +530,7 @@ Get a list of users who have liked this media.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/{media-id}/likes 
+HTTP 1.1 get https://api.instagram.com/v1/media/-1102967059/likes 
 ```
 
 
@@ -545,7 +551,7 @@ Set a like on this media by the currently authenticated user.
 
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/media/{media-id}/likes 
+HTTP 1.1 post https://api.instagram.com/v1/media/-1102967059/likes 
 ```
 
 
@@ -567,7 +573,7 @@ Remove a like on this media by the currently authenticated user.
 
 * Example of request :
 ```json
-HTTP 1.1 delete https://api.instagram.com/v1/media/{media-id}/likes 
+HTTP 1.1 delete https://api.instagram.com/v1/media/-1102967059/likes 
 ```
 
 
@@ -595,7 +601,7 @@ Its corresponding shortcode is D.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media1/{shortcode} 
+HTTP 1.1 get https://api.instagram.com/v1/media1/m+varius+lobortis+porttitor.+Mauris+vel+ultrices+erat%2C+at+hendrerit+enim.+Sed+leo+ex%2C+pulvinar+vel+metus+et%2C+molestie+pretium+tortor.+ 
 ```
 
 
@@ -617,7 +623,7 @@ Get information about a tag object.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/{tag-name} 
+HTTP 1.1 get https://api.instagram.com/v1/tags/s%2C+sed+mollis+est+molestie.+Aenean+quam+nisi%2C+posuere 
 ```
 
 
@@ -641,7 +647,7 @@ these objects.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/{tag-name}/media/recent 
+HTTP 1.1 get https://api.instagram.com/v1/tags/.+Etiam+convallis+eu+ligula+non+consequat.+Pellentesque+elit+libero%2C+faucibus+luctus+ante+nec%2C+volutpat+dictum+neque.+Donec+molestie%2C+eros+in+pretium+pulvinar%2C+est+leo+vehicula+lectus%2C+a+cursus+neque+erat+vitae+odio.+Sed+sed+neque+dignissim%2C+imperdi/media/recent 
 ```
 
 
@@ -663,7 +669,7 @@ HTTP 1.1 get https://api.instagram.com/v1/tags/{tag-name}/media/recent
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/search 
+HTTP 1.1 get https://api.instagram.com/v1/tags/search?q=es.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicul 
 ```
 
 
@@ -686,7 +692,7 @@ Get information about a location.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/{location-id} 
+HTTP 1.1 get https://api.instagram.com/v1/locations/-725941659 
 ```
 
 
@@ -712,7 +718,7 @@ Get a list of recent media objects from a given location.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/{location-id}/media/recent 
+HTTP 1.1 get https://api.instagram.com/v1/locations/-22328988/media/recent?max_timestamp=-998489774&min_timestamp=1924260263&min_id=se%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20eni&max_id=leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tor 
 ```
 
 
@@ -739,7 +745,7 @@ Search for a location by geographic coordinate.
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/search 
+HTTP 1.1 get https://api.instagram.com/v1/locations/search?distance=1277264542&facebook_places_id=-1902635063&foursquare_id=1519272608&lat=5.736454E-249&lng=4.031888E+37&foursquare_v2_id=-977840422 
 ```
 
 
@@ -773,7 +779,7 @@ geography, use the [media search endpoint
 
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/geographies/{geo-id}/media/recent 
+HTTP 1.1 get https://api.instagram.com/v1/geographies/-1968713171/media/recent?count=1631889076&min_id=-635992118 
 ```
 
 
