@@ -65,7 +65,7 @@ class TypeObject extends \SwaggerValidator\DataType\TypeObject
                     $ref = \Swagger2md\Swagger2md::makeAnchor(uniqid('objectProperty_'));
 
                     $name = $context->getLastDataPath();
-                    $name = array_pop($name) . '/properties/' . $key . '/object';
+                    $name = array_pop($name) . '/properties/' . $key;
 
                     $subVars = array(
                         \SwaggerValidator\Common\FactorySwagger::KEY_TYPE       => \SwaggerValidator\Common\FactorySwagger::TYPE_OBJECT,
