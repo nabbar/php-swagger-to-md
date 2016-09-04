@@ -42,7 +42,7 @@ class TypeArray extends \SwaggerValidator\DataType\TypeArray
             }
         }
 
-        $items = $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_ITEMS];
+        $items = $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_ITEMS][\SwaggerValidator\Common\FactorySwagger::KEY_ITEMS];
         unset($templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_ITEMS]);
 
         $templateVars['partType']        = \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartTypeFormat', $templateVars);
