@@ -1,14 +1,11 @@
 {% if parameters is not null %}
 * Request Parameters :
-  * Content-Type Accepted : {{ consumes|join(', ') }}
-
+  * Content-Type Accepted : {{ consumes|join(', ')|replace({"\n":"", "\r":""}) }}
 {{ parameters }}
-
 {% if example is not null %}
 * Example of request :
 {{ example }}
 {% endif %}
-
 {% if suffix is not null %}
 {% for object in suffix %}
 {{ object.contents }}
