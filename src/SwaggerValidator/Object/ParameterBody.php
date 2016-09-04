@@ -88,14 +88,6 @@ class ParameterBody extends \SwaggerValidator\Object\ParameterBody
         $templateVars['name'] = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
         $templateVars['in']   = \SwaggerValidator\Common\FactorySwagger::LOCATION_BODY;
 
-        $tpl = explode('\\', trim(__CLASS__, "\\"));
-        array_shift($tpl);
-        array_shift($tpl);
-        $tpl = implode('', array_map('ucfirst', $tpl));
-
-        \Swagger2md\Swagger2md::printOutV('Rendering this template : ' . $tpl);
-        $templateVars['render'] = \Swagger2md\Swagger2md::getInstance()->renderTemplate($tpl, $templateVars);
-
         return $templateVars;
     }
 

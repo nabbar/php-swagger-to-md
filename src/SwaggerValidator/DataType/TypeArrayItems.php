@@ -35,11 +35,6 @@ class TypeArrayItems extends \SwaggerValidator\DataType\TypeArrayItems
         );
         $keySchema    = \SwaggerValidator\Common\FactorySwagger::KEY_SCHEMA;
 
-        $tpl = explode('\\', trim(__CLASS__, "\\"));
-        array_shift($tpl);
-        array_shift($tpl);
-        $tpl = implode('', array_map('ucfirst', $tpl));
-
         $name = $context->searchDataPath('items', 1);
         $name = array_pop($name) . '/items/';
 

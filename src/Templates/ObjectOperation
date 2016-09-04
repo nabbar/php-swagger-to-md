@@ -3,12 +3,5 @@
 * Addition note : {{ externalDocs }}
 {% endif %}
 {% if parameters is not null %}
-* Request Parameters :
-  * Content-Type Accepted : {{ consumes|join(', ') }}
-
 {{ parameters }}
-
-* Example of request :
-{{ Request }}
-
 {% endif %}

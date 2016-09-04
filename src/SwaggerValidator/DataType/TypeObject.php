@@ -35,11 +35,6 @@ class TypeObject extends \SwaggerValidator\DataType\TypeObject
             'model'    => $this->getModel($context)
         );
 
-        $tpl = explode('\\', trim(__CLASS__, "\\"));
-        array_shift($tpl);
-        array_shift($tpl);
-        $tpl = implode('', array_map('ucfirst', $tpl));
-
         if (!empty($this->properties)) {
 
             $properties = array();

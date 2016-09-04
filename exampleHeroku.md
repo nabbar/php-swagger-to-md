@@ -38,10 +38,6 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
   * Content-Type Accepted : application/json, text/xml
 
 
-* Request Parameters :
-  * Content-Type Accepted : application/json, text/xml
-
-
 | Name | Location | Type | Validation | Default | Description | Example |  
 | :---: | :---: | :---: | :---: | :---: | :--- | :--- |  
 | limit | query | integer | 11 <= Value <= 10000 | 11 | number of pets to return | 11 | 
@@ -56,15 +52,7 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 
 
 
-* Example of request :
-
-
-
 #### post /
-
-* Request Parameters :
-  * Content-Type Accepted : application/json, text/xml
-
 
 * Request Parameters :
   * Content-Type Accepted : application/json, text/xml
@@ -79,10 +67,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 264
+Content-Length: 249
 {
-    "name": "felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et ve",
-    "birthday": 358597227
+    "name": "andit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ul",
+    "birthday": 1409315224
 }
 ```
 
@@ -90,15 +78,7 @@ Content-Length: 264
 
 
 
-* Example of request :
-
-
-
 #### put /
-
-* Request Parameters :
-  * Content-Type Accepted : application/json, text/xml
-
 
 * Request Parameters :
   * Content-Type Accepted : application/json, text/xml
@@ -113,18 +93,14 @@ Content-Length: 264
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 299
+Content-Length: 157
 {
-    "name": "e. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringill",
-    "birthday": 740603518
+    "name": "ortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspend",
+    "birthday": 486531303
 }
 ```
 
 
-
-
-
-* Example of request :
 
 
 
@@ -135,25 +111,17 @@ Content-Length: 299
   * Content-Type Accepted : application/json, text/xml
 
 
-* Request Parameters :
-  * Content-Type Accepted : application/json, text/xml
-
-
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of the pet | smod ullamcorper. Phasellus si | 
+| petId | path | string | yes | ID of the pet | nas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/smod+ullamcorper.+Phasellus+si 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/nas+et+velit+dignissim%2C+tincidunt+justo+quis%2C+iaculis+odio.+Mauris+volutpat+dignissim+mi+eget+lacinia.+In+nisi+odio%2C+porta+ 
 ```
 
 
-
-
-
-* Example of request :
 
 
 
