@@ -60,26 +60,26 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| pet | body | object | yes | [parameters/body](#objectproperty_57cc35002949d) | The pet JSON you want to post | 
+| pet | body | object | yes | [parameters/body](#objectproperty_57cc3560a1dcb) | The pet JSON you want to post | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 68
+Content-Length: 51
 {
-    "name": "m orci. Sed eros massa",
-    "birthday": 1673273740
+    "name": "isus n",
+    "birthday": 726226239
 }
 ```
 
 
-* <p name="objectproperty_57cc35002949d">Object pet :</p> 
-| Name | Location | Type |  
-| :---: | :---: | :---: |  
-| name |  | string | 
-| birthday |  | int32 | 
+* <p name="objectproperty_57cc3560a1dcb">Object pet :</p> 
+| Name | Type |  
+| :---: | :---: |  
+| name | string | 
+| birthday | int32 | 
 
 
 
@@ -92,26 +92,26 @@ Content-Length: 68
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| pet | body | object | yes | [parameters/body](#objectproperty_57cc35002d5c6) | The pet JSON you want to post | 
+| pet | body | object | yes | [parameters/body](#objectproperty_57cc3560a5fe7) | The pet JSON you want to post | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 96
+Content-Length: 122
 {
-    "name": "endrerit enim. Sed leo ex, pulvinar vel metus et, ",
-    "birthday": 1595446820
+    "name": "sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisi",
+    "birthday": 1119015305
 }
 ```
 
 
-* <p name="objectproperty_57cc35002d5c6">Object pet :</p> 
-| Name | Location | Type |  
-| :---: | :---: | :---: |  
-| name |  | string | 
-| birthday |  | int32 | 
+* <p name="objectproperty_57cc3560a5fe7">Object pet :</p> 
+| Name | Type |  
+| :---: | :---: |  
+| name | string | 
+| birthday | int32 | 
 
 
 
@@ -125,12 +125,12 @@ Content-Length: 96
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of the pet | lis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est q | 
+| petId | path | string | yes | ID of the pet | erdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/lis.+Fusce+ac+dui+nisl.+Donec+ultricies+nibh+eu+leo+consectetur+congue+quis+nec+tellus.+Morbi+consequat+mi+id+eros+viverra+ullamcorper.+Fusce+nec+est+q 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/erdiet+nunc+maximus%2C+finibus+erat.+Proin+id+scelerisque+ipsum.+Quisque+porta+mauris+nec+massa+egestas%2C+sed+mollis+est+molestie.+Aenean+quam+nisi%2C+posuere+sed+ 
 ```
 
 

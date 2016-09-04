@@ -479,7 +479,7 @@ Options:
                 return;
             }
 
-            if (in_array($colons[0], array('name', 'in', 'partType'))) {
+            if (in_array($colons[0], array('name', 'partType'))) {
                 $enable = true;
             }
 
