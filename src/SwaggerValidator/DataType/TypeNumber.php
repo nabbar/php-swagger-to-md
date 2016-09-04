@@ -48,7 +48,11 @@ class TypeNumber extends \SwaggerValidator\DataType\TypeNumber
             \Swagger2md\Swagger2md::getInstance()->renderTemplate('PartMultipleOf', $templateVars),
         )));
 
-        $templateVars['model'] = $this->getModel($context);
+        if (!array_key_exists(\SwaggerValidator\Common\FactorySwagger::KEY_EXAMPLE, $templateVars)) {
+            $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_EXAMPLE] = $this->getModel($context);
+        }
+
+        $templateVars['model'] = $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_EXAMPLE];
 
         return $templateVars;
     }
