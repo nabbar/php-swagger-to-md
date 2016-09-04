@@ -44,54 +44,65 @@ For this sample, you can use the api key `special-key` to test the authorization
 
 | Name | Location | Type | Definition | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-| body | body | object | [parameters/body](#objectproperty_57cc341f937da) | Pet object that needs to be added to the store | 
+| body | body | object | [parameters/body](#objectproperty_57cc34873244e) | Pet object that needs to be added to the store | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/pets 
 Content-Type: application/json
-Content-Length: 918
+Content-Length: 784
 {
-    "id": -1250923183603712000,
+    "id": -8010886547102498816,
     "category": {
-        "id": -4685478315396431872,
-        "name": "dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Do"
+        "id": -6990645885168254976,
+        "name": "nte sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semp"
     },
     "name": "doggie",
     "photoUrls": [
-        "ed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius"
+        " quam non, imperdiet varius orci. Don"
     ],
     "tags": [
         {
-            "id": 802250451524255744,
-            "name": "gue interdum sed. Vestibulum eget luctus metus, eu bib"
+            "id": 6761053271579688960,
+            "name": "Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar me"
         }
     ],
-    "status": "tus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum to"
+    "status": "sque enim metus in eros. Mauris sollicitudin varius purus, nec condimentum tellus sagittis at. Nullam vel metus ac quam gravida pellentesq"
 }
 ```
 
 
-* <p name="objectproperty_57cc341f8a22a">Object category</p> :
+* <p name="objectproperty_57cc348728d1e">Object category</p> :
 
 | Name | Location | Type |  
 | :---: | :---: | :---: |  
 | id |  | int64 | 
 | name |  | string | 
 
-* <p name="schema_57cc341f8e4d8">Object photoUrls/items/schema</p> :
+* <p name="schema_57cc34872cf62">Object photoUrls/items/schema</p> :
 
 | Name | Location | Type |  
 | :---: | :---: | :---: |  
 |  |  | string | 
 
-* <p name="schema_57cc341f92ee8">Object tags/items/schema</p> :
+* <p name="schema_57cc348731b48">Object tags/items/schema</p> :
 
 | Name | Location | Type |  
 | :---: | :---: | :---: |  
 | id |  | int64 | 
 | name |  | string | 
+
+* <p name="objectproperty_57cc34873244e">Object body</p> :
+
+| Name | Location | Type | Required | Definition | Description | Example |  
+| :---: | :---: | :---: | :---: | :---: | :--- | :--- |  
+| id |  | int64 |  |  |  |  | 
+| category |  |  |  | [schema/properties/category/object](#objectproperty_57cc348728d1e) |  |  | 
+| name |  | string | yes |  |  | doggie | 
+| photoUrls |  | array | yes | [ [photoUrls/items/schema](#schema_57cc34872cf62) ] |  |  | 
+| tags |  | array |  | [ [tags/items/schema](#schema_57cc348731b48) ] |  |  | 
+| status |  | string |  |  | pet status in the store |  | 
 
 
 
@@ -104,54 +115,65 @@ Content-Length: 918
 
 | Name | Location | Type | Definition | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-| body | body | object | [parameters/body](#objectproperty_57cc341f9cae8) | Pet object that needs to be added to the store | 
+| body | body | object | [parameters/body](#objectproperty_57cc34873c41f) | Pet object that needs to be added to the store | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore.swagger.io/v2/pets 
 Content-Type: application/json
-Content-Length: 756
+Content-Length: 724
 {
-    "id": 1817928015649177600,
+    "id": -5665192524919078912,
     "category": {
-        "id": -7318084437944565760,
-        "name": "a malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at tu"
+        "id": -2296663964022472704,
+        "name": "m magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringil"
     },
     "name": "doggie",
     "photoUrls": [
-        "ien finibu"
+        "etus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin "
     ],
     "tags": [
         {
-            "id": 7318987205710446592,
-            "name": "non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo c"
+            "id": 2790070245073616896,
+            "name": " dolor sit amet, consectetur adipiscing elit. Susp"
         }
     ],
-    "status": "pien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nib"
+    "status": "tum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neq"
 }
 ```
 
 
-* <p name="objectproperty_57cc341f9b7ad">Object category</p> :
+* <p name="objectproperty_57cc34873b0f4">Object category</p> :
 
 | Name | Location | Type |  
 | :---: | :---: | :---: |  
 | id |  | int64 | 
 | name |  | string | 
 
-* <p name="schema_57cc341f9bc97">Object photoUrls/items/schema</p> :
+* <p name="schema_57cc34873b5fb">Object photoUrls/items/schema</p> :
 
 | Name | Location | Type |  
 | :---: | :---: | :---: |  
 |  |  | string | 
 
-* <p name="schema_57cc341f9c1b3">Object tags/items/schema</p> :
+* <p name="schema_57cc34873bafc">Object tags/items/schema</p> :
 
 | Name | Location | Type |  
 | :---: | :---: | :---: |  
 | id |  | int64 | 
 | name |  | string | 
+
+* <p name="objectproperty_57cc34873c41f">Object body</p> :
+
+| Name | Location | Type | Required | Definition | Description | Example |  
+| :---: | :---: | :---: | :---: | :---: | :--- | :--- |  
+| id |  | int64 |  |  |  |  | 
+| category |  |  |  | [schema/properties/category/object](#objectproperty_57cc34873b0f4) |  |  | 
+| name |  | string | yes |  |  | doggie | 
+| photoUrls |  | array | yes | [ [photoUrls/items/schema](#schema_57cc34873b5fb) ] |  |  | 
+| tags |  | array |  | [ [tags/items/schema](#schema_57cc34873bafc) ] |  |  | 
+| status |  | string |  |  | pet status in the store |  | 
 
 
 
@@ -165,7 +187,7 @@ Multiple status values can be provided with comma seperated strings
 
 | Name | Location | Type | Definition | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-| status | query | array | [ [status/items/schema](#schema_57cc341f9e270) ] | Status values that need to be considered for filter | 
+| status | query | array | [ [status/items/schema](#schema_57cc34873e46e) ] | Status values that need to be considered for filter | 
 
 
 * Example of request :
@@ -174,7 +196,7 @@ HTTP 1.1 get http://petstore.swagger.io/v2/pets/findByStatus
 ```
 
 
-* <p name="schema_57cc341f9e270">Object status/items/schema</p> :
+* <p name="schema_57cc34873e46e">Object status/items/schema</p> :
 
 | Name | Location | Type |  
 | :---: | :---: | :---: |  
@@ -192,7 +214,7 @@ Muliple tags can be provided with comma seperated strings. Use tag1, tag2, tag3 
 
 | Name | Location | Type | Definition | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-| tags | query | array | [ [tags/items/schema](#schema_57cc341f9ede8) ] | Tags to filter by | 
+| tags | query | array | [ [tags/items/schema](#schema_57cc34873eff5) ] | Tags to filter by | 
 
 
 * Example of request :
@@ -201,7 +223,7 @@ HTTP 1.1 get http://petstore.swagger.io/v2/pets/findByTags
 ```
 
 
-* <p name="schema_57cc341f9ede8">Object tags/items/schema</p> :
+* <p name="schema_57cc34873eff5">Object tags/items/schema</p> :
 
 | Name | Location | Type |  
 | :---: | :---: | :---: |  
@@ -219,12 +241,12 @@ Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error cond
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | int64 | yes | ID of pet that needs to be fetched | 4750360530911232000 | 
+| petId | path | int64 | yes | ID of pet that needs to be fetched | -7888214039086497792 | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/pets/4750360530911232000 
+HTTP 1.1 get http://petstore.swagger.io/v2/pets/-7888214039086497792 
 ```
 
 
@@ -239,24 +261,24 @@ HTTP 1.1 get http://petstore.swagger.io/v2/pets/4750360530911232000
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of pet that needs to be updated |  lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum | 
-| name | formData | string | yes | Updated name of the pet | molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pret | 
-| status | formData | string | yes | Updated status of the pet | gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu t | 
+| petId | path | string | yes | ID of pet that needs to be updated | um dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, | 
+| name | formData | string | yes | Updated name of the pet | dales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie | 
+| status | formData | string | yes | Updated status of the pet | erdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://petstore.swagger.io/v2/pets/+lorem+eros.+Suspendisse+eget+nibh+pulvinar%2C+vestibulum+magna+ut%2C+suscipit+est.+Etiam+varius+lobortis+porttitor.+Mauris+vel+ultrices+erat%2C+at+hendrerit+enim.+Sed+leo+ex%2C+pulvinar+vel+metus+et%2C+molestie+pretium+tortor.+Praesent+interdum 
-Content-Type: multipart/form-data, boundary=57cc341fa02e8
-Content-Length: 517
---57cc341fa02e8
+HTTP 1.1 post http://petstore.swagger.io/v2/pets/um+dolor+sit+amet%2C+consectetur+adipiscing+elit.+Suspendisse+justo+turpis%2C+lacinia+id+tempor+sed%2C+dapibus+vel+elit.+Sed+efficitur%2C 
+Content-Type: multipart/form-data, boundary=57cc348740558
+Content-Length: 313
+--57cc348740558
 content-disposition: form-data; name="name"
 
-molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pret
---57cc341fa02e8
+dales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie
+--57cc348740558
 content-disposition: form-data; name="status"
 
-gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu t
+erdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis
 ```
 
 
@@ -271,14 +293,14 @@ gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada f
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| api_key | header | string | yes |  | dales, | 
-| petId | path | int64 | yes | Pet id to delete | 4800392811100766208 | 
+| api_key | header | string | yes |  | tpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada,  | 
+| petId | path | int64 | yes | Pet id to delete | -7607899545359351808 | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 delete http://petstore.swagger.io/v2/pets/4800392811100766208 
-api_key: dales,
+HTTP 1.1 delete http://petstore.swagger.io/v2/pets/-7607899545359351808 
+api_key: tpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, 
 ```
 
 
@@ -295,24 +317,35 @@ api_key: dales,
 
 | Name | Location | Type | Definition | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-| body | body | object | [parameters/body](#objectproperty_57cc341fa1c13) | order placed for purchasing the pet | 
+| body | body | object | [parameters/body](#objectproperty_57cc348741e86) | order placed for purchasing the pet | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/stores/order 
 Content-Type: 
-Content-Length: 267
+Content-Length: 237
 {
-    "id": 5749587957975613440,
-    "petId": -5718203656986165248,
-    "quantity": -712528774,
-    "shipDate": "2016-09-04T14:47:59+00:00",
-    "status": "llentesque. Nullam ultricies turpis nec dignissim aliquam. Nunc sed enim nec tellus accum",
+    "id": 6357907506370445312,
+    "petId": -1602539644887498752,
+    "quantity": 1778062011,
+    "shipDate": "2016-09-04T14:49:43+00:00",
+    "status": "elit. Sed efficitur, mi sit amet fermentum ultricies, felis",
     "complete": 0
 }
 ```
 
+
+* <p name="objectproperty_57cc348741e86">Object body</p> :
+
+| Name | Location | Type | Description |  
+| :---: | :---: | :---: | :--- |  
+| id |  | int64 |  | 
+| petId |  | int64 |  | 
+| quantity |  | int32 |  | 
+| shipDate |  | date-time |  | 
+| status |  | string | Order Status | 
+| complete |  | boolean |  | 
 
 
 
@@ -326,12 +359,12 @@ For valid response try integer IDs with value <= 5 or > 10. Other values will ge
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| orderId | path | string | yes | ID of pet that needs to be fetched | lestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odi | 
+| orderId | path | string | yes | ID of pet that needs to be fetched | bulum eget | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/stores/order/lestie.+Aenean+quam+nisi%2C+posuere+sed+varius+sodales%2C+sagittis+sed+ex.+Vivamus+id+vulputate+odi 
+HTTP 1.1 get http://petstore.swagger.io/v2/stores/order/bulum+eget 
 ```
 
 
@@ -346,12 +379,12 @@ For valid response try integer IDs with value < 1000. Anything above 1000 or non
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| orderId | path | string | yes | ID of the order that needs to be deleted | hicula, sem tortor accumsan nibh | 
+| orderId | path | string | yes | ID of the order that needs to be deleted | . Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficit | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 delete http://petstore.swagger.io/v2/stores/order/hicula%2C+sem+tortor+accumsan+nibh 
+HTTP 1.1 delete http://petstore.swagger.io/v2/stores/order/.+Lorem+ipsum+dolor+sit+amet%2C+consectetur+adipiscing+elit.+Suspendisse+justo+turpis%2C+lacinia+id+tempor+sed%2C+dapibus+vel+elit.+Sed+efficit 
 ```
 
 
@@ -368,26 +401,39 @@ This can only be done by the logged in user.
 
 | Name | Location | Type | Definition | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
-| body | body | object | [parameters/body](#objectproperty_57cc341fa3cef) | Created user object | 
+| body | body | object | [parameters/body](#objectproperty_57cc3487444b2) | Created user object | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/users 
 Content-Type: 
-Content-Length: 1206
+Content-Length: 840
 {
-    "id": -3239947852918554624,
-    "username": "ent interdum fringilla orci, gravida ornare nibh sollic",
-    "firstName": "ue ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat di",
-    "lastName": "d efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accum",
-    "email": " non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et",
-    "password": "e. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum f",
-    "phone": "cing elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etia",
-    "userStatus": 680735682
+    "id": 5025787180056838144,
+    "username": " est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendre",
+    "firstName": "retium pu",
+    "lastName": "risque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula qu",
+    "email": "enas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus ",
+    "password": " amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac d",
+    "phone": "vel metus ac quam gravida pellentesque. Nullam ultricies turpis nec dignis",
+    "userStatus": 1101866020
 }
 ```
 
+
+* <p name="objectproperty_57cc3487444b2">Object body</p> :
+
+| Name | Location | Type | Description |  
+| :---: | :---: | :---: | :--- |  
+| id |  | int64 |  | 
+| username |  | string |  | 
+| firstName |  | string |  | 
+| lastName |  | string |  | 
+| email |  | string |  | 
+| password |  | string |  | 
+| phone |  | string |  | 
+| userStatus |  | int32 | User Status | 
 
 
 
@@ -401,30 +447,30 @@ Content-Length: 1206
 
 | Name | Location | Type | Definition | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| body | body | array | [ [schema/items/schema](#schema_57cc341fa4797) ] | List of user object |  | 
+| body | body | array | [ [schema/items/schema](#schema_57cc348745699) ] | List of user object |  | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/users/createWithArray 
 Content-Type: 
-Content-Length: 681
+Content-Length: 1000
 [
     {
-        "id": -5126547619627139072,
-        "username": " justo turpis, lacinia id tempor sed, dapibus vel elit.",
-        "firstName": " condimentum eget, tristique ut",
-        "lastName": "em ipsum dolor sit amet, consectetur adipiscing elit. Integer ipsu",
-        "email": ", tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, fauc",
-        "password": ". Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris ve",
-        "phone": " vel metus et, molestie pretium tortor. Praesent interdu",
-        "userStatus": 1512796303
+        "id": 492555263346212864,
+        "username": "orper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Se",
+        "firstName": "nsectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat",
+        "lastName": "os in pretium pulvinar, ",
+        "email": "lutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non conse",
+        "password": "ue. Suspendisse potent",
+        "phone": "ellus sagittis at. Nullam vel",
+        "userStatus": -1567340526
     }
 ]
 ```
 
 
-* <p name="schema_57cc341fa4797">Object schema/items/schema</p> :
+* <p name="schema_57cc348745699">Object schema/items/schema</p> :
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
@@ -449,30 +495,30 @@ Content-Length: 681
 
 | Name | Location | Type | Definition | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| body | body | array | [ [schema/items/schema](#schema_57cc341fa6441) ] | List of user object |  | 
+| body | body | array | [ [schema/items/schema](#schema_57cc34874743f) ] | List of user object |  | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore.swagger.io/v2/users/createWithList 
 Content-Type: 
-Content-Length: 1101
+Content-Length: 1037
 [
     {
-        "id": -8762530704648044544,
-        "username": " risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tr",
-        "firstName": "rabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam",
-        "lastName": "t ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et di",
-        "email": "ing elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie ali",
-        "password": "varius lobortis porttitor. Mauris vel ultrices ",
-        "phone": "ar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada ",
-        "userStatus": 1607745789
+        "id": -2844155582821171200,
+        "username": "ibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo qu",
+        "firstName": ". Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. ",
+        "lastName": " Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam ",
+        "email": "urpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, m",
+        "password": " mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien",
+        "phone": "a, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut qu",
+        "userStatus": -1448600106
     }
 ]
 ```
 
 
-* <p name="schema_57cc341fa6441">Object schema/items/schema</p> :
+* <p name="schema_57cc34874743f">Object schema/items/schema</p> :
 
 | Name | Location | Type | Description |  
 | :---: | :---: | :---: | :--- |  
@@ -497,13 +543,13 @@ Content-Length: 1101
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| username | query | string | The user name for login |  laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu | 
-| password | query | string | The password for login in clear text | sit | 
+| username | query | string | The user name for login | it amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu,  | 
+| password | query | string | The password for login in clear text | us erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sod | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/users/login?username=%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu&password=sit 
+HTTP 1.1 get http://petstore.swagger.io/v2/users/login?username=it%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20&password=us%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sod 
 ```
 
 
@@ -524,12 +570,12 @@ HTTP 1.1 get http://petstore.swagger.io/v2/users/login?username=%20laoreet%20a%2
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| username | path | string | yes | The name that needs to be fetched. Use user1 for testing. | utate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut orna | 
+| username | path | string | yes | The name that needs to be fetched. Use user1 for testing. | ui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viv | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore.swagger.io/v2/users/utate+odio.+Donec+quis+facilisis+arcu%2C+vel+ultrices+augue.+Suspendisse+potenti.+Mauris+vehicula+ex+lorem%2C+ut+orna 
+HTTP 1.1 get http://petstore.swagger.io/v2/users/ui+nisl.+Donec+ultricies+nibh+eu+leo+consectetur+congue+quis+nec+tellus.+Morbi+consequat+mi+id+eros+viv 
 ```
 
 
@@ -544,27 +590,40 @@ This can only be done by the logged in user.
 
 | Name | Location | Type | Required | Definition | Description | Example |  
 | :---: | :---: | :---: | :---: | :---: | :--- | :--- |  
-| username | path | string | yes |  | name that need to be deleted | sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada | 
-| body | body | object |  | [parameters/body](#objectproperty_57cc341fa9dbe) | Updated user object |  | 
+| username | path | string | yes |  | name that need to be deleted |  quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdie | 
+| body | body | object |  | [parameters/body](#objectproperty_57cc34874adb0) | Updated user object |  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 put http://petstore.swagger.io/v2/users/sed%2C+dapibus+vel+elit.+Sed+efficitur%2C+mi+sit+amet+fermentum+ultricies%2C+felis+felis+aliquam+enim%2C+id+feugiat+magna+elit+in+sapien.+Sed+malesuada 
+HTTP 1.1 put http://petstore.swagger.io/v2/users/+quis+condimentum+eget%2C+tristique+ut+quam.+Maecenas+et+velit+dignissim%2C+tincidunt+justo+quis%2C+iaculis+odio.+Mauris+volutpat+dignissim+mi+eget+lacinia.+In+nisi+odio%2C+porta+ut+quam+non%2C+imperdie 
 Content-Type: 
-Content-Length: 716
+Content-Length: 802
 {
-    "id": -431808701905502208,
-    "username": "e nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blan",
-    "firstName": "h pulvin",
-    "lastName": "uam gravida pellentesque. Nullam ultricies turpis nec d",
-    "email": " lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, te",
-    "password": "im nec tellus accumsan tincidunt. Aliquam enim dui,",
-    "phone": "llicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, b",
-    "userStatus": -399772994
+    "id": -8813921431453696000,
+    "username": " commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque ",
+    "firstName": "tesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam ",
+    "lastName": ", eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam no",
+    "email": "onec molestie, eros i",
+    "password": "s. In non lectus eu nunc interdum laore",
+    "phone": "",
+    "userStatus": -1509628270
 }
 ```
 
+
+* <p name="objectproperty_57cc34874adb0">Object body</p> :
+
+| Name | Location | Type | Description |  
+| :---: | :---: | :---: | :--- |  
+| id |  | int64 |  | 
+| username |  | string |  | 
+| firstName |  | string |  | 
+| lastName |  | string |  | 
+| email |  | string |  | 
+| password |  | string |  | 
+| phone |  | string |  | 
+| userStatus |  | int32 | User Status | 
 
 
 
@@ -577,12 +636,12 @@ This can only be done by the logged in user.
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| username | path | string | yes | The name that needs to be deleted | . Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdie | 
+| username | path | string | yes | The name that needs to be deleted | alesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 delete http://petstore.swagger.io/v2/users/.+Maecenas+et+velit+dignissim%2C+tincidunt+justo+quis%2C+iaculis+odio.+Mauris+volutpat+dignissim+mi+eget+lacinia.+In+nisi+odio%2C+porta+ut+quam+non%2C+imperdie 
+HTTP 1.1 delete http://petstore.swagger.io/v2/users/alesuada+facilisis+sapien+finibus+at.+Nullam+finibus+urna+vel+auctor+fringilla.+Mauris+eu+tortor+blandit%2C 
 ```
 
 

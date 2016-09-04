@@ -93,9 +93,9 @@ class ParameterBody extends \SwaggerValidator\Object\ParameterBody
             $templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES] = $templateVars[$schemaKey];
             unset($templateVars[$schemaKey]);
 
-            \Swagger2md\Swagger2md::getInstance()->renderTable($name, $ref, \SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES, 'ColonsConfigOperation', 'TableObjectProperties', $subVars, true);
+            \Swagger2md\Swagger2md::getInstance()->renderTable($name, $ref, \SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES, 'ColonsConfigOperation', 'TableObjectProperties', $templateVars, true);
 
-            unset($subVars[\SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES]);
+            unset($templateVars[\SwaggerValidator\Common\FactorySwagger::KEY_PROPERTIES]);
         }
 
         return $templateVars;
