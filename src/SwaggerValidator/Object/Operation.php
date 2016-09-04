@@ -47,6 +47,24 @@ class Operation extends \SwaggerValidator\Object\Operation
         $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS] = $reduce;
         unset($reduce);
 
+        $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS] = array_map(function($val) {
+            if (is_array($val) && array_key_exists(\SwaggerValidator\Common\FactorySwagger::KEY_TYPE, $val) && array_key_exists('model', $val)) {
+
+                if (in_array($val[\SwaggerValidator\Common\FactorySwagger::KEY_TYPE], array(
+                            \SwaggerValidator\Common\FactorySwagger::TYPE_OBJECT,
+                            \SwaggerValidator\Common\FactorySwagger::TYPE_ARRAY,
+                        ))) {
+                    unset($val['model']);
+                }
+                elseif (empty($val[\SwaggerValidator\Common\FactorySwagger::KEY_EXAMPLE])) {
+                    $val[\SwaggerValidator\Common\FactorySwagger::KEY_EXAMPLE] = $val['model'];
+                    unset($val['model']);
+                }
+            }
+
+            return $val;
+        }, $generalItems[\SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS]);
+
         $templateVars = array(
             \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS => \Swagger2md\Swagger2md::getInstance()->renderTable(null, null, \SwaggerValidator\Common\FactorySwagger::KEY_PARAMETERS, 'ColonsConfigOperation', 'TableOperationRequest', $generalItems, false),
             \SwaggerValidator\Common\FactorySwagger::KEY_RESPONSES  => null,

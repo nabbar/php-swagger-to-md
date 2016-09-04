@@ -7,5 +7,5 @@ pattern|Pattern|center
 enum|Enum|center
 linkItemsObject|Definition|center
 default|Default|center
-example|Example|center
 description|Description|left
+example|Example|left

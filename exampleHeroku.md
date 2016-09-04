@@ -39,9 +39,9 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 
 * Request Parameters :
 
-| Name | Location | Type | Validation | Default | Description |  
-| :---: | :---: | :---: | :---: | :---: | :--- |  
-| limit | query | integer | 11 <= Value <= 10000 | 11 | number of pets to return | 
+| Name | Location | Type | Validation | Default | Description | Example |  
+| :---: | :---: | :---: | :---: | :---: | :--- | :--- |  
+| limit | query | integer | 11 <= Value <= 10000 | 11 | number of pets to return | 11 | 
 
 
 * Example of request :
@@ -67,10 +67,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 140
+Content-Length: 120
 {
-    "name": "pien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum ",
-    "birthday": 1121828795
+    "name": "uat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum ",
+    "birthday": -1402081525
 }
 ```
 
@@ -92,10 +92,10 @@ Content-Length: 140
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 291
+Content-Length: 190
 {
-    "name": "el auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultr",
-    "birthday": 1239823271
+    "name": "g elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Du",
+    "birthday": -1097005581
 }
 ```
 
@@ -109,14 +109,14 @@ Content-Length: 291
 
 * Request Parameters :
 
-| Name | Location | Type | Required | Description |  
-| :---: | :---: | :---: | :---: | :--- |  
-| petId | path | string | yes | ID of the pet | 
+| Name | Location | Type | Required | Description | Example |  
+| :---: | :---: | :---: | :---: | :--- | :--- |  
+| petId | path | string | yes | ID of the pet | dui sit a | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/din+et.+Curabitur+pulvinar+metus+massa%2C+malesuada+facilisis+sapien+finibus+at.+Nullam+finibus+urna+vel+auctor+fringilla.+Mauris+eu+tortor+blandit%2C+bibendum+tortor+ac%2C+congue+ero 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/dui+sit+a 
 ```
 
 
