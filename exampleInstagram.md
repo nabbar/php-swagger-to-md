@@ -146,15 +146,19 @@ callbackFunction({
 #### get /users/{user-id}
 Get basic information about a user.
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
 | user-id | path | number | yes | The user identifier number | 
 | tag-name | path | string | yes | Tag name | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/-4.771657E-63 
+HTTP 1.1 get https://api.instagram.com/v1/users/{user-id} 
 ```
 
 
@@ -162,6 +166,9 @@ HTTP 1.1 get https://api.instagram.com/v1/users/-4.771657E-63
 
 #### get /users/self/feed
 See the authenticated user's feed.
+* Request Parameters :
+  * Content-Type Accepted : application/json
+
 * Request Parameters :
 
 | Name | Location | Type | Required | Description |  
@@ -172,15 +179,19 @@ See the authenticated user's feed.
 | max_id | query | integer |  | Return media earlier than this max_id.s | 
 | min_id | query | integer |  | Return media later than this min_id. | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=1943347288&max_id=273942460&min_id=-574754969 
+HTTP 1.1 get https://api.instagram.com/v1/users/self/feed 
 ```
 
 
 
 
 #### get /users/{user-id}/media/recent
+
+* Request Parameters :
+  * Content-Type Accepted : application/json
 
 * Request Parameters :
 
@@ -194,9 +205,10 @@ HTTP 1.1 get https://api.instagram.com/v1/users/self/feed?count=1943347288&max_i
 | min_id | query | string |  | Return media later than this min_id. | 
 | max_id | query | string |  | Return media earlier than this max_id. | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/5.952396E-10/media/recent?count=2134962278&max_timestamp=-778724429&min_timestamp=866856408&min_id=%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20&max_id=sed%20enim%20nec%20tellus%20accumsan%20tincidunt.%20A 
+HTTP 1.1 get https://api.instagram.com/v1/users/{user-id}/media/recent 
 ```
 
 
@@ -209,6 +221,9 @@ has permissionto view that media. Liked media lists are only
 available for the currently authenticated user.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
@@ -217,9 +232,10 @@ available for the currently authenticated user.
 | count | query | integer |  | Count of media to return. | 
 | max_like_id | query | integer |  | Return media liked before this id. | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked?count=-1285817305&max_like_id=-961567244 
+HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked 
 ```
 
 
@@ -227,6 +243,9 @@ HTTP 1.1 get https://api.instagram.com/v1/users/self/media/liked?count=-12858173
 
 #### get /users/search
 Search for a user by name.
+* Request Parameters :
+  * Content-Type Accepted : application/json
+
 * Request Parameters :
 
 | Name | Location | Type | Required | Description |  
@@ -236,9 +255,10 @@ Search for a user by name.
 | q | query | string | yes | A query string | 
 | count | query | string |  | Number of users to return. | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/search?q=malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20&count=%20molestie 
+HTTP 1.1 get https://api.instagram.com/v1/users/search 
 ```
 
 
@@ -247,15 +267,19 @@ HTTP 1.1 get https://api.instagram.com/v1/users/search?q=malesuada%20facilisis%2
 #### get /users/{user-id}/follows
 Get the list of users this user follows.
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
 | user-id | path | number | yes | The user identifier number | 
 | tag-name | path | string | yes | Tag name | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/7.835651E%2B198/follows 
+HTTP 1.1 get https://api.instagram.com/v1/users/{user-id}/follows 
 ```
 
 
@@ -264,15 +288,19 @@ HTTP 1.1 get https://api.instagram.com/v1/users/7.835651E%2B198/follows
 #### get /users/{user-id}/followed-by
 Get the list of users this user is followed by.
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
 | user-id | path | number | yes | The user identifier number | 
 | tag-name | path | string | yes | Tag name | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/users/7.57067E%2B225/followed-by 
+HTTP 1.1 get https://api.instagram.com/v1/users/{user-id}/followed-by 
 ```
 
 
@@ -282,11 +310,15 @@ HTTP 1.1 get https://api.instagram.com/v1/users/7.57067E%2B225/followed-by
 List the users who have requested this user's permission to follow.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
 | user-id | path | number | yes | The user identifier number | 
 | tag-name | path | string | yes | Tag name | 
+
 
 * Example of request :
 ```json
@@ -300,6 +332,9 @@ HTTP 1.1 get https://api.instagram.com/v1/users/self/requested-by
 Modify the relationship between the current user and thetarget user.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
@@ -307,12 +342,10 @@ Modify the relationship between the current user and thetarget user.
 | tag-name | path | string | yes | Tag name | 
 | body | body | string |  | One of follow/unfollow/block/unblock/approve/ignore. | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/users/-8.140344E-206/relationship 
-Content-Type: application/json
-Content-Length: 8
-"follow"
+HTTP 1.1 post https://api.instagram.com/v1/users/{user-id}/relationship 
 ```
 
 
@@ -329,6 +362,9 @@ Note: if you authenticate with an OAuth Token, you will receive the
 has liked this media item.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
@@ -336,9 +372,10 @@ has liked this media item.
 | tag-name | path | string | yes | Tag name | 
 | media-id | path | integer | yes | The media ID | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/-1216448302 
+HTTP 1.1 get https://api.instagram.com/v1/media/{media-id} 
 ```
 
 
@@ -348,6 +385,9 @@ HTTP 1.1 get https://api.instagram.com/v1/media/-1216448302
 Search for media in a given area. The default time span is set to 5
 days. The time span must not exceed 7 days. Defaults time stamps cover
 the last 5 days. Can return mix of image and video types.
+
+* Request Parameters :
+  * Content-Type Accepted : application/json
 
 * Request Parameters :
 
@@ -361,9 +401,10 @@ the last 5 days. Can return mix of image and video types.
 | MAX_TIMESTAMP | query | integer |  |  |  | A unix timestamp. All media returned will be taken earlier than thistimestamp. | 
 | DISTANCE | query | integer |  | Value <= 5000 | 1000 | Default is 1km (distance=1000), max distance is 5km. | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/search?LAT=1.59647E-136&MIN_TIMESTAMP=-755671907&LNG=7.974568E-232&MAX_TIMESTAMP=1171332534&DISTANCE=1000 
+HTTP 1.1 get https://api.instagram.com/v1/media/search 
 ```
 
 
@@ -374,11 +415,15 @@ Get a list of what media is most popular at the moment.
 Can return mix of image and video types.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
 | user-id | path | number | yes | The user identifier number | 
 | tag-name | path | string | yes | Tag name | 
+
 
 * Example of request :
 ```json
@@ -392,6 +437,9 @@ HTTP 1.1 get https://api.instagram.com/v1/media/popular
 Get a list of recent comments on a media object.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
@@ -399,9 +447,10 @@ Get a list of recent comments on a media object.
 | tag-name | path | string | yes | Tag name | 
 | media-id | path | integer | yes | Media ID | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media/1856135199/comments 
+HTTP 1.1 get https://api.instagram.com/v1/media/{media-id}/comments 
 ```
 
 
@@ -415,6 +464,9 @@ Create a comment on a media object with the following rules:
 * The comment cannot consist of all capital letters.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
@@ -423,12 +475,10 @@ Create a comment on a media object with the following rules:
 | media-id | path | integer | yes | Media ID | 
 | body | body | number |  | Text to post as a comment on the media object as specified inmedia-id. | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/media/1856135199/comments 
-Content-Type: application/json
-Content-Length: 13
--3.928848e+43
+HTTP 1.1 post https://api.instagram.com/v1/media/{media-id}/comments 
 ```
 
 
@@ -438,6 +488,9 @@ Remove a comment either on the authenticated user's media object or
 authored by the authenticated user.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
@@ -445,9 +498,10 @@ authored by the authenticated user.
 | tag-name | path | string | yes | Tag name | 
 | media-id | path | integer | yes | Media ID | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 delete https://api.instagram.com/v1/media/1856135199/comments 
+HTTP 1.1 delete https://api.instagram.com/v1/media/{media-id}/comments 
 ```
 
 
@@ -457,22 +511,8 @@ HTTP 1.1 delete https://api.instagram.com/v1/media/1856135199/comments
 Get a list of users who have liked this media.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
 
-| Name | Location | Type | Required | Description |  
-| :---: | :---: | :---: | :---: | :--- |  
-| user-id | path | number | yes | The user identifier number | 
-| tag-name | path | string | yes | Tag name | 
-| media-id | path | integer | yes | Media ID | 
-
-* Example of request :
-```json
-HTTP 1.1 get https://api.instagram.com/v1/media/-2098782036/likes 
-```
-
-
-
-#### post /media/{media-id}/likes
-Set a like on this media by the currently authenticated user.
 * Request Parameters :
 
 | Name | Location | Type | Required | Description |  
@@ -481,9 +521,31 @@ Set a like on this media by the currently authenticated user.
 | tag-name | path | string | yes | Tag name | 
 | media-id | path | integer | yes | Media ID | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 post https://api.instagram.com/v1/media/-2098782036/likes 
+HTTP 1.1 get https://api.instagram.com/v1/media/{media-id}/likes 
+```
+
+
+
+#### post /media/{media-id}/likes
+Set a like on this media by the currently authenticated user.
+* Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
+
+| Name | Location | Type | Required | Description |  
+| :---: | :---: | :---: | :---: | :--- |  
+| user-id | path | number | yes | The user identifier number | 
+| tag-name | path | string | yes | Tag name | 
+| media-id | path | integer | yes | Media ID | 
+
+
+* Example of request :
+```json
+HTTP 1.1 post https://api.instagram.com/v1/media/{media-id}/likes 
 ```
 
 
@@ -492,6 +554,9 @@ HTTP 1.1 post https://api.instagram.com/v1/media/-2098782036/likes
 Remove a like on this media by the currently authenticated user.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
@@ -499,9 +564,10 @@ Remove a like on this media by the currently authenticated user.
 | tag-name | path | string | yes | Tag name | 
 | media-id | path | integer | yes | Media ID | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 delete https://api.instagram.com/v1/media/-2098782036/likes 
+HTTP 1.1 delete https://api.instagram.com/v1/media/{media-id}/likes 
 ```
 
 
@@ -516,6 +582,9 @@ An example shortlink is `http://instagram.com/p/D/`
 Its corresponding shortcode is D.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
@@ -523,9 +592,10 @@ Its corresponding shortcode is D.
 | tag-name | path | string | yes | Tag name | 
 | shortcode | path | string | yes | The media shortcode | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/media1/nim.+Sed+leo+ex%2C+pulvinar+vel+metus+et%2C+molestie+pretium+tortor.+Praesent+interdum+fringilla+orci%2C+gravida+ornare+nibh+sollicitudin+et.+Curabitur+pulvinar+metus+massa%2C+malesuada+facilisis+sapien+finibus+ 
+HTTP 1.1 get https://api.instagram.com/v1/media1/{shortcode} 
 ```
 
 
@@ -535,15 +605,19 @@ HTTP 1.1 get https://api.instagram.com/v1/media1/nim.+Sed+leo+ex%2C+pulvinar+vel
 #### get /tags/{tag-name}
 Get information about a tag object.
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
 | user-id | path | number | yes | The user identifier number | 
 | tag-name | path | string | yes | Tag name | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/sque+porta+mauris+nec+massa+egestas%2C+sed+mollis+est+molestie.+Aenean+quam+nisi%2C+posuere+sed+varius+sodales%2C+sagittis+sed+ex.+Vivamus+id+vulputate+odio.+Donec+quis+facilisis+arcu%2C+vel+ultrices+augue.+Suspendisse+potenti.+Mauris+vehicula+ex+lorem%2C+ut+ornar 
+HTTP 1.1 get https://api.instagram.com/v1/tags/{tag-name} 
 ```
 
 
@@ -555,21 +629,28 @@ Get a list of recently tagged media. Use the `max_tag_id` and
 these objects.
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
 | user-id | path | number | yes | The user identifier number | 
 | tag-name | path | string | yes | Tag name | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/suere+eu+facilisis+nec%2C+tempus+ac+ipsum.+Ut+molestie+aliquet+est%2C+posuere+tincidunt+elit.+Etiam+convallis+eu+ligula+non+consequat.+Pellentesque+elit+libero%2C+faucibus+luctus+ante+nec%2C+volutpat+dictum+neque.+Donec+molesti/media/recent 
+HTTP 1.1 get https://api.instagram.com/v1/tags/{tag-name}/media/recent 
 ```
 
 
 
 
 #### get /tags/search
+
+* Request Parameters :
+  * Content-Type Accepted : application/json
 
 * Request Parameters :
 
@@ -579,9 +660,10 @@ HTTP 1.1 get https://api.instagram.com/v1/tags/suere+eu+facilisis+nec%2C+tempus+
 | tag-name | path | string | yes | Tag name | 
 | q | query | string |  | A valid tag name without a leading #. (eg. snowy, nofilter) | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/tags/search?q=rabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum 
+HTTP 1.1 get https://api.instagram.com/v1/tags/search 
 ```
 
 
@@ -591,6 +673,9 @@ HTTP 1.1 get https://api.instagram.com/v1/tags/search?q=rabitur%20pulvinar%20met
 #### get /locations/{location-id}
 Get information about a location.
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
@@ -598,9 +683,10 @@ Get information about a location.
 | tag-name | path | string | yes | Tag name | 
 | location-id | path | integer | yes | Location ID | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/417798733 
+HTTP 1.1 get https://api.instagram.com/v1/locations/{location-id} 
 ```
 
 
@@ -608,6 +694,9 @@ HTTP 1.1 get https://api.instagram.com/v1/locations/417798733
 
 #### get /locations/{location-id}/media/recent
 Get a list of recent media objects from a given location.
+* Request Parameters :
+  * Content-Type Accepted : application/json
+
 * Request Parameters :
 
 | Name | Location | Type | Required | Description |  
@@ -620,9 +709,10 @@ Get a list of recent media objects from a given location.
 | min_id | query | string |  | Return media later than this min_id. | 
 | max_id | query | string |  | Return media earlier than this max_id. | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/-1460619590/media/recent?max_timestamp=694566989&min_timestamp=-368335339&min_id=spendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20digni&max_id=us%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus 
+HTTP 1.1 get https://api.instagram.com/v1/locations/{location-id}/media/recent 
 ```
 
 
@@ -630,6 +720,9 @@ HTTP 1.1 get https://api.instagram.com/v1/locations/-1460619590/media/recent?max
 
 #### get /locations/search
 Search for a location by geographic coordinate.
+* Request Parameters :
+  * Content-Type Accepted : application/json
+
 * Request Parameters :
 
 | Name | Location | Type | Required | Description |  
@@ -643,9 +736,10 @@ Search for a location by geographic coordinate.
 | lng | query | number |  | ongitude of the center search coordinate. If used, lat is required. | 
 | foursquare_v2_id | query | integer |  | Returns a location mapped off of a foursquare v2 api location id. Ifused, you are not required to use lat and lng. | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/locations/search?distance=1018012810&facebook_places_id=-1167907801&foursquare_id=-2118180048&lat=-4.755365E-226&lng=-7.162667E+108&foursquare_v2_id=-1527628040 
+HTTP 1.1 get https://api.instagram.com/v1/locations/search 
 ```
 
 
@@ -664,6 +758,9 @@ geography, use the [media search endpoint
 ](https://instagram.com/developer/endpoints/media/).
 
 * Request Parameters :
+  * Content-Type Accepted : application/json
+
+* Request Parameters :
 
 | Name | Location | Type | Required | Description |  
 | :---: | :---: | :---: | :---: | :--- |  
@@ -673,9 +770,10 @@ geography, use the [media search endpoint
 | count | query | integer |  | Max number of media to return. | 
 | min_id | query | integer |  | Return media before this `min_id`. | 
 
+
 * Example of request :
 ```json
-HTTP 1.1 get https://api.instagram.com/v1/geographies/1907688627/media/recent?count=852443976&min_id=-2004935550 
+HTTP 1.1 get https://api.instagram.com/v1/geographies/{geo-id}/media/recent 
 ```
 
 
