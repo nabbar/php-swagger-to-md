@@ -31,21 +31,20 @@ Returns the 20 most recent mentions for the authenticating user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| count | query | string | Specifies the number of tweets to try and retrieve |  est, posuere tincidunt elit | 
-| since_id | query | string | Returns result with an ID greater than the specified ID | et, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem to | 
-| max_id | query | string | Returns results with an ID less than or equal to the specified ID | llentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus  | 
-| trim_user | query | string | When set to either true, t or 1, each tweet returned in a timeline will include a user object |  sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie alique | 
-| contributor_details | query | string | This parameter enhances the contributors element of the status response | est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est m | 
-| include_entities | query | string | The entities node will be disincluded when set to false | cidunt pretium sodales. Etiam  | 
+| count | query | string | Specifies the number of tweets to try and retrieve | esuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum torto | 
+| since_id | query | string | Returns result with an ID greater than the specified ID | u ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in preti | 
+| max_id | query | string | Returns results with an ID less than or equal to the specified ID | st leo vehicula lectus, a cursus neque erat | 
+| trim_user | query | string | When set to either true, t or 1, each tweet returned in a timeline will include a user object |  Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ips | 
+| contributor_details | query | string | This parameter enhances the contributors element of the status response | ue porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odi | 
+| include_entities | query | string | The entities node will be disincluded when set to false | iquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris sollicitudin v | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/statuses/mentions_timeline?count=%20est%2C%20posuere%20tincidunt%20elit&since_id=et%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20to&max_id=llentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20&trim_user=%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20alique&contributor_details=est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20m&include_entities=cidunt%20pretium%20sodales.%20Etiam%20 
+HTTP 1.1 get http://api.twitter.com/1.1/statuses/mentions_timeline?count=esuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20torto&since_id=u%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20preti&max_id=st%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat&trim_user=%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ips&contributor_details=ue%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odi&include_entities=iquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20v 
 ```
 
 
@@ -56,22 +55,21 @@ Returns a collection of the most recent Tweets posted by the User
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| count | query | string | Specifies the number of tweets to try and retrieve | it. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feu | 
-| since_id | query | string | Returns result with an ID greater than the specified ID | c, congue  | 
-| max_id | query | string | Returns results with an ID less than or equal to the specified ID | estie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdi | 
-| trim_user | query | string | When set to either true, t or 1, each tweet returned in a timeline will include a user object | nissim augue interdum sed. Vestibulum eget luctus metus, | 
+| count | query | string | Specifies the number of tweets to try and retrieve | sque elit libero, faucibus luctus ante | 
+| since_id | query | string | Returns result with an ID greater than the specified ID | ncidunt pretium sodal | 
+| max_id | query | string | Returns results with an ID less than or equal to the specified ID | onsectetur adipiscing elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis | 
+| trim_user | query | string | When set to either true, t or 1, each tweet returned in a timeline will include a user object | e quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fu | 
 | exclude_replies | query | boolean | This paramters will prevent from appearing in the returned timeline | 0 | 
-| contributor_details | query | boolean | This paramters enhances the contributors element of the status response to include the screen_name of the contributor | 1 | 
+| contributor_details | query | boolean | This paramters enhances the contributors element of the status response to include the screen_name of the contributor | 0 | 
 | include_rts | query | boolean | When set to false, the timeline will strip any native retweet | 0 | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/statuses/user_timeline?count=it.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feu&since_id=c%2C%20congue%20&max_id=estie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdi&trim_user=nissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C&exclude_replies=0&contributor_details=1&include_rts=0 
+HTTP 1.1 get http://api.twitter.com/1.1/statuses/user_timeline?count=sque%20elit%20libero%2C%20faucibus%20luctus%20ante&since_id=ncidunt%20pretium%20sodal&max_id=onsectetur%20adipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis&trim_user=e%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fu&exclude_replies=0&contributor_details=0&include_rts=0 
 ```
 
 
@@ -82,20 +80,19 @@ Returns a collection of the most recent Tweets
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| since_id | query | string | Returns result with an ID greater than the specified ID |  ac quam gravida pellentesque. Nullam ultricies turpis nec dig | 
-| max_id | query | string | Returns results with an ID less than or equal to the specified ID | , consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna e | 
-| trim_user | query | string | When set to either true, t or 1, each tweet returned in a timeline will include a user object | m laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. F | 
+| since_id | query | string | Returns result with an ID greater than the specified ID |  sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egesta | 
+| max_id | query | string | Returns results with an ID less than or equal to the specified ID | ectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi conse | 
+| trim_user | query | string | When set to either true, t or 1, each tweet returned in a timeline will include a user object | orbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis c | 
 | exclude_replies | query | boolean | This paramters will prevent from appearing in the returned timeline | 1 | 
-| contributor_details | query | boolean | This paramters enhances the contributors element of the status response to include the screen_name of the contributor | 0 | 
+| contributor_details | query | boolean | This paramters enhances the contributors element of the status response to include the screen_name of the contributor | 1 | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/statuses/home_timeline?since_id=%20ac%20quam%20gravida%20pellentesque.%20Nullam%20ultricies%20turpis%20nec%20dig&max_id=%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20e&trim_user=m%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20F&exclude_replies=1&contributor_details=0 
+HTTP 1.1 get http://api.twitter.com/1.1/statuses/home_timeline?since_id=%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egesta&max_id=ectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20conse&trim_user=orbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20c&exclude_replies=1&contributor_details=1 
 ```
 
 
@@ -106,17 +103,16 @@ Retweens a tweet
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| id | path | string | yes | The numerical ID of the desired status | ida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tor | 
-| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | t, at hendrerit enim. Sed leo | 
+| id | path | string | yes | The numerical ID of the desired status | a ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliqu | 
+| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | , e | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/statuses/retweets/ida+ornare+nibh+sollicitudin+et.+Curabitur+pulvinar+metus+massa%2C+malesuada+facilisis+sapien+finibus+at.+Nullam+finibus+urna+vel+auctor+fringilla.+Mauris+eu+tortor+blandit%2C+bibendum+tor?trim_user=t%2C%20at%20hendrerit%20enim.%20Sed%20leo 
+HTTP 1.1 post http://api.twitter.com/1.1/statuses/retweets/a+ex+lorem%2C+ut+ornare+purus+ultrices+nec.+Vestibulum+elementum+felis+sit+amet+ipsum+euismod+ullamcorper.+Phasellus+sit+amet+vestibulum+quam.+Morbi+tincidunt+pretium+sodales.+Etiam+dignissim+risus+non+felis+scelerisque+aliqu?trim_user=%2C%20e 
 ```
 
 
@@ -127,19 +123,18 @@ Retruns a single Tweet
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| id | path | string | yes | The numerical ID of the desired status | . Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, c | 
-| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | r, mi sit amet fermentum ultricies, fe | 
-| include_my_retweet | query | string | yes | When set to either true, t or 1, any Tweets returned that have been retweeted by the authenticating | rem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodale | 
-| include_entities | query | string |  | The entities node will be disincluded when set to false |  vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris sollicitudin varius | 
+| id | path | string | yes | The numerical ID of the desired status | o vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisq | 
+| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | urus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibul | 
+| include_my_retweet | query | string | yes | When set to either true, t or 1, any Tweets returned that have been retweeted by the authenticating | i consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, | 
+| include_entities | query | string |  | The entities node will be disincluded when set to false | er. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/statuses/show/.+Curabitur+pulvinar+metus+massa%2C+malesuada+facilisis+sapien+finibus+at.+Nullam+finibus+urna+vel+auctor+fringilla.+Mauris+eu+tortor+blandit%2C+bibendum+tortor+ac%2C+congue+eros.+Lorem+ipsum+dolor+sit+amet%2C+c?trim_user=r%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20fe&include_my_retweet=rem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodale&include_entities=%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius 
+HTTP 1.1 get http://api.twitter.com/1.1/statuses/show/o+vehicula+lectus%2C+a+cursus+neque+erat+vitae+odio.+Sed+sed+neque+dignissim%2C+imperdiet+nunc+maximus%2C+finibus+erat.+Proin+id+scelerisq?trim_user=urus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibul&include_my_retweet=i%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C&include_entities=er.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20 
 ```
 
 
@@ -150,17 +145,16 @@ Destroys the status specified by the required ID parameter
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| id | path | string | yes | The numerical ID of the desired status | r pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse just | 
-| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | ringilla | 
+| id | path | string | yes | The numerical ID of the desired status | it. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat v | 
+| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | e. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque port | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/statuses/destroy/r+pulvinar+metus+massa%2C+malesuada+facilisis+sapien+finibus+at.+Nullam+finibus+urna+vel+auctor+fringilla.+Mauris+eu+tortor+blandit%2C+bibendum+tortor+ac%2C+congue+eros.+Lorem+ipsum+dolor+sit+amet%2C+consectetur+adipiscing+elit.+Suspendisse+just?trim_user=ringilla 
+HTTP 1.1 post http://api.twitter.com/1.1/statuses/destroy/it.+Etiam+convallis+eu+ligula+non+consequat.+Pellentesque+elit+libero%2C+faucibus+luctus+ante+nec%2C+volutpat+dictum+neque.+Donec+molestie%2C+eros+in+pretium+pulvinar%2C+est+leo+vehicula+lectus%2C+a+cursus+neque+erat+v?trim_user=e.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20port 
 ```
 
 
@@ -171,22 +165,21 @@ Updates the authenticating user's status
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| status | query | string | yes | The text of your status update | dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque port | 
-| in_reply_to_status_id | query | string |  | The ID of an existing status | uspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci,  | 
-| lat | query | string |  | The latitude of the location | te sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit  | 
-| long | query | string |  | The longitude of the location | um magna ut, suscipit est. Etiam varius lobortis porttitor. Maur | 
-| place_id | query | string |  | A place in the world | itudin varius purus, nec condimentum tellus sagittis at. Nullam vel metus ac quam gravida pellentesque. Nullam ultricies turpis nec | 
-| display_coordinates | query | string |  | Whether or not to put a pin on the exact coordinates a tweet |  ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tin | 
-| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | ilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum eu | 
+| status | query | string | yes | The text of your status update | sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor a | 
+| in_reply_to_status_id | query | string |  | The ID of an existing status | is sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris | 
+| lat | query | string |  | The latitude of the location | Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum | 
+| long | query | string |  | The longitude of the location | at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla o | 
+| place_id | query | string |  | A place in the world | sus neque erat  | 
+| display_coordinates | query | string |  | Whether or not to put a pin on the exact coordinates a tweet | n eros. Mauris sollicitudin varius purus, nec condimentum tellus sagittis at. Nu | 
+| trim_user | query | string |  | When set to either true, t or 1, each tweet returned in a timeline will include a user object | tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit.  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/statuses/update?status=dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20port&in_reply_to_status_id=uspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20&lat=te%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20&long=um%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Maur&place_id=itudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pellentesque.%20Nullam%20ultricies%20turpis%20nec&display_coordinates=%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tin&trim_user=ilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20eu 
+HTTP 1.1 post http://api.twitter.com/1.1/statuses/update?status=sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20a&in_reply_to_status_id=is%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris&lat=Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum&long=at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20o&place_id=sus%20neque%20erat%20&display_coordinates=n%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nu&trim_user=tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20 
 ```
 
 
@@ -197,23 +190,22 @@ Returns information allowing the creation of an embedded representation
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| id | query | string | yes | The tweet/status id to return embed code for |  ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet  | 
-| url | query | string | yes | The encoded URL of the Tweet status to be embedded | sce ac dui nisl. Donec ultrici | 
-| maxwidth | query | string |  | The maximum width in pixels that the embed should be rendered at | d | 
-| hide_media | query | string |  | Specifies whether the embedded tweet should automatically show the original message in the case that the embedded Tweet is a reply |  Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Se | 
-| hide_thread | query | string |  | Specifies whether the embedded Tweet html should include a 'script' element pointing to widgets.js | it amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit.  | 
-| align | query | string |  | Specifies whether the embedded Tweet should be left aligned | Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudi | 
-| related | query | string |  | A value for the TWT related parameters | eros mass | 
-| lang | query | string |  | Languages code for the rendered embed |  ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat.  | 
+| id | query | string | yes | The tweet/status id to return embed code for |  massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis  | 
+| url | query | string | yes | The encoded URL of the Tweet status to be embedded | dio. Mauris volutpat dignissim mi eget lacinia. In nis | 
+| maxwidth | query | string |  | The maximum width in pixels that the embed should be rendered at | endrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravi | 
+| hide_media | query | string |  | Specifies whether the embedded tweet should automatically show the original message in the case that the embedded Tweet is a reply | dum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur,  | 
+| hide_thread | query | string |  | Specifies whether the embedded Tweet html should include a 'script' element pointing to widgets.js | etus, eu biben | 
+| align | query | string |  | Specifies whether the embedded Tweet should be left aligned |  justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est,  | 
+| related | query | string |  | A value for the TWT related parameters | etium sodales. Etiam dignissim r | 
+| lang | query | string |  | Languages code for the rendered embed | ris sollicitudin varius purus, nec condiment | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/statuses/oembed?id=%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20&url=sce%20ac%20dui%20nisl.%20Donec%20ultrici&maxwidth=d&hide_media=%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Se&hide_thread=it%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20&align=Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudi&related=eros%20mass&lang=%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20 
+HTTP 1.1 get http://api.twitter.com/1.1/statuses/oembed?id=%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20&url=dio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nis&maxwidth=endrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravi&hide_media=dum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20&hide_thread=etus%2C%20eu%20biben&align=%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20&related=etium%20sodales.%20Etiam%20dignissim%20r&lang=ris%20sollicitudin%20varius%20purus%2C%20nec%20condiment 
 ```
 
 
@@ -225,17 +217,16 @@ Return all lists the authenticating or specified user subscribes to, including t
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | yes | The screen name of the user for whom to return results for | que. Nullam ultricies turpis ne | 
-| user_id | query | string | yes | The ID of the user for whom to return results for | sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu  | 
+| screen_name | query | string | yes | The screen name of the user for whom to return results for | dit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id te | 
+| user_id | query | string | yes | The ID of the user for whom to return results for | tum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris soll | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/list?screen_name=que.%20Nullam%20ultricies%20turpis%20ne&user_id=sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/list?screen_name=dit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20te&user_id=tum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20soll 
 ```
 
 
@@ -246,24 +237,23 @@ Returns a timeline of tweets authored by memebers of the specified list
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list |  sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, a | 
-| slug | query | string | yes | You can identify a list by its slug instead of its numerical id | in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris sollicitudin varius purus, nec | 
-| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug |  convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volut | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | psum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit  | 
-| since_id | query | string |  | Returns results with an ID greater than the sepcified ID | terdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultrici | 
-| max_id | query | string |  | Returns results with an ID less than or equal to the specified ID | aliquam enim, id feugiat magna elit in sapien. Sed malesuada, ve | 
-| count | query | string |  | Specifies the number of results to retrieve per page | ibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim au | 
-| include_entities | query | string |  | Entities are ON by default | us vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in s | 
-| include_rts | query | string |  | When set to either true, t or 1, the list timeline will contain native retweets in addition to the standard stream of tweets |  Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed  | 
+| list_id | query | string | yes | The numerical id of the list | d lacus. Nulla justo arcu, soda | 
+| slug | query | string | yes | You can identify a list by its slug instead of its numerical id | tetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | a. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id,  | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | uere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, v | 
+| since_id | query | string |  | Returns results with an ID greater than the sepcified ID | ilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elemen | 
+| max_id | query | string |  | Returns results with an ID less than or equal to the specified ID | adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem torto | 
+| count | query | string |  | Specifies the number of results to retrieve per page | tpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id s | 
+| include_entities | query | string |  | Entities are ON by default | d sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris n | 
+| include_rts | query | string |  | When set to either true, t or 1, the list timeline will contain native retweets in addition to the standard stream of tweets | suere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/statuses?list_id=%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20a&slug=in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec&owner_screen_name=%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volut&owner_id=psum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20&since_id=terdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultrici&max_id=aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20ve&count=ibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20au&include_entities=us%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20s&include_rts=%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/statuses?list_id=d%20lacus.%20Nulla%20justo%20arcu%2C%20soda&slug=tetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C&owner_screen_name=a.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20&owner_id=uere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20v&since_id=ilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elemen&max_id=adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20torto&count=tpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20s&include_entities=d%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20n&include_rts=suere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20 
 ```
 
 
@@ -274,21 +264,20 @@ Returns the list of memebers destroy
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | , sodales ac | 
-| slug | query | string | yes | You can identify a list by its slug instrad of its numerical id | s, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla ma | 
-| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | , consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien | 
-| user_id | query | string |  | The id of the user for whom to remove from the list | t amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicul | 
-| screen_name | query | string |  | The screen name of the user for whom to remove from the list | psum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in p | 
-| owner_id | query | string |  | The is of the user who wons the list being requested by a slug | ius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultri | 
+| list_id | query | string | yes | The numerical id of the list | gravida pellentesq | 
+| slug | query | string | yes | You can identify a list by its slug instrad of its numerical id | nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesq | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | n non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam.  | 
+| user_id | query | string |  | The id of the user for whom to remove from the list | tum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mol | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list | ncidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec c | 
+| owner_id | query | string |  | The is of the user who wons the list being requested by a slug | a ex | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/members/destroy?list_id=%2C%20sodales%20ac&slug=s%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20ma&owner_screen_name=%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien&user_id=t%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicul&screen_name=psum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20p&owner_id=ius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultri 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/members/destroy?list_id=gravida%20pellentesq&slug=nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesq&owner_screen_name=n%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20&user_id=tum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mol&screen_name=ncidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20c&owner_id=a%20ex 
 ```
 
 
@@ -299,19 +288,18 @@ Returns the lists of the specified user has been added to
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| user_id | query | string | The id of the user for whom to return results for | e eu facilisis nec, tempus ac ipsu | 
-| screen_name | query | string | The screen name of the user for whom to return results for | ate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molesti | 
-| cursor | query | string | Breaks the results into pages | met ipsum | 
-| filter_to_owned_lists | query | string | When set to true, t or 1, will return just lists the authenticating user owns | s aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris sollicitudin varius purus, nec condimentum tellus sagit | 
+| user_id | query | string | The id of the user for whom to return results for |  luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus  | 
+| screen_name | query | string | The screen name of the user for whom to return results for | tesque enim metus in eros. Mauris sollicitudin varius purus, nec condimentum tellus sa | 
+| cursor | query | string | Breaks the results into pages |  est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in preti | 
+| filter_to_owned_lists | query | string | When set to true, t or 1, will return just lists the authenticating user owns | erisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/memberships?user_id=e%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsu&screen_name=ate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molesti&cursor=met%20ipsum&filter_to_owned_lists=s%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagit 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/memberships?user_id=%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20&screen_name=tesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sa&cursor=%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20preti&filter_to_owned_lists=erisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci 
 ```
 
 
@@ -322,22 +310,21 @@ Returns the subscribers of the specified list
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list |  arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex l | 
-| slug | query | string | yes | You can identify a list by its slug insted of its numerical id |  mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc i | 
-| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | ique ut quam. Maecenas et velit dignissim, t | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | m laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam.  | 
-| cursor | query | string |  | Breaks the results into pages | eo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet | 
-| include_entities | query | string |  | Wehn set to either true, t or 1 | sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdu | 
-| skip_status | query | string |  | When set to either true, t or 1 | s sit amet vestibulum quam. Morbi tincidunt pretium sodal | 
+| list_id | query | string | yes | The numerical id of the list | d enim nec tellus accumsan tincidunt. Aliquam en | 
+| slug | query | string | yes | You can identify a list by its slug insted of its numerical id | ntesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed ne | 
+| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | . Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | s scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue int | 
+| cursor | query | string |  | Breaks the results into pages | la lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa | 
+| include_entities | query | string |  | Wehn set to either true, t or 1 | ortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor | 
+| skip_status | query | string |  | When set to either true, t or 1 | ltricies turpis nec dignissim ali | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers?list_id=%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20l&slug=%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20i&owner_screen_name=ique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20t&owner_id=m%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20&cursor=eo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet&include_entities=sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdu&skip_status=s%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodal 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers?list_id=d%20enim%20nec%20tellus%20accumsan%20tincidunt.%20Aliquam%20en&slug=ntesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20ne&owner_screen_name=.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio&owner_id=s%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20int&cursor=la%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa&include_entities=ortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor&skip_status=ltricies%20turpis%20nec%20dignissim%20ali 
 ```
 
 
@@ -348,19 +335,18 @@ Subscribes the authenticated user to the specified list
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list |  adipiscing elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, p | 
-| slug | query | string | yes | You can identify a list being requested by a slug | t amet fermentum ultricies, felis felis aliquam enim, id feugiat magn | 
-| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue.  | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | m varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesua | 
+| list_id | query | string | yes | The numerical id of the list | esque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, | 
+| slug | query | string | yes | You can identify a list being requested by a slug | nec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis s | 
+| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | us luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium p | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | rcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. M | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/lists/subscribers/create?list_id=%20adipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20p&slug=t%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magn&owner_screen_name=varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20&owner_id=m%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesua 
+HTTP 1.1 post http://api.twitter.com/1.1/lists/subscribers/create?list_id=esque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C&slug=nec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20s&owner_screen_name=us%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20p&owner_id=rcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20M 
 ```
 
 
@@ -371,23 +357,22 @@ Check if the specified user is a subscriber of the specified list
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | s nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit li | 
-| slug | query | string | yes | You can identify a list being requested by a slug | m orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, impe | 
-| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | r blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultr | 
-| user_id | query | string |  | The id of the user for whom to remove from the list |  congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vest | 
-| screen_name | query | string |  | The screen name of the user for whom to remove from the list |  a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neq | 
-| owner_id | query | string |  | The is of the user who wons the list being requested by a slug | aucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris vol | 
-| include_entities | query | string |  | Wehn set to either true, t or 1 | vallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est | 
-| skip_status | query | string |  | When set to either true, t or 1 | s, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, i | 
+| list_id | query | string | yes | The numerical id of the list | Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis | 
+| slug | query | string | yes | You can identify a list being requested by a slug |  orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nu | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | m neque. Donec molestie, eros in pretium pulvinar,  | 
+| user_id | query | string |  | The id of the user for whom to remove from the list |  ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ul | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list |  laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis | 
+| owner_id | query | string |  | The is of the user who wons the list being requested by a slug | nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices au | 
+| include_entities | query | string |  | Wehn set to either true, t or 1 | . Nunc et lorem eros. Suspendisse eget nibh pulvinar | 
+| skip_status | query | string |  | When set to either true, t or 1 |  et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers/show?list_id=s%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20li&slug=m%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20impe&owner_screen_name=r%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultr&user_id=%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vest&screen_name=%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neq&owner_id=aucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20vol&include_entities=vallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est&skip_status=s%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20i 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers/show?list_id=Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis&slug=%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nu&owner_screen_name=m%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20&user_id=%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ul&screen_name=%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis&owner_id=nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20au&include_entities=.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar&skip_status=%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20 
 ```
 
 
@@ -398,19 +383,18 @@ Returns list of subscribers destroy
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis fac | 
-| slug | query | string | yes | You can identify a list being requested by a slug | tae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. A | 
-| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet f | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | et varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, eges | 
+| list_id | query | string | yes | The numerical id of the list | quam.  | 
+| slug | query | string | yes | You can identify a list being requested by a slug | s et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur  | 
+| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | urpis, lacinia | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | ales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum se | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers/destroy?list_id=scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20fac&slug=tae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20A&owner_screen_name=eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20f&owner_id=et%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20eges 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/subscribers/destroy?list_id=quam.%20&slug=s%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20&owner_screen_name=urpis%2C%20lacinia&owner_id=ales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20se 
 ```
 
 
@@ -421,21 +405,20 @@ Returns lists of members create_all
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | us et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu to | 
-| slug | query | string | yes | You can identify a list being requested by a slug | is vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ulla | 
-| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug |  felis scelerisque a | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | uam. Pellentesque vulputa | 
-| user_id | query | string |  | The id of the user for whom to remove from the list | or accumsan nibh, sed pellentesque enim metus in eros. Mauris sollicitudin varius purus, nec condimentum tellus sagi | 
-| screen_name | query | string |  | The screen name of the user for whom to remove from the list |  facilisis arcu, vel ul | 
+| list_id | query | string | yes | The numerical id of the list | acus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, fa | 
+| slug | query | string | yes | You can identify a list being requested by a slug | rta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, ve | 
+| owner_screen_name | query | string |  | the screen name of the user who owns the list being requested by a slug | Mauris volutpat dignissim mi eget lacinia. In ni | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | ibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapie | 
+| user_id | query | string |  | The id of the user for whom to remove from the list | . Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac  | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list | ed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in er | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/members/create_all?list_id=us%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20to&slug=is%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ulla&owner_screen_name=%20felis%20scelerisque%20a&owner_id=uam.%20Pellentesque%20vulputa&user_id=or%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagi&screen_name=%20facilisis%20arcu%2C%20vel%20ul 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/members/create_all?list_id=acus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20fa&slug=rta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20ve&owner_screen_name=Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20ni&owner_id=ibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapie&user_id=.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20&screen_name=ed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20er 
 ```
 
 
@@ -446,19 +429,18 @@ Returns list of destroy
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo | 
-| slug | query | string | yes | You can identify a list being requested by a slug | nt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros  | 
-| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | mperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | iquam enim, id feu | 
+| list_id | query | string | yes | The numerical id of the list |  euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibul | 
+| slug | query | string | yes | You can identify a list being requested by a slug | tur, mi sit amet fermentum ultricie | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | t turpis molestie congue. N | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug |  felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/lists/destroy?list_id=Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo&slug=nt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20&owner_screen_name=mperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In&owner_id=iquam%20enim%2C%20id%20feu 
+HTTP 1.1 post http://api.twitter.com/1.1/lists/destroy?list_id=%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibul&slug=tur%2C%20mi%20sit%20amet%20fermentum%20ultricie&owner_screen_name=t%20turpis%20molestie%20congue.%20N&owner_id=%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros 
 ```
 
 
@@ -469,22 +451,21 @@ Returns lists of updates
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | ia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu  | 
-| slug | query | string | yes | You can identify a list being requested by a slug | augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. V | 
-| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | a non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium p | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | lvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapi | 
-| name | query | string |  | The name for the list | at | 
-| mode | query | string |  | Whether your list is public or private | gue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel eli | 
-| description | query | string |  | The description to give the list | . Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut d | 
+| list_id | query | string | yes | The numerical id of the list | ellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arc | 
+| slug | query | string | yes | You can identify a list being requested by a slug | c ultricies nibh eu leo consectetur | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | nsectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentu | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | e tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula  | 
+| name | query | string |  | The name for the list | ui nisl. Donec ultricies nibh eu leo conse | 
+| mode | query | string |  | Whether your list is public or private | cidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperd | 
+| description | query | string |  | The description to give the list | gue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel m | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/lists/update?list_id=ia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20&slug=augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20V&owner_screen_name=a%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20p&owner_id=lvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapi&name=at&mode=gue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20eli&description=.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20d 
+HTTP 1.1 post http://api.twitter.com/1.1/lists/update?list_id=ellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arc&slug=c%20ultricies%20nibh%20eu%20leo%20consectetur&owner_screen_name=nsectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentu&owner_id=e%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20&name=ui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20conse&mode=cidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperd&description=gue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20m 
 ```
 
 
@@ -495,18 +476,17 @@ Returns list of create
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| name | query | string | The name for the list | ttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla or | 
-| mode | query | string | Whether your list is public or private | ng elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo qui | 
-| description | query | string | The description to give the list | ilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Ph | 
+| name | query | string | The name for the list | aximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augu | 
+| mode | query | string | Whether your list is public or private |  leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque p | 
+| description | query | string | The description to give the list | uspendiss | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/lists/create?name=ttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20or&mode=ng%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20qui&description=ilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Ph 
+HTTP 1.1 post http://api.twitter.com/1.1/lists/create?name=aximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augu&mode=%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20p&description=uspendiss 
 ```
 
 
@@ -517,19 +497,18 @@ Returns list of show
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | ed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posue | 
-| slug | query | string | yes | You can identify a list being requested by a slug | t dignissim, tincidunt justo quis, i | 
-| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | estie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | to arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere ti | 
+| list_id | query | string | yes | The numerical id of the list | les. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et | 
+| slug | query | string | yes | You can identify a list being requested by a slug | o vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sod | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | iquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar,  | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | a elit in s | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/show?list_id=ed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posue&slug=t%20dignissim%2C%20tincidunt%20justo%20quis%2C%20i&owner_screen_name=estie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar&owner_id=to%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20ti 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/show?list_id=les.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et&slug=o%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sod&owner_screen_name=iquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20&owner_id=a%20elit%20in%20s 
 ```
 
 
@@ -540,19 +519,18 @@ Returns list of subscriptions
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | The screen name of the user | olestie congue. Nunc et lorem eros. Suspendisse eget nibh | 
-| user_id | query | string | The id of the user for whom to return results for | e dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. | 
-| count | query | string | The amount of results to return per page | m nisi, posuere sed varius sodales, sagittis sed ex. V | 
-| cursor | query | string | Breaks the results into pages | bulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel | 
+| screen_name | query | string | The screen name of the user | tum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris  | 
+| user_id | query | string | The id of the user for whom to return results for | facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum element | 
+| count | query | string | The amount of results to return per page | molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna | 
+| cursor | query | string | Breaks the results into pages | orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/lists/subscriptions?screen_name=olestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh&user_id=e%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.&count=m%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20V&cursor=bulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel 
+HTTP 1.1 get http://api.twitter.com/1.1/lists/subscriptions?screen_name=tum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20&user_id=facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20element&count=molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna&cursor=orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20 
 ```
 
 
@@ -564,23 +542,22 @@ Check if the specified user is a member of the specified list
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | la. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet ferme | 
-| slug | query | string | yes | You can identify a list being requested by a slug | pendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gra | 
-| user_id | query | string |  | The id of the user for whom to remove from the list |  metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id t | 
-| screen_name | query | string |  | The screen name of the user for whom to remove from the list | ce ac dui nisl. Donec ultricies nibh eu leo consectet | 
-| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug |  | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug |  malesuada f | 
-| include_entities | query | string |  | Wehn set to either true, t or 1 | ris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie p | 
-| skip_status | query | string |  | When set to either true, t or 1 | g elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accum | 
+| list_id | query | string | yes | The numerical id of the list |  vulputate odio. Donec quis facilisis arcu, | 
+| slug | query | string | yes | You can identify a list being requested by a slug | bulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium | 
+| user_id | query | string |  | The id of the user for whom to remove from the list | ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum eui | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list |  tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla mal | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, ves | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | m enim dui | 
+| include_entities | query | string |  | Wehn set to either true, t or 1 | r  | 
+| skip_status | query | string |  | When set to either true, t or 1 | oreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. E | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/list/members/show?list_id=la.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20ferme&slug=pendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gra&user_id=%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20t&screen_name=ce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectet&owner_screen_name=&owner_id=%20malesuada%20f&include_entities=ris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20p&skip_status=g%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accum 
+HTTP 1.1 get http://api.twitter.com/1.1/list/members/show?list_id=%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C&slug=bulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium&user_id=ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20eui&screen_name=%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20mal&owner_screen_name=Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20ves&owner_id=m%20enim%20dui&include_entities=r%20&skip_status=oreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20E 
 ```
 
 
@@ -591,22 +568,21 @@ Returns the members of the specified list
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | m. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, impe | 
-| slug | query | string | yes | You can identify a list being requested by a slug | t quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio | 
-| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | ada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque en | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | orper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum | 
-| include_entities | query | string |  | Wehn set to either true, t or 1 | elis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, | 
-| skip_status | query | string |  | When set to either true, t or 1 | at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. P | 
-| cursor | query | string |  | Breaks the results into pages |  elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. D | 
+| list_id | query | string | yes | The numerical id of the list | t magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris sol | 
+| slug | query | string | yes | You can identify a list being requested by a slug | justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet var | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug |  ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus e | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | ula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis e | 
+| include_entities | query | string |  | Wehn set to either true, t or 1 | dio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis | 
+| skip_status | query | string |  | When set to either true, t or 1 | ti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim | 
+| cursor | query | string |  | Breaks the results into pages | erdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta maur | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/list/members?list_id=m.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20impe&slug=t%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio&owner_screen_name=ada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20en&owner_id=orper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum&include_entities=elis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C&skip_status=at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20P&cursor=%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20D 
+HTTP 1.1 get http://api.twitter.com/1.1/list/members?list_id=t%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sol&slug=justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20var&owner_screen_name=%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20e&owner_id=ula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20e&include_entities=dio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis&skip_status=ti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim&cursor=erdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20maur 
 ```
 
 
@@ -617,20 +593,19 @@ Returns list of members create
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | dum | 
-| slug | query | string | yes | You can identify a list being requested by a slug | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, veli | 
-| screen_name | query | string |  | The screen name of the user for whom to remove from the list | cula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris sollicitudin varius purus, nec condiment | 
-| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | ur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibul | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug |  auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit | 
+| list_id | query | string | yes | The numerical id of the list | ignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdie | 
+| slug | query | string | yes | You can identify a list being requested by a slug | empor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list | um tortor ac, congue eros. Lorem ipsum dolor sit ame | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | a cursus neque erat vitae odio. Sed sed neque dignis | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | tie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/list/members/create?list_id=dum&slug=Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20veli&screen_name=cula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condiment&owner_screen_name=ur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibul&owner_id=%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit 
+HTTP 1.1 post http://api.twitter.com/1.1/list/members/create?list_id=ignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdie&slug=empor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna&screen_name=um%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20ame&owner_screen_name=a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignis&owner_id=tie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio. 
 ```
 
 
@@ -641,21 +616,20 @@ Returns lists of destroy all
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| list_id | query | string | yes | The numerical id of the list | eque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque port | 
-| slug | query | string | yes | You can identify a list being requested by a slug |  pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue in | 
-| user_id | query | string |  | The id of the user for whom to remove from the list | ies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris sollicitudin varius purus, nec condimentum te | 
-| screen_name | query | string |  | The screen name of the user for whom to remove from the list | rper. Fusce nec est quam. Pellentesque vulputate sapien at tu | 
-| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, biben | 
-| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | rem ipsum dolor sit amet, consectetur adipiscing elit. Integer ipsum sapien, bibendum at | 
+| list_id | query | string | yes | The numerical id of the list | consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien  | 
+| slug | query | string | yes | You can identify a list being requested by a slug | s. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis portti | 
+| user_id | query | string |  | The id of the user for whom to remove from the list | issim augue interdum sed. Vestibulum eget luctu | 
+| screen_name | query | string |  | The screen name of the user for whom to remove from the list | at. Nullam vel metus ac quam gravida pellente | 
+| owner_screen_name | query | string |  | The screen name of the user who owns the list being requested by a slug | stie, eros in pretium pulvina | 
+| owner_id | query | string |  | The user ID of the user who owns the list being requested by a slug | rtor. Praesent interdum fringilla orci, gravida  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/list/members/destroy_all?list_id=eque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20port&slug=%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20in&user_id=ies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20te&screen_name=rper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20tu&owner_screen_name=pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20biben&owner_id=rem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at 
+HTTP 1.1 get http://api.twitter.com/1.1/list/members/destroy_all?list_id=consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20&slug=s.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20portti&user_id=issim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctu&screen_name=at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pellente&owner_screen_name=stie%2C%20eros%20in%20pretium%20pulvina&owner_id=rtor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20 
 ```
 
 
@@ -667,20 +641,19 @@ return 20 most recent direct messages sent
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Example |  
 | :---: | :---: | :---: | :--- |  
-| since_id | query | string | , bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tinci | 
-| max_id | query | string | n nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed an | 
-| count | query | string | que ut quam. Maecenas et velit dignissim, tincidunt justo qu | 
-| page | query | string | ur adipiscing elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere  | 
-| include_entities | query | string | t sagittis. In non lectus eu nunc interdu | 
+| since_id | query | string |  Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi,  | 
+| max_id | query | string | t lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices e | 
+| count | query | string | lit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Don | 
+| page | query | string | urus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus ur | 
+| include_entities | query | string |  efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tor | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/direct_messages/sent?since_id=%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tinci&max_id=n%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20an&count=que%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20qu&page=ur%20adipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20&include_entities=t%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdu 
+HTTP 1.1 get http://api.twitter.com/1.1/direct_messages/sent?since_id=%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20&max_id=t%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20e&count=lit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Don&page=urus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20ur&include_entities=%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tor 
 ```
 
 
@@ -691,16 +664,15 @@ returns a single direct message specified by an id
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| id | query | string | yes | ID of direct message | rcu, et dignissim | 
+| id | query | string | yes | ID of direct message | tum felis sit amet ipsum euismod ullamcorper. Phasellus  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/direct_messages/show?id=rcu%2C%20et%20dignissim 
+HTTP 1.1 get http://api.twitter.com/1.1/direct_messages/show?id=tum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20 
 ```
 
 
@@ -711,19 +683,18 @@ return 20 most recent direct messages sent to user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| since_id | query | string | return results with ID greater than specified | t, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed a | 
-| max_id | query | string | returns results with an ID less than/equal to specified ID | us purus, nec condimentum tellus sagittis at. Nullam vel metus ac quam gravida pellentesque. Nulla | 
-| include_entities | query | string | whether or not to include entities | citudin varius purus, nec condimentum tellus sagittis at. Nullam vel metus ac quam gravida pellentesque. Nullam ultricies t | 
-| skip_status | query | string | whether or not to include status | at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent  | 
+| since_id | query | string | return results with ID greater than specified |  metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur | 
+| max_id | query | string | returns results with an ID less than/equal to specified ID | orem eros. Suspendisse eget nibh pulvinar, vesti | 
+| include_entities | query | string | whether or not to include entities | massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros.  | 
+| skip_status | query | string | whether or not to include status | empor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/direct_messages?since_id=t%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20a&max_id=us%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pellentesque.%20Nulla&include_entities=citudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pellentesque.%20Nullam%20ultricies%20t&skip_status=at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20 
+HTTP 1.1 get http://api.twitter.com/1.1/direct_messages?since_id=%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur&max_id=orem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vesti&include_entities=massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20&skip_status=empor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20 
 ```
 
 
@@ -734,17 +705,16 @@ destroys direct messages specified in required ID
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| id | query | string | yes | ID of direct message to delete | s massa, vehicula quis condi | 
-| include_entities | query | string |  | whether or not to include entities |  eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut  | 
+| id | query | string | yes | ID of direct message to delete | s vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Ma | 
+| include_entities | query | string |  | whether or not to include entities | dunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimen | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/direct_messages/destroy?id=s%20massa%2C%20vehicula%20quis%20condi&include_entities=%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20 
+HTTP 1.1 post http://api.twitter.com/1.1/direct_messages/destroy?id=s%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Ma&include_entities=dunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimen 
 ```
 
 
@@ -755,18 +725,17 @@ sends a new direct message to specified user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| user_id | query | string | yes | description |  sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper | 
-| screen_name | query | string |  | screen name of user receiving message | et lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a u | 
-| text | query | string | yes | text of your direct message | . Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, ve | 
+| user_id | query | string | yes | description | um eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut  | 
+| screen_name | query | string |  | screen name of user receiving message | rem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissi | 
+| text | query | string | yes | text of your direct message | ec condimentum tellus sagittis at. Nullam vel metus ac quam gravi | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/direct_messages/new?user_id=%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper&screen_name=et%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20u&text=.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20ve 
+HTTP 1.1 post http://api.twitter.com/1.1/direct_messages/new?user_id=um%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20&screen_name=rem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissi&text=ec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravi 
 ```
 
 
@@ -778,26 +747,25 @@ returns collection of relevant Tweets matching query
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| q | query | string | yes | URL-encoded search query of 500 characters max | quam. Nunc sed enim nec tellus accumsan  | 
-| geocode | query | string |  | returns tweets by users located within given radius | asellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et di | 
-| lang | query | string |  | restricts tweets to a given language | t. Pellentesque elit libero, faucibus luctus ante nec, vol | 
-| locale | query | string |  | language of query you are sending |  Fusce nec est quam | 
-| result_type | query | string |  | specifies type of search results you prefer |  ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nis | 
-| count | query | string |  | number of tweets to return | eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam  | 
-| until | query | string |  | returns tweets created before given date | s erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius so | 
-| since_id | query | string |  | return results with ID greater than specified | et a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus an | 
-| max_id | query | string |  | returns results with an ID less than/equal to specified ID | onec  | 
-| include_entities | query | string |  | whether or not to include entities | ur, mi sit amet fe | 
-| callback | query | string |  | response will use the callback with given name | iquet. Phasellus faucibus urna arcu, et digni | 
+| q | query | string | yes | URL-encoded search query of 500 characters max |  Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. P | 
+| geocode | query | string |  | returns tweets by users located within given radius | nibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis | 
+| lang | query | string |  | restricts tweets to a given language | culis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet v | 
+| locale | query | string |  | language of query you are sending | s sollicitudin | 
+| result_type | query | string |  | specifies type of search results you prefer | met, consectetur adipiscing | 
+| count | query | string |  | number of tweets to return | dio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum feli | 
+| until | query | string |  | returns tweets created before given date | rabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor frin | 
+| since_id | query | string |  | return results with ID greater than specified | sed ante sit amet sagittis. In non lectus eu nunc interdum laor | 
+| max_id | query | string |  | returns results with an ID less than/equal to specified ID |  felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tin | 
+| include_entities | query | string |  | whether or not to include entities | gittis sed ex. Vivamus id vulputate odio. Donec quis facilisis | 
+| callback | query | string |  | response will use the callback with given name | o ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada fa | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/search/tweets?q=quam.%20Nunc%20sed%20enim%20nec%20tellus%20accumsan%20&geocode=asellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20di&lang=t.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20vol&locale=%20Fusce%20nec%20est%20quam&result_type=%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nis&count=eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20&until=s%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20so&since_id=et%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20an&max_id=onec%20&include_entities=ur%2C%20mi%20sit%20amet%20fe&callback=iquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20digni 
+HTTP 1.1 get http://api.twitter.com/1.1/search/tweets?q=%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20P&geocode=nibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis&lang=culis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20v&locale=s%20sollicitudin&result_type=met%2C%20consectetur%20adipiscing&count=dio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20feli&until=rabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20frin&since_id=sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laor&max_id=%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tin&include_entities=gittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis&callback=o%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20fa 
 ```
 
 
@@ -813,16 +781,15 @@ Retrieve the information for the saved search represented by the given id
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| id | path | string | yes | The id of the saved search |  interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula | 
+| id | path | string | yes | The id of the saved search | is nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare p | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/saved_searches/show/+interdum+sed.+Vestibulum+eget+luctus+metus%2C+eu+bibendum+orci.+Sed+eros+massa%2C+vehicula 
+HTTP 1.1 get http://api.twitter.com/1.1/saved_searches/show/is+nec+massa+egestas%2C+sed+mollis+est+molestie.+Aenean+quam+nisi%2C+posuere+sed+varius+sodales%2C+sagittis+sed+ex.+Vivamus+id+vulputate+odio.+Donec+quis+facilisis+arcu%2C+vel+ultrices+augue.+Suspendisse+potenti.+Mauris+vehicula+ex+lorem%2C+ut+ornare+p 
 ```
 
 
@@ -833,16 +800,15 @@ Create a new saved search for the authenticated user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| query | query | string | yes | The query of the search the user would like to save | s sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ul | 
+| query | query | string | yes | The query of the search the user would like to save | t amet, consectetur adipiscing elit. Suspendisse justo turpis, laci | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/saved_searches/create?query=s%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ul 
+HTTP 1.1 post http://api.twitter.com/1.1/saved_searches/create?query=t%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20laci 
 ```
 
 
@@ -853,16 +819,15 @@ Destroy a saved search for the authenticating user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| id | path | string | yes | The id of the saved search |  sagittis at. Nullam vel metus ac quam gravida pellentesque. Nullam ultricies turpis nec dignissim aliquam. Nu | 
+| id | path | string | yes | The id of the saved search | blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus ve | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/saved_searches/destroy/+sagittis+at.+Nullam+vel+metus+ac+quam+gravida+pellentesque.+Nullam+ultricies+turpis+nec+dignissim+aliquam.+Nu 
+HTTP 1.1 post http://api.twitter.com/1.1/saved_searches/destroy/blandit%2C+bibendum+tortor+ac%2C+congue+eros.+Lorem+ipsum+dolor+sit+amet%2C+consectetur+adipiscing+elit.+Suspendisse+justo+turpis%2C+lacinia+id+tempor+sed%2C+dapibus+ve 
 ```
 
 
@@ -874,20 +839,19 @@ returns a cursored collection of user IDs followed by user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| user_id | query | string | ID of user for whom to return results for |  porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla ma | 
-| screen_name | query | string | screen name of user for whom to return results for | apien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis  | 
-| cursor | query | string | causes list of connections to be broken in pages | l metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh solli | 
-| stringify_ids | query | string | IDs converted to strings | vida ornare ni | 
-| count | query | string | number of IDs to attempt retrieval of | ada, velit eu dapibus vehicula, sem to | 
+| user_id | query | string | ID of user for whom to return results for | st leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean q | 
+| screen_name | query | string | screen name of user for whom to return results for | ere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luct | 
+| cursor | query | string | causes list of connections to be broken in pages | sto arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut mo | 
+| stringify_ids | query | string | IDs converted to strings | met vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed e | 
+| count | query | string | number of IDs to attempt retrieval of | s luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvin | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/friends/ids?user_id=%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20ma&screen_name=apien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20&cursor=l%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20solli&stringify_ids=vida%20ornare%20ni&count=ada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20to 
+HTTP 1.1 get http://api.twitter.com/1.1/friends/ids?user_id=st%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20q&screen_name=ere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luct&cursor=sto%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20mo&stringify_ids=met%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20e&count=s%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvin 
 ```
 
 
@@ -899,20 +863,19 @@ returns a cursored collection of user IDs following the user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| user_id | query | string | ID of user for whom to return results for | at  | 
-| screen_name | query | string | screen name of user for whom to return results for | sent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, c | 
-| cursor | query | string | causes list of connections to be broken in pages | ec quis facilisis arc | 
-| stringify_ids | query | string | IDs converted to strings |  imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultric | 
-| count | query | string | number of IDs to attempt retrieval of |  molestie, eros in pretium pulvinar, est leo vehicula lectus, a cu | 
+| user_id | query | string | ID of user for whom to return results for | in eros. Mauris sollicitudin varius purus, nec condimentum | 
+| screen_name | query | string | screen name of user for whom to return results for |  | 
+| cursor | query | string | causes list of connections to be broken in pages |  lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Ae | 
+| stringify_ids | query | string | IDs converted to strings |  felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque ali | 
+| count | query | string | number of IDs to attempt retrieval of | r | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/followers/ids?user_id=at%20&screen_name=sent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20c&cursor=ec%20quis%20facilisis%20arc&stringify_ids=%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultric&count=%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cu 
+HTTP 1.1 get http://api.twitter.com/1.1/followers/ids?user_id=in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum&screen_name=&cursor=%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Ae&stringify_ids=%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20ali&count=r 
 ```
 
 
@@ -924,17 +887,16 @@ returns collection of IDs of users with pending follow request
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| cursor | query | string | causes list of connections to be broken in pages | es. Etiam dignissim risus non felis scelerisque aliquet. Phasellus fauc | 
-| stringify_ids | query | string | IDs converted to strings | suada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id ero | 
+| cursor | query | string | causes list of connections to be broken in pages | vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit am | 
+| stringify_ids | query | string | IDs converted to strings |  neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/friendships/incoming?cursor=es.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20fauc&stringify_ids=suada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20ero 
+HTTP 1.1 get http://api.twitter.com/1.1/friendships/incoming?cursor=vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20am&stringify_ids=%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20 
 ```
 
 
@@ -945,17 +907,16 @@ returns collection of IDs of users with pending follow request from the user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| cursor | query | string | causes list of connections to be broken in pages | nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. F | 
-| stringify_ids | query | string | IDs converted to strings | nt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum e | 
+| cursor | query | string | causes list of connections to be broken in pages | are purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non fe | 
+| stringify_ids | query | string | IDs converted to strings |  faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Mae | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/friendships/outgoing?cursor=nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20F&stringify_ids=nt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20e 
+HTTP 1.1 get http://api.twitter.com/1.1/friendships/outgoing?cursor=are%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20fe&stringify_ids=%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Mae 
 ```
 
 
@@ -966,18 +927,17 @@ allows users to follow user sepcified by ID
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | screen name of user for whom to befriend | stibulum eget luctus | 
-| user_id | query | string | ID of user for whom to befriend | mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lo | 
-| follow | query | string | enable notifications for target user | lis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum ege | 
+| screen_name | query | string | screen name of user for whom to befriend | sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem | 
+| user_id | query | string | ID of user for whom to befriend | In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper  | 
+| follow | query | string | enable notifications for target user | lla. Mauris eu tortor blandit, | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/friendships/create?screen_name=stibulum%20eget%20luctus&user_id=mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lo&follow=lis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20ege 
+HTTP 1.1 post http://api.twitter.com/1.1/friendships/create?screen_name=sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem&user_id=In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20&follow=lla.%20Mauris%20eu%20tortor%20blandit%2C 
 ```
 
 
@@ -988,17 +948,16 @@ allows user to unfollow user psecified by ID
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | yes | screen name of user for whom to befriend | cula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum eui | 
-| user_id | query | string | yes | ID of user for whom to befriend | etus, eu bibendum orci. Sed e | 
+| screen_name | query | string | yes | screen name of user for whom to befriend | t sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo co | 
+| user_id | query | string | yes | ID of user for whom to befriend | dunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laore | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/friendships/destroy?screen_name=cula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20eui&user_id=etus%2C%20eu%20bibendum%20orci.%20Sed%20e 
+HTTP 1.1 post http://api.twitter.com/1.1/friendships/destroy?screen_name=t%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20co&user_id=dunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laore 
 ```
 
 
@@ -1009,19 +968,18 @@ Allows one to enable or disable settings for specified user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | yes | screen name of user for whom to befriend | e odio. | 
-| user_id | query | string | yes | ID of user for whom to befriend | ed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis se | 
-| device | query | string | yes | enable/disable device notifications for user | eo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean q | 
-| retweets | query | string | yes | enable/disable retweets from target user | s. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit i | 
+| screen_name | query | string | yes | screen name of user for whom to befriend | ellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id sce | 
+| user_id | query | string | yes | ID of user for whom to befriend | erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molest | 
+| device | query | string | yes | enable/disable device notifications for user | ortis porttitor. Mau | 
+| retweets | query | string | yes | enable/disable retweets from target user | citur, mi sit amet fermentum ultricies, felis | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/friendships/update?screen_name=e%20odio.&user_id=ed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20se&device=eo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20q&retweets=s.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20i 
+HTTP 1.1 post http://api.twitter.com/1.1/friendships/update?screen_name=ellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20sce&user_id=erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molest&device=ortis%20porttitor.%20Mau&retweets=citur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis 
 ```
 
 
@@ -1032,19 +990,18 @@ returns detailed info about relationship between two users
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| source_id | query | string |  | user id of subject user |  Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultri | 
-| source_screen_name | query | string |  | screen_name of subject user |  porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent  | 
-| target_id | query | string | yes | user id of target user | titor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa | 
-| target_screen_name | query | string | yes | screen name of target user | us, eu bibendum orci. S | 
+| source_id | query | string |  | user id of subject user |  ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel  | 
+| source_screen_name | query | string |  | screen_name of subject user | tur, mi sit amet fermentum ultricies, felis felis aliq | 
+| target_id | query | string | yes | user id of target user | amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nul | 
+| target_screen_name | query | string | yes | screen name of target user |  vel metus et, molestie pretium tortor. Pra | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/friendships/show?source_id=%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultri&source_screen_name=%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20&target_id=titor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa&target_screen_name=us%2C%20eu%20bibendum%20orci.%20S 
+HTTP 1.1 get http://api.twitter.com/1.1/friendships/show?source_id=%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20&source_screen_name=tur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliq&target_id=amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nul&target_screen_name=%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Pra 
 ```
 
 
@@ -1059,21 +1016,20 @@ updates user's settings
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| trend_location_woeid | query | string | the Yahoo! Where On Earth ID to user as defaul tend location | ermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, | 
-| sleep_time_enabled | query | string | enables/disables sleep time, silencing notifications |  Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lore | 
-| start_sleep_time | query | string | the hour that sleep time should begin if enabled | cus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit | 
-| end_sleep_time | query | string | the hour that sleep time should end if enabled | quat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat  | 
-| time_zone | query | string | timezone dates and times should be displayed in | c interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi | 
-| lang | query | string | language which Twitter should render in for the user | u facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellent | 
+| trend_location_woeid | query | string | the Yahoo! Where On Earth ID to user as defaul tend location |  ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultrici | 
+| sleep_time_enabled | query | string | enables/disables sleep time, silencing notifications | um eget luct | 
+| start_sleep_time | query | string | the hour that sleep time should begin if enabled | pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin | 
+| end_sleep_time | query | string | the hour that sleep time should end if enabled |  vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pr | 
+| time_zone | query | string | timezone dates and times should be displayed in | ue ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis  | 
+| lang | query | string | language which Twitter should render in for the user |  feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim me | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/settings?trend_location_woeid=ermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C&sleep_time_enabled=%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lore&start_sleep_time=cus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit&end_sleep_time=quat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20&time_zone=c%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi&lang=u%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellent 
+HTTP 1.1 post http://api.twitter.com/1.1/account/settings?trend_location_woeid=%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultrici&sleep_time_enabled=um%20eget%20luct&start_sleep_time=pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin&end_sleep_time=%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pr&time_zone=ue%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20&lang=%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20me 
 ```
 
 
@@ -1084,17 +1040,16 @@ sets which device Twitter delivers updates to for user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| device | query | string | yes | must be one of sms, none | i. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputat | 
-| include_entities | query | string |  | whether or not to include entities | giat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in  | 
+| device | query | string | yes | must be one of sms, none | estibu | 
+| include_entities | query | string |  | whether or not to include entities | ndimentum tellus sagittis at. Nullam vel metus ac quam gravida pellentesque. Nullam ultricies turpis nec dignissim al | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/update_delivery_device?device=i.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputat&include_entities=giat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20 
+HTTP 1.1 post http://api.twitter.com/1.1/account/update_delivery_device?device=estibu&include_entities=ndimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pellentesque.%20Nullam%20ultricies%20turpis%20nec%20dignissim%20al 
 ```
 
 
@@ -1105,21 +1060,20 @@ sets values that users ar eable to set under Account tab
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| name | query | string | full name of profile | endrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam fin | 
-| url | query | string | url associated with profile | te sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie preti | 
-| location | query | string | city or country describing where user of account is. | gilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, con | 
-| description | query | string | a description of user owning account |  Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, ia | 
-| include_entities | query | string | whether or not to include entities | ictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim,  | 
-| skip_status | query | string | whether or not to include statuses in response | isus non felis scelerisque aliquet. Phasell | 
+| name | query | string | full name of profile | ula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros i | 
+| url | query | string | url associated with profile | eu nunc interdum laoreet a ut dui. Sed eu nulla m | 
+| location | query | string | city or country describing where user of account is. | s sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissi | 
+| description | query | string | a description of user owning account | uam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget  | 
+| include_entities | query | string | whether or not to include entities |  id eros viverra ullamcorper. Fusce nec est | 
+| skip_status | query | string | whether or not to include statuses in response | is condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat digniss | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile?name=endrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20fin&url=te%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20preti&location=gilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20con&description=%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20ia&include_entities=ictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20&skip_status=isus%20non%20felis%20scelerisque%20aliquet.%20Phasell 
+HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile?name=ula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20i&url=eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20m&location=s%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissi&description=uam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20&include_entities=%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est&skip_status=is%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20digniss 
 ```
 
 
@@ -1130,27 +1084,26 @@ updates user's profile background image
 * Request Parameters :
   * Content-Type Accepted : multipart/form-data
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| tile | query | string |  | whether or not to tile background image | ris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut or | 
-| use | query | string |  | display background image or not | ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum eui | 
-| include_entities | query | string |  | whether or not to include entities | r metus massa, malesuada facilisis sapi | 
-| skip_status | query | string |  | whether or not to include status in returned user objects | sa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dign | 
-| file | formData | file | yes | image to replace background image of profile | --data-binary ODNkYTBjYjhlNzAxNzIwZWI3MTdjNTY1ZDA2ZWM4Y2U3YTg2NDJkOGY4ZjBmMjViODVhZjJmZGQyOGE3ZDgxMzk0ZmQ0YWVlZTRjMzQ0ODY2MjRkNDI3MzQzYWQ3ZDA5N2U3NGU0MDc1ZGE1NGRiOWQyZTc4ZmQ3NWEwZDg2OWJjZjY3ZmQxMjM3NTQ5M2NkY2RkZjA2MjkzNmIzZmI5N2I2Y2MwY2I0MDI5ZGUyMjEzOGQyMGZmNTQ1M2RhODI4OTQ3NWNkYjdiYTNhNTAzYzAzN2I5NmYxOWY3ZGNkN2Y1ZGVhMzYyNGJlZjg4NDY3YjIzMjZjZDEyYjk3NTk0YzMyM2Y1OTVhMzE0ZjljYjZlNWYzYjBhMThmYmZhYTI5YzhkNmViMTk3ZGM1M2M2ZDg2OWFkNTAxNjExNmE2MzAzZDc2ZThhY2MyN2YyYTI3ZGQ0NGE1ZDI5NzRmOWIwYjRjMzg3MDAzMjIxODVjMjA5YmQ1YTE4OTk1NGVhOGE1ODk2ZmFjOGU3Y2NmNWY1YTM0NWMzNDk0MGY2OTk4MGRmYmY2MmU5NDg3OWIxOWUxZGQyYjg0NDc5YzI0ZTA0MjBhZmJiZWI5NmU4ZjNjY2JhODBjZjJlYzc3N2JmMzg5OTkzMjhkOThmNzM4NTYyZWZkZDhlNjRiZmUwNWMyZTg= | 
+| tile | query | string |  | whether or not to tile background image | r. Mauris vel ultrices erat, at h | 
+| use | query | string |  | display background image or not |  amet fermentum ultricies, felis felis ali | 
+| include_entities | query | string |  | whether or not to include entities | s, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed variu | 
+| skip_status | query | string |  | whether or not to include status in returned user objects | liquam enim, id feugiat magna elit in sapien. Sed malesuada, velit | 
+| file | formData | file | yes | image to replace background image of profile | --data-binary ZTI0ODkwOTRmMzYyYmE2MjlhOGYwODUyNzJhMjRhZDkzYTViNmIzYjU5MmUyMjkzYTNmMGIwMGNmMmFhZWM4NzZhYWI5MDI5Njc0OThkYmY1NWNkNmJkY2MwZWZjNjkyMzY4MTAxMTM5OWRmNmZjNGU3MjBjNzNhMDNkNTRiNmE3ZmQwNDdjZGMxZTVlNzNlZDU0NWNjYWEwOTM0MTIzMWJiOWEwYjgwZTliYjkyYzdjYmM4YmM1ZmYzNGNhNzRiYzY2MTZiZjA5YzdkN2E0YTMyNjY1MmQ0MGZiYWU3NjU4ZjU3YzY3ZjJiZDY2NmIwOTJkNWQyZmQwMWE2N2QyMWRlOTA0NTkzNjliY2E0YWE3YzM5OWE3ZGI2NmM3NjgzMjZhMmQwN2NkYjJkMjAzNDVhZTFkYWU3MDM3NjM1NmFjNzhhZmMyNjIxOTZiY2NhY2Q0ZWJhOGRhNjNjZDJmMWQ5MTRiZjk5YTdiYTRlMTAyNDhiMzlhODUxNDg2YTkyMjg4MmViZGQ1ZjFjZjdhNmY2YmIyZTExODNlZTQ2Yjc4OGRhZjg4YzU5NjE5YTFjMWYyNjUxNzY5ZDgzMmEwYjNjNmY2OWQyNzAzZGM5ZGY2OWYyNmFmZDBhNGE5ZmFiZTk4ZTA4Y2NjZDNjMzEzODYwNjI2NWU3MzVmYTZiYmY= | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_background_image?tile=ris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20or&use=ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20eui&include_entities=r%20metus%20massa%2C%20malesuada%20facilisis%20sapi&skip_status=sa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dign 
-Content-Type: multipart/form-data, boundary=57cc270e62b18
+HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_background_image?tile=r.%20Mauris%20vel%20ultrices%20erat%2C%20at%20h&use=%20amet%20fermentum%20ultricies%2C%20felis%20felis%20ali&include_entities=s%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20variu&skip_status=liquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit 
+Content-Type: multipart/form-data, boundary=57cc276119516
 Content-Length: 761
---57cc270e62b18
+--57cc276119516
 content-disposition: form-data; name="file"
 
 --data-binary 
-ODNkYTBjYjhlNzAxNzIwZWI3MTdjNTY1ZDA2ZWM4Y2U3YTg2NDJkOGY4ZjBmMjViODVhZjJmZGQyOGE3ZDgxMzk0ZmQ0YWVlZTRjMzQ0ODY2MjRkNDI3MzQzYWQ3ZDA5N2U3NGU0MDc1ZGE1NGRiOWQyZTc4ZmQ3NWEwZDg2OWJjZjY3ZmQxMjM3NTQ5M2NkY2RkZjA2MjkzNmIzZmI5N2I2Y2MwY2I0MDI5ZGUyMjEzOGQyMGZmNTQ1M2RhODI4OTQ3NWNkYjdiYTNhNTAzYzAzN2I5NmYxOWY3ZGNkN2Y1ZGVhMzYyNGJlZjg4NDY3YjIzMjZjZDEyYjk3NTk0YzMyM2Y1OTVhMzE0ZjljYjZlNWYzYjBhMThmYmZhYTI5YzhkNmViMTk3ZGM1M2M2ZDg2OWFkNTAxNjExNmE2MzAzZDc2ZThhY2MyN2YyYTI3ZGQ0NGE1ZDI5NzRmOWIwYjRjMzg3MDAzMjIxODVjMjA5YmQ1YTE4OTk1NGVhOGE1ODk2ZmFjOGU3Y2NmNWY1YTM0NWMzNDk0MGY2OTk4MGRmYmY2MmU5NDg3OWIxOWUxZGQyYjg0NDc5YzI0ZTA0MjBhZmJiZWI5NmU4ZjNjY2JhODBjZjJlYzc3N2JmMzg5OTkzMjhkOThmNzM4NTYyZWZkZDhlNjRiZmUwNWMyZTg=
+ZTI0ODkwOTRmMzYyYmE2MjlhOGYwODUyNzJhMjRhZDkzYTViNmIzYjU5MmUyMjkzYTNmMGIwMGNmMmFhZWM4NzZhYWI5MDI5Njc0OThkYmY1NWNkNmJkY2MwZWZjNjkyMzY4MTAxMTM5OWRmNmZjNGU3MjBjNzNhMDNkNTRiNmE3ZmQwNDdjZGMxZTVlNzNlZDU0NWNjYWEwOTM0MTIzMWJiOWEwYjgwZTliYjkyYzdjYmM4YmM1ZmYzNGNhNzRiYzY2MTZiZjA5YzdkN2E0YTMyNjY1MmQ0MGZiYWU3NjU4ZjU3YzY3ZjJiZDY2NmIwOTJkNWQyZmQwMWE2N2QyMWRlOTA0NTkzNjliY2E0YWE3YzM5OWE3ZGI2NmM3NjgzMjZhMmQwN2NkYjJkMjAzNDVhZTFkYWU3MDM3NjM1NmFjNzhhZmMyNjIxOTZiY2NhY2Q0ZWJhOGRhNjNjZDJmMWQ5MTRiZjk5YTdiYTRlMTAyNDhiMzlhODUxNDg2YTkyMjg4MmViZGQ1ZjFjZjdhNmY2YmIyZTExODNlZTQ2Yjc4OGRhZjg4YzU5NjE5YTFjMWYyNjUxNzY5ZDgzMmEwYjNjNmY2OWQyNzAzZGM5ZGY2OWYyNmFmZDBhNGE5ZmFiZTk4ZTA4Y2NjZDNjMzEzODYwNjI2NWU3MzVmYTZiYmY=
 ```
 
 
@@ -1161,22 +1114,21 @@ sets one or more hex values that controls color scheme
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| profile_background_color | query | string | profile background color | io. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodale | 
-| profile_link_color | query | string | profile link color |  mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum  | 
-| profile_sidebar_border_color | query | string | profile sidebar's border color | e aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo | 
-| profile_sidebar_fill_color | query | string | profile's sidebar background color | et nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar ve | 
-| profile_text_color | query | string | profile text color | t molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in | 
-| include_entities | query | string | whether or not to include entities | isl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapi | 
-| skip_status | query | string | whether or not to include statuses | ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vu | 
+| profile_background_color | query | string | profile background color | Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi con | 
+| profile_link_color | query | string | profile link color | e ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vul | 
+| profile_sidebar_border_color | query | string | profile sidebar's border color | re eu facili | 
+| profile_sidebar_fill_color | query | string | profile's sidebar background color | posuere eu facilisis nec, tempus ac ipsum. | 
+| profile_text_color | query | string | profile text color | i id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molesti | 
+| include_entities | query | string | whether or not to include entities | citur, mi sit ame | 
+| skip_status | query | string | whether or not to include statuses | ollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehic | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_colors?profile_background_color=io.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodale&profile_link_color=%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20&profile_sidebar_border_color=e%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo&profile_sidebar_fill_color=et%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20ve&profile_text_color=t%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in&include_entities=isl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapi&skip_status=ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vu 
+HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_colors?profile_background_color=Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20con&profile_link_color=e%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vul&profile_sidebar_border_color=re%20eu%20facili&profile_sidebar_fill_color=posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.&profile_text_color=i%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molesti&include_entities=citur%2C%20mi%20sit%20ame&skip_status=ollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehic 
 ```
 
 
@@ -1187,24 +1139,23 @@ updates user's profile image
 * Request Parameters :
   * Content-Type Accepted : multipart/form-data
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| skip_status | query | string |  | whether or not to include statuses | r, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapi | 
-| image | formData | file | yes | image to be set as profile image | --data-binary MDdmNjc3M2ExMGNiN2FlOWUyMTRkMWI3MDFlODAxY2Q1OWRmZmQzZGE3NDViZjAyMWVjMDFlNGY2YWZjZDAxMzE5ZWNiMzBmYWVjYzM0NDczZTE5MzFkZTZiYzdiM2E3YjMwNzU3YzU5ZmQ5YzhjZTc2ODU0ZTg3MzBlMTc5MGNjMTM1Y2NjZTFjNDFjYWNjYjQyZTA0MWJiYjFjM2Q2OGQzYmZkZWUzN2U5NDA0ZjhkOGYyZTJmNmFlNjUzY2QyZWQ2YzBlMmMzYmZjNzJmMzM0ZjI4YjE3YTkwOGE0ZTVkY2ZjYzg3MzNlNGY2ZGI2MjlkMTJmNTJiNjAyZDA1MWZhNjNlNzdkZTVkMzRhYjIwYmQ1Yzk3NzE3MjVjMTkxODUxZDQzNDJlMTM0YzNlYmY4NTQ2YTA1ZTc3MzZhODRjMjVlYmRhN2NjZmJhYjRiZTgwNWMxNjNhNjNmNzAzZDgzN2JkZDRmZWRmM2VlMzE3MTEyYmVkZGQzNTJjZDhjMDMzODU3YjA3MTEzZjRmODI1YjU1MzgyNDhlYmQyNTQyZDFhODIyZmMyYzFjN2EyNmQxMWY1ZTE0ZjhiYjg5YTM0NjYxZTUxODIwMzQ5NGNiMGJmZWQ2YWNmZmE4YzdkNWE3N2JlMDY0Y2I1ZWQzODBmMzQxNGFmZTgwNWM4ZjM= | 
+| skip_status | query | string |  | whether or not to include statuses | sectetur sed ante sit amet sagittis. In non lectus eu nunc interdum laoreet a ut dui. Sed eu nu | 
+| image | formData | file | yes | image to be set as profile image | --data-binary NjVkOTBjYzhhOTliOTlkNjgzYzMzZDNhODg0ODYwZTFlZmRiOWJkMmE2ZTg3ZDQzMjBiMzg0YTk2YTZlYTNkYjg1NGM0MTQzNDkwY2Y2YzQ1Mjc0NWQzNGUyNjc2ODllNGY1NWZhYzU5NDE0NDcwY2UyNGM2MjI0MTZkODMzMTQ5OGE3YWY0NzFjNDVjNDhjZDBiMDg1MTkwOGY2ZjM3YzgzYmUyMWMwNWMzYzdmMDU1NzQ3ZjVmNTVkYmYxMWQxOWZhMGMxMWE1ZDEwZDdmNDJhNGE0ZGQxZjljNzk0Mjk5N2E3NzgyNTE1ODQ2NmY0MzAzYTU2Yzc5MTgwNjM1MTY1NmZiOTNhMTUzMTc3MzMxNTM0ZGE3ZWMzYjg1YzM4YWVkZTNmMWI2NGFjMGYwMTg4MTdiOTZkMmM1ZGQ1ZWZhOTJkZmQxMTY0ZjQzNTJkMjg4MTEzMzM2NmUzZGE5N2RiNjg3NDhlZDc3OTVhODcwMWJlZDA3MGFkZTdkYWQwOWFhYjVlZjg0NzdiZDI1MGRlMzdkY2ZmMzdkMDViNDIxZGEyM2Y2MzNlZmE0MjUzNWVkNmVhOWIxNmYwNDgwYTQ3NzAwNDQ5Njg0MzNiYjk0YjI2Y2Y4OWY5YWFkNzZlNjM0ZjQ4YTJjNWYyYjBlOWQ3MjA0NmY4ZjI5Njk0OGQ= | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_image?skip_status=r%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapi 
-Content-Type: multipart/form-data, boundary=57cc270e64d50
+HTTP 1.1 post http://api.twitter.com/1.1/account/update_profile_image?skip_status=sectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20non%20lectus%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nu 
+Content-Type: multipart/form-data, boundary=57cc27611b765
 Content-Length: 762
---57cc270e64d50
+--57cc27611b765
 content-disposition: form-data; name="image"
 
 --data-binary 
-MDdmNjc3M2ExMGNiN2FlOWUyMTRkMWI3MDFlODAxY2Q1OWRmZmQzZGE3NDViZjAyMWVjMDFlNGY2YWZjZDAxMzE5ZWNiMzBmYWVjYzM0NDczZTE5MzFkZTZiYzdiM2E3YjMwNzU3YzU5ZmQ5YzhjZTc2ODU0ZTg3MzBlMTc5MGNjMTM1Y2NjZTFjNDFjYWNjYjQyZTA0MWJiYjFjM2Q2OGQzYmZkZWUzN2U5NDA0ZjhkOGYyZTJmNmFlNjUzY2QyZWQ2YzBlMmMzYmZjNzJmMzM0ZjI4YjE3YTkwOGE0ZTVkY2ZjYzg3MzNlNGY2ZGI2MjlkMTJmNTJiNjAyZDA1MWZhNjNlNzdkZTVkMzRhYjIwYmQ1Yzk3NzE3MjVjMTkxODUxZDQzNDJlMTM0YzNlYmY4NTQ2YTA1ZTc3MzZhODRjMjVlYmRhN2NjZmJhYjRiZTgwNWMxNjNhNjNmNzAzZDgzN2JkZDRmZWRmM2VlMzE3MTEyYmVkZGQzNTJjZDhjMDMzODU3YjA3MTEzZjRmODI1YjU1MzgyNDhlYmQyNTQyZDFhODIyZmMyYzFjN2EyNmQxMWY1ZTE0ZjhiYjg5YTM0NjYxZTUxODIwMzQ5NGNiMGJmZWQ2YWNmZmE4YzdkNWE3N2JlMDY0Y2I1ZWQzODBmMzQxNGFmZTgwNWM4ZjM=
+NjVkOTBjYzhhOTliOTlkNjgzYzMzZDNhODg0ODYwZTFlZmRiOWJkMmE2ZTg3ZDQzMjBiMzg0YTk2YTZlYTNkYjg1NGM0MTQzNDkwY2Y2YzQ1Mjc0NWQzNGUyNjc2ODllNGY1NWZhYzU5NDE0NDcwY2UyNGM2MjI0MTZkODMzMTQ5OGE3YWY0NzFjNDVjNDhjZDBiMDg1MTkwOGY2ZjM3YzgzYmUyMWMwNWMzYzdmMDU1NzQ3ZjVmNTVkYmYxMWQxOWZhMGMxMWE1ZDEwZDdmNDJhNGE0ZGQxZjljNzk0Mjk5N2E3NzgyNTE1ODQ2NmY0MzAzYTU2Yzc5MTgwNjM1MTY1NmZiOTNhMTUzMTc3MzMxNTM0ZGE3ZWMzYjg1YzM4YWVkZTNmMWI2NGFjMGYwMTg4MTdiOTZkMmM1ZGQ1ZWZhOTJkZmQxMTY0ZjQzNTJkMjg4MTEzMzM2NmUzZGE5N2RiNjg3NDhlZDc3OTVhODcwMWJlZDA3MGFkZTdkYWQwOWFhYjVlZjg0NzdiZDI1MGRlMzdkY2ZmMzdkMDViNDIxZGEyM2Y2MzNlZmE0MjUzNWVkNmVhOWIxNmYwNDgwYTQ3NzAwNDQ5Njg0MzNiYjk0YjI2Y2Y4OWY5YWFkNzZlNjM0ZjQ4YTJjNWYyYjBlOWQ3MjA0NmY4ZjI5Njk0OGQ=
 ```
 
 
@@ -1216,18 +1167,17 @@ disallows retweets and device notifications from a user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| include_entities | query | string | whether or not to include entities | ng elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo qui | 
-| skip_status | query | string | whether or not to include statuses in response | cing elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. N | 
-| cursor | query | string | breaks block of user to be broken up into pages | et varius orci. Donec consectetur sed ante s | 
+| include_entities | query | string | whether or not to include entities | t enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar met | 
+| skip_status | query | string | whether or not to include statuses in response | congue eros. Lorem ipsum dolor sit amet, con | 
+| cursor | query | string | breaks block of user to be broken up into pages | ulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ult | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/blocks/list?include_entities=ng%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20qui&skip_status=cing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20N&cursor=et%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20s 
+HTTP 1.1 get http://api.twitter.com/1.1/blocks/list?include_entities=t%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20met&skip_status=congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20con&cursor=ulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ult 
 ```
 
 
@@ -1238,17 +1188,16 @@ returns array of numeric user ids of blocked users
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| stringify_ids | query | string | returns array of numeric IDs as string IDs | posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus | 
-| cursor | query | string | breaks up block of user IDs into pages | e, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta maur | 
+| stringify_ids | query | string | returns array of numeric IDs as string IDs | im mi eget lacinia. In nisi odio, porta ut quam non, imperdiet variu | 
+| cursor | query | string | breaks up block of user IDs into pages | u bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecen | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/blocks/ids?stringify_ids=posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus&cursor=e%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20maur 
+HTTP 1.1 get http://api.twitter.com/1.1/blocks/ids?stringify_ids=im%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20variu&cursor=u%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecen 
 ```
 
 
@@ -1259,19 +1208,18 @@ blocks the specified user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | yes | screen name of user to be blocked | d feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, se | 
-| user_id | query | string | yes | ID of user to be blocked | sectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus veh | 
-| include_entities | query | string |  | whether or not to include entities | rat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent inte | 
-| skip_status | query | string |  | whether or not to skip statuses | cies turpis nec dignissim aliquam. Nunc  | 
+| screen_name | query | string | yes | screen name of user to be blocked | . Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque en | 
+| user_id | query | string | yes | ID of user to be blocked | elit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec es | 
+| include_entities | query | string |  | whether or not to include entities | nc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros viverra ul | 
+| skip_status | query | string |  | whether or not to skip statuses | sim augue interdum sed. Vestibulum eget luctus metu | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/blocks/create?screen_name=d%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20se&user_id=sectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20veh&include_entities=rat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20inte&skip_status=cies%20turpis%20nec%20dignissim%20aliquam.%20Nunc%20 
+HTTP 1.1 post http://api.twitter.com/1.1/blocks/create?screen_name=.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20en&user_id=elit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20es&include_entities=nc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ul&skip_status=sim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metu 
 ```
 
 
@@ -1282,19 +1230,18 @@ un-blocks the specified user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | yes | screen name of user to be un-blocked | um tellus sagittis at. Nullam vel metus ac quam gravida pelle | 
-| user_id | query | string | yes | ID of user to be un-blocked | t amet fermentum ult | 
-| include_entities | query | string |  | whether or not to include entities | e nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendu | 
-| skip_status | query | string |  | whether or not to skip statuses | . Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibu | 
+| screen_name | query | string | yes | screen name of user to be un-blocked | porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti | 
+| user_id | query | string | yes | ID of user to be un-blocked | rem ipsum dolor sit amet, consectetur adipiscing elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed  | 
+| include_entities | query | string |  | whether or not to include entities | s, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet fermentum ul | 
+| skip_status | query | string |  | whether or not to skip statuses |  sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/blocks/destroy?screen_name=um%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pelle&user_id=t%20amet%20fermentum%20ult&include_entities=e%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendu&skip_status=.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibu 
+HTTP 1.1 post http://api.twitter.com/1.1/blocks/destroy?screen_name=porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti&user_id=rem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Integer%20ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20&include_entities=s%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet%20fermentum%20ul&skip_status=%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20 
 ```
 
 
@@ -1306,18 +1253,17 @@ returns fully-hydrated user objects up to 100
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | screen name of user to lookup | gue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor | 
-| user_id | query | string | ID of user to lookup | titor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa, malesuada facilisis sap | 
-| include_entities | query | string | whether or not to include entities | ignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis  | 
+| screen_name | query | string | screen name of user to lookup | ismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dign | 
+| user_id | query | string | ID of user to lookup | eet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellent | 
+| include_entities | query | string | whether or not to include entities | ere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus ultrices nec. Vestibulum elementum felis sit amet ip | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/users/lookup?screen_name=gue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor&user_id=titor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sap&include_entities=ignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20 
+HTTP 1.1 get http://api.twitter.com/1.1/users/lookup?screen_name=ismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dign&user_id=eet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellent&include_entities=ere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus%20ultrices%20nec.%20Vestibulum%20elementum%20felis%20sit%20amet%20ip 
 ```
 
 
@@ -1328,18 +1274,17 @@ returns a variety of info about specified user
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | yes | screen name of user to be shown | ommodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, fa | 
-| user_id | query | string | yes | ID of user to be shown | arius purus, nec condimentum tellus sagittis at. Nullam vel metus ac quam gravida pellentesque. Nullam ultric | 
-| include_entities | query | string |  | whether or not to include entities | suada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ips | 
+| screen_name | query | string | yes | screen name of user to be shown |  ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volu | 
+| user_id | query | string | yes | ID of user to be shown | issim, imperdiet nunc m | 
+| include_entities | query | string |  | whether or not to include entities |  Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasel | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/users/show?screen_name=ommodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20fa&user_id=arius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20ac%20quam%20gravida%20pellentesque.%20Nullam%20ultric&include_entities=suada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ips 
+HTTP 1.1 get http://api.twitter.com/1.1/users/show?screen_name=%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volu&user_id=issim%2C%20imperdiet%20nunc%20m&include_entities=%20Vestibulum%20elementum%20felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasel 
 ```
 
 
@@ -1350,19 +1295,18 @@ simple relevance-based user search
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| q | query | string | yes | the search query to run against people search | amcorper. Phasellus s | 
-| page | query | string |  | specifies the page of results to receive | lum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, impe | 
-| count | query | string |  | number of people to return per page | apibus vehicula, sem tortor accumsan nibh, sed pellentesque eni | 
-| include_entities | query | string |  | whether or not to include entities | mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. N | 
+| q | query | string | yes | the search query to run against people search | iquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros i | 
+| page | query | string |  | specifies the page of results to receive | ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet | 
+| count | query | string |  | number of people to return per page | t veli | 
+| include_entities | query | string |  | whether or not to include entities | lisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consecte | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/users/search?q=amcorper.%20Phasellus%20s&page=lum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20impe&count=apibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20eni&include_entities=mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20N 
+HTTP 1.1 get http://api.twitter.com/1.1/users/search?q=iquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20i&page=ipsum%20sapien%2C%20bibendum%20at%20placerat%20sit%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodales%20ac%20commodo%20quis%2C%20laoreet%20a%20ipsum.%20Duis%20sem%20elit%2C%20posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet&count=t%20veli&include_entities=lisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consecte 
 ```
 
 
@@ -1373,19 +1317,18 @@ collection of users specified user can contribute to
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | yes | screen name of user that is contributed to | ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequa | 
-| user_id | query | string | yes | ID of user to that is contributed to | rtor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed effi | 
-| include_entities | query | string |  | whether or not to include entities | olestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Maur | 
-| skip_status | query | string |  | whether or not to skip statuses | gnissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodal | 
+| screen_name | query | string | yes | screen name of user that is contributed to |  sit amet f | 
+| user_id | query | string | yes | ID of user to that is contributed to | , felis felis aliquam enim, id feugiat magna elit in sapien. | 
+| include_entities | query | string |  | whether or not to include entities | nt interdum fringilla  | 
+| skip_status | query | string |  | whether or not to skip statuses | tium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/users/contributees?screen_name=ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec%20ultricies%20nibh%20eu%20leo%20consectetur%20congue%20quis%20nec%20tellus.%20Morbi%20consequa&user_id=rtor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20effi&include_entities=olestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Maur&skip_status=gnissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodal 
+HTTP 1.1 get http://api.twitter.com/1.1/users/contributees?screen_name=%20sit%20amet%20f&user_id=%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.&include_entities=nt%20interdum%20fringilla%20&skip_status=tium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C 
 ```
 
 
@@ -1396,19 +1339,18 @@ collection of users that can contribute to specified account
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | yes | screen name of user contributing | tesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, s | 
-| user_id | query | string | yes | ID of user contributing | um ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accums | 
-| include_entities | query | string |  | whether or not to include entities | orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iacu | 
-| skip_status | query | string |  | whether or not to skip statuses | d scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec  | 
+| screen_name | query | string | yes | screen name of user contributing | , iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit  | 
+| user_id | query | string | yes | ID of user contributing | lestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare purus | 
+| include_entities | query | string |  | whether or not to include entities | . Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia | 
+| skip_status | query | string |  | whether or not to skip statuses | etus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fring | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/users/contributors?screen_name=tesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20s&user_id=um%20ultricies%2C%20felis%20felis%20aliquam%20enim%2C%20id%20feugiat%20magna%20elit%20in%20sapien.%20Sed%20malesuada%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accums&include_entities=orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iacu&skip_status=d%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20 
+HTTP 1.1 get http://api.twitter.com/1.1/users/contributors?screen_name=%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20&user_id=lestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare%20purus&include_entities=.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia&skip_status=etus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fring 
 ```
 
 
@@ -1419,17 +1361,16 @@ Returna users report spam
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Description | Example |  
 | :---: | :---: | :---: | :--- | :--- |  
-| screen_name | query | string | The ID or screen_name of the user you want to report as a spammer | Donec molestie, eros in pretium pulvinar, est l | 
-| user_id | query | string | The ID of the user you want to report as a spammer | u, vel ultrices augue. Suspendisse potenti. Mauris vehicul | 
+| screen_name | query | string | The ID or screen_name of the user you want to report as a spammer |  Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eg | 
+| user_id | query | string | The ID of the user you want to report as a spammer | at mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Susp | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 post http://api.twitter.com/1.1/users/report_spam?screen_name=Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20l&user_id=u%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicul 
+HTTP 1.1 post http://api.twitter.com/1.1/users/report_spam?screen_name=%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eg&user_id=at%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Susp 
 ```
 
 
@@ -1441,16 +1382,15 @@ Returns all the information about a know place
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| place_id | path | string | yes | A place in the world | it dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In non lectus eu nunc int | 
+| place_id | path | string | yes | A place in the world | olestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque po | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/geo/id/it+dignissim%2C+tincidunt+justo+quis%2C+iaculis+odio.+Mauris+volutpat+dignissim+mi+eget+lacinia.+In+nisi+odio%2C+porta+ut+quam+non%2C+imperdiet+varius+orci.+Donec+consectetur+sed+ante+sit+amet+sagittis.+In+non+lectus+eu+nunc+int 
+HTTP 1.1 get http://api.twitter.com/1.1/geo/id/olestie%2C+eros+in+pretium+pulvinar%2C+est+leo+vehicula+lectus%2C+a+cursus+neque+erat+vitae+odio.+Sed+sed+neque+dignissim%2C+imperdiet+nunc+maximus%2C+finibus+erat.+Proin+id+scelerisque+ipsum.+Quisque+po 
 ```
 
 
@@ -1461,21 +1401,20 @@ Given a latitude and a longitude, searches for up to 20 places that can be used 
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| lat | query | string | yes | The latitude to search around | vel ultrices augue. Suspendisse potenti. Mauris vehicula ex lorem, ut ornare | 
-| long | query | string | yes | The longtitude to search around | amet, consectetur adipiscing elit. Suspendisse justo turpis, lacinia id tempor sed, dapibus vel elit. Sed efficitur, mi sit amet | 
-| accuracy | query | string |  | A hint on region in which to search | onsequat mi id eros viverra | 
-| granularity | query | string |  | This is the minimal granularity of place types to return | posuere tincidunt elit. Etiam convallis eu ligula n | 
-| max_results | query | string |  | A hint as to the number of results to return | sim, tincidunt jus | 
-| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | t  | 
+| lat | query | string | yes | The latitude to search around | licitudin et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, cons | 
+| long | query | string | yes | The longtitude to search around | ur congue quis nec tellus. Morbi consequat mi id eros viverra ullamcorper. Fusce nec est qu | 
+| accuracy | query | string |  | A hint on region in which to search | t amet, volutpat sed lacus. Nulla justo arcu, sodal | 
+| granularity | query | string |  | This is the minimal granularity of place types to return | da, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris sollicitudin varius purus, nec condimentum tellus sagittis at. Nullam vel metus  | 
+| max_results | query | string |  | A hint as to the number of results to return | ur pulvinar metu | 
+| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | scipit est. Etiam varius lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/geo/reverse_geoncode?lat=vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20lorem%2C%20ut%20ornare&long=amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20justo%20turpis%2C%20lacinia%20id%20tempor%20sed%2C%20dapibus%20vel%20elit.%20Sed%20efficitur%2C%20mi%20sit%20amet&accuracy=onsequat%20mi%20id%20eros%20viverra&granularity=posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20n&max_results=sim%2C%20tincidunt%20jus&callback=t%20 
+HTTP 1.1 get http://api.twitter.com/1.1/geo/reverse_geoncode?lat=licitudin%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20cons&long=ur%20congue%20quis%20nec%20tellus.%20Morbi%20consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20qu&accuracy=t%20amet%2C%20volutpat%20sed%20lacus.%20Nulla%20justo%20arcu%2C%20sodal&granularity=da%2C%20velit%20eu%20dapibus%20vehicula%2C%20sem%20tortor%20accumsan%20nibh%2C%20sed%20pellentesque%20enim%20metus%20in%20eros.%20Mauris%20sollicitudin%20varius%20purus%2C%20nec%20condimentum%20tellus%20sagittis%20at.%20Nullam%20vel%20metus%20&max_results=ur%20pulvinar%20metu&callback=scipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20 
 ```
 
 
@@ -1486,24 +1425,23 @@ Search for places that can be attached to a statuses/updates
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| lat | query | string | yes | The latitude to search around | nibh pulvinar, vesti | 
-| long | query | string | yes | The longtitude to search around | , at hendrerit enim. Sed | 
-| query | query | string | yes | Free-form text to match against while executing a geo-based query | verra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eg | 
-| ip | query | string | yes | An Ip address | e ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi,  | 
-| accuracy | query | string |  | A hint on region in which to search |  et. Curabitur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur ad | 
-| granularity | query | string |  | This is the minimal granularity of place types to return | felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed | 
-| contained_within | query | string |  | This is the place_id which you would like to restrict the search results to | . Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum  | 
-| attribute:street_address | query | string |  | This parameter searches for places which have this givven street address | s massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet  | 
-| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | s molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrice | 
+| lat | query | string | yes | The latitude to search around | ristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, port | 
+| long | query | string | yes | The longtitude to search around | itur pulvinar metus massa, malesuada facilisis sapien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bib | 
+| query | query | string | yes | Free-form text to match against while executing a geo-based query | llamcorper. Fusce nec est quam. Pellentesque vulputate sapien at turpis molestie congue. Nu | 
+| ip | query | string | yes | An Ip address | ta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vu | 
+| accuracy | query | string |  | A hint on region in which to search | mpus ac ip | 
+| granularity | query | string |  | This is the minimal granularity of place types to return | apien finibus at. Nullam finibus urna vel auctor fringilla. Mauris eu tortor blandit, bibendum tortor ac, congue eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse j | 
+| contained_within | query | string |  | This is the place_id which you would like to restrict the search results to | consequat mi id eros viverra ullamcorper. Fusce nec est quam. Pellentesque vulputate sapie | 
+| attribute:street_address | query | string |  | This parameter searches for places which have this givven street address | s lobortis porttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pul | 
+| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam co | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/geo/search?lat=nibh%20pulvinar%2C%20vesti&long=%2C%20at%20hendrerit%20enim.%20Sed&query=verra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eg&ip=e%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20&accuracy=%20et.%20Curabitur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20ad&granularity=felis%20sit%20amet%20ipsum%20euismod%20ullamcorper.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed&contained_within=.%20Phasellus%20sit%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20&attribute%3Astreet_address=s%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20&callback=s%20molestie%20congue.%20Nunc%20et%20lorem%20eros.%20Suspendisse%20eget%20nibh%20pulvinar%2C%20vestibulum%20magna%20ut%2C%20suscipit%20est.%20Etiam%20varius%20lobortis%20porttitor.%20Mauris%20vel%20ultrice 
+HTTP 1.1 get http://api.twitter.com/1.1/geo/search?lat=ristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20port&long=itur%20pulvinar%20metus%20massa%2C%20malesuada%20facilisis%20sapien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bib&query=llamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapien%20at%20turpis%20molestie%20congue.%20Nu&ip=ta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vu&accuracy=mpus%20ac%20ip&granularity=apien%20finibus%20at.%20Nullam%20finibus%20urna%20vel%20auctor%20fringilla.%20Mauris%20eu%20tortor%20blandit%2C%20bibendum%20tortor%20ac%2C%20congue%20eros.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Suspendisse%20j&contained_within=consequat%20mi%20id%20eros%20viverra%20ullamcorper.%20Fusce%20nec%20est%20quam.%20Pellentesque%20vulputate%20sapie&attribute%3Astreet_address=s%20lobortis%20porttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pul&callback=posuere%20eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20co 
 ```
 
 
@@ -1514,21 +1452,20 @@ Locates places near the given coordinates which are similar in name
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| lat | query | string | yes | The latitude to search around | di | 
-| long | query | string | yes | The longtitude to search around | s condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. I | 
-| name | query | string | yes | The name a place is known as | eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque.  | 
-| contained_within | query | string |  | This is the place_id which you would like to restrict the search results to | ccumsan tincidunt. Aliqua | 
-| attribute:street_address | query | string |  | This parameter searches for places which have this givven street address | us, a cursus neque erat vitae odio. Sed sed neq | 
-| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec mas | 
+| lat | query | string | yes | The latitude to search around | sque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspen | 
+| long | query | string | yes | The longtitude to search around | nissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec q | 
+| name | query | string | yes | The name a place is known as | vallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neq | 
+| contained_within | query | string |  | This is the place_id which you would like to restrict the search results to | alesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec | 
+| attribute:street_address | query | string |  | This parameter searches for places which have this givven street address | lis sit amet ipsum euismod ull | 
+| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui  | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/geo/similar_places?lat=di&long=s%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20I&name=eu%20facilisis%20nec%2C%20tempus%20ac%20ipsum.%20Ut%20molestie%20aliquet%20est%2C%20posuere%20tincidunt%20elit.%20Etiam%20convallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20&contained_within=ccumsan%20tincidunt.%20Aliqua&attribute%3Astreet_address=us%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neq&callback=neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20mas 
+HTTP 1.1 get http://api.twitter.com/1.1/geo/similar_places?lat=sque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspen&long=nissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20q&name=vallis%20eu%20ligula%20non%20consequat.%20Pellentesque%20elit%20libero%2C%20faucibus%20luctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neq&contained_within=alesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20nisl.%20Donec&attribute%3Astreet_address=lis%20sit%20amet%20ipsum%20euismod%20ull&callback=dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui%20 
 ```
 
 
@@ -1539,22 +1476,21 @@ Create a new place object at the given latitude and logitude
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| lat | query | string | yes | The latitude to search around | to quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, porta ut quam non, imperdiet varius orci. Donec consectetur sed ante sit amet sagittis. In no | 
-| long | query | string | yes | The longtitude to search around | ttitor. Mauris vel ultrices erat, at hendrerit enim. Sed leo ex, pulvinar vel metus et, molestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nibh sollicitudin et. Curabitur pulvinar metus massa | 
-| name | query | string | yes | The name a place is known as | t amet vestibulum quam. Morbi tincidunt pretium s | 
-| token | query | string | yes | The token found in the response from geo/similar_places | us eu nunc interdum laoreet a ut dui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui | 
-| contained_within | query | string |  | This is the place_id which you would like to restrict the search results to | ius sodales, sagittis sed ex. Vivamus id vulputate odio. Donec quis facilisis arcu, vel ultrices augue. Suspendisse potenti. Mauris vehicula ex l | 
-| attribute:street_address | query | string |  | This parameter searches for places which have this givven street address |  vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis,  | 
-| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | , est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus erat. Proin id scelerisque ipsum. Quisque porta m | 
+| lat | query | string | yes | The latitude to search around | ugiat | 
+| long | query | string | yes | The longtitude to search around | nibh eu | 
+| name | query | string | yes | The name a place is known as | am. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget | 
+| token | query | string | yes | The token found in the response from geo/similar_places | hicula lectus, a cursus neque erat vitae odio. S | 
+| contained_within | query | string |  | This is the place_id which you would like to restrict the search results to | lerisque ipsum. Quisque porta mauris nec massa egestas, sed mollis est molestie. Aenean quam nisi, posuere sed varius sodales, sagittis sed ex. Vivamus id vulp | 
+| attribute:street_address | query | string |  | This parameter searches for places which have this givven street address | pretium sodales. Etiam dignissim risus non felis scelerisque ali | 
+| callback | query | string |  | If supplied, the responses will use the JSON format with a callback of the given name | nec est quam. Pellent | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/geo/places?lat=to%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C%20porta%20ut%20quam%20non%2C%20imperdiet%20varius%20orci.%20Donec%20consectetur%20sed%20ante%20sit%20amet%20sagittis.%20In%20no&long=ttitor.%20Mauris%20vel%20ultrices%20erat%2C%20at%20hendrerit%20enim.%20Sed%20leo%20ex%2C%20pulvinar%20vel%20metus%20et%2C%20molestie%20pretium%20tortor.%20Praesent%20interdum%20fringilla%20orci%2C%20gravida%20ornare%20nibh%20sollicitudin%20et.%20Curabitur%20pulvinar%20metus%20massa&name=t%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20s&token=us%20eu%20nunc%20interdum%20laoreet%20a%20ut%20dui.%20Sed%20eu%20nulla%20malesuada%2C%20egestas%20velit%20id%2C%20semper%20felis.%20Fusce%20ac%20dui&contained_within=ius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulputate%20odio.%20Donec%20quis%20facilisis%20arcu%2C%20vel%20ultrices%20augue.%20Suspendisse%20potenti.%20Mauris%20vehicula%20ex%20l&attribute%3Astreet_address=%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20&callback=%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20imperdiet%20nunc%20maximus%2C%20finibus%20erat.%20Proin%20id%20scelerisque%20ipsum.%20Quisque%20porta%20m 
+HTTP 1.1 get http://api.twitter.com/1.1/geo/places?lat=ugiat&long=nibh%20eu&name=am.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget&token=hicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20S&contained_within=lerisque%20ipsum.%20Quisque%20porta%20mauris%20nec%20massa%20egestas%2C%20sed%20mollis%20est%20molestie.%20Aenean%20quam%20nisi%2C%20posuere%20sed%20varius%20sodales%2C%20sagittis%20sed%20ex.%20Vivamus%20id%20vulp&attribute%3Astreet_address=pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20ali&callback=nec%20est%20quam.%20Pellent 
 ```
 
 
@@ -1566,17 +1502,16 @@ Returns the top 10 trending topics for a specific WOEID
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| id | query | string | yes | The yahoo where on earch id | metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis odio. Mauris volutpat dignissim mi eget lacinia. In nisi odio, | 
-| exclude | query | string | yes | Setting this equal to hashtages will remove all hashtages from the trends list | tibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis condimentum eget, tristique ut quam. Maecenas et velit dignissim, tincidunt justo quis, iaculis | 
+| id | query | string | yes | The yahoo where on earch id | t amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, vehicula quis  | 
+| exclude | query | string | yes | Setting this equal to hashtages will remove all hashtages from the trends list |  Etiam dignissim risus non felis scelerisque aliquet. Phasellus faucibus ur | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/trends/place?id=metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis%20odio.%20Mauris%20volutpat%20dignissim%20mi%20eget%20lacinia.%20In%20nisi%20odio%2C&exclude=tibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20condimentum%20eget%2C%20tristique%20ut%20quam.%20Maecenas%20et%20velit%20dignissim%2C%20tincidunt%20justo%20quis%2C%20iaculis 
+HTTP 1.1 get http://api.twitter.com/1.1/trends/place?id=t%20amet%20vestibulum%20quam.%20Morbi%20tincidunt%20pretium%20sodales.%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C%20vehicula%20quis%20&exclude=%20Etiam%20dignissim%20risus%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20ur 
 ```
 
 
@@ -1591,17 +1526,16 @@ Returns the location that Twitter has trending topic information for
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| lat | query | string | yes | If provided with a long parameter the available trend locations wil be stored by distance | ortis porttitor. Mauris vel ultrices erat | 
-| long | query | string | yes | If provided with a lat parameters the available trend locations will be sorted by distance | uctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehi | 
+| lat | query | string | yes | If provided with a long parameter the available trend locations wil be stored by distance | nec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, i | 
+| long | query | string | yes | If provided with a lat parameters the available trend locations will be sorted by distance |  non felis scelerisque aliquet. Phasellus faucibus urna arcu, et dignissim augue interdum sed. Vestibulum eget luctus metus, eu bibendum orci. Sed eros massa, | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://api.twitter.com/1.1/trends/closest?lat=ortis%20porttitor.%20Mauris%20vel%20ultrices%20erat&long=uctus%20ante%20nec%2C%20volutpat%20dictum%20neque.%20Donec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehi 
+HTTP 1.1 get http://api.twitter.com/1.1/trends/closest?lat=nec%20molestie%2C%20eros%20in%20pretium%20pulvinar%2C%20est%20leo%20vehicula%20lectus%2C%20a%20cursus%20neque%20erat%20vitae%20odio.%20Sed%20sed%20neque%20dignissim%2C%20i&long=%20non%20felis%20scelerisque%20aliquet.%20Phasellus%20faucibus%20urna%20arcu%2C%20et%20dignissim%20augue%20interdum%20sed.%20Vestibulum%20eget%20luctus%20metus%2C%20eu%20bibendum%20orci.%20Sed%20eros%20massa%2C 
 ```
 
 
@@ -1630,7 +1564,6 @@ Returns the current rate limits for methods belonging to the specified resource 
 * Request Parameters :
   * Content-Type Accepted : application/json
 
-* Request Parameters :
 
 | Name | Location | Type | Definition | Description |  
 | :---: | :---: | :---: | :---: | :--- |  

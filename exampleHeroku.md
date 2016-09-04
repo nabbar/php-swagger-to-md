@@ -37,7 +37,6 @@ Find source code of this API [here](https://github.com/mohsen1/petstore-api)
 * Request Parameters :
   * Content-Type Accepted : application/json, text/xml
 
-* Request Parameters :
 
 | Name | Location | Type | Validation | Default | Description | Example |  
 | :---: | :---: | :---: | :---: | :---: | :--- | :--- |  
@@ -56,7 +55,6 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 * Request Parameters :
   * Content-Type Accepted : application/json, text/xml
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
@@ -67,10 +65,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 120
+Content-Length: 234
 {
-    "name": "uat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum ",
-    "birthday": -1402081525
+    "name": "ue vulputate sapien at turpis molestie congue. Nunc et lorem eros. Suspendisse eget nibh pulvinar, vestibulum magna ut, suscipit est. Etiam varius lobortis porttitor. Mauris vel ultrices ",
+    "birthday": -2016058399
 }
 ```
 
@@ -81,7 +79,6 @@ Content-Length: 120
 * Request Parameters :
   * Content-Type Accepted : application/json, text/xml
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
@@ -92,10 +89,10 @@ Content-Length: 120
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 190
+Content-Length: 54
 {
-    "name": "g elit. Integer ipsum sapien, bibendum at placerat sit amet, volutpat sed lacus. Nulla justo arcu, sodales ac commodo quis, laoreet a ipsum. Du",
-    "birthday": -1097005581
+    "name": "arius l",
+    "birthday": -1138391945
 }
 ```
 
@@ -107,16 +104,15 @@ Content-Length: 190
 * Request Parameters :
   * Content-Type Accepted : application/json, text/xml
 
-* Request Parameters :
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of the pet | dui sit a | 
+| petId | path | string | yes | ID of the pet | olestie pretium tortor. Praesent interdum fringilla orci, gravida ornare nib | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/dui+sit+a 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/olestie+pretium+tortor.+Praesent+interdum+fringilla+orci%2C+gravida+ornare+nib 
 ```
 
 
