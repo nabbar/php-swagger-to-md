@@ -60,17 +60,17 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| body | body | object | yes | [parameters/body](#toto) | The pet JSON you want to post | 
+| pet | body | object | yes | [parameters/body](#objectproperty_57cc341d9145f) | The pet JSON you want to post | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 223
+Content-Length: 101
 {
-    "name": "pat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed neque dignissim, imperdiet nunc maximus, finibus era",
-    "birthday": 1777389928
+    "name": "et nibh pulvinar, vestibulum magna ut, suscipit est. Et",
+    "birthday": 2053118126
 }
 ```
 
@@ -86,17 +86,17 @@ Content-Length: 223
 
 | Name | Location | Type | Required | Definition | Description |  
 | :---: | :---: | :---: | :---: | :---: | :--- |  
-| body | body | object | yes | [parameters/body](#toto) | The pet JSON you want to post | 
+| pet | body | object | yes | [parameters/body](#objectproperty_57cc341d92462) | The pet JSON you want to post | 
 
 
 * Example of request :
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 243
+Content-Length: 65
 {
-    "name": "ntum ultricies, felis felis aliquam enim, id feugiat magna elit in sapien. Sed malesuada, velit eu dapibus vehicula, sem tortor accumsan nibh, sed pellentesque enim metus in eros. Mauris sollicitud",
-    "birthday": 1604069200
+    "name": "odales ac commodo q",
+    "birthday": -812985425
 }
 ```
 
@@ -113,12 +113,12 @@ Content-Length: 243
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of the pet | ui. Sed eu nulla malesuada, egestas velit id, semper felis. Fusce ac dui nisl. Donec ultricies nibh eu leo consectetur congue quis nec tellus. Morbi consequat mi id eros vive | 
+| petId | path | string | yes | ID of the pet | m convallis eu ligula non consequat. Pellentesque elit libero, faucibus luctus ante nec, volutpat dictum neque. Donec molestie, eros in pretium pulvinar, est leo vehicula lectus, a cursus neque erat vitae odio. Sed sed ne | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/ui.+Sed+eu+nulla+malesuada%2C+egestas+velit+id%2C+semper+felis.+Fusce+ac+dui+nisl.+Donec+ultricies+nibh+eu+leo+consectetur+congue+quis+nec+tellus.+Morbi+consequat+mi+id+eros+vive 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/m+convallis+eu+ligula+non+consequat.+Pellentesque+elit+libero%2C+faucibus+luctus+ante+nec%2C+volutpat+dictum+neque.+Donec+molestie%2C+eros+in+pretium+pulvinar%2C+est+leo+vehicula+lectus%2C+a+cursus+neque+erat+vitae+odio.+Sed+sed+ne 
 ```
 
 
