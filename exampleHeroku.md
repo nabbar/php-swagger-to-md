@@ -67,10 +67,10 @@ HTTP 1.1 get http://petstore-api.herokuapp.com/pet/?limit=11
 ```json
 HTTP 1.1 post http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 93
+Content-Length: 194
 {
-    "name": "d eros viverra ullamcorper. Fusce nec est quam.",
-    "birthday": 1891058877
+    "name": ". Vestibulum elementum felis sit amet ipsum euismod ullamcorper. Phasellus sit amet vestibulum quam. Morbi tincidunt pretium sodales. Etiam dignissim",
+    "birthday": 298880795
 }
 ```
 
@@ -93,10 +93,10 @@ Content-Length: 93
 ```json
 HTTP 1.1 put http://petstore-api.herokuapp.com/pet/ 
 Content-Type: application/json
-Content-Length: 200
+Content-Length: 70
 {
-    "name": "uis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tincidunt elit. Etiam convallis eu ligula ",
-    "birthday": 339140376
+    "name": "rpis molestie congue. N",
+    "birthday": -1312289124
 }
 ```
 
@@ -113,12 +113,12 @@ Content-Length: 200
 
 | Name | Location | Type | Required | Description | Example |  
 | :---: | :---: | :---: | :---: | :--- | :--- |  
-| petId | path | string | yes | ID of the pet | cilisis arcu, vel ultrices augue. Suspendisse potenti. Mauri | 
+| petId | path | string | yes | ID of the pet | quis, laoreet a ipsum. Duis sem elit, posuere eu facilisis nec, tempus ac ipsum. Ut molestie aliquet est, posuere tinc | 
 
 
 * Example of request :
 ```json
-HTTP 1.1 get http://petstore-api.herokuapp.com/pet/cilisis+arcu%2C+vel+ultrices+augue.+Suspendisse+potenti.+Mauri 
+HTTP 1.1 get http://petstore-api.herokuapp.com/pet/quis%2C+laoreet+a+ipsum.+Duis+sem+elit%2C+posuere+eu+facilisis+nec%2C+tempus+ac+ipsum.+Ut+molestie+aliquet+est%2C+posuere+tinc 
 ```
 
 
