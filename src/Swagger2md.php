@@ -449,26 +449,19 @@ Options:
             }
 
             try {
-                mkdir($folder, 0777, true);
+                mkdir($folder);
             }
             catch (\Exception $e) {
-                self::printError("Error while try to create this folder '{$folder}' (recursive) : " . $e->getMessage());
-
-                if (file_exists(dirname($folder))) {
-                    try {
-                        mkdir($folder);
-                    }
-                    catch (\Exception $e) {
-                        throw $e;
-                    }
-                }
+                self::printError("Error while try to create this folder '{$folder}' : " . $e->getMessage());
+                return $this->tempFolder . DIRECTORY_SEPARATOR;
             }
 
             if (file_exists($folder)) {
                 return $folder;
             }
 
-            throw new Exception('Cannot create folder : ' . $folder);
+            self::printError("Error while try to create this folder '{$folder}' !");
+            return $this->tempFolder . DIRECTORY_SEPARATOR;
         }
 
         return null;
