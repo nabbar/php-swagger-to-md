@@ -448,7 +448,21 @@ Options:
                 return $folder;
             }
 
-            mkdir($folder, 0777, true);
+            try {
+                mkdir($folder, 0777, true);
+            }
+            catch (\Exception $e) {
+                self::printError("Error while try to create this folder '{$folder}' (recursive) : " . $e->getMessage());
+
+                if (file_exists(dirname($folder))) {
+                    try {
+                        mkdir($folder);
+                    }
+                    catch (\Exception $e) {
+                        throw $e;
+                    }
+                }
+            }
 
             if (file_exists($folder)) {
                 return $folder;
