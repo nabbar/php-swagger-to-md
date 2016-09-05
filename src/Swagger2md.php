@@ -442,22 +442,29 @@ Options:
     private function checkAndMakeObjectFolder()
     {
         if (empty($this->tempFolder)) {
-            $folder = $this->tempFolder . DIRECTORY_SEPARATOR . 'tmpObject' . DIRECTORY_SEPARATOR;
-
-            if (file_exists($folder)) {
-                return $folder;
-            }
-
-            mkdir($folder, 0777, true);
-
-            if (file_exists($folder)) {
-                return $folder;
-            }
-
-            throw new Exception('Cannot create folder : ' . $folder);
+            return;
         }
 
-        return null;
+        $folder = $this->tempFolder . DIRECTORY_SEPARATOR . 'tmpObject' . DIRECTORY_SEPARATOR;
+
+        if (file_exists($folder)) {
+            return $folder;
+        }
+
+        try {
+            mkdir($folder);
+        }
+        catch (\Exception $e) {
+            self::printError("Error while try to create this folder '{$folder}' : " . $e->getMessage());
+            return $this->tempFolder . DIRECTORY_SEPARATOR;
+        }
+
+        if (file_exists($folder)) {
+            return $folder;
+        }
+
+        self::printError("Error while try to create this folder '{$folder}' !");
+        return $this->tempFolder . DIRECTORY_SEPARATOR;
     }
 
     public function getColonArray($fileName)

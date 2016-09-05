@@ -91,7 +91,6 @@ class Paths extends \SwaggerValidator\Object\Paths
         }
 
         \Swagger2md\Swagger2md::printOutVV('Tags generated');
-        print_r($tags);
         return $tags;
     }
 
