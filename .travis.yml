@@ -39,6 +39,8 @@ matrix:
     env: SCRIPTBUILD=gitBuild
   allow_failures:
     - php: hhvm
+    - php: "5.3"
+    - php: "5.4"
   fast_finish: true
 
 # Commands you want to run that will verify your build.
