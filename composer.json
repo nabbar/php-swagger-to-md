@@ -1,7 +1,7 @@
 {
     "name": "njuhel/swagger-to-md",
     "description": "Tranform a swagger (multifile or plainfile) into markdown doc file based on template files. The generated doc is more a sskeltton of doc than a full finished doc file (depends of the documentation into your swagger file)",
-    "version": "1.0.0",
+    "version": "1.0.0-dev",
     "type": "package",
     "keywords": ["swagger", "OAI", "openapi", "md", "markdown", "transform", "doc", "skeletton", "template", "api", "restfull", "php"],
     "license": "Apache-2.0",
@@ -16,7 +16,7 @@
         "email": "swaggervalidator@nabbar.com"
     },
     "bin": [
-        "swagger-to-md"
+        "swagger-to-md", "bin/Swagger2MD.phar"
     ],
     "archive": {
         "exclude": ["!/src", "!/bin"]
@@ -64,35 +64,20 @@
             "vendor/evert/phpdoc-md/bin/phpdocmd doc/structure.xml doc/",
             "rm -rf doc/structure.xml temp/; mv doc/ApiIndex.md doc/README.md"
         ],
-        "build": [
-            "@Phpunit",
-            "@PharBuilder",
-            "@PhpDoc",
-            "@PharTest",
-            "@Coverage"
-        ],
         "gitBuild": [
-            "@Phpunit",
-            "@PharBuilder",
-            "@PharTest"
+            "@test"
         ],
         "gitBuildCoverage": [
-            "@Phpunit",
-            "@PharBuilder",
-            "@PharTest",
-            "@Coverage",
-            "./vendor/bin/test-reporter"
+            "@test"
         ],
         "test": [
-            "@Phpunit"
-        ],
-        "examples": [
-            "@PharBuilder",
             "bin/Swagger2MD.phar --output=exampleHeroku.md -v tests/examples/swaggerPetStoreHeroku.json",
             "bin/Swagger2MD.phar --output=exampleInstagram.md -v tests/examples/swaggerInstagram.json",
             "bin/Swagger2MD.phar --output=exampleMultiFile.md -v tests/examples/swaggerMultiFile.json",
             "bin/Swagger2MD.phar --output=exampleTwitter.md -v tests/examples/swaggerTwitter.json",
+            "bin/Swagger2MD.phar --output=examplePetStoreFull.md -v tests/examples/swaggerPetStoreFull.json",
             "bin/Swagger2MD.phar --output=example.md -v tests/examples/swaggerPetStoreFull.json"
         ]
     }
 }
+

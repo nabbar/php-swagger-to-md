@@ -15,9 +15,7 @@
         <template name="xml" />
     </transformations>
     <files>
-        <directory>./src/Swagger-to-md</directory>
-        <ignore>./src/Swagger-to-md/Example.php</ignore>
-        <ignore>./src/Swagger-to-md/Compat.php</ignore>
-        <ignore>./src/Swagger-to-md/Autoload.php</ignore>
+        <directory>./src</directory>
+        <ignore>./src/Swagger2mdAutoload.php</ignore>
     </files>
 </phpdoc>
