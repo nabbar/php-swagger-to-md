@@ -71,12 +71,14 @@
             "@test"
         ],
         "test": [
-            "bin/Swagger2MD.phar --output=exampleHeroku.md -v tests/examples/swaggerPetStoreHeroku.json",
-            "bin/Swagger2MD.phar --output=exampleInstagram.md -v tests/examples/swaggerInstagram.json",
-            "bin/Swagger2MD.phar --output=exampleMultiFile.md -v tests/examples/swaggerMultiFile.json",
-            "bin/Swagger2MD.phar --output=exampleTwitter.md -v tests/examples/swaggerTwitter.json",
-            "bin/Swagger2MD.phar --output=examplePetStoreFull.md -v tests/examples/swaggerPetStoreFull.json",
-            "bin/Swagger2MD.phar --output=example.md -v tests/examples/swaggerPetStoreFull.json"
+            "mkdir -vp temp; chmod -vR a+rwx temp/",
+            "bin/Swagger2MD.phar --output=temp/exampleHeroku.md -v --temp=temp/ tests/examples/swaggerPetStoreHeroku.json",
+            "bin/Swagger2MD.phar --output=temp/exampleInstagram.md -v --temp=temp/ tests/examples/swaggerInstagram.json",
+            "bin/Swagger2MD.phar --output=temp/exampleMultiFile.md -v --temp=temp/ tests/examples/swaggerMultiFile.json",
+            "bin/Swagger2MD.phar --output=temp/exampleTwitter.md -v --temp=temp/ tests/examples/swaggerTwitter.json",
+            "bin/Swagger2MD.phar --output=temp/examplePetStoreFull.md -v --temp=temp/ tests/examples/swaggerPetStoreFull.json",
+            "bin/Swagger2MD.phar --output=temp/example.md -v --temp=temp/ tests/examples/swaggerPetStoreFull.json",
+            "rm -rf temp/;"
         ]
     }
 }
