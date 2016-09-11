@@ -27,4 +27,24 @@ namespace Swagger2md\SwaggerValidator\Object;
 class HeaderItem extends \SwaggerValidator\Object\HeaderItem
 {
 
+    /**
+     *
+     * @param \SwaggerValidator\Common\Context $context
+     * @return mixed
+     * @throws \SwaggerValidator\Exception
+     */
+    public function markdown(\SwaggerValidator\Common\Context $context)
+    {
+        $method = __FUNCTION__;
+
+        if ($this->__isset(\SwaggerValidator\Object\HeaderItem::KEY_ITEM)) {
+
+            $context->setLocation(\SwaggerValidator\Common\FactorySwagger::LOCATION_HEADER);
+
+            return $this->get(\SwaggerValidator\Object\HeaderItem::KEY_ITEM)->getModel($context);
+        }
+
+        $this->throwException('Cannot find a well formed item in the headeritem object', $context, __METHOD__, __LINE__);
+    }
+
 }

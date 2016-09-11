@@ -1,4 +1,4 @@
 * License :{% if name|length > 0 %} {{ name }} {% endif %}{% if url|length > 0 %} {{ url }} {% endif %}
 {% if externalDocs|length > 0 %}
-    * Addition note : {{ externalDocs }}
+      * Addition note : {{ externalDocs }}
 {% endif %}

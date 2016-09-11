@@ -27,4 +27,26 @@ namespace Swagger2md\SwaggerValidator\Object;
 class Headers extends \SwaggerValidator\Object\Headers
 {
 
+    /**
+     *
+     * @param \SwaggerValidator\Common\Context $context
+     * @param array $generalItems
+     */
+    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems)
+    {
+        $method = __FUNCTION__;
+
+        foreach ($this->keys() as $key) {
+
+            if (!is_object($this->$key) || !($this->$key instanceof \SwaggerValidator\Object\HeaderItem)) {
+                continue;
+            }
+
+            $generalItems[$key] = $this->$key->$method($context->setDataPath($key));
+        }
+
+        \Swagger2md\Swagger2md::printOutVV('Collecting Headers data');
+        return $generalItems;
+    }
+
 }

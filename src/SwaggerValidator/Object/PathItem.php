@@ -75,8 +75,6 @@ class PathItem extends \SwaggerValidator\Object\PathItem
             }
 
             foreach ($this->$key->get($keyTags) as $oneTag) {
-                \Swagger2md\Swagger2md::printOutVV('Tags "' . $oneTag . '" found for path :' . $context->getDataPath() . ' and Method :' . $key);
-
                 if (!array_key_exists($oneTag, $tags)) {
                     $tags[$oneTag] = array(
                         'name' => $oneTag

@@ -34,7 +34,30 @@ class Responses extends \SwaggerValidator\Object\Responses
      */
     public function markdown(\SwaggerValidator\Common\Context $context, $generalItems)
     {
-        return;
+        $method = __FUNCTION__;
+        $context->setType(\SwaggerValidator\Common\Context::TYPE_RESPONSE);
+
+        foreach ($this->keys() as $key) {
+
+            if (!preg_match('/^([0-9]{3})$|^(default)$/', $key) || !is_object($this->$key) || !($this->$key instanceof \SwaggerValidator\Object\ResponseItem)) {
+                continue;
+            }
+
+            if (!array_key_exists($key, $generalItems)) {
+                $generalItems[$key] = array();
+            }
+
+            $response = $this->$key->$method($context->setDataPath($key), $generalItems[$key]);
+
+            if (empty($response)) {
+                $response = null;
+            }
+
+            $generalItems[$key] = $response;
+        }
+
+        \Swagger2md\Swagger2md::printOutVV('Collecting responses data');
+        return $generalItems;
     }
 
 }

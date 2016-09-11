@@ -27,4 +27,44 @@ namespace Swagger2md\SwaggerValidator\Object;
 class ResponseItem extends \SwaggerValidator\Object\ResponseItem
 {
 
+    /**
+     *
+     * @param \SwaggerValidator\Common\Context $context
+     * @param array $generalItems
+     */
+    public function markdown(\SwaggerValidator\Common\Context $context, $generalItems)
+    {
+        $method = __FUNCTION__;
+
+        $headersKey = \SwaggerValidator\Common\FactorySwagger::KEY_HEADERS;
+        $schemaKey  = \SwaggerValidator\Common\FactorySwagger::KEY_SCHEMA;
+
+        if (!array_key_exists($headersKey, $generalItems)) {
+            $generalItems[$headersKey] = array();
+        }
+
+        if (!array_key_exists($schemaKey, $generalItems)) {
+            $generalItems[$schemaKey] = null;
+        }
+
+        if ($this->__isset($headersKey) && is_object($this->$headersKey) && ($this->$headersKey instanceof \SwaggerValidator\Object\Headers)) {
+            $generalItems[$headersKey] = $this->$headersKey->$method($context->setDataPath($headersKey), $generalItems[$headersKey]);
+        }
+
+        if (isset($this->$schemaKey) && is_object($this->$schemaKey) && method_exists($this->$schemaKey, 'getModel')) {
+            $generalItems[$schemaKey] = $this->$schemaKey->$method($context->setDataPath($schemaKey)->setType(\SwaggerValidator\Common\Context::TYPE_RESPONSE));
+        }
+
+        if (empty($generalItems[$headersKey])) {
+            unset($generalItems[$headersKey]);
+        }
+
+        if (empty($generalItems[$schemaKey])) {
+            unset($generalItems[$schemaKey]);
+        }
+
+        \Swagger2md\Swagger2md::printOutVV('Collecting one response data');
+        return $generalItems;
+    }
+
 }

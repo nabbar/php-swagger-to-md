@@ -27,4 +27,9 @@ namespace Swagger2md\SwaggerValidator\DataType;
 class TypeCombined extends \SwaggerValidator\DataType\TypeCombined
 {
 
+    public function markdown(\SwaggerValidator\Common\Context $context)
+    {
+        return true;
+    }
+
 }

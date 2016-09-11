@@ -4,7 +4,7 @@
   * [Resource : {{ resource.name }}](#{{ resource.link }})
 {% for path in resource.paths %}
 {% for method in path.methods %}
-    * [Operation : {{ method.name }}](#{{ method.link }})
+      * [Operation : {{ method.name }}](#{{ method.link }})
 {% endfor %}
 {% endfor %}
 {% endfor %}

@@ -133,8 +133,6 @@ class Operation extends \SwaggerValidator\Object\Operation
             $operation[$keyConsumes] = array();
         }
 
-        //\Swagger2md\Swagger2md::printOutVV('Request Example Base Parameters : ' . print_r($operation[$keyParameters], true));
-
         $templateVars = array(
         );
 

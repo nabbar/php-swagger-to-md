@@ -4,7 +4,7 @@
 {% if tag.description |length > 0 %} : {{ tag.description }}{% endif %}
 {% if externalDocs|length > 0 %} : Addition note : {{ externalDocs }}{% endif %}
 {% for path in tag.paths %}{% for operation in path.methods %}
-    * [Operation : {{ operation.name }}](#{{ operation.link }})
+      * [Operation : {{ operation.name }}](#{{ operation.link }})
 {% endfor %}{% endfor %}
 {% endfor %}
 * [Summary](#summary)
@@ -13,7 +13,7 @@
   * [Resource : {{ resource.name }}](#{{ resource.link }})
 {% for path in resource.paths %}
 {% for method in path.methods %}
-    * [Operation : {{ method.name }}](#{{ method.link }})
+      * [Operation : {{ method.name }}](#{{ method.link }})
 {% endfor %}
 {% endfor %}
 {% endfor %}

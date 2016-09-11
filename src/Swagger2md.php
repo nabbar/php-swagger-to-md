@@ -93,7 +93,10 @@ class Swagger2md
             'help',
             'version',
             'verbose',
+            'debug',
         ));
+
+        $debug = false;
 
         if (isset($params['help']) || isset($params['h'])) {
             $this->showVersion();
@@ -141,6 +144,10 @@ class Swagger2md
             \SwaggerValidator\Common\Context::setConfigDropAllDebugLog();
         }
 
+        if (!empty($params['debug'])) {
+            $debug = true;
+        }
+
         if (!empty($params['tempDir'])) {
             $temp = $params['tempDir'];
         }
@@ -160,7 +167,7 @@ class Swagger2md
         if (!empty($temp)) {
             $this->twigTpl = new \Twig_Environment(new \Twig_Loader_Filesystem($this->templateFolder), array(
                 'cache'            => $temp,
-                'debug'            => (self::$verboseLevel > 0),
+                'debug'            => $debug,
                 'strict_variables' => false,
                 'optimizations'    => 0,
                 'autoescape'       => false,
@@ -169,7 +176,7 @@ class Swagger2md
         else {
             $this->twigTpl = new \Twig_Environment(new \Twig_Loader_Filesystem($this->templateFolder), array(
                 'cache'            => false,
-                'debug'            => (self::$verboseLevel > 0),
+                'debug'            => $debug,
                 'strict_variables' => false,
                 'optimizations'    => 0,
                 'autoescape'       => false,
